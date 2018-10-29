@@ -366,6 +366,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out" name="out">
+      <column comment="" key="false" length="-1" name="lignef" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="Customer" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
@@ -425,9 +426,10 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="Numeric.sequence(&quot;s1&quot;,1,1) " name="lignef" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Customer " name="Customer" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.OwnerRU " name="OwnerRU" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.CommonName " name="CommonName" nullable="true" type="id_String"/>
@@ -504,6 +506,11 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="lignef"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Customer"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -609,120 +616,122 @@
     <elementParameter field="TEXT" name="LABEL" value="POC_Mysql"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out" name="tDBOutput_3">
-      <column comment="" key="false" length="255" name="Customer" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="lignef" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Customer" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="OwnerRU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="OwnerRU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="CommonName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="CommonName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="LegalName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="LegalName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="OrganisationNo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="OrganisationNo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="VAT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="VAT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="ChamberOfCom" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="ChamberOfCom" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="Parma" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="Parma" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="SICCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="SICCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="AdressLine1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="AdressLine1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sAddrLine2" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sAddrLine2" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sAddrLine3" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sAddrLine3" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sPostalCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sPostalCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sCity" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sCity" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sStateProvince" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sStateProvince" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="Country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="Country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="CountryCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="CountryCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="SalesChannel" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="SalesChannel" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="Phone" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="Phone" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
     </metadata>
     <metadata connector="REJECT" label="out" name="REJECT">
-      <column comment="" key="false" length="255" name="Customer" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="lignef" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="255" name="Customer" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="OwnerRU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="OwnerRU" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="CommonName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="CommonName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="LegalName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="LegalName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="OrganisationNo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="OrganisationNo" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="VAT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="VAT" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="ChamberOfCom" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="ChamberOfCom" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="Parma" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="Parma" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="SICCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="SICCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="AdressLine1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="AdressLine1" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sAddrLine2" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sAddrLine2" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sAddrLine3" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sAddrLine3" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sPostalCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sPostalCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sCity" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sCity" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="sStateProvince" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="sStateProvince" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="Country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="Country" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="CountryCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="CountryCode" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="SalesChannel" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="SalesChannel" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
-      <column comment="" key="false" length="255" name="Phone" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="255" name="Phone" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -734,6 +743,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="lignef"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
   </connection>
@@ -742,13 +756,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7eecbb4e-b1d5-4956-9d4c-1cc0df36c515"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Sl0gKTzEVkjVFdpmgCSVZqBx+o1Zbk+X//VQ4kBCeU3wv3VJzJbb954bnTSd4LN5xsCTEWby9xHk
-3PEQxFgENA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_1f739107-4874-4cdb-8e17-a9d76ad456ef"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Fumfd39p23F4tu9sT+YKPobk+AbFoyyApWANuuzHN2w3sfzo3b8OXfYFxfBT55oPneOloICGFfwJ
-ow7N8Opd0Q==</DigestValue></Reference></SignedInfo><SignatureValue>DiRLQGKXxd9fRPP2R2TyWiv+JD7koP3oKmkjV4A5ZUT1pXBNTaylA/YqJJ6P84vy9gkllPi6QtGP
-fppFqsoHDLdqzoDCzu27prvgQEFjhoUj5mcPEdSPPrrIA8JB1bPdde5xRrXUl8d4p7kTakWoXAAD
-AmqOE40hAVQFBlHPw2818nB88+OzJ/6kddfcnP2mLMsKq4oTj5Z+NweBiVhswBYTXRGmPisgXLqA
-sJQHQy1p5UWY3lgmhOppcV06RGnchMO2ea93SiAvplyyhD7V9LBTFvH4cIEP75dcR7KLJ3ib3ANG
-pIlvq5sbE5WSmKM80ZdCA5dMpJp1DGx/Yb/vMA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8a13a880-3616-4706-a068-1a5f7e36120b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>286aLgKGR86ffX+tWZm+8MUo6GHBQZuMciQnN1bFV9Z4eVXTKjAyOzaqQrzRVkxiVtPsEZKAlcJZ
+60puz4fplQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_205df7b5-b0b1-4ac5-b1c1-0052c16e0274"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DQA5zm27zglMDL3wAvZkW7aCYaKplBRaRk8CD1zmLHP/1jqQjc+Ff+S4GIiQCmwaTQCSCctFlZgu
+djPTDM+ehw==</DigestValue></Reference></SignedInfo><SignatureValue>jpqSb4nA8SsvRTPLgPeFr3zc5qPamgEJPMfv/FsLgOkk0Dsaz2owpSEs44lW67nsjT7pgLz6ANlI
+N0r0HZ+iG+gBF1QtaBhXgT/ZpxbxaGwdEVHpOqaoVy1qcYYjKKv79UDo7BiFuvbosBRP6cTmvSMv
+8AeSO0DbdDyyIb9ScqD8vj5v+FAkapJQTwCB8rQWxh8i1CZ/GQcdpxtIkPQCx7JVU342wDK0/2aN
+bHRtNR/LxOufbscI/klJlt1uP33MKxtUs+AoBgi9U90WU3u+AZVHJCuGR5SGyWZC0Hc9skUmIMTD
+suQUBixyAFe5qo8ukxvDuZX9pwdScclCxfRvMA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -772,4 +786,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_1f739107-4874-4cdb-8e17-a9d76ad456ef" Target="#_7eecbb4e-b1d5-4956-9d4c-1cc0df36c515"><Timestamp>2018-10-29 14:21:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_205df7b5-b0b1-4ac5-b1c1-0052c16e0274" Target="#_8a13a880-3616-4706-a068-1a5f7e36120b"><Timestamp>2018-10-29 14:31:40</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
