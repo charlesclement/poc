@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0">
   <TalendMetadata:DatabaseConnection AdditionalParams="" DatabaseType="PostgresPlus" DatasourceName="" DbmsId="postgresplus_id" DriverClass="org.postgresql.Driver" FileFieldName="" NullChar="" Password="RX/CTwlUNiA=" Port="5432" ProductId="POSTGRESPLUS" SID="POC_V" SQLMode="false" ServerName="localhost" SqlSynthax="" StandardSQL="true" StringQuote="" URL="jdbc:postgresql://localhost:5432/POC_V" UiSchema="" Username="postgres" dataPackage="_be2mUNuDEeiy94mzVlVxwg" dbVersionString="PRIOR_TO_V9" id="_TL2gQNuBEeiy94mzVlVxwg" label="POC_Postgres" name="POC_Postgres" xmi:id="_UEzFANuCEeiy94mzVlVxwg">
     <taggedValue tag="Is Conn Need Reload" value="false" xmi:id="_UEzsENuCEeiy94mzVlVxwg"/>
     <taggedValue tag="package filter" value="" xmi:id="_UF-wwNuCEeiy94mzVlVxwg"/>
@@ -15,15 +15,76 @@
     <parameters key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value="" xmi:id="_I23XgNuDEeiy94mzVlVxwg"/>
   </TalendMetadata:DatabaseConnection>
   <orgomg.cwm.resource.relational:Catalog dataManager="_UEzFANuCEeiy94mzVlVxwg" name="POC_V" xmi:id="_be2mUNuDEeiy94mzVlVxwg">
-    <ownedElement name="" xmi:id="_be2mUduDEeiy94mzVlVxwg" xsi:type="orgomg.cwm.resource.relational:Schema"/>
+    <ownedElement name="" xmi:id="_be2mUduDEeiy94mzVlVxwg" xsi:type="orgomg.cwm.resource.relational:Schema">
+      <ownedElement label="_pg_foreign_data_wrappers" name="_pg_foreign_data_wrappers" tableType="VIEW" xmi:id="_-7u5MNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="_pg_foreign_servers" name="_pg_foreign_servers" tableType="VIEW" xmi:id="_-7u5MduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="_pg_foreign_table_columns" name="_pg_foreign_table_columns" tableType="VIEW" xmi:id="_-7u5MtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="_pg_foreign_tables" name="_pg_foreign_tables" tableType="VIEW" xmi:id="_-7u5M9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="_pg_user_mappings" name="_pg_user_mappings" tableType="VIEW" xmi:id="_-7u5NNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="administrable_role_authorizations" name="administrable_role_authorizations" tableType="VIEW" xmi:id="_-7u5NduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="applicable_roles" name="applicable_roles" tableType="VIEW" xmi:id="_-7u5NtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="attributes" name="attributes" tableType="VIEW" xmi:id="_-7u5N9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="character_sets" name="character_sets" tableType="VIEW" xmi:id="_-7u5ONuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="check_constraint_routine_usage" name="check_constraint_routine_usage" tableType="VIEW" xmi:id="_-7u5OduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="check_constraints" name="check_constraints" tableType="VIEW" xmi:id="_-7u5OtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="collation_character_set_applicability" name="collation_character_set_applicability" tableType="VIEW" xmi:id="_-7u5O9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="collations" name="collations" tableType="VIEW" xmi:id="_-7u5PNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="column_domain_usage" name="column_domain_usage" tableType="VIEW" xmi:id="_-7u5PduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="column_options" name="column_options" tableType="VIEW" xmi:id="_-7u5PtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="column_privileges" name="column_privileges" tableType="VIEW" xmi:id="_-7u5P9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="column_udt_usage" name="column_udt_usage" tableType="VIEW" xmi:id="_-7u5QNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="columns" name="columns" tableType="VIEW" xmi:id="_-7u5QduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="constraint_column_usage" name="constraint_column_usage" tableType="VIEW" xmi:id="_-7u5QtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="constraint_table_usage" name="constraint_table_usage" tableType="VIEW" xmi:id="_-7u5Q9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="data_type_privileges" name="data_type_privileges" tableType="VIEW" xmi:id="_-7u5RNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="domain_constraints" name="domain_constraints" tableType="VIEW" xmi:id="_-7u5RduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="domain_udt_usage" name="domain_udt_usage" tableType="VIEW" xmi:id="_-7u5RtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="domains" name="domains" tableType="VIEW" xmi:id="_-7u5R9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="element_types" name="element_types" tableType="VIEW" xmi:id="_-7u5SNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="enabled_roles" name="enabled_roles" tableType="VIEW" xmi:id="_-7u5SduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="foreign_data_wrapper_options" name="foreign_data_wrapper_options" tableType="VIEW" xmi:id="_-7u5StuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="foreign_data_wrappers" name="foreign_data_wrappers" tableType="VIEW" xmi:id="_-7u5S9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="foreign_server_options" name="foreign_server_options" tableType="VIEW" xmi:id="_-7u5TNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="foreign_servers" name="foreign_servers" tableType="VIEW" xmi:id="_-7u5TduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="foreign_table_options" name="foreign_table_options" tableType="VIEW" xmi:id="_-7u5TtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="foreign_tables" name="foreign_tables" tableType="VIEW" xmi:id="_-7u5T9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="information_schema_catalog_name" name="information_schema_catalog_name" tableType="VIEW" xmi:id="_-7u5UNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="key_column_usage" name="key_column_usage" tableType="VIEW" xmi:id="_-7u5UduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="parameters" name="parameters" tableType="VIEW" xmi:id="_-7u5UtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="referential_constraints" name="referential_constraints" tableType="VIEW" xmi:id="_-7u5U9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="role_column_grants" name="role_column_grants" tableType="VIEW" xmi:id="_-7u5VNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="role_routine_grants" name="role_routine_grants" tableType="VIEW" xmi:id="_-7u5VduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="role_table_grants" name="role_table_grants" tableType="VIEW" xmi:id="_-7u5VtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="role_udt_grants" name="role_udt_grants" tableType="VIEW" xmi:id="_-7u5V9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="role_usage_grants" name="role_usage_grants" tableType="VIEW" xmi:id="_-7u5WNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="routine_privileges" name="routine_privileges" tableType="VIEW" xmi:id="_-7u5WduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="routines" name="routines" tableType="VIEW" xmi:id="_-7u5WtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="schemata" name="schemata" tableType="VIEW" xmi:id="_-7u5W9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="sequences" name="sequences" tableType="VIEW" xmi:id="_-7u5XNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="table_constraints" name="table_constraints" tableType="VIEW" xmi:id="_-7u5XduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="table_privileges" name="table_privileges" tableType="VIEW" xmi:id="_-7u5XtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="tables" name="tables" tableType="VIEW" xmi:id="_-7u5X9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="transforms" name="transforms" tableType="VIEW" xmi:id="_-7u5YNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="triggered_update_columns" name="triggered_update_columns" tableType="VIEW" xmi:id="_-7u5YduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="triggers" name="triggers" tableType="VIEW" xmi:id="_-7u5YtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="udt_privileges" name="udt_privileges" tableType="VIEW" xmi:id="_-7u5Y9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="usage_privileges" name="usage_privileges" tableType="VIEW" xmi:id="_-7u5ZNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="user_defined_types" name="user_defined_types" tableType="VIEW" xmi:id="_-7u5ZduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="user_mapping_options" name="user_mapping_options" tableType="VIEW" xmi:id="_-7u5ZtuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="user_mappings" name="user_mappings" tableType="VIEW" xmi:id="_-7u5Z9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="view_column_usage" name="view_column_usage" tableType="VIEW" xmi:id="_-7u5aNuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="view_routine_usage" name="view_routine_usage" tableType="VIEW" xmi:id="_-7u5aduEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="view_table_usage" name="view_table_usage" tableType="VIEW" xmi:id="_-7u5atuEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+      <ownedElement label="views" name="views" tableType="VIEW" xmi:id="_-7u5a9uEEeiy94mzVlVxwg" xsi:type="relational:TdView"/>
+    </ownedElement>
   </orgomg.cwm.resource.relational:Catalog>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fcf288ce-455c-4634-81ee-c8e6450d6248"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AD/gJzxppdBdoRAwVWir34FhmrVro/kKiy9GDVOICYSyRaQhAnGhl2Jq0z803nROL0SkSJh35mc2
-XlzHyjTRnA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8c25864f-0ff8-421b-96a0-423f8f14bbe4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Yzx4Wn4sP40tTPFwhw6Iya62ehtvp/3GN/D1COntCq5p+LlUwZR628q5u3u6N6MUrTPxmWQbWlH4
-q8Ws0mD2dQ==</DigestValue></Reference></SignedInfo><SignatureValue>2j4T6TvfdSLciV9vYsW/zqdwqwcqOHVna6H9vOQ1V/vL2dWYQwy5YXbsDQfQaPD4uhtEsj6Tux+o
-IDEvYi3alqSrq+PtLFNkDUgSCOKJE+m25Zq7yItOjPvG0JoO1ccdPCB9sK8lQtnU+iNXykA30Kmm
-M9YL2ndA5mGuPt8CJhQqJ9FDJNBbUj0P4SojTgQkcuUZq1ACzhIP8c7BeAWHmUU8+w+wLiHtBswn
-aNXci7NFxnkep7oINTOAmofM+bze8gwRxcQ9tlGvbxrm3Rr/nUe3BlegeJicqC5lLXXmpBqVszlF
-LnE4GbzwtXnIjJs8nDd+8QJyAehnQ2smSPXqQQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d66a02bd-b82d-4ea6-a032-86151ce5d527"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GLqAm45VgJRf5IzWc915okdcFrRrKJfl2v7bmNGzY14FtJOX23lIeUYTFZM8MMCL1ncmp25I7sEU
+ZD/ie1qVdQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4ccecfdc-844f-4210-9523-3bba1d875cbf"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ca4vGFPAE5uyofmOClIV192aAMY3bnC4b5fiO10unBpZih+cXXQ4QbXWIjoc3tCs5Ov5tXFDauY9
+mBua9hcq/w==</DigestValue></Reference></SignedInfo><SignatureValue>uI6c+U6hJsy8Mr4dAec5wDrZZVzm52rZRAIFCsvT+DP0f01Ldb7mEGGoRQRGK+pBGADJBOLtQfNJ
+8Gt+U/pToPSGB/MFZ5ziFnxazITPYrZUBxRDuH3POZK+ojwPqOZQoingH1cPWqpJNHZY9ctFOCCw
+q2KV34F3Y3wdJwBAfGGae5rtAxqb0E5/f6h2WlJ92Ft/0nEUXaXUNpMHfz6EeAz0QNMbRKkSUCU7
+IlMLY2ZkndIynCeYBg7HqphnfTRCzC+WZqz6cNX95uTDu8bxLJaqjoCWXXOYpxWvMuZ707N0pIR+
+rjlQq1JVE42tdAlgNX0KGVUZTkOARQv184OiWQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -47,4 +108,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8c25864f-0ff8-421b-96a0-423f8f14bbe4" Target="#_fcf288ce-455c-4634-81ee-c8e6450d6248"><Timestamp>2018-10-29 14:03:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4ccecfdc-844f-4210-9523-3bba1d875cbf" Target="#_d66a02bd-b82d-4ea6-a032-86151ce5d527"><Timestamp>2018-10-29 14:14:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
