@@ -7,6 +7,12 @@
     <contextParameter comment="" name="RTDMS_DecimalSeparator" prompt="RTDMS_DecimalSeparator?" promptNeeded="false" repositoryContextId="_VyayYNqbEeidEthfyG9KeA" type="id_String" value="'.'"/>
     <contextParameter comment="" name="RTDMS_File" prompt="RTDMS_File?" promptNeeded="false" repositoryContextId="_VyayYNqbEeidEthfyG9KeA" type="id_File" value="C:/Users/charles.clement/Documents/04 - Prestation/2018/Volvo/03_Fichier_Source/2_RTDMS/RTDMS_Van Hove_20180919_V1.xlsx"/>
     <contextParameter comment="" name="RTDMS_Encoding" prompt="RTDMS_Encoding?" promptNeeded="false" repositoryContextId="_VyayYNqbEeidEthfyG9KeA" type="id_String" value="UTF-8"/>
+    <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
+    <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
+    <contextParameter comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="root"/>
+    <contextParameter comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="noDatetimeStringSync=true"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -385,11 +391,11 @@
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;54.217.174.128&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;volvo&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="r0M4Avw8nA8="/>
+    <elementParameter field="TEXT" name="HOST" value="context.Mysql_local_Server"/>
+    <elementParameter field="TEXT" name="PORT" value="context.Mysql_local_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.Mysql_local_Database"/>
+    <elementParameter field="TEXT" name="USER" value="context.Mysql_local_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ODS_RTDMS&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -398,7 +404,7 @@
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.Mysql_local_AdditionalParams"/>
     <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
     <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
     <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
@@ -572,13 +578,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_986e1a54-6b5a-4685-96cd-32032c6e0b90"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MxxWNIvfxzmu3k2/uEEQmNNfCYkX3T7kCyZOWBkd/L7lzYdWgeC027Crcmv6SOrr4KKg85ct43mK
-kk9gxJPaew==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3eb2bda6-cd29-4d19-bfd4-c19b028b8891"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xTaEhRYUm0vShV86IsWFRr76+Vk6YEsdgaqRxCI2O/U2MlQi0eh6OpnQHHIBpn8dJzO9k26STcPO
-tKSgDhqRZA==</DigestValue></Reference></SignedInfo><SignatureValue>2DhaZ8/e9KlZEFR1XjkEZ8DYLteuOuYVAST5YnvcD30J5kNbz1xUw40YGN3u4yF11UDgCtVE2HJ5
-GWjwZR74DoarwVUKVV3oGlW0dVK89d5UAx7Y/zJILChr52FkFLfJ0dL22yGgfeSJ44gpHRo5sRSv
-N8JMZHpFkk0d9kubATSuO6X2SC8hKsULhkfBZb6qAobzFeGzdT/I0e50l8R288BpRMVrhiLbGlOB
-QUXl/bLLaXoBmIwkOojka69TXwcT35oTniwGBLjZOBj0ItUZxDmoU/BHRGBMr/44W0duoxvUXi7I
-unDG2ZlYxc0/qrY/dZpuwdb15aIYuTgEPtpL4w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4a21c7d0-65ca-4b6b-a3af-951ac38adeae"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zcD3r4NjCAAcVQTUmOkGzFMnb/+yw0LPAoW7kIEgqKQhIJo8JbE3Q8dTpPBdUQroeN1OorMQwiN1
+f8vuZWVVgg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fced04fe-ce0e-4305-80e7-4b014cfb5363"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>kggs7sspFhYOj0sDVlzjVHVY5hxeS8r/VmHcCzMwX4y5Lp3vzYleeOpNDO9xNv9E6cXnW+dVqWtf
++Gs+tA6s6A==</DigestValue></Reference></SignedInfo><SignatureValue>hQc8Is+K3a90+VO+dInwzhl6OzcbUW0EQ4gzWfJiHz/mrv7UYvACM0uHv9nGltAarc90dDL9q51g
+Nt4QfFbZ518aYIPG/ICpGkPAYW7mL1kvVDBvgwW7iew81kCp+uXJfMmzy4frY46zuRHR608JlWRj
+Ja2Bt5lBH7PVGBMKJ4oOhAzeVRTh9TuiyymVaQwoshBUirNl1OI9ZCWd7t+YKvV2DHEG+A/nXSMx
+yV1zgTzNeaJlU8zJc6RaOXuiY8Ccm6kB0ST0cKDgYkqafbDbcXzfobe6Lp21KH/SIvPruwPdbUiN
+nxNpNLBzq1AtT7HCk0FIjCy+dIWpjbdLp4m7IQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -602,4 +608,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3eb2bda6-cd29-4d19-bfd4-c19b028b8891" Target="#_986e1a54-6b5a-4685-96cd-32032c6e0b90"><Timestamp>2018-10-31 10:36:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fced04fe-ce0e-4305-80e7-4b014cfb5363" Target="#_4a21c7d0-65ca-4b6b-a3af-951ac38adeae"><Timestamp>2018-10-31 20:18:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
