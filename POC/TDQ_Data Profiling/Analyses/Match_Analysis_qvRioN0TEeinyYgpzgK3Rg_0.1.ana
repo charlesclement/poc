@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_vwpAMN0SEeinyYgpzgK3Rg" name="MAtch_Analysis" creationDate="2018-10-31T14:42:01.883+0100" defaultContext="Default">
+<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_vwpAMN0SEeinyYgpzgK3Rg" name="Match_Analysis" creationDate="2018-10-31T14:42:01.883+0100" defaultContext="Default">
   <clientDependency href="../../metadata/connections/Mysql_0.1.item#_w1WlgN0SEeinyYgpzgK3Rg"/>
   <taggedValue xmi:id="_vwpnQN0SEeinyYgpzgK3Rg" tag="PREVIEW_ROW_NUMBER" value="10000"/>
   <taggedValue xmi:id="_vwpnQd0SEeinyYgpzgK3Rg" tag="Status" value="development"/>
@@ -38,7 +38,16 @@
     <indicators xsi:type="dataquality.indicators.columnset:BlockKeyIndicator" xmi:id="_vwpnSd0SEeinyYgpzgK3Rg"/>
     <indicators xsi:type="dataquality.indicators.columnset:RecordMatchingIndicator" xmi:id="_vwpnSt0SEeinyYgpzgK3Rg">
       <builtInMatchRuleDefinition xmi:id="_vwpnS90SEeinyYgpzgK3Rg">
-        <matchRules xmi:id="_v07qUN0SEeinyYgpzgK3Rg" name="Règle de rapprochement 1"/>
+        <blockKeys xmi:id="_1qKYUN0SEeinyYgpzgK3Rg" name="name" column="CommonName">
+          <preAlgorithm xmi:id="_1qKYUd0SEeinyYgpzgK3Rg" algorithmType="removeDiacriticalMarks" algorithmParameters=""/>
+          <algorithm xmi:id="_1qKYUt0SEeinyYgpzgK3Rg" algorithmType="first_N_Char" algorithmParameters="3"/>
+          <postAlgorithm xmi:id="_1qKYU90SEeinyYgpzgK3Rg" algorithmType="NON_ALGO" algorithmParameters=""/>
+        </blockKeys>
+        <matchRules xmi:id="_v07qUN0SEeinyYgpzgK3Rg" name="Règle de rapprochement 1">
+          <matchKeys xmi:id="_SdojsN0TEeinyYgpzgK3Rg" name="legalname" column="LegalName" confidenceWeight="1" handleNull="nullMatchNull" threshold="1.0" tokenizationType="No">
+            <algorithm xmi:id="_Sdojsd0TEeinyYgpzgK3Rg" algorithmType="LEVENSHTEIN" algorithmParameters=""/>
+          </matchKeys>
+        </matchRules>
       </builtInMatchRuleDefinition>
     </indicators>
   </results>
