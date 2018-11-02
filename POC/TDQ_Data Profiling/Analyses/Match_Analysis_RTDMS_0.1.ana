@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_vwpAMN0SEeinyYgpzgK3Rg" name="Match_Analysis" creationDate="2018-10-31T14:42:01.883+0100" defaultContext="Default">
+<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_vwpAMN0SEeinyYgpzgK3Rg" name="Match_Analysis_RTDMS" creationDate="2018-10-31T14:42:01.883+0100" defaultContext="Default">
   <clientDependency href="../../metadata/connections/Mysql_0.1.item#_w1WlgN0SEeinyYgpzgK3Rg"/>
   <taggedValue xmi:id="_vwpnQN0SEeinyYgpzgK3Rg" tag="PREVIEW_ROW_NUMBER" value="10000"/>
   <taggedValue xmi:id="_vwpnQd0SEeinyYgpzgK3Rg" tag="Status" value="development"/>
@@ -48,6 +48,9 @@
             <algorithm xmi:id="_Sdojsd0TEeinyYgpzgK3Rg" algorithmType="LEVENSHTEIN" algorithmParameters=""/>
           </matchKeys>
         </matchRules>
+        <survivorshipKeys xmi:id="_On158N7sEeiAxo_Xf4VPDg" name="legalname" allowManualResolution="true">
+          <function xmi:id="_On158d7sEeiAxo_Xf4VPDg" algorithmType="Concatenate" algorithmParameters=","/>
+        </survivorshipKeys>
       </builtInMatchRuleDefinition>
     </indicators>
   </results>
