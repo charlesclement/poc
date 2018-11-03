@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.analysis="http://dataquality.analysis" xmi:id="_2MrjcN9rEeid7v2-FZr9SQ" name="Analyse simple de colonne RTDMS" creationDate="2018-11-03T14:24:52.645+0100">
-  <taggedValue xmi:id="_2Mrjcd9rEeid7v2-FZr9SQ" tag="Status" value="development"/>
-  <taggedValue xmi:id="_2Mrjct9rEeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
-  <taggedValue xmi:id="_2Mrjc99rEeid7v2-FZr9SQ" tag="Purpose"/>
-  <taggedValue xmi:id="_2MrjdN9rEeid7v2-FZr9SQ" tag="Description"/>
-  <taggedValue xmi:id="_2Mrjdd9rEeid7v2-FZr9SQ" tag="Version" value="0.1"/>
-  <context xmi:id="_2Mrjdt9rEeid7v2-FZr9SQ"/>
-  <results xmi:id="_2Mrjd99rEeid7v2-FZr9SQ">
-    <resultMetadata xmi:id="_2MrjeN9rEeid7v2-FZr9SQ"/>
-  </results>
-  <parameters xmi:id="_2Mrjed9rEeid7v2-FZr9SQ" analysisType="Multiple Column Analysis"/>
-</dataquality.analysis:Analysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_2MrjcN9rEeid7v2-FZr9SQ" name="Analyse simple de colonne RTDMS" creationDate="2018-11-03T14:24:52.645+0100" defaultContext="Default">
+    <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+    <taggedValue xmi:id="_2Mrjcd9rEeid7v2-FZr9SQ" tag="Status" value="development"/>
+    <taggedValue xmi:id="_2Mrjct9rEeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+    <taggedValue xmi:id="_2Mrjc99rEeid7v2-FZr9SQ" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_2MrjdN9rEeid7v2-FZr9SQ" tag="Description" value=""/>
+    <taggedValue xmi:id="_2Mrjdd9rEeid7v2-FZr9SQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_DFN8Id9sEeid7v2-FZr9SQ" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_DFN8It9sEeid7v2-FZr9SQ" tag="PREVIEW_ROW_NUMBER" value="50"/>
+    <taggedValue xmi:id="_DFOjMN9sEeid7v2-FZr9SQ" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <taggedValue xmi:id="_DFPxUN9sEeid7v2-FZr9SQ" tag="Is Use Sample Data" value="false"/>
+    <context xmi:id="_2Mrjdt9rEeid7v2-FZr9SQ">
+      <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+    </context>
+    <results xmi:id="_2Mrjd99rEeid7v2-FZr9SQ">
+      <resultMetadata xmi:id="_2MrjeN9rEeid7v2-FZr9SQ"/>
+    </results>
+    <parameters xmi:id="_2Mrjed9rEeid7v2-FZr9SQ" dataFilter="_DFQYYN9sEeid7v2-FZr9SQ" analysisType="Multiple Column Analysis"/>
+    <contextType xmi:id="_DFN8IN9sEeid7v2-FZr9SQ" confirmationNeeded="false" name="Default"/>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_DFQYYN9sEeid7v2-FZr9SQ" name="Analyse simple de colonne RTDMS">
+    <ranges xmi:id="_DFQYYd9sEeid7v2-FZr9SQ">
+      <expressions xmi:id="_DFQYYt9sEeid7v2-FZr9SQ">
+        <expression xsi:type="relational:TdExpression" xmi:id="_DFQYY99sEeid7v2-FZr9SQ" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
