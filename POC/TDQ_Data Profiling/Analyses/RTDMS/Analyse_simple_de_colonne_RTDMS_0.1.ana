@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_2MrjcN9rEeid7v2-FZr9SQ" name="Analyse simple de colonne RTDMS" creationDate="2018-11-03T14:24:52.645+0100" defaultContext="Default">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT_Belgium_0.1.pattern#_ixdrcN9sEeid7v2-FZr9SQ"/>
     <taggedValue xmi:id="_2Mrjcd9rEeid7v2-FZr9SQ" tag="Status" value="development"/>
     <taggedValue xmi:id="_2Mrjct9rEeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_2Mrjc99rEeid7v2-FZr9SQ" tag="Purpose" value=""/>
@@ -16,7 +17,28 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
     </context>
     <results xmi:id="_2Mrjd99rEeid7v2-FZr9SQ">
-      <resultMetadata xmi:id="_2MrjeN9rEeid7v2-FZr9SQ"/>
+      <resultMetadata xmi:id="_2MrjeN9rEeid7v2-FZr9SQ" executionDate="2018-11-03T14:29:52.908+0100" executionDuration="116" message="" executionNumber="1" lastRunOk="true" lastExecutionNumberOk="1"/>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_ixL-oN9sEeid7v2-FZr9SQ" name="VAT Belgium" count="962" computed="true" matchingValueCount="10" notMatchingValueCount="952">
+        <parameters xmi:id="_ixL-od9sEeid7v2-FZr9SQ">
+          <dataValidDomain xmi:id="_ixL-ot9sEeid7v2-FZr9SQ">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT_Belgium_0.1.pattern#_RcMowN9sEeid7v2-FZr9SQ"/>
+            <builtInPatterns xmi:id="_i8J4gN9sEeid7v2-FZr9SQ" name="VAT Belgium">
+              <taggedValue xmi:id="_i8J4gd9sEeid7v2-FZr9SQ" tag="Status" value="development"/>
+              <taggedValue xmi:id="_i8J4gt9sEeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_i8J4g99sEeid7v2-FZr9SQ" tag="Purpose"/>
+              <taggedValue xmi:id="_i8J4hN9sEeid7v2-FZr9SQ" tag="Description"/>
+              <taggedValue xmi:id="_i8J4hd9sEeid7v2-FZr9SQ" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_i8J4ht9sEeid7v2-FZr9SQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_i8J4h99sEeid7v2-FZr9SQ" expressionType="REGEXP">
+                <expression xmi:id="_i8J4iN9sEeid7v2-FZr9SQ" body="'(BE)?0[0-9]{9}'" language="MySQL"/>
+              </components>
+            </builtInPatterns>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_i8M70N9sEeid7v2-FZr9SQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY '(BE)?0[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_rtdms` " language="MySQL"/>
+      </indicators>
     </results>
     <parameters xmi:id="_2Mrjed9rEeid7v2-FZr9SQ" dataFilter="_DFQYYN9sEeid7v2-FZr9SQ" analysisType="Multiple Column Analysis"/>
     <contextType xmi:id="_DFN8IN9sEeid7v2-FZr9SQ" confirmationNeeded="false" name="Default"/>
