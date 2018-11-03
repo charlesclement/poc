@@ -51,13 +51,16 @@
           <matchKeys xmi:id="_DpBvcN9OEeid7v2-FZr9SQ" name="commonname" column="CommonName" confidenceWeight="1" handleNull="nullMatchNull" threshold="1.0" tokenizationType="No">
             <algorithm xmi:id="_DpBvcd9OEeid7v2-FZr9SQ" algorithmType="LEVENSHTEIN" algorithmParameters=""/>
           </matchKeys>
-          <matchKeys xmi:id="_GGt54N9OEeid7v2-FZr9SQ" name="VAT" column="VAT" confidenceWeight="1" handleNull="nullMatchNull" threshold="1.0" tokenizationType="No">
-            <algorithm xmi:id="_GGt54d9OEeid7v2-FZr9SQ" algorithmType="LEVENSHTEIN" algorithmParameters=""/>
-          </matchKeys>
         </matchRules>
         <appliedBlockKeys xmi:id="_hrQ0AN9OEeid7v2-FZr9SQ" name="BLOCK_KEY" column="BLOCK_KEY"/>
         <survivorshipKeys xmi:id="_W5An599NEeid7v2-FZr9SQ" name="legalname" allowManualResolution="true">
           <function xmi:id="_W5An6N9NEeid7v2-FZr9SQ" algorithmType="Concatenate" algorithmParameters=","/>
+        </survivorshipKeys>
+        <survivorshipKeys xmi:id="_5iDYEN9QEeid7v2-FZr9SQ" name="commonname" allowManualResolution="true">
+          <function xmi:id="_5iDYEd9QEeid7v2-FZr9SQ" algorithmType="Concatenate" algorithmParameters=","/>
+        </survivorshipKeys>
+        <survivorshipKeys xmi:id="_5iDYEt9QEeid7v2-FZr9SQ" name="VAT" allowManualResolution="true">
+          <function xmi:id="_5iDYE99QEeid7v2-FZr9SQ" algorithmType="Concatenate" algorithmParameters=","/>
         </survivorshipKeys>
       </builtInMatchRuleDefinition>
     </indicators>
