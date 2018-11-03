@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.domain.pattern:Pattern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmi:id="_E_mEgN90Eeid7v2-FZr9SQ" name="fs">
-  <taggedValue xmi:id="_E_mEgd90Eeid7v2-FZr9SQ" tag="Status" value="development"/>
-  <taggedValue xmi:id="_E_mEgt90Eeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
-  <taggedValue xmi:id="_E_mEg990Eeid7v2-FZr9SQ" tag="Purpose"/>
-  <taggedValue xmi:id="_E_mEhN90Eeid7v2-FZr9SQ" tag="Description"/>
-  <taggedValue xmi:id="_E_mEhd90Eeid7v2-FZr9SQ" tag="Version" value="0.1"/>
-  <taggedValue xmi:id="_E_mEht90Eeid7v2-FZr9SQ" tag="Validation_Status" value="true"/>
-  <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_E_mEh990Eeid7v2-FZr9SQ" expressionType="REGEXP">
-    <expression xmi:id="_E_mEiN90Eeid7v2-FZr9SQ" body="'^(BE){0,1}[0]{0,1}[0-9]{9}$'" language="MySQL"/>
-  </components>
-</dataquality.domain.pattern:Pattern>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:orgomg.cwm.objectmodel.core="http:///orgomg/cwm/objectmodel/core.ecore">
+  <dataquality.domain.pattern:Pattern xmi:id="_E_mEgN90Eeid7v2-FZr9SQ" name="fs" supplierDependency="_aDgjMN90Eeid7v2-FZr9SQ">
+    <taggedValue xmi:id="_E_mEgd90Eeid7v2-FZr9SQ" tag="Status" value="development"/>
+    <taggedValue xmi:id="_E_mEgt90Eeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+    <taggedValue xmi:id="_E_mEg990Eeid7v2-FZr9SQ" tag="Purpose"/>
+    <taggedValue xmi:id="_E_mEhN90Eeid7v2-FZr9SQ" tag="Description"/>
+    <taggedValue xmi:id="_E_mEhd90Eeid7v2-FZr9SQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_E_mEht90Eeid7v2-FZr9SQ" tag="Validation_Status" value="true"/>
+    <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_E_mEh990Eeid7v2-FZr9SQ" expressionType="REGEXP">
+      <expression xmi:id="_E_mEiN90Eeid7v2-FZr9SQ" body="'^(BE){0,1}[0]{0,1}[0-9]{9}$'" language="MySQL"/>
+    </components>
+  </dataquality.domain.pattern:Pattern>
+  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_aDgjMN90Eeid7v2-FZr9SQ" kind="Usage" supplier="_E_mEgN90Eeid7v2-FZr9SQ">
+    <client xsi:type="dataquality.analysis:Analysis" href="../../../../TDQ_Data Profiling/Analyses/RTDMS/Analyse_simple_de_colonne_RTDMS_0.1.ana#_2MrjcN9rEeid7v2-FZr9SQ"/>
+  </orgomg.cwm.objectmodel.core:Dependency>
+</xmi:XMI>
