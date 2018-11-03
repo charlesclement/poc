@@ -35,7 +35,7 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/Mysql_local_0.1.item#_Zg8d_99OEeid7v2-FZr9SQ"/>
     </context>
     <results xmi:id="_TzI7t99QEeid7v2-FZr9SQ">
-      <resultMetadata xmi:id="_TzI7uN9QEeid7v2-FZr9SQ" executionDate="2018-11-03T11:09:34.649+0100" executionDuration="1011" message="" executionNumber="2" lastRunOk="true" lastExecutionNumberOk="2"/>
+      <resultMetadata xmi:id="_TzI7uN9QEeid7v2-FZr9SQ" executionDate="2018-11-03T11:11:09.292+0100" executionDuration="1101" message="" executionNumber="3" lastRunOk="true" lastExecutionNumberOk="3"/>
       <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_b4cO4N9QEeid7v2-FZr9SQ" nullCount="962" computed="true">
         <parameters xmi:id="_b4cO4d9QEeid7v2-FZr9SQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Mysql_local_0.1.item#_Zg724N9OEeid7v2-FZr9SQ"/>
@@ -265,6 +265,23 @@
           <taggedValue xmi:id="_kFAAod9QEeid7v2-FZr9SQ" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_kFAAot9QEeid7v2-FZr9SQ" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_kFAAo99QEeid7v2-FZr9SQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:FrequencyIndicator" xmi:id="_x7SbAN9QEeid7v2-FZr9SQ" computed="true" distinctValueCount="2" valueToFreq="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C770800000010000000027400034344427372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B020000787000000000000157D17400055254444D537371007E000300000000000003C278">
+        <parameters xmi:id="_x7SbAd9QEeid7v2-FZr9SQ"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/Mysql_local_0.1.item#_Zg8d_99OEeid7v2-FZr9SQ"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Advanced Statistics/Frequency_Table_0.1.definition#_ccIR4hF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_yL_wgN9QEeid7v2-FZr9SQ" body="SELECT `Source`, COUNT(*) c FROM `volvo`.`cdb_rtdms` t  GROUP BY `Source` ORDER BY c DESC LIMIT 10" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_yLpLMN9QEeid7v2-FZr9SQ" name="Frequency Table" label="Frequency Table">
+          <taggedValue xmi:id="_yLpLMd9QEeid7v2-FZr9SQ" tag="Description" value="counts the number of records for each distinct record"/>
+          <taggedValue xmi:id="_yLpLMt9QEeid7v2-FZr9SQ" tag="Purpose" value="evaluates the most frequent records"/>
+          <sqlGenericExpression xmi:id="_yLpLM99QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="SQL"/>
+          <sqlGenericExpression xmi:id="_yLpLNN9QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_yLpLNd9QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_yLpLNt9QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY COUNT(*) DESC" language="PostgreSQL"/>
+          <sqlGenericExpression xmi:id="_yLpLN99QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="DB2"/>
+          <sqlGenericExpression xmi:id="_yLpLON9QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_yLpLOd9QEeid7v2-FZr9SQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Informix"/>
         </builtInIndicatorDefinition>
       </indicators>
     </results>
