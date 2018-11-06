@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_MhOCANuGEeiy94mzVlVxwg" name="RTDMS_Van_Hove" creationDate="2018-10-29T15:23:24.702+0100" defaultContext="Default">
+    <clientDependency href="../../metadata/connections/Z_tests_PGO/POC_Mysql_0.1.item#_MsKtwNuGEeiy94mzVlVxwg"/>
     <taggedValue xmi:id="_MhOCAduGEeiy94mzVlVxwg" tag="Status" value="development"/>
     <taggedValue xmi:id="_MhOCAtuGEeiy94mzVlVxwg" tag="Author" value="pascal.gomboso@eval11351.talend.com"/>
     <taggedValue xmi:id="_MhOCA9uGEeiy94mzVlVxwg" tag="Purpose" value=""/>
@@ -10,9 +11,30 @@
     <taggedValue xmi:id="_MsKGstuGEeiy94mzVlVxwg" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_MsKtwduGEeiy94mzVlVxwg" tag="Is Use Sample Data" value="false"/>
     <taggedValue xmi:id="_MsKtwtuGEeiy94mzVlVxwg" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
-    <context xmi:id="_MhOCBtuGEeiy94mzVlVxwg"/>
+    <context xmi:id="_MhOCBtuGEeiy94mzVlVxwg">
+      <connection href="../../metadata/connections/Z_tests_PGO/POC_Mysql_0.1.item#_mi4CgNuFEeiy94mzVlVxwg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/Z_tests_PGO/POC_Mysql_0.1.item#_MmAbbNuGEeiy94mzVlVxwg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/Z_tests_PGO/POC_Mysql_0.1.item#_MmAbdNuGEeiy94mzVlVxwg"/>
+    </context>
     <results xmi:id="_MhOpENuGEeiy94mzVlVxwg">
       <resultMetadata xmi:id="_MhOpEduGEeiy94mzVlVxwg" executionDate="2018-10-31T10:42:24.566+0100" executionDuration="460" message="" executionNumber="4" lastRunOk="true" lastExecutionNumberOk="4"/>
+      <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_iaGMwOG7EeiD688qtMPZkQ">
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Multiple_Column_Simple_Statistics_0.1.definition#_JoeMkM-jEd6qN5aKpPNGTg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/Z_tests_PGO/POC_Mysql_0.1.item#_MmAbbNuGEeiy94mzVlVxwg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/Z_tests_PGO/POC_Mysql_0.1.item#_MmAbdNuGEeiy94mzVlVxwg"/>
+        <rowCountIndicator xmi:id="_iaGMweG7EeiD688qtMPZkQ">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        </rowCountIndicator>
+        <uniqueCountIndicator xmi:id="_iaGMwuG7EeiD688qtMPZkQ">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
+        </uniqueCountIndicator>
+        <distinctCountIndicator xmi:id="_iaGMw-G7EeiD688qtMPZkQ">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
+        </distinctCountIndicator>
+        <duplicateCountIndicator xmi:id="_iaGMxOG7EeiD688qtMPZkQ">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
+        </duplicateCountIndicator>
+      </indicators>
     </results>
     <parameters xmi:id="_MhOpF9uGEeiy94mzVlVxwg" dataFilter="_MsKtw9uGEeiy94mzVlVxwg" analysisType="Column Set Analysis"/>
     <contextType xmi:id="_MsKGsNuGEeiy94mzVlVxwg" confirmationNeeded="false" name="Default"/>
