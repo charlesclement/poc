@@ -131,35 +131,34 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="160">
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="KEEP_ORDER_FOR_DOCUMENT" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out">
-      <column comment="" key="false" length="-1" name="checkVat" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Document" usefulColumn="true"/>
+    <metadata connector="FLOW" label="Input" name="out">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row1">
-        <nodes name="vatNumber" outgoingConnections="//@node.1/@nodeData/@connections.0" type="id_String" xpath="row1/vatNumber"/>
-        <nodes name="countryCode" outgoingConnections="//@node.1/@nodeData/@connections.1" type="id_String" xpath="row1/countryCode"/>
+        <nodes name="vatNumber" outgoingConnections="//@node.1/@nodeData/@connections.1" type="id_String" xpath="row1/vatNumber"/>
+        <nodes name="countryCode" outgoingConnections="//@node.1/@nodeData/@connections.0" type="id_String" xpath="row1/countryCode"/>
       </inputTrees>
       <outputTrees name="out">
-        <nodes expression="" name="checkVat" pattern="" type="id_Document" xpath="out/checkVat">
-          <children expression="" loop="true" main="true" name="root" type="id_String" xpath="out.checkVat:/root" xsi:type="TalendXMLMap:OutputTreeNode">
-            <children expression="row1.vatNumber" incomingConnections="//@node.1/@nodeData/@connections.0" name="vatNumber" type="id_String" xpath="out.checkVat:/root/vatNumber" xsi:type="TalendXMLMap:OutputTreeNode"/>
-            <children expression="row1.countryCode" incomingConnections="//@node.1/@nodeData/@connections.1" name="countryCode" type="id_String" xpath="out.checkVat:/root/countryCode" xsi:type="TalendXMLMap:OutputTreeNode"/>
-          </children>
-        </nodes>
+        <nodes expression="row1.countryCode" incomingConnections="//@node.1/@nodeData/@connections.0" name="countryCode" type="id_String" xpath="out/countryCode"/>
+        <nodes expression="row1.vatNumber" incomingConnections="//@node.1/@nodeData/@connections.1" name="vatNumber" type="id_String" xpath="out/vatNumber"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
-      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.0" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.1" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.1" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.1" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0" target="//@node.1/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="160">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_gmIeMONPEeiPfJdv9puJpw - Input"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
     <elementParameter field="RADIO" name="VERTICAL" value="false"/>
@@ -172,46 +171,347 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="checkVat"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="false" length="-1" name="checkVat" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Document" usefulColumn="true"/>
+    <metadata connector="FLOW" label="Input" name="tLogRow_1">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSOAP" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSOAP_1"/>
+  <node componentName="tWebService" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWebService_1"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_gmIeMONPEeiPfJdv9puJpw"/>
+    <elementParameter field="EXTERNAL" name="SERVICE_CONFIGURATION" value=""/>
+    <elementParameter field="CLOSED_LIST" name="MAPPING_DISPLAY" value="AUTO"/>
+    <elementParameter field="TEXT" name="CONNECTION_TIMEOUT" value="20"/>
+    <elementParameter field="TEXT" name="RECEIVE_TIMEOUT" value="20"/>
+    <elementParameter field="TECHNICAL" name="INPUT_SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="INPUT_SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_gmIeMONPEeiPfJdv9puJpw - Input"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_gmIeMONPEeiPfJdv9puJpw - Output"/>
     <elementParameter field="CHECK" name="USE_NTLM" value="false"/>
     <elementParameter field="TEXT" name="NTLM_DOMAIN" show="false" value="&quot;192.168.0.100&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTH" value="false"/>
-    <elementParameter field="TEXT" name="AUTH_USERNAME" show="false" value="&quot;username&quot;"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" show="false" value="PoLvNyVG2XWndNDdLn696A=="/>
+    <elementParameter field="TEXT" name="AUTH_USERNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" show="false" value="0RMsyjmybrE="/>
     <elementParameter field="CHECK" name="USE_PROXY" value="false"/>
-    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;61.163.92.4&quot;"/>
-    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="8080"/>
+    <elementParameter field="TEXT" name="PROXY_HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROXY_PORT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" show="false" value="&quot;&quot;"/>
     <elementParameter field="PASSWORD" name="PROXY_PASSWORD" show="false" value="0RMsyjmybrE="/>
     <elementParameter field="CHECK" name="NEED_SSL_TO_TRUSTSERVER" value="false"/>
     <elementParameter field="TEXT" name="SSL_TRUSTSERVER_TRUSTSTORE" show="false" value="&quot;C:/clientTrustStore.trustStore&quot;"/>
     <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" show="false" value="PoLvNyVG2XWndNDdLn696A=="/>
-    <elementParameter field="TEXT" name="ENDPOINT" value="&quot;http://ec.europa.eu/taxation_customs/vies/services/checkVatService&quot;"/>
-    <elementParameter field="TEXT" name="ACTION" value="&quot;http://ec.europa.eu/taxation_customs/vies/services/checkVatService/checkVat&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="SOAP_VERSION" value="Soap11"/>
-    <elementParameter field="CHECK" name="USE_MESSAGE_FROM_SCHEMA" value="true"/>
-    <elementParameter field="PREV_COLUMN_LIST" name="SOAPMESSAGE_FROM_SCHEMA" value="checkVat"/>
-    <elementParameter field="MEMO" name="SOAPMESSAGE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="CHECK" name="OUTPUT_DOCUMENT" value="false"/>
-    <elementParameter field="CHECK" name="USE_KERBEROS" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="KERBEROS_CONFIGURATION" show="false" value=""/>
-    <elementParameter field="CHECK" name="ENFORCE_NTLM" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
+    <elementParameter field="TEXT" name="ENDPOINT" show="false" value="&quot;http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl&quot;"/>
+    <elementParameter field="TEXT" name="SERVICE_NS" show="false" value="urn:ec.europa.eu:taxud:vies:services:checkVat"/>
+    <elementParameter field="TEXT" name="SERVICE_NAME" show="false" value="checkVatService"/>
+    <elementParameter field="TEXT" name="PORT_NS" show="false" value="urn:ec.europa.eu:taxud:vies:services:checkVat"/>
+    <elementParameter field="TEXT" name="PORT_NAME" show="false" value="checkVatPort"/>
+    <elementParameter field="TEXT" name="METHOD" show="false" value="checkVat(parameters):string,string,date,boolean,string,string"/>
+    <elementParameter field="TABLE" name="INPUT_PARAMS" show="false">
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="input.vatNumber"/>
+      <elementValue elementRef="ELEMENT" value="parameters.vatNumber"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="input.countryCode"/>
+      <elementValue elementRef="ELEMENT" value="parameters.countryCode"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="parameters"/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="countryCode"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="vatNumber"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value="countryCode"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value="vatNumber"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OUTPUT_PARAMS" show="false">
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters.countryCode"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters.vatNumber"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters.requestDate"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters.valid"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters.name"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value="parameters.address"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="parameters"/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="countryCode"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="vatNumber"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="requestDate"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="valid"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="name"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="address"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.countryCode"/>
+      <elementValue elementRef="COLUMN" value="countryCode"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.vatNumber"/>
+      <elementValue elementRef="COLUMN" value="vatNumber"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.requestDate"/>
+      <elementValue elementRef="COLUMN" value="requestDate"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.valid"/>
+      <elementValue elementRef="COLUMN" value="valid"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.name"/>
+      <elementValue elementRef="COLUMN" value="name"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.address"/>
+      <elementValue elementRef="COLUMN" value="address"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value="parameters.address"/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value="parameters.vatNumber"/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value="parameters.valid"/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value="parameters.requestDate"/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value="parameters.countryCode"/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value="parameters.name"/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+    </elementParameter>
+    <elementParameter field="DIRECTORY" name="TMPPATH" value=""/>
+    <elementParameter field="TEXT" name="LABEL" value="CheckVat"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSOAP_1">
-      <column defaultValue="" key="false" length="0" name="Header" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" label="Input" name="tWebService_1">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="OUTPUT" label="Output" name="OUTPUT">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="requestDate" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="valid" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="address" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="992" posY="160">
@@ -228,20 +528,29 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Header"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Body"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Fault"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="requestDate"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="valid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="address"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_2">
-      <column defaultValue="" key="false" length="0" name="Header" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="Body" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="0" name="Fault" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" label="Output" name="tLogRow_2">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="requestDate" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="valid" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="address" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tRowGenerator_1" offsetLabelX="0" offsetLabelY="0" source="tRowGenerator_1" target="tXMLMap_1">
@@ -252,11 +561,11 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tSOAP_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tWebService_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tSOAP_1" offsetLabelX="0" offsetLabelY="0" source="tSOAP_1" target="tLogRow_2">
+  <connection connectorName="OUTPUT" label="row3" lineStyle="0" metaname="OUTPUT" offsetLabelX="0" offsetLabelY="0" source="tWebService_1" target="tLogRow_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
@@ -265,13 +574,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ea5a57c8-e663-413b-8a4b-b7e432b8b730"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UYadZF/CKFQaV9UUegSkRd8s7R6/Zo2mfVwWyijOM8BIlG0T8ZgFrgWygH7eUnfcpEfL6HWW96oa
-XCHOLjOxRQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b0a6ad36-8267-45c7-a133-4046029da879"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ox4bYi9K5AR3OS5+If11bpsFc0quVUdPCsaBkXRXdYRoxejxjJBVs92W8BVQo+T5HIyWvOvVvLsf
-CD3Nvnr7hg==</DigestValue></Reference></SignedInfo><SignatureValue>MYdRDfuFX1Z4c4+yw1jq/ziofpoke15lx6nwpzCLRSxhlVOYglp4SnaqPkDA/nUZmuqbUpk4Tfoi
-EgE2JVofQ3dNnbFiHm0SyJT+ROL/HM8qDMSRhwQpYxfj273SNAU4R+nYxWqZqCsh9WEu+rnGhbWr
-EEI1fbfCd49Otz7M+02pCXN1gxiHSMcgQKUbFCpaZ6LPXodHlGaMjfbSq7IM/un9+Dz5Ic29oNfp
-5qePQaMglK3PuaLbCQi7Q/Fuju1+vI/EAMjV8rMGhj21La4aC4d2Zvz/FxduC7I1JWwdintT1rD6
-oCWN3cZ8WqaSzY4Ejt6PanBvYnQ5wnvKk1C8lA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e293413f-ff0c-4b1f-90a2-d13e5b15a9bf"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>m570Lo72EhIXY7UVSXGeHWSWhqnqqp2DXEIRpEMdfQbIzN4PNfvpr2isXoGFYMdYaY2NA47YZZh8
+yEYQLFtRqQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e9e865f0-a820-4146-ae6e-d2c8a606306b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EJ9uUe0gqbgkbICaRb0N56CRYYB1Wq5YGj0PGzAQgZQfaYIOorwp+Rz51BbfyGBQEOxauHZ3/yCr
+8bME5ozr/Q==</DigestValue></Reference></SignedInfo><SignatureValue>CDXoi/DIkXGsXokbhZDt/rBI3Ezt0awYGUMswTReooTAcu3LtxMmmv0T+PG7eI9q5WiXGXr4EBbC
+clbeadWsIuakppHw+8g7ooPGrhhQg++TyWZiaxYJMljGtSDUKXrUrahU91lvXVFG6z+qvqH0ShRX
+py7347fZt+dv9HDMscPy+NAI823ddeZ9ozxm355VRhb15+4GwTwoOCEeSnndX33OTTXO3hNJ7c56
+8LQpXE2eJHKd9c1DJvIOhjzMjkzws5Iw+8U2jMmmRc75zauaPxE+VT7bxsnOIG1vS6DpxQd+7PFI
+o10jAxwCwmrbnl3Lub/q9Bc9pzEplvbBZ65jmA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -295,4 +604,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b0a6ad36-8267-45c7-a133-4046029da879" Target="#_ea5a57c8-e663-413b-8a4b-b7e432b8b730"><Timestamp>2018-11-08 12:07:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e9e865f0-a820-4146-ae6e-d2c8a606306b" Target="#_e293413f-ff0c-4b1f-90a2-d13e5b15a9bf"><Timestamp>2018-11-08 12:13:04</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
