@@ -142,7 +142,7 @@
     <routinesParameter id="_57GroNYYEeidWZlrTjj8MQ" name="TalendStringUtil"/>
     <routinesParameter id="_5686oNYYEeidWZlrTjj8MQ" name="TalendString"/>
   </parameters>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="160">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
@@ -156,13 +156,13 @@
     <elementParameter field="TEXT" name="USER" value="context.Mysql_local_Login"/>
     <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - stg_cdb"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;stg_cdb&quot;"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - stg_rtdms"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;stg_rtdms&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `stg_cdb`.`Customer`, &#10;  `stg_cdb`.`OwnerRU`, &#10;  `stg_cdb`.`CommonName`, &#10;  `stg_cdb`.`LegalName`, &#10;  `stg_cdb`.`OrganisationNo`, &#10;  `stg_cdb`.`VAT`, &#10;  `stg_cdb`.`STG_VAT`, &#10;  `stg_cdb`.`ChamberOfCom`, &#10;  `stg_cdb`.`Parma`, &#10;  `stg_cdb`.`SICCode`, &#10;  `stg_cdb`.`AdressLine1`, &#10;  `stg_cdb`.`sAddrLine2`, &#10;  `stg_cdb`.`sAddrLine3`, &#10;  `stg_cdb`.`sPostalCode`, &#10;  `stg_cdb`.`sCity`, &#10;  `stg_cdb`.`sStateProvince`, &#10;  `stg_cdb`.`Country`, &#10;  `stg_cdb`.`CountryCode`, &#10;  `stg_cdb`.`SalesChannel`, &#10;  `stg_cdb`.`Phone`, &#10;  `stg_cdb`.`STG_Phone`, &#10;  `stg_cdb`.`ID`, &#10;  `stg_cdb`.`Loading_Date`&#10;FROM `stg_cdb`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `stg_rtdms`.`Customer`, &#10;  `stg_rtdms`.`OwnerRU`, &#10;  `stg_rtdms`.`CommonName`, &#10;  `stg_rtdms`.`LegalName`, &#10;  `stg_rtdms`.`OrganisationNo`, &#10;  `stg_rtdms`.`VAT`, &#10;  `stg_rtdms`.`STG_VAT`, &#10;  `stg_rtdms`.`ChamberOfCom`, &#10;  `stg_rtdms`.`Parma`, &#10;  `stg_rtdms`.`SICCode`, &#10;  `stg_rtdms`.`AdressLine1`, &#10;  `stg_rtdms`.`sAddrLine2`, &#10;  `stg_rtdms`.`sAddrLine3`, &#10;  `stg_rtdms`.`sPostalCode`, &#10;  `stg_rtdms`.`sCity`, &#10;  `stg_rtdms`.`sStateProvince`, &#10;  `stg_rtdms`.`Country`, &#10;  `stg_rtdms`.`CountryCode`, &#10;  `stg_rtdms`.`SalesChannel`, &#10;  `stg_rtdms`.`Phone`, &#10;  `stg_rtdms`.`STG_Phone`, &#10;  `stg_rtdms`.`ID`, &#10;  `stg_rtdms`.`Loading_Date`&#10;FROM `stg_rtdms`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -211,6 +211,10 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SalesChannel"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_Phone"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
@@ -218,7 +222,7 @@
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="stg_cdb" name="tDBInput_2">
+    <metadata connector="FLOW" label="stg_rtdms" name="tDBInput_2">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -274,6 +278,12 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -287,14 +297,14 @@
   </node>
   <node componentName="tStandardizePhoneNumber" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStandardizePhoneNumber_1"/>
-    <elementParameter field="PREV_COLUMN_LIST" name="PHONE_NUMBER" value="Customer"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="PHONE_NUMBER" value="STG_Phone"/>
     <elementParameter field="PREV_COLUMN_LIST" name="COUNTRY_CODE" value="CountryCode"/>
     <elementParameter field="CHECK" name="COUNTRY_CUSTOME" value="false"/>
     <elementParameter field="TEXT" name="COUNTRY_CODE_CUSTOME" show="false" value="&quot;US&quot;"/>
     <elementParameter field="CLOSED_LIST" name="PHONE_NUMBER_FORMAT" value="E164"/>
     <elementParameter field="CHECK" name="AVOID_COMPARISON" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="stg_cdb" name="tStandardizePhoneNumber_1">
+    <metadata connector="FLOW" label="stg_rtdms" name="tStandardizePhoneNumber_1">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -350,6 +360,12 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -546,7 +562,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.Mysql_local_Database"/>
     <elementParameter field="TEXT" name="USER" value="context.Mysql_local_Login"/>
     <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;DQ_CDB&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;DQ_RTDMS&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -896,13 +912,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_08dd81b4-0323-4f8e-b5d8-6a41c99e3b96"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WoXQP9/N67tkt5g7G1iyyujLYNqDJ5r9We3It6I44kOpYVcE4KNdDnWEIwa1aFRSHmGQmTfqhcER
-gw5DeTXb8A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f3aed774-46f2-46d5-a8dd-f939e8f373db"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WjgUuI62Svl1WptykZywAeQSFK4C8KflDYcyBc1q6HxeqbyL3J+943Z5ABMFbWoC4viJZIJgJ/Py
-qg+uGB2jdg==</DigestValue></Reference></SignedInfo><SignatureValue>qOjhWsa3LPQ+Ve79w63rFv5R8ib3syCKPPO11VHDyjyAPF+6/qg5oMBdmvmQ/KpQ1MYtlGxeaoDZ
-V6ZTvQ8M36QgMQvxntfKf6cVrhsJzdiNSWOAvtKSBBIjhGCPxrSz1AUP4OELjFtZO6zz4+WMEGT8
-+UrAu1zDzAove+GkB4Y2XrUAeTDCinyvtzR6bmVnrmjk3KuA7syLk0t5XC6mNlaY1m9UTlr1dvae
-laI2lk7ercaynDqba8nqUZh4PD2G2oH1zJZjzf99dhlaKr/vKcv9RWVrOPTmhJEB4BoyTrr8t0qb
-YH6CkaLtZtomAiCXKaPyxaJtwSnHwH1/vpGN5w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5e739137-9e76-46fc-8c2c-50be888fcff0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VouWXUqz1LBr+gngFmELJRoqNBaof/Ry1Luwn5zC+dgbaSKs1J3zd0RgPYSJoDiNpepXSzfRhr+S
+bEKjl9ex8w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5394a5b9-c827-483a-a726-e1f09ffd5ca5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YJpVQ/gk/my7MQhVmKm9pgZvEqUFnniMoxnEMJ2sLNJUO9TWbS8nrC95ThKVZBIaVZ0kBqVoWHMo
+ce//EPliMg==</DigestValue></Reference></SignedInfo><SignatureValue>f+YrD+4nx/jJ3oy33/f0TDIvM68xI1t7HV35WOVWOY1IGYn78CEbED4y2d+kpJbfD8y3KvjLpxWM
+cUYSqVJ45octc/bluJcy7HsEEdnZn7SO3bJUd5CmzRcg6kTeA2P7klj/t5jfH9qHZ0o03fJbDRuk
+6ngfSQ2ZUt9Own7JY/WeYh/LS5kQjiA6DfXnAifrLbvrRY0A6s9mSGYsA4B3MI1pT4lDb5zyod1O
+F9milhzTuikWa4tncbiVUY3btrc69SSA75r2mn0gnx2P5ovbAjKNyOO67eVfWvazvNtNKQ71UnvK
+YZkVUr2oA3+56IrNsRgPLnqG9Qeq1OEhqyBfZg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -926,4 +942,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f3aed774-46f2-46d5-a8dd-f939e8f373db" Target="#_08dd81b4-0323-4f8e-b5d8-6a41c99e3b96"><Timestamp>2018-11-09 13:09:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5394a5b9-c827-483a-a726-e1f09ffd5ca5" Target="#_5e739137-9e76-46fc-8c2c-50be888fcff0"><Timestamp>2018-11-09 13:10:37</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
