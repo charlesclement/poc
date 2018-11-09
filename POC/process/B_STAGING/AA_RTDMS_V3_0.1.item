@@ -162,7 +162,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `ods_rtdms`.`Customer`, &#10;  `ods_rtdms`.`OwnerRU`, &#10;  `ods_rtdms`.`CommonName`, &#10;  `ods_rtdms`.`LegalName`, &#10;  `ods_rtdms`.`OrganisationNo`, &#10;  `ods_rtdms`.`VAT`, &#10;  `ods_rtdms`.`ChamberOfCom`, &#10;  `ods_rtdms`.`Parma`, &#10;  `ods_rtdms`.`SICCode`, &#10;  `ods_rtdms`.`AdressLine1`, &#10;  `ods_rtdms`.`sAddrLine2`, &#10;  `ods_rtdms`.`sAddrLine3`, &#10;  `ods_rtdms`.`sPostalCode`, &#10;  `ods_rtdms`.`sCity`, &#10;  `ods_rtdms`.`sStateProvince`, &#10;  `ods_rtdms`.`Country`, &#10;  `ods_rtdms`.`CountryCode`, &#10;  `ods_rtdms`.`SalesChannel`, &#10;  `ods_rtdms`.`Phone`&#10;FROM `ods_rtdms`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `ods_rtdms`.`Customer`, &#10;  `ods_rtdms`.`OwnerRU`, &#10;  `ods_rtdms`.`CommonName`, &#10;  `ods_rtdms`.`LegalName`, &#10;  `ods_rtdms`.`OrganisationNo`, &#10;  `ods_rtdms`.`VAT`, &#10;  `ods_rtdms`.`ChamberOfCom`, &#10;  `ods_rtdms`.`Parma`, &#10;  `ods_rtdms`.`SICCode`, &#10;  `ods_rtdms`.`AdressLine1`, &#10;  `ods_rtdms`.`sAddrLine2`, &#10;  `ods_rtdms`.`sAddrLine3`, &#10;  `ods_rtdms`.`sPostalCode`, &#10;  `ods_rtdms`.`sCity`, &#10;  `ods_rtdms`.`sStateProvince`, &#10;  `ods_rtdms`.`Country`, &#10;  `ods_rtdms`.`CountryCode`, &#10;  `ods_rtdms`.`SalesChannel`, &#10;  `ods_rtdms`.`Phone`, &#10;  `ods_rtdms`.`ID`, &#10;  `ods_rtdms`.`Loading_Date`&#10;FROM `ods_rtdms`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -210,6 +210,10 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="SalesChannel"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
@@ -270,6 +274,12 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -353,6 +363,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -379,6 +395,8 @@
         <mapperTableEntries expression="row1.SalesChannel " name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Phone " name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.TRIM(StringHandling.CHANGE(row1.Phone,&quot;[A-Z-.-/-+-,- -(-)]&quot;,&quot;&quot;)) " name="STG_Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ID " name="ID" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.Loading_Date " name="Loading_Date" nullable="true" type="id_Date"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Customer" nullable="true" type="id_String"/>
@@ -400,6 +418,8 @@
         <mapperTableEntries name="CountryCode" nullable="true" type="id_String"/>
         <mapperTableEntries name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries name="Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
       </inputTables>
     </nodeData>
   </node>
@@ -541,6 +561,16 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -614,6 +644,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -679,6 +715,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -692,6 +734,12 @@
       <elementValue elementRef="TRACE_COLUMN" value="STG_Phone1"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ID"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Loading_Date"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -701,13 +749,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6d8e5b9c-cc94-430d-aa7a-fd73e8d289a3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MWzD6A7OchAK0q2LtnRIRdIN2iGRSoqTCe3Q5JRkby7rVxJppsst/I1S5o14b2dTikVxgudTGGp2
-sFONcYIbTA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e3bef411-c298-47bc-8a07-625a16bf284c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1z5F2h5uCkh2ReBV9bLjO/tG3WK/2l/f81yl3poGD1CzFCivODU7iU8l857xLCPmxl1fhK03H8mc
-Cz/68ODXpQ==</DigestValue></Reference></SignedInfo><SignatureValue>E2tdlnJSX7SrcOCBxDtfiGaGkYXCkbh7IbbOglNmVnXmahllG9qmAUQcsUiNiuj6fl2PL1/is0Cl
-1+9fFJdecYUzkOZWIiR7Rf5yIhBAvdfgKT1B2lzm5DHnACuqA0LnZ3/D2XojHpFfx8+FiSSnUp7L
-EyPbLVpgzOE0cRuLRTyPgojF7XMJX0P682rz8FH/thAtc5YMbwRyYEGnwfv4ZPFgLoVjCpcsnS7B
-4E4dJ47D71b3qwz8PDglHDQ5v0irIsHxKWjYQ7PhTJZQ2Clyy8oq7iZPr+567f+Vh9roP94DeXLt
-CDAIgchSoY9ba1PrT7kaCNdts6w7bpy2bgUsdQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_96d263cb-fe6c-4834-bc0d-cc475f73774d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wW74ksO51QQbvKLjGn0wC6qJkUTdoboQZHuE9kBWkzb47YaKeOM7EgnK4KCaLOWYJmAxQeqATViL
+LKu6sO8hHg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_40b7a76b-45df-4e6c-b8f2-ee5b3939bcd7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4njQ57cnKq3x4GFK6Tyfzj6CcSAtUyjempGp/nwHj7PhVM4RTUSMObpgxpnqtlSlT9A+qGig1aD5
+7hI+PLJJfQ==</DigestValue></Reference></SignedInfo><SignatureValue>Dw7JhjX0oY6Um5b3SZf14Ev665ozPU2YVK5IetUuflyzwxOGBixmzK85ap6k8SzMMZsfE9vqiFp0
+IBmRSy8IaA0mp69v9LANZLOWq97WeoO82bMFA6ocnr3mmdccREO1ASJ7pHU99bPUcXCvY9kwECSQ
+PdqrG4aMPIXFnHCptfr+R5rFeE8KO+7RFq1aF6Woj3tFPgFKWRRVEmuaJfE5cW0dzmNCG4nX0rn5
+0QYlV8/EVUHeDeOdOrllL45rcd6dXZoeLBqw19O5OF9xcDVnAADM/lOpC3AXrEZjPYYF7fIqPQNd
+7yNDQ0ppPbm99SI1MJLY1lned4l0Zw/XCRCSOQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -731,4 +779,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e3bef411-c298-47bc-8a07-625a16bf284c" Target="#_6d8e5b9c-cc94-430d-aa7a-fd73e8d289a3"><Timestamp>2018-11-09 12:40:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_40b7a76b-45df-4e6c-b8f2-ee5b3939bcd7" Target="#_96d263cb-fe6c-4834-bc0d-cc475f73774d"><Timestamp>2018-11-09 12:57:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
