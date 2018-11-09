@@ -363,12 +363,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="countryCode" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="vatNumber" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="requestDate" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="valid" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="name" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="address" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -401,12 +401,12 @@
         <mapperTableEntries expression="row1.SalesChannel " name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Phone " name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.TRIM(StringHandling.CHANGE(row1.Phone,&quot;[A-Z-.-/-+-,- -(-)]&quot;,&quot;&quot;)) " name="STG_Phone" nullable="true" type="id_String"/>
-        <mapperTableEntries name="countryCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="vatNumber" nullable="true" type="id_String"/>
-        <mapperTableEntries name="requestDate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="valid" nullable="true" type="id_String"/>
-        <mapperTableEntries name="name" nullable="true" type="id_String"/>
-        <mapperTableEntries name="address" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="" name="VAT_countryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_vatNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_requestDate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_valid" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_name" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_address" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ID " name="ID" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.Loading_Date " name="Loading_Date" nullable="true" type="id_Date"/>
       </outputTables>
@@ -573,32 +573,32 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_countryCode"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_vatNumber"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="requestDate"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_requestDate"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="valid"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_valid"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_name"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="address"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_address"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -686,12 +686,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="countryCode" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="vatNumber" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="requestDate" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="valid" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="name" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="address" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -763,12 +763,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="countryCode" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="vatNumber" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="requestDate" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="valid" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="name" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="address" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -797,7 +797,7 @@
       <elementValue elementRef="TRACE_COLUMN" value="valid"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="address"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_address"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="countryCode"/>
@@ -812,6 +812,21 @@
       <elementValue elementRef="TRACE_COLUMN" value="vatNumber"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_requestDate"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_vatNumber"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_valid"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_countryCode"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_name"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -821,13 +836,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_18c5dd7b-0c25-47e1-8560-2f664472d468"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Uzk1pp+pYUccVs9bvkPZoUMJagcLhuYBfMWBiPpDhbS6w9cilWaVOtbWNTUWWozg55/FPTUKfzo0
-9a4Kaa5JEg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_312dd47e-9a70-4eee-bd4f-228c05c84b3e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8eUq/8G7qQ5bKSUydD6IftXF42dLXuulGHzX246pj8cFdD2/7waCfpTcdeeqaAqbrLlEhTtDEtKP
-5oxDV0VvRQ==</DigestValue></Reference></SignedInfo><SignatureValue>eb/+xsJ94cUU1NJKR9PFgn4vNjOU5KnESVmkfDSudJydOHyFZBDcd3W3pkkY0rzg4xnAdivB6XTX
-rvH30yhnbQVOzmPV18yBx31GYwGTV5z8nhiOmZpuy5e+Heq66mqaQNQKxZChbZw5TYLiXRDhANHU
-brYIh7612ijfD7hGptKPIA/zCoS7yzI2Iw1Hbj/UbwSoMnnGILRMJEP/t+GWBMQukW9Mm+ofb7te
-GNbHVLjXjtajjosy1pU8VwXtJYzB2l2rBirPpw/aEES3BSFGJFbgIjy2GFaoYzhu7u/Q46k85HBd
-4jO+Ji6bsFpxns1RWVm3S3yJAl3AL/O9GYoVLA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7fb2402b-9f8a-428e-bf7e-218b1febf569"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+wDYFZxvY2Kavv1Uu/U+hJNFJ4lEqh9yLoKgm5Rvm0PM7mGljr5F1+Jvz3+/XK5qq6WDp93G6+7z
+XEGJ7lphbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c63980ac-431f-4cdb-beae-b5a1edfbadbf"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gEwSgEliIMXkq/r7gcDKCwfhQgMdOCWhSquoioA2oacNQbXDbI3JRKahN5Ra5FkbWNvo0F21/Ovb
+tbgWuO1L5g==</DigestValue></Reference></SignedInfo><SignatureValue>mJdV6+vWSllb0ZSOG53tJZvht5sb/AP3hpxRZYT97+yHxN25UfMk74tlZ6fVL4IbJHInmAMnkAKt
+U/k5nSxvwpH9ZSM9TOIyqMPxj21qdfKV1dlirvnsYZmUNv2ATCsFjEvK5sNDAPXRLWembH+wx+x9
+5dtZPlQUp5ybxRBQOUX0qZe3zDIt0OERtZ8VQy2Y59oDpD28cdxpmSPPckQxTM8WE58qazYiMzZs
+hLyqA760De5V0AjVtIkO/DlrfCxG+46yLKwuAbOuWCUgRPCY9Uuma6wtqAX42GP8moZfkvftqwGu
+p6t1q5jaw/+MG3vwtbKnPINxzriSLl9zv0rLYw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -851,4 +866,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_312dd47e-9a70-4eee-bd4f-228c05c84b3e" Target="#_18c5dd7b-0c25-47e1-8560-2f664472d468"><Timestamp>2018-11-09 14:23:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c63980ac-431f-4cdb-beae-b5a1edfbadbf" Target="#_7fb2402b-9f8a-428e-bf7e-218b1febf569"><Timestamp>2018-11-09 14:25:15</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
