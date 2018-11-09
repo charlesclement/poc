@@ -363,6 +363,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="countryCode" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="vatNumber" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="requestDate" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="valid" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="name" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="address" nullable="true" originalLength="200" pattern="" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -395,6 +401,12 @@
         <mapperTableEntries expression="row1.SalesChannel " name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.Phone " name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.TRIM(StringHandling.CHANGE(row1.Phone,&quot;[A-Z-.-/-+-,- -(-)]&quot;,&quot;&quot;)) " name="STG_Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries name="countryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="vatNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="requestDate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="valid" nullable="true" type="id_String"/>
+        <mapperTableEntries name="name" nullable="true" type="id_String"/>
+        <mapperTableEntries name="address" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ID " name="ID" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.Loading_Date " name="Loading_Date" nullable="true" type="id_Date"/>
       </outputTables>
@@ -561,6 +573,36 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="requestDate"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="valid"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="address"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -644,6 +686,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="countryCode" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="vatNumber" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="requestDate" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="valid" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="name" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="address" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -715,6 +763,12 @@
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="countryCode" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="vatNumber" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="requestDate" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="valid" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="name" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="address" nullable="true" originalLength="200" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -740,6 +794,24 @@
       <elementValue elementRef="TRACE_COLUMN" value="Loading_Date"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="valid"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="address"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="countryCode"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="requestDate"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="name"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="vatNumber"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -749,13 +821,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_96d263cb-fe6c-4834-bc0d-cc475f73774d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wW74ksO51QQbvKLjGn0wC6qJkUTdoboQZHuE9kBWkzb47YaKeOM7EgnK4KCaLOWYJmAxQeqATViL
-LKu6sO8hHg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_40b7a76b-45df-4e6c-b8f2-ee5b3939bcd7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4njQ57cnKq3x4GFK6Tyfzj6CcSAtUyjempGp/nwHj7PhVM4RTUSMObpgxpnqtlSlT9A+qGig1aD5
-7hI+PLJJfQ==</DigestValue></Reference></SignedInfo><SignatureValue>Dw7JhjX0oY6Um5b3SZf14Ev665ozPU2YVK5IetUuflyzwxOGBixmzK85ap6k8SzMMZsfE9vqiFp0
-IBmRSy8IaA0mp69v9LANZLOWq97WeoO82bMFA6ocnr3mmdccREO1ASJ7pHU99bPUcXCvY9kwECSQ
-PdqrG4aMPIXFnHCptfr+R5rFeE8KO+7RFq1aF6Woj3tFPgFKWRRVEmuaJfE5cW0dzmNCG4nX0rn5
-0QYlV8/EVUHeDeOdOrllL45rcd6dXZoeLBqw19O5OF9xcDVnAADM/lOpC3AXrEZjPYYF7fIqPQNd
-7yNDQ0ppPbm99SI1MJLY1lned4l0Zw/XCRCSOQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_18c5dd7b-0c25-47e1-8560-2f664472d468"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Uzk1pp+pYUccVs9bvkPZoUMJagcLhuYBfMWBiPpDhbS6w9cilWaVOtbWNTUWWozg55/FPTUKfzo0
+9a4Kaa5JEg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_312dd47e-9a70-4eee-bd4f-228c05c84b3e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8eUq/8G7qQ5bKSUydD6IftXF42dLXuulGHzX246pj8cFdD2/7waCfpTcdeeqaAqbrLlEhTtDEtKP
+5oxDV0VvRQ==</DigestValue></Reference></SignedInfo><SignatureValue>eb/+xsJ94cUU1NJKR9PFgn4vNjOU5KnESVmkfDSudJydOHyFZBDcd3W3pkkY0rzg4xnAdivB6XTX
+rvH30yhnbQVOzmPV18yBx31GYwGTV5z8nhiOmZpuy5e+Heq66mqaQNQKxZChbZw5TYLiXRDhANHU
+brYIh7612ijfD7hGptKPIA/zCoS7yzI2Iw1Hbj/UbwSoMnnGILRMJEP/t+GWBMQukW9Mm+ofb7te
+GNbHVLjXjtajjosy1pU8VwXtJYzB2l2rBirPpw/aEES3BSFGJFbgIjy2GFaoYzhu7u/Q46k85HBd
+4jO+Ji6bsFpxns1RWVm3S3yJAl3AL/O9GYoVLA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -779,4 +851,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_40b7a76b-45df-4e6c-b8f2-ee5b3939bcd7" Target="#_96d263cb-fe6c-4834-bc0d-cc475f73774d"><Timestamp>2018-11-09 12:57:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_312dd47e-9a70-4eee-bd4f-228c05c84b3e" Target="#_18c5dd7b-0c25-47e1-8560-2f664472d468"><Timestamp>2018-11-09 14:23:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
