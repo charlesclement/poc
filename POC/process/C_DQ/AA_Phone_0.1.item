@@ -211,10 +211,6 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SalesChannel"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STG_Phone"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
@@ -280,12 +276,6 @@
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -297,7 +287,7 @@
   </node>
   <node componentName="tStandardizePhoneNumber" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tStandardizePhoneNumber_1"/>
-    <elementParameter field="PREV_COLUMN_LIST" name="PHONE_NUMBER" value="STG_Phone"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="PHONE_NUMBER" value="Customer"/>
     <elementParameter field="PREV_COLUMN_LIST" name="COUNTRY_CODE" value="CountryCode"/>
     <elementParameter field="CHECK" name="COUNTRY_CUSTOME" value="false"/>
     <elementParameter field="TEXT" name="COUNTRY_CODE_CUSTOME" show="false" value="&quot;US&quot;"/>
@@ -360,12 +350,6 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -912,13 +896,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_05840159-1c38-44f0-9b1f-851de255589e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nKKcfmPNjDWrmEW+sKaeUURs/nC2WYNPIxOU8jc8nZq15pW7uaxqg3U5qsxHiLnWCB5lXcswse0q
-Oae8qondPg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2fc8433f-0f71-4fb9-9eca-2cfc6b1becb6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VwGneXRBaRNQBkXOT8EY9ZC1AMMFa4jP7o8UVnnJHPp071Jr2MB+LJ2CJiEjJ+tRglZf/A8OOoqn
-TWT7JIIWsQ==</DigestValue></Reference></SignedInfo><SignatureValue>OgQ4kthaqA0dAIDvF0mtiVRYgEJkBO64h/I2RGiN9HhNa6F9KYTbHOvueVDojnl+9c6xA/WIiOWI
-hCJWSaWepxBnnrslK6ItuA9YZaocbNAqsgr3YkaWaHnoIzVRC/5nu0C6dDLHAtm8tpetSOn3En21
-22M2rqtbH/LyRwfemrgdl7lR17guHRFNEwnkpQ2q+pQE7csuhndw+HZcxdW8TzYR3NTLTqmEO2cA
-jDDCOz0Q4PfMAHjmGLVilm6sbKUzkm8NPO5Zqq9cGZJLSuhBgqjmcLrUXok+zvPEWLhdLyKGZrSg
-/xzDip6eFc6X0uTEg40e4IgXmCahUyVavwoQ/g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_08dd81b4-0323-4f8e-b5d8-6a41c99e3b96"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WoXQP9/N67tkt5g7G1iyyujLYNqDJ5r9We3It6I44kOpYVcE4KNdDnWEIwa1aFRSHmGQmTfqhcER
+gw5DeTXb8A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f3aed774-46f2-46d5-a8dd-f939e8f373db"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WjgUuI62Svl1WptykZywAeQSFK4C8KflDYcyBc1q6HxeqbyL3J+943Z5ABMFbWoC4viJZIJgJ/Py
+qg+uGB2jdg==</DigestValue></Reference></SignedInfo><SignatureValue>qOjhWsa3LPQ+Ve79w63rFv5R8ib3syCKPPO11VHDyjyAPF+6/qg5oMBdmvmQ/KpQ1MYtlGxeaoDZ
+V6ZTvQ8M36QgMQvxntfKf6cVrhsJzdiNSWOAvtKSBBIjhGCPxrSz1AUP4OELjFtZO6zz4+WMEGT8
++UrAu1zDzAove+GkB4Y2XrUAeTDCinyvtzR6bmVnrmjk3KuA7syLk0t5XC6mNlaY1m9UTlr1dvae
+laI2lk7ercaynDqba8nqUZh4PD2G2oH1zJZjzf99dhlaKr/vKcv9RWVrOPTmhJEB4BoyTrr8t0qb
+YH6CkaLtZtomAiCXKaPyxaJtwSnHwH1/vpGN5w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -942,4 +926,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2fc8433f-0f71-4fb9-9eca-2cfc6b1becb6" Target="#_05840159-1c38-44f0-9b1f-851de255589e"><Timestamp>2018-11-09 13:06:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f3aed774-46f2-46d5-a8dd-f939e8f373db" Target="#_08dd81b4-0323-4f8e-b5d8-6a41c99e3b96"><Timestamp>2018-11-09 13:09:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
