@@ -998,7 +998,7 @@
       <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1013,12 +1013,13 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="true" length="200" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row4">
         <nodes name="countryCode" outgoingConnections="//@node.4/@nodeData/@connections.0" type="id_String" xpath="row4/countryCode"/>
-        <nodes name="vatNumber" outgoingConnections="//@node.4/@nodeData/@connections.1" type="id_String" xpath="row4/vatNumber"/>
+        <nodes name="vatNumber" outgoingConnections="//@node.4/@nodeData/@connections.1 //@node.4/@nodeData/@connections.6" type="id_String" xpath="row4/vatNumber"/>
         <nodes name="requestDate" outgoingConnections="//@node.4/@nodeData/@connections.2" type="id_String" xpath="row4/requestDate"/>
         <nodes name="valid" outgoingConnections="//@node.4/@nodeData/@connections.3" type="id_String" xpath="row4/valid"/>
         <nodes name="name" outgoingConnections="//@node.4/@nodeData/@connections.4" type="id_String" xpath="row4/name"/>
@@ -1026,11 +1027,12 @@
       </inputTrees>
       <outputTrees name="out">
         <nodes expression="row4.countryCode" incomingConnections="//@node.4/@nodeData/@connections.0" name="VAT_countryCode" type="id_String" xpath="out/VAT_countryCode"/>
-        <nodes expression="row4.vatNumber" incomingConnections="//@node.4/@nodeData/@connections.1" key="true" name="VAT_vatNumber" type="id_String" xpath="out/VAT_vatNumber"/>
+        <nodes expression="row4.vatNumber" incomingConnections="//@node.4/@nodeData/@connections.1" name="VAT_vatNumber" type="id_String" xpath="out/VAT_vatNumber"/>
         <nodes expression="row4.requestDate" incomingConnections="//@node.4/@nodeData/@connections.2" name="VAT_requestDate" type="id_String" xpath="out/VAT_requestDate"/>
         <nodes expression="row4.valid" incomingConnections="//@node.4/@nodeData/@connections.3" name="VAT_valid" type="id_String" xpath="out/VAT_valid"/>
         <nodes expression="row4.name" incomingConnections="//@node.4/@nodeData/@connections.4" name="VAT_name" type="id_String" xpath="out/VAT_name"/>
         <nodes expression="row4.address" incomingConnections="//@node.4/@nodeData/@connections.5" name="VAT_address" type="id_String" xpath="out/VAT_address"/>
+        <nodes expression="row4.vatNumber" incomingConnections="//@node.4/@nodeData/@connections.6" key="true" name="STG_VAT" pattern="" type="id_String" xpath="out/STG_VAT"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
       <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.0" target="//@node.4/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
@@ -1039,6 +1041,7 @@
       <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.3" target="//@node.4/@nodeData/@outputTrees.0/@nodes.3" xsi:type="TalendXMLMap:Connection"/>
       <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.4" target="//@node.4/@nodeData/@outputTrees.0/@nodes.4" xsi:type="TalendXMLMap:Connection"/>
       <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.5" target="//@node.4/@nodeData/@outputTrees.0/@nodes.5" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.1" target="//@node.4/@nodeData/@outputTrees.0/@nodes.6" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="96">
@@ -1104,6 +1107,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_VAT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -1117,7 +1125,7 @@
       <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1132,13 +1140,14 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="true" length="200" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="stg_rtdms" name="REJECT">
       <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1153,6 +1162,7 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="true" length="200" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
@@ -1183,13 +1193,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b604fcae-b97a-4796-bba4-dc6885f5e851"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fNjM1rmWBzwrALlm0IpU00Sbf8atWvs7+6qtT48hIsnS4J/xdFhgWuxn+XxpxNL6o2OJgXssIArE
-1EF2xw+Mpg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ad554d45-e52e-42c9-9e4e-1fa8c3889bf0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4swe5YK7Aqhh1AvBAk1Jdxtvrr+NFnZD/DjWd6e+8VUtuFggBY1KnpmTHo1ljoo9QIWmfmGvJPcl
-tq/bwN88uw==</DigestValue></Reference></SignedInfo><SignatureValue>BKa1FFH7zNKC3t5r1kmyETMraj5C+EAaW2d6mPPcdrKwLvqF86MVKeROwr60cDGSq189PobaWfCY
-ynjfQdDhT2fGdDbjSrJxkeVKuPYhY2hLJHVWas5+iRRh9XjfivjTbWCwBNXarkOOF8dE8vGsoIeZ
-j95T6fUKlz5zwLqU7tKudDURPYE2M0TO5bhpE0DhcirVV1q7ds0qtCf5d7f9HXnYIPdNlp4Ara3y
-EnOTHzGSfB6hSEufeOLsIKpha/MoLCWGoo8uTX2tt4eoE15K4Y76WVKBox5YEi2h5c6hIoYK59F0
-DrWIv95GbjabdPfjNROzpAYIuXsK/86GU8zBVQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e7609b74-ed16-4174-9e7f-4bf524210fd7"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QLTRZEZM6DCXMr51o9/3/EBc9s6Sp4cSB4atmJOTqzJ000ZE985rd+a/VBXaPi60dCSJjV41JfXW
+u9y8P7lLmQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_03d83fba-4671-45bd-98a8-4497d0a85520"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yrh4QqEojhcVij/1E0/ZNLiHbuT4Y52eE4jdFcT9QKkdQDasRoL+JGLbyLlxPmDIWU+eDXhkfyDr
+8/wIzqe36g==</DigestValue></Reference></SignedInfo><SignatureValue>MoFERKzX/QGAOEn46/JdOPyVKpYSHFxgAnZQmSqEJm8A01htjqdZHvVvioQ4nZBKYFX8s18vMaZT
+xrIRQHrHIoupm74TJw3vDaj1fRRedDD5M+HW4cR/rO1dCc5IpCwBlcjNLTVjDE2vOM15qWgG+pbq
+fFDwnuN3zR6AAdIb9LmtWLtsS+JRrEuLhe7PCex0z+Fp/aBZv5lpAyQEEGr3PkTVTUQUBbT/ESYY
+FjWwEsS1ZiWCGwFkrvPef1uw8sl+ph5CgctYZROyVEkDARE73Fi4X1wLbI5zw9YyuxKf57h4UEJk
+zgvkHuIVcWf9Fm3PGmVpZMPy3w+D0GYOPBY0dQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1213,4 +1223,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ad554d45-e52e-42c9-9e4e-1fa8c3889bf0" Target="#_b604fcae-b97a-4796-bba4-dc6885f5e851"><Timestamp>2018-11-10 10:45:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_03d83fba-4671-45bd-98a8-4497d0a85520" Target="#_e7609b74-ed16-4174-9e7f-4bf524210fd7"><Timestamp>2018-11-10 10:48:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
