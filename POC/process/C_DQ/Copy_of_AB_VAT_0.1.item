@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
     <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
@@ -609,59 +609,59 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_1"/>
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="KEEP_ORDER_FOR_DOCUMENT" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="Input" name="out">
+    <metadata connector="FLOW" label="Input" name="copyOfout">
       <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
-      <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row3">
-        <nodes name="Customer" type="id_String" xpath="row3/Customer"/>
-        <nodes name="OwnerRU" type="id_String" xpath="row3/OwnerRU"/>
-        <nodes name="CommonName" type="id_String" xpath="row3/CommonName"/>
-        <nodes name="LegalName" type="id_String" xpath="row3/LegalName"/>
-        <nodes name="OrganisationNo" type="id_String" xpath="row3/OrganisationNo"/>
-        <nodes name="VAT" type="id_String" xpath="row3/VAT"/>
-        <nodes name="STG_VAT" outgoingConnections="//@node.2/@nodeData/@connections.0" type="id_String" xpath="row3/STG_VAT"/>
-        <nodes name="ChamberOfCom" type="id_String" xpath="row3/ChamberOfCom"/>
-        <nodes name="Parma" type="id_String" xpath="row3/Parma"/>
-        <nodes name="SICCode" type="id_String" xpath="row3/SICCode"/>
-        <nodes name="AdressLine1" type="id_String" xpath="row3/AdressLine1"/>
-        <nodes name="sAddrLine2" type="id_String" xpath="row3/sAddrLine2"/>
-        <nodes name="sAddrLine3" type="id_String" xpath="row3/sAddrLine3"/>
-        <nodes name="sPostalCode" type="id_String" xpath="row3/sPostalCode"/>
-        <nodes name="sCity" type="id_String" xpath="row3/sCity"/>
-        <nodes name="sStateProvince" type="id_String" xpath="row3/sStateProvince"/>
-        <nodes name="Country" type="id_String" xpath="row3/Country"/>
-        <nodes name="CountryCode" outgoingConnections="//@node.2/@nodeData/@connections.1" type="id_String" xpath="row3/CountryCode"/>
-        <nodes name="SalesChannel" type="id_String" xpath="row3/SalesChannel"/>
-        <nodes name="Phone" type="id_String" xpath="row3/Phone"/>
-        <nodes name="STG_Phone" type="id_String" xpath="row3/STG_Phone"/>
-        <nodes name="VAT_countryCode" type="id_String" xpath="row3/VAT_countryCode"/>
-        <nodes name="VAT_vatNumber" type="id_String" xpath="row3/VAT_vatNumber"/>
-        <nodes name="VAT_requestDate" type="id_String" xpath="row3/VAT_requestDate"/>
-        <nodes name="VAT_valid" type="id_String" xpath="row3/VAT_valid"/>
-        <nodes name="VAT_name" type="id_String" xpath="row3/VAT_name"/>
-        <nodes name="VAT_address" type="id_String" xpath="row3/VAT_address"/>
-        <nodes name="ID" type="id_Integer" xpath="row3/ID"/>
-        <nodes name="Loading_Date" type="id_Date" xpath="row3/Loading_Date"/>
+      <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row2">
+        <nodes name="Customer" type="id_String" xpath="row2/Customer"/>
+        <nodes name="OwnerRU" type="id_String" xpath="row2/OwnerRU"/>
+        <nodes name="CommonName" type="id_String" xpath="row2/CommonName"/>
+        <nodes name="LegalName" type="id_String" xpath="row2/LegalName"/>
+        <nodes name="OrganisationNo" type="id_String" xpath="row2/OrganisationNo"/>
+        <nodes name="VAT" type="id_String" xpath="row2/VAT"/>
+        <nodes name="STG_VAT" outgoingConnections="//@node.2/@nodeData/@connections.1" type="id_String" xpath="row2/STG_VAT"/>
+        <nodes name="ChamberOfCom" type="id_String" xpath="row2/ChamberOfCom"/>
+        <nodes name="Parma" type="id_String" xpath="row2/Parma"/>
+        <nodes name="SICCode" type="id_String" xpath="row2/SICCode"/>
+        <nodes name="AdressLine1" type="id_String" xpath="row2/AdressLine1"/>
+        <nodes name="sAddrLine2" type="id_String" xpath="row2/sAddrLine2"/>
+        <nodes name="sAddrLine3" type="id_String" xpath="row2/sAddrLine3"/>
+        <nodes name="sPostalCode" type="id_String" xpath="row2/sPostalCode"/>
+        <nodes name="sCity" type="id_String" xpath="row2/sCity"/>
+        <nodes name="sStateProvince" type="id_String" xpath="row2/sStateProvince"/>
+        <nodes name="Country" type="id_String" xpath="row2/Country"/>
+        <nodes name="CountryCode" outgoingConnections="//@node.2/@nodeData/@connections.0" type="id_String" xpath="row2/CountryCode"/>
+        <nodes name="SalesChannel" type="id_String" xpath="row2/SalesChannel"/>
+        <nodes name="Phone" type="id_String" xpath="row2/Phone"/>
+        <nodes name="STG_Phone" type="id_String" xpath="row2/STG_Phone"/>
+        <nodes name="VAT_countryCode" type="id_String" xpath="row2/VAT_countryCode"/>
+        <nodes name="VAT_vatNumber" type="id_String" xpath="row2/VAT_vatNumber"/>
+        <nodes name="VAT_requestDate" type="id_String" xpath="row2/VAT_requestDate"/>
+        <nodes name="VAT_valid" type="id_String" xpath="row2/VAT_valid"/>
+        <nodes name="VAT_name" type="id_String" xpath="row2/VAT_name"/>
+        <nodes name="VAT_address" type="id_String" xpath="row2/VAT_address"/>
+        <nodes name="ID" type="id_Integer" xpath="row2/ID"/>
+        <nodes name="Loading_Date" type="id_Date" xpath="row2/Loading_Date"/>
       </inputTrees>
-      <outputTrees name="out">
-        <nodes expression="row3.CountryCode" incomingConnections="//@node.2/@nodeData/@connections.1" name="countryCode" type="id_String" xpath="out/countryCode"/>
-        <nodes expression="row3.STG_VAT" incomingConnections="//@node.2/@nodeData/@connections.0" name="vatNumber" type="id_String" xpath="out/vatNumber"/>
+      <outputTrees name="copyOfout">
+        <nodes expression=" row2.CountryCode" incomingConnections="//@node.2/@nodeData/@connections.0" name="countryCode" type="id_String" xpath="copyOfout/countryCode"/>
+        <nodes expression=" row2.STG_VAT" incomingConnections="//@node.2/@nodeData/@connections.1" name="vatNumber" type="id_String" xpath="copyOfout/vatNumber"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
-      <connections source="//@node.2/@nodeData/@inputTrees.0/@nodes.6" target="//@node.2/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
       <connections source="//@node.2/@nodeData/@inputTrees.0/@nodes.17" target="//@node.2/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.2/@nodeData/@inputTrees.0/@nodes.6" target="//@node.2/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
-  <node componentName="tWebService" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWebService_1"/>
+  <node componentName="tWebService" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWebService_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_gmIeMONPEeiPfJdv9puJpw"/>
     <elementParameter field="EXTERNAL" name="SERVICE_CONFIGURATION" value=""/>
@@ -700,25 +700,18 @@
       <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
-      <elementValue elementRef="EXPRESSION" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="EXPRESSION" value="input.vatNumber"/>
+      <elementValue elementRef="ELEMENT" value="parameters.vatNumber"/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="parameters"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
       <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
-      <elementValue elementRef="EXPRESSION" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="EXPRESSION" value="input.countryCode"/>
+      <elementValue elementRef="ELEMENT" value="parameters.countryCode"/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="countryCode"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
-      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
-      <elementValue elementRef="PARAMETERINDEX" value=""/>
-      <elementValue elementRef="EXPRESSION" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="vatNumber"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
@@ -749,6 +742,27 @@
       <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="parameters"/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="countryCode"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="vatNumber"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
     </elementParameter>
     <elementParameter field="TABLE" name="OUTPUT_PARAMS" show="false">
       <elementValue elementRef="EXPRESSION" value=""/>
@@ -762,57 +776,97 @@
       <elementValue elementRef="EXPRESSION" value=""/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="parameters"/>
+      <elementValue elementRef="ELEMENT" value="parameters.countryCode"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
       <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="countryCode"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="ELEMENT" value="parameters.vatNumber"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="vatNumber"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="ELEMENT" value="parameters.requestDate"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="requestDate"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="ELEMENT" value="parameters.valid"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="valid"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="ELEMENT" value="parameters.name"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
       <elementValue elementRef="COLUMN" value=""/>
       <elementValue elementRef="SOURCE" value=""/>
-      <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="name"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="ELEMENT" value="parameters.address"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
-      <elementValue elementRef="EXPRESSION" value=""/>
-      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.countryCode"/>
+      <elementValue elementRef="COLUMN" value="countryCode"/>
       <elementValue elementRef="SOURCE" value=""/>
       <elementValue elementRef="ELEMENT" value=""/>
-      <elementValue elementRef="PARAMETERINFO" value="address"/>
-      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.vatNumber"/>
+      <elementValue elementRef="COLUMN" value="vatNumber"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.requestDate"/>
+      <elementValue elementRef="COLUMN" value="requestDate"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.valid"/>
+      <elementValue elementRef="COLUMN" value="valid"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.name"/>
+      <elementValue elementRef="COLUMN" value="name"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value="parameters.address"/>
+      <elementValue elementRef="COLUMN" value="address"/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value=""/>
+      <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
       <elementValue elementRef="EXPRESSION" value=""/>
@@ -863,11 +917,67 @@
       <elementValue elementRef="PARAPARENT" value=""/>
       <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
       <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="parameters"/>
+      <elementValue elementRef="PARAPARENT" value=""/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value=""/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="countryCode"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="vatNumber"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="requestDate"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="valid"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="name"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
+      <elementValue elementRef="EXPRESSION" value=""/>
+      <elementValue elementRef="COLUMN" value=""/>
+      <elementValue elementRef="SOURCE" value=""/>
+      <elementValue elementRef="ELEMENT" value=""/>
+      <elementValue elementRef="PARAMETERINFO" value="address"/>
+      <elementValue elementRef="PARAPARENT" value="parameters"/>
+      <elementValue elementRef="PARAMETERARRAYSIZE" value="0"/>
+      <elementValue elementRef="PARAMETERINDEX" value=""/>
     </elementParameter>
     <elementParameter field="DIRECTORY" name="TMPPATH" value=""/>
     <elementParameter field="TEXT" name="LABEL" value="CheckVat"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="Input" name="tWebService_1">
+    <metadata connector="FLOW" label="Input" name="tWebService_2">
       <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -880,211 +990,73 @@
       <column comment="" key="false" length="0" name="address" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="736" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_Tq-4gOQiEeirA5cfncl2TA-tMap_2-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="stg_rtdms" name="stg_rtdms">
-      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="stg_rtdms" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row2.countryCode " name="VAT_countryCode" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.vatNumber " name="VAT_vatNumber" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.requestDate " name="VAT_requestDate" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.valid " name="VAT_valid" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.name " name="VAT_name" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.address " name="VAT_address" nullable="true" type="id_String"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row2" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="countryCode" nullable="true" type="id_String"/>
-        <mapperTableEntries name="vatNumber" nullable="true" type="id_String"/>
-        <mapperTableEntries name="requestDate" nullable="true" type="id_String"/>
-        <mapperTableEntries name="valid" nullable="true" type="id_String"/>
-        <mapperTableEntries name="name" nullable="true" type="id_String"/>
-        <mapperTableEntries name="address" nullable="true" type="id_String"/>
-      </inputTables>
-    </nodeData>
-  </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_4"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
-    <elementParameter field="TEXT" name="HOST" value="context.Mysql_local_Server"/>
-    <elementParameter field="TEXT" name="PORT" value="context.Mysql_local_Port"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.Mysql_local_Database"/>
-    <elementParameter field="TEXT" name="USER" value="context.Mysql_local_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;stg_rtdms&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
-    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="context.Mysql_local_AdditionalParams"/>
-    <elementParameter field="CHECK" name="EXTENDINSERT" show="false" value="true"/>
-    <elementParameter field="LABEL" name="NOTE" show="false" value="(Not compatible with reject links)"/>
-    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" show="false" value="100"/>
-    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
-    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TABLE" name="ADD_COLS"/>
-    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_countryCode"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_vatNumber"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_requestDate"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_valid"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_name"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_address"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="requestDate"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="valid"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="address"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
-    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
-    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
-    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" show="false" value="false"/>
-    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
-    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="stg_rtdms" name="tDBOutput_4">
-      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-    <metadata connector="REJECT" label="stg_rtdms" name="REJECT">
-      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
+    <metadata connector="FLOW" label="Output" name="tLogRow_1">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="requestDate" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="valid" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="name" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="address" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tFilterRow_6">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FILTER" label="row3" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_6" target="tXMLMap_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
-  </connection>
-  <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tXMLMap_1" target="tWebService_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
-  </connection>
-  <connection connectorName="OUTPUT" label="row2" lineStyle="0" metaname="OUTPUT" offsetLabelX="0" offsetLabelY="0" source="tWebService_1" target="tMap_2">
+  <connection connectorName="FILTER" label="row2" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_6" target="tXMLMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
-  <connection connectorName="FLOW" label="stg_rtdms" lineStyle="0" metaname="stg_rtdms" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_4">
+  <connection connectorName="FLOW" label="copyOfout" lineStyle="0" metaname="copyOfout" offsetLabelX="0" offsetLabelY="0" source="tXMLMap_2" target="tWebService_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="stg_rtdms"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfout"/>
+  </connection>
+  <connection connectorName="OUTPUT" label="row4" lineStyle="0" metaname="tWebService_2" offsetLabelX="0" offsetLabelY="0" source="tWebService_2" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e771383c-fa5b-4b48-ab87-ca1393dd4899"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>sGJ9c0BhgV1ANQ6/qGS+MJGakzAmaidQhPV6tStejF/xrEql0uZcPF98VLtXQ8I2gDioupbc5srh
-Utg3RaBLrg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_be909e02-d693-4c53-9216-6146a0022045"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Uc6gC3XlyJzs3z2OibHgmuqU7NhhfaZZ0Eo3VipDBEQyaIzKOPl5hkcABHJNmdpdUI9Cf+mt4hTj
-+P2D3Aj6kQ==</DigestValue></Reference></SignedInfo><SignatureValue>0bZNPyYqBiuPQg1jILwoRt80TAk406FqeSrgupY9PzVWF87RYcXs39GTvaLEvC7Yju3Cf8Ugo2vu
-9fMwVrCgoYGq3KdrYo80DHRit+QNs1hZc3nBZZdd6KgOv5NUIpHLmeaywFMV3NBYCX6iT8vQm5jr
-46WJzBH/Jf/KTMMpEqsJfUcECbPhfVK1Ve+yMDvqgan0Hd5nmUCwYO7sMS+iOL8dJ2ssJBj12xRl
-ANSYo71LNCvWvXZantU2SW3Dd8tmEN0kk0ZqpVLa5v0XHRwaNGzc7KCnM0xgU85U3oce1Y7kluXe
-sODlPbKhlnET7IXw1567QWDctI21jS3SB6bDFQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_07ad56e3-b1dd-4612-9cd5-7423e25219d6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XmngCDx/GBPgvW07q2K2oKCGItUzB141mM2vSQH5zB58OpciXcVphNd5b/Um2bMxRa0rNzTpnghQ
+ft1sExYFAA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_615d2715-045f-4394-aa5e-9e39223a75a0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vOiq2o9NLvuv5RRCqMf3w4vVbUj8kpodyWL7UbZJ982ISYn8IXnFispyYKjHMKo6pXNATVKM83m1
+FH1zAPHRnw==</DigestValue></Reference></SignedInfo><SignatureValue>A8XXqDtyV8QuoyQeV1JtxkbWryTnfsUrQoikVC4jWxWL6qzb+IMOzKW+uaBuGqbDx+ypk6phj1cQ
+cKWjPtOT622ZZ2v1oxCp+mGF5oOCELtY4ShQpt22WOtzuOpxzy3ztPFdgJjmCIHBwAhAu5XRAKuh
+sDoUuWJXzjojo6e2rP0iNPWKB5pBy4wGQMPzhcdtR5vK4x38oKLOhJbtFAH0SEcVp9goo3YhmkMX
+73KN8A+PsSE6jIV2ZrBPQJsOXcTvm1cjsG94yf3EQOdidfh/5lSzldTS1Mos6K4kBkojrSHP1xoL
+Cbl4IrZ6IQXqTyc4CQs8MsW2TQ21a+uAEJR+DA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1108,4 +1080,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_be909e02-d693-4c53-9216-6146a0022045" Target="#_e771383c-fa5b-4b48-ab87-ca1393dd4899"><Timestamp>2018-11-10 10:40:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_615d2715-045f-4394-aa5e-9e39223a75a0" Target="#_07ad56e3-b1dd-4612-9cd5-7423e25219d6"><Timestamp>2018-11-10 10:41:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
