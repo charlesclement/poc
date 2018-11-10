@@ -611,7 +611,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata comment="" label="metadata" name="out">
+    <metadata comment="" connector="FLOW" label="metadata" name="out">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -633,8 +633,6 @@
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -647,9 +645,11 @@
       <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateCondensedTool="true" id="_cVrF0OQkEeirA5cfncl2TA - metadata" name="out" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row3.Customer" name="Customer" nullable="true" type="id_String"/>
@@ -673,8 +673,6 @@
         <mapperTableEntries expression="row3.SalesChannel" name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.Phone" name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.STG_Phone" name="STG_Phone" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.ID" name="ID" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row3.Loading_Date" name="Loading_Date" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row3.StandardizedPhoneNumber" name="StandardizedPhoneNumber" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.IsValidPhoneNumber" name="IsValidPhoneNumber" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.IsPossiblePhoneNumber" name="IsPossiblePhoneNumber" nullable="true" type="id_String"/>
@@ -687,6 +685,8 @@
         <mapperTableEntries name="VAT_valid" nullable="true" type="id_String"/>
         <mapperTableEntries name="VAT_name" nullable="true" type="id_String"/>
         <mapperTableEntries name="VAT_address" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.ID" name="ID" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row3.Loading_Date" name="Loading_Date" nullable="true" type="id_Date"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row3" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Customer" nullable="true" type="id_String"/>
@@ -859,16 +859,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="StandardizedPhoneNumber"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -929,6 +919,16 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -938,7 +938,7 @@
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="dq_rtdms" name="tDBOutput_2">
+    <metadata connector="FLOW" label="metadata" name="tDBOutput_2">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -960,8 +960,6 @@
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -974,9 +972,11 @@
       <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
-    <metadata connector="REJECT" label="dq_rtdms" name="REJECT">
+    <metadata connector="REJECT" label="metadata" name="REJECT">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -998,8 +998,6 @@
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1012,6 +1010,8 @@
       <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
@@ -1038,13 +1038,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1e3e6fbd-85b3-4a31-aa16-57dc636209d2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9pheLckzcp2k6h9erjh0BsGoBC7+MXhuBGk613/ynSQDS9e9ODa9xFqPiUElpkbY4mg+e76j1mXr
-3ju67bGn3Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_861e2d45-2e17-46bb-bedb-09b9a095e437"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pqB445w4AUgRCZhncPiepQYpnoUtFilXJfbYDejIdU6BUKu7OQDMNQW8A4DsonRR7E7GSD1VwI0P
-6otxHqVECg==</DigestValue></Reference></SignedInfo><SignatureValue>h8m5vE55fSlvW8ipuyRXGWaJA/yiXN6OvjYpq4/EUEjX4b6jaUpV/ujqM/GQ8tBnJAnEvuRkLlfD
-og4tzlDozjK4K+RqmHeUUSxaOqUcjtF8WhiMjmoQxi2Cn1WE4PikS84H20SKCRijAl3PLfrKTzAB
-4xdhlajEEGRQ0+97ul8RMBpdYRDBS6QK7Li4MAMg7CMTcuhVVG11gZr4/uLeRUUygRyq3LKzhXZ0
-KPpjpdH80SUcLWlecM4pTXfsKiE505MWYZ2kmDYlEonfPnAQsDS2r5bWQlvJ3Yb01PFAG/MZFqAF
-tP/8F5FW4hor0tFPWFiHEfJaxOq8m9fWp+5a4g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2b58c51c-495f-440f-8233-6bb620989115"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QbKbu72ZV7hlnK+1qBVB7tEnPBMXuzGO79cnGvPlXL80mmPv6WdITaH4RIBZlkSDWAMt09m2MzP0
+fibFtcpKMQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4fc9a36b-1832-42c9-838b-4448a30eb5dd"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KPr2qG5E3utfVMqI20CHmkblXIhIZ+fjIy5gRyQdS4MWaNjO/s6MV8VEVgKJj79pH7oQRZq6Nx9K
+qCrRm0ExsQ==</DigestValue></Reference></SignedInfo><SignatureValue>FPfVrgFm1aCCgHt3ZhTyqLrJJA9CPFwPa5zgLN97D/W1Dr1vj99SKKHLKCPp3Hy+obUwGYCWipjJ
+DxamgUE/y9FmCgRx6CIp4bcjkkjbu/ypulJP7WKXzKqGoVWXbDRWZbk8Kt+ZTTqUHfSgWH60g/Mt
+ubrX2GENXhRKC6diUnq8AHBm+1quOoaU5CSnesnIqrCurReqIxfV/qS/Rjrr6JuScsuZFC0AxrrQ
+YoJuqBT84GfqUXOvcIE4AApbd5QxwwLuplqzOPlPmxpmBSHHYHKJnx1R2b5zOVkoe+mjVizAjjwh
+h9haG1BkoPlZbTKh6wiTjqK5dNwol+c76BtG0g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1068,4 +1068,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_861e2d45-2e17-46bb-bedb-09b9a095e437" Target="#_1e3e6fbd-85b3-4a31-aa16-57dc636209d2"><Timestamp>2018-11-10 15:58:24</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4fc9a36b-1832-42c9-838b-4448a30eb5dd" Target="#_2b58c51c-495f-440f-8233-6bb620989115"><Timestamp>2018-11-10 16:08:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
