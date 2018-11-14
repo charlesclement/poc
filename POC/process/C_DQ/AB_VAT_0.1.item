@@ -162,7 +162,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `dq_rtdms`.`Customer`, &#10;  `dq_rtdms`.`OwnerRU`, &#10;  `dq_rtdms`.`CommonName`, &#10;  `dq_rtdms`.`LegalName`, &#10;  `dq_rtdms`.`OrganisationNo`, &#10;  `dq_rtdms`.`VAT`, &#10;  `dq_rtdms`.`STG_VAT`, &#10;  `dq_rtdms`.`ChamberOfCom`, &#10;  `dq_rtdms`.`Parma`, &#10;  `dq_rtdms`.`SICCode`, &#10;  `dq_rtdms`.`AdressLine1`, &#10;  `dq_rtdms`.`sAddrLine2`, &#10;  `dq_rtdms`.`sAddrLine3`, &#10;  `dq_rtdms`.`sPostalCode`, &#10;  `dq_rtdms`.`sCity`, &#10;  `dq_rtdms`.`sStateProvince`, &#10;  `dq_rtdms`.`Country`, &#10;  `dq_rtdms`.`CountryCode`, &#10;  `dq_rtdms`.`SalesChannel`, &#10;  `dq_rtdms`.`Phone`, &#10;  `dq_rtdms`.`STG_Phone`, &#10;  `dq_rtdms`.`StandardizedPhoneNumber`, &#10;  `dq_rtdms`.`IsValidPhoneNumber`, &#10;  `dq_rtdms`.`IsPossiblePhoneNumber`, &#10;  `dq_rtdms`.`IsAlreadyStandard`, &#10;  `dq_rtdms`.`PhoneNumberType`, &#10;  `dq_rtdms`.`ErrorMessage`, &#10;  `dq_rtdms`.`VAT_countryCode`, &#10;  `dq_rtdms`.`VAT_vatNumber`, &#10;  `dq_rtdms`.`VAT_requestDate`, &#10;  `dq_rtdms`.`VAT_valid`, &#10;  `dq_rtdms`.`VAT_name`, &#10;  `dq_rtdms`.`VAT_address`, &#10;  `dq_rtdms`.`OSM_lat`, &#10;  `dq_rtdms`.`OSM_lon`, &#10;  `dq_rtdms`.`OSM_road`, &#10;  `dq_rtdms`.`OSM_city_district`, &#10;  `dq_rtdms`.`OSM_town`, &#10;  `dq_rtdms`.`OSM_county`, &#10;  `dq_rtdms`.`OSM_state`, &#10;  `dq_rtdms`.`OSM_postcode`, &#10;  `dq_rtdms`.`OSM_country`, &#10;  `dq_rtdms`.`OSM_country_code`, &#10;  `dq_rtdms`.`ID`, &#10;  `dq_rtdms`.`Loading_Date`&#10;FROM `dq_rtdms`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `dq_rtdms`.`Customer`, &#10;  `dq_rtdms`.`OwnerRU`, &#10;  `dq_rtdms`.`CommonName`, &#10;  `dq_rtdms`.`LegalName`, &#10;  `dq_rtdms`.`OrganisationNo`, &#10;  `dq_rtdms`.`VAT`, &#10;  `dq_rtdms`.`STG_VAT`, &#10;  `dq_rtdms`.`ChamberOfCom`, &#10;  `dq_rtdms`.`Parma`, &#10;  `dq_rtdms`.`SICCode`, &#10;  `dq_rtdms`.`AdressLine1`, &#10;  `dq_rtdms`.`sAddrLine2`, &#10;  `dq_rtdms`.`sAddrLine3`, &#10;  `dq_rtdms`.`sPostalCode`, &#10;  `dq_rtdms`.`sCity`, &#10;  `dq_rtdms`.`sStateProvince`, &#10;  `dq_rtdms`.`Country`, &#10;  `dq_rtdms`.`CountryCode`, &#10;  `dq_rtdms`.`SalesChannel`, &#10;  `dq_rtdms`.`Phone`, &#10;  `dq_rtdms`.`STG_Phone`, &#10;  `dq_rtdms`.`StandardizedPhoneNumber`, &#10;  `dq_rtdms`.`IsValidPhoneNumber`, &#10;  `dq_rtdms`.`IsPossiblePhoneNumber`, &#10;  `dq_rtdms`.`IsAlreadyStandard`, &#10;  `dq_rtdms`.`PhoneNumberType`, &#10;  `dq_rtdms`.`ErrorMessage`, &#10;  `dq_rtdms`.`VAT_countryCode`, &#10;  `dq_rtdms`.`VAT_vatNumber`, &#10;  `dq_rtdms`.`VAT_requestDate`, &#10;  `dq_rtdms`.`VAT_valid`, &#10;  `dq_rtdms`.`VAT_name`, &#10;  `dq_rtdms`.`VAT_address`, &#10;  `dq_rtdms`.`OSM_lat`, &#10;  `dq_rtdms`.`OSM_lon`, &#10;  `dq_rtdms`.`OSM_road`, &#10;  `dq_rtdms`.`OSM_city_district`, &#10;  `dq_rtdms`.`OSM_town`, &#10;  `dq_rtdms`.`OSM_county`, &#10;  `dq_rtdms`.`OSM_state`, &#10;  `dq_rtdms`.`OSM_postcode`, &#10;  `dq_rtdms`.`OSM_country`, &#10;  `dq_rtdms`.`OSM_country_code`, &#10;  `dq_rtdms`.`OSM_Valid`, &#10;  `dq_rtdms`.`ID`, &#10;  `dq_rtdms`.`Loading_Date`&#10;FROM `dq_rtdms`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -258,6 +258,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_country"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_country_code"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OSM_Valid"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -394,6 +396,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -559,6 +564,9 @@
       <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -697,6 +705,9 @@
       <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -833,6 +844,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -1474,13 +1488,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ae166784-e67f-4201-932d-688d0c3edc71"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1pPW+24LNymUg7jwkUZ9pD0X0HChVSjFJMJlxWCXR2SDfOMS8bv9RfZo3turUugygpw2Cl1pYGQM
-E0erd3h7Yw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_15b64f70-d2e5-4d27-ab7a-bc0a40259f52"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PMW/BtnZGHFbARSrLfKYmMbuHbtwBhjK7PNh4OC6AwiAqesTOI76U9FsIwNMDtfWkbCKVRmpa1TB
-g2Y451cThg==</DigestValue></Reference></SignedInfo><SignatureValue>Ovv8hRw2V3MRYsw3nlgvVTgyy3rKFkdS7FVIlrq6giz4lVoyg8+M/tTLakX6ZLSd9rwyNhKBH6MZ
-F68WYN++3WOR/LHo5PequO7dHvu2Acq2KC49jaNtfU+mWlI44Sdw/KvBg5pGYw6ZOFGdUTVAxsOn
-xSilEMJN/5jF4SNecB36TpRlrKXPUV7dn5koJpMRWPeamYUPOaVIF1wfT9gTlp+1jiRcos3f0taP
-PJRlcn9JeFV5LLWAMjyN+LwJ9XMWUHRlWTUST0C7yelw0pk77yp2zDuDB/L8fRv3hAyrW9LyfU32
-p658zo62ZP9vDAWd98Wu9uUQJMhO8aVxb40qcg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e10fc0a2-bc02-4332-86ea-385b34dc9f5a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>P+Sai8xRITPGeEwyV8pgIXDdHdTo4bSrHIICruRKqdGRzoFt6h6W31nGU6Vmwl7nFjjLf5WEmNk/
+NymzTl2vYw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8b119019-8535-4d43-805c-5a2b665b0796"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LfEkggTRbBgLrL1QsOcuBsS1cd6sVjrKM9TQBCR10xaR8Iq1BT7D+Sfq/Cc6yEkxPDUzHm7RcVIP
+mY41keTLmg==</DigestValue></Reference></SignedInfo><SignatureValue>D3rROtuic4Pk4hlWb0qtHF2SBdG1vj5MKTJE1Nd/g9A+KI8nR+MbD1KkricUc6E4/f3et/Y+pS2X
+BDfipyaJ1mGMq9Almprcot9Xc+56QF6a/S+w5N/4VR3jrebPHL46CuvwV0QtaXoEUZ5KqOjFlfyC
+WrpnJMuLJ/p6lzy0B6Jelw982oxZYQtGN9+3t4rZ94ZNUkaZhqqZqTDB8RhiC2i07qFvPYvY0glv
+mexwCfyG6m0ORM1B8NB9yJ+Exu8VNaQ2OZLrw7LeREKWBUe86PcZhOszyn10wPotsyJkT4ZyK7Xa
+vkvVNxJOa06hTd6n4m0ZOMe87Dy1oecc+uT3Ow==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1504,4 +1518,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_15b64f70-d2e5-4d27-ab7a-bc0a40259f52" Target="#_ae166784-e67f-4201-932d-688d0c3edc71"><Timestamp>2018-11-14 16:52:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8b119019-8535-4d43-805c-5a2b665b0796" Target="#_e10fc0a2-bc02-4332-86ea-385b34dc9f5a"><Timestamp>2018-11-14 16:59:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
