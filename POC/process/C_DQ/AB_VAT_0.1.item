@@ -477,7 +477,7 @@
       <elementValue elementRef="INPUT_COLUMN" value="ID"/>
       <elementValue elementRef="FUNCTION" value=""/>
       <elementValue elementRef="OPERATOR" value="&lt;="/>
-      <elementValue elementRef="RVALUE" value="10"/>
+      <elementValue elementRef="RVALUE" value="&quot;10&quot;"/>
       <elementValue elementRef="INPUT_COLUMN" value="STG_VAT"/>
       <elementValue elementRef="FUNCTION" value=""/>
       <elementValue elementRef="OPERATOR" value="!="/>
@@ -1057,16 +1057,45 @@
         <nodes name="sStateProvince" type="id_String" xpath="row2/sStateProvince"/>
         <nodes name="Country" type="id_String" xpath="row2/Country"/>
         <nodes name="CountryCode" outgoingConnections="//@node.2/@nodeData/@connections.0" type="id_String" xpath="row2/CountryCode"/>
+        <nodes name="STG_Adresse" type="id_String" xpath="row2/STG_Adresse"/>
         <nodes name="SalesChannel" type="id_String" xpath="row2/SalesChannel"/>
         <nodes name="Phone" type="id_String" xpath="row2/Phone"/>
         <nodes name="STG_Phone" type="id_String" xpath="row2/STG_Phone"/>
+        <nodes name="StandardizedPhoneNumber" type="id_String" xpath="row2/StandardizedPhoneNumber"/>
+        <nodes name="IsValidPhoneNumber" type="id_String" xpath="row2/IsValidPhoneNumber"/>
+        <nodes name="IsPossiblePhoneNumber" type="id_String" xpath="row2/IsPossiblePhoneNumber"/>
+        <nodes name="IsAlreadyStandard" type="id_String" xpath="row2/IsAlreadyStandard"/>
+        <nodes name="PhoneNumberType" type="id_String" xpath="row2/PhoneNumberType"/>
+        <nodes name="ErrorMessage" type="id_String" xpath="row2/ErrorMessage"/>
         <nodes name="VAT_countryCode" type="id_String" xpath="row2/VAT_countryCode"/>
         <nodes name="VAT_vatNumber" type="id_String" xpath="row2/VAT_vatNumber"/>
         <nodes name="VAT_requestDate" type="id_String" xpath="row2/VAT_requestDate"/>
         <nodes name="VAT_valid" type="id_String" xpath="row2/VAT_valid"/>
         <nodes name="VAT_name" type="id_String" xpath="row2/VAT_name"/>
         <nodes name="VAT_address" type="id_String" xpath="row2/VAT_address"/>
-        <nodes name="ID" type="id_Integer" xpath="row2/ID"/>
+        <nodes name="OSM_VAT_lat" type="id_String" xpath="row2/OSM_VAT_lat"/>
+        <nodes name="OSM_VAT_lon" type="id_String" xpath="row2/OSM_VAT_lon"/>
+        <nodes name="OSM_VAT_road" type="id_String" xpath="row2/OSM_VAT_road"/>
+        <nodes name="OSM_VAT_city_district" type="id_String" xpath="row2/OSM_VAT_city_district"/>
+        <nodes name="OSM_VAT_town" type="id_String" xpath="row2/OSM_VAT_town"/>
+        <nodes name="OSM_VAT_county" type="id_String" xpath="row2/OSM_VAT_county"/>
+        <nodes name="OSM_VAT_state" type="id_String" xpath="row2/OSM_VAT_state"/>
+        <nodes name="OSM_VAT_postcode" type="id_String" xpath="row2/OSM_VAT_postcode"/>
+        <nodes name="OSM_VAT_country" type="id_String" xpath="row2/OSM_VAT_country"/>
+        <nodes name="OSM_VAT_country_code" type="id_String" xpath="row2/OSM_VAT_country_code"/>
+        <nodes name="OSM_VAT_Valid" type="id_String" xpath="row2/OSM_VAT_Valid"/>
+        <nodes name="OSM_lat" type="id_String" xpath="row2/OSM_lat"/>
+        <nodes name="OSM_lon" type="id_String" xpath="row2/OSM_lon"/>
+        <nodes name="OSM_road" type="id_String" xpath="row2/OSM_road"/>
+        <nodes name="OSM_city_district" type="id_String" xpath="row2/OSM_city_district"/>
+        <nodes name="OSM_town" type="id_String" xpath="row2/OSM_town"/>
+        <nodes name="OSM_county" type="id_String" xpath="row2/OSM_county"/>
+        <nodes name="OSM_state" type="id_String" xpath="row2/OSM_state"/>
+        <nodes name="OSM_postcode" type="id_String" xpath="row2/OSM_postcode"/>
+        <nodes name="OSM_country" type="id_String" xpath="row2/OSM_country"/>
+        <nodes name="OSM_country_code" type="id_String" xpath="row2/OSM_country_code"/>
+        <nodes name="OSM_Valid" type="id_String" xpath="row2/OSM_Valid"/>
+        <nodes name="ID" type="id_String" xpath="row2/ID"/>
         <nodes name="Loading_Date" type="id_Date" xpath="row2/Loading_Date"/>
       </inputTrees>
       <outputTrees expressionFilter="" name="copyOfout">
@@ -1656,13 +1685,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_97a21216-0b47-4858-80c5-0bba58be1e01"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YjUMq8uWTC+6jSBNEbC+q3DMIBc6E4HDDut5PWDLANozWpvbjv/k3gfbctkbS8bnarbUyzN1BjbG
-qCSByppUew==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a41445e1-b77d-4774-bcf3-f58db375c4d1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uiwrzglHgIq2n0s8bersW496c6PJ4MTUrraE0CPNHxTosWMfkyZtkRwLMiq4YBDrQkykIAqd4b7M
-VoqOCLZ1wA==</DigestValue></Reference></SignedInfo><SignatureValue>D6jD0qha/d2vKCcOnvp/tXNmexe8vJfXL3tOdbcuEgBBHqpr07V1+L6h42jQvGtme5aWM3JZIoE5
-63L6d5rtJaZt7GSJ0JARLdLDZRx45Oo6+3N6BsjvlFgT3y0AUsbxo78lbkhp9xFLSL6ctHfWQkj7
-OxFfSqzlB2Gfedt5XQUP0vMGXSr5eh3X8P4ie+SgXzB93oKkWMjmaJCkiqL1DERCORvnltw05jXM
-v9S20W4ivD9ZDI20CbOYJ0QVLjf8n90nq49aoCZOehbUyLwFwXXJ0WvbaNhKsHXlJAATqoZcfqv2
-i5dGR17p3KQU2WqrdMK8u/HDekEMgu3fO2cBTA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9d4802d3-da8a-43ac-8fcd-52f484c28a74"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PFZBCM/0i1QvJXHwBZTdCuTDDYVcc21mpdcSsTPm7azn+of6xqd2Wyl+0OH+VvwcmIRGI3sBo6uU
+kKEIoDp6Fg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0fdd34f3-da58-41e4-aa36-b29e280ab277"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>AWWgpwe7ir4V2uWGb6W3agDASF1xqwSr98IB5BFfbNIAh+BUgtQ9Kpp7aHhX8HIPtFcXoBd77ekd
+GkQX9EW4rg==</DigestValue></Reference></SignedInfo><SignatureValue>t5NqSUIXod+necmQ2ev9SXz37fmlvC3dY8BvH4kp4jrGN7fV4XOJggJdD7ajfHooORwa21K/lCxe
+MEVLrVLHt6Jt/MaPbLI5gxky8TN3fbuht/AI7c4HLSx1IWV5DXqADSJn6N0APOlmFYVjWpPWwqu8
+xLuT5f+o9154RkQjhYllrbtBXb59TBxNvQ4d++je6uv7GS0PU0SyYQBdmF4TILxz+fe13M0jcJLf
+aqRAz6yTfPN0Rm+NSX0TZaMuOgV83KzCLITZekGnJIWHF7caxxjlpLvK3xWghnJI+J7dmeUxx5Ru
+OHpAmXXyfd2MLs2S6nk3GqAR8dOBK1KYSahfng==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1686,4 +1715,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a41445e1-b77d-4774-bcf3-f58db375c4d1" Target="#_97a21216-0b47-4858-80c5-0bba58be1e01"><Timestamp>2018-11-16 13:29:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0fdd34f3-da58-41e4-aa36-b29e280ab277" Target="#_9d4802d3-da8a-43ac-8fcd-52f484c28a74"><Timestamp>2018-11-16 13:31:09</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
