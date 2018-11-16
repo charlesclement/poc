@@ -162,7 +162,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `stg_rtdms`.`Customer`, &#10;  `stg_rtdms`.`OwnerRU`, &#10;  `stg_rtdms`.`CommonName`, &#10;  `stg_rtdms`.`LegalName`, &#10;  `stg_rtdms`.`OrganisationNo`, &#10;  `stg_rtdms`.`VAT`, &#10;  `stg_rtdms`.`STG_VAT`, &#10;  `stg_rtdms`.`ChamberOfCom`, &#10;  `stg_rtdms`.`Parma`, &#10;  `stg_rtdms`.`SICCode`, &#10;  `stg_rtdms`.`AdressLine1`, &#10;  `stg_rtdms`.`sAddrLine2`, &#10;  `stg_rtdms`.`sAddrLine3`, &#10;  `stg_rtdms`.`sPostalCode`, &#10;  `stg_rtdms`.`sCity`, &#10;  `stg_rtdms`.`sStateProvince`, &#10;  `stg_rtdms`.`Country`, &#10;  `stg_rtdms`.`CountryCode`, &#10;  `stg_rtdms`.`SalesChannel`, &#10;  `stg_rtdms`.`Phone`, &#10;  `stg_rtdms`.`STG_Phone`, &#10;  `stg_rtdms`.`ID`, &#10;  `stg_rtdms`.`Loading_Date`&#10;FROM `stg_rtdms`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `stg_rtdms`.`Customer`, &#10;  `stg_rtdms`.`OwnerRU`, &#10;  `stg_rtdms`.`CommonName`, &#10;  `stg_rtdms`.`LegalName`, &#10;  `stg_rtdms`.`OrganisationNo`, &#10;  `stg_rtdms`.`VAT`, &#10;  `stg_rtdms`.`STG_VAT`, &#10;  `stg_rtdms`.`ChamberOfCom`, &#10;  `stg_rtdms`.`Parma`, &#10;  `stg_rtdms`.`SICCode`, &#10;  `stg_rtdms`.`AdressLine1`, &#10;  `stg_rtdms`.`sAddrLine2`, &#10;  `stg_rtdms`.`sAddrLine3`, &#10;  `stg_rtdms`.`sPostalCode`, &#10;  `stg_rtdms`.`sCity`, &#10;  `stg_rtdms`.`sStateProvince`, &#10;  `stg_rtdms`.`Country`, &#10;  `stg_rtdms`.`CountryCode`, &#10;  `stg_rtdms`.`STG_Adresse`, &#10;  `stg_rtdms`.`SalesChannel`, &#10;  `stg_rtdms`.`Phone`, &#10;  `stg_rtdms`.`STG_Phone`, &#10;  `stg_rtdms`.`ID`, &#10;  `stg_rtdms`.`Loading_Date`&#10;FROM `stg_rtdms`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -208,6 +208,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Country"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CountryCode"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_Adresse"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SalesChannel"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -277,6 +279,9 @@
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -295,160 +300,6 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tConvertType_2"/>
-    <elementParameter field="CHECK" name="AUTOCAST" value="true"/>
-    <elementParameter field="TABLE" name="MANUALTABLE" show="false"/>
-    <elementParameter field="CHECK" name="EMPTYTONULL" value="false"/>
-    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="stg_rtdms" name="tConvertType_2">
-      <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-    <metadata connector="REJECT" label="stg_rtdms" name="REJECT">
-      <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-  </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="320" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
@@ -463,7 +314,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata comment="" label="metadata" name="out1">
+    <metadata connector="FLOW" label="metadata" name="dq_rtdms">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -522,33 +373,34 @@
       <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables activateCondensedTool="true" id="_cVrF0OQkEeirA5cfncl2TA - metadata" name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row3.Customer" name="Customer" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.OwnerRU" name="OwnerRU" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.CommonName" name="CommonName" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.LegalName" name="LegalName" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.OrganisationNo" name="OrganisationNo" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.VAT" name="VAT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.STG_VAT" name="STG_VAT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.ChamberOfCom" name="ChamberOfCom" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.Parma" name="Parma" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.SICCode" name="SICCode" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.AdressLine1" name="AdressLine1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.sAddrLine2" name="sAddrLine2" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.sAddrLine3" name="sAddrLine3" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.sPostalCode" name="sPostalCode" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.sCity" name="sCity" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.sStateProvince" name="sStateProvince" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.Country" name="Country" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.CountryCode" name="CountryCode" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="" name="STG_Adresse" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.SalesChannel" name="SalesChannel" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.Phone" name="Phone" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.STG_Phone" name="STG_Phone" nullable="true" type="id_String"/>
+      <outputTables activateCondensedTool="true" id="_cVrF0OQkEeirA5cfncl2TA - metadata" name="dq_rtdms" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.Customer" name="Customer" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.OwnerRU" name="OwnerRU" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CommonName" name="CommonName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.LegalName" name="LegalName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.OrganisationNo" name="OrganisationNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.VAT" name="VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.STG_VAT" name="STG_VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ChamberOfCom" name="ChamberOfCom" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Parma" name="Parma" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SICCode" name="SICCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.AdressLine1" name="AdressLine1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.sAddrLine2" name="sAddrLine2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.sAddrLine3" name="sAddrLine3" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.sPostalCode" name="sPostalCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.sCity" name="sCity" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.sStateProvince" name="sStateProvince" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Country" name="Country" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CountryCode" name="CountryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.STG_Adresse" name="STG_Adresse" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SalesChannel" name="SalesChannel" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Phone" name="Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.STG_Phone" name="STG_Phone" nullable="true" type="id_String"/>
         <mapperTableEntries name="StandardizedPhoneNumber" nullable="true" type="id_String"/>
         <mapperTableEntries name="IsValidPhoneNumber" nullable="true" type="id_String"/>
         <mapperTableEntries name="IsPossiblePhoneNumber" nullable="true" type="id_String"/>
@@ -583,10 +435,10 @@
         <mapperTableEntries name="OSM_country" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_country_code" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;false&quot;" name="OSM_Valid" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.ID" name="ID" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.Loading_Date" name="Loading_Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row1.ID" name="ID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.Loading_Date" name="Loading_Date" nullable="true" type="id_Date"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row3" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="Customer" nullable="true" type="id_String"/>
         <mapperTableEntries name="OwnerRU" nullable="true" type="id_String"/>
         <mapperTableEntries name="CommonName" nullable="true" type="id_String"/>
@@ -605,147 +457,14 @@
         <mapperTableEntries name="sStateProvince" nullable="true" type="id_String"/>
         <mapperTableEntries name="Country" nullable="true" type="id_String"/>
         <mapperTableEntries name="CountryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_Adresse" nullable="true" type="id_String"/>
         <mapperTableEntries name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries name="STG_Phone" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
       </inputTables>
     </nodeData>
-  </node>
-  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="96">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tConvertType_1"/>
-    <elementParameter field="TECHNICAL" name="IN_SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="IN_SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_cVrF0OQkEeirA5cfncl2TA - metadata"/>
-    <elementParameter field="CHECK" name="AUTOCAST" value="true"/>
-    <elementParameter field="TABLE" name="MANUALTABLE" show="false"/>
-    <elementParameter field="CHECK" name="EMPTYTONULL" value="false"/>
-    <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="metadata" name="tConvertType_1">
-      <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="IsAlreadyStandard" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="PhoneNumberType" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="ErrorMessage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_city_district" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_town" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_county" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_state" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_postcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_city_district" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_town" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_county" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_state" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_postcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-    <metadata connector="REJECT" label="metadata" name="REJECT">
-      <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="IsAlreadyStandard" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="PhoneNumberType" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="255" name="ErrorMessage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_city_district" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_town" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_county" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_state" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_postcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_VAT_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_city_district" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_town" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_county" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_state" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_postcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
@@ -1206,39 +925,26 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tConvertType_2">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tConvertType_2" offsetLabelX="0" offsetLabelY="0" source="tConvertType_2" target="tMap_1">
+  <connection connectorName="FLOW" label="dq_rtdms" lineStyle="0" metaname="dq_rtdms" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
-  </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tConvertType_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="OSM_Valid"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
-  </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tConvertType_1" offsetLabelX="0" offsetLabelY="0" source="tConvertType_1" target="tDBOutput_2">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="dq_rtdms"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b732221d-b5d8-413a-8ad1-e5e3c086ab76"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PXGLnhMGgChZwvNCDLVtLAcMyt7z24n6fzSaTbWR8xz0imHBC/Xr9lQ70+4WId8VhqCBJp0hzL4z
-SgGtdmbo3g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_69df4204-77c1-4876-837b-f4a3b6a9a15e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EZOhlxY6EB8an/QhGyLPJgTxWeEawMFKK50q/d/YB65fzAtrEDR93kE5mRuzvJUU+d3HYtC/HG4y
-befwbnla4Q==</DigestValue></Reference></SignedInfo><SignatureValue>ZUc16BBvVNaGJKuiU1lUpChHJSKUJhftLg0Nw+2LhYjajThMuWfIaMhJjE3UdB36YbqThXmkXOI9
-mmEZk396u+g+O0ZjHXon6zyDfbzdQhw0rhcmM1V1puP8ey6cBSXvXhlc8CeT1MpR631BsyU44gEk
-4k2chhymxRMg2F6u3doFCG8rDsRCy/p0JUaFxTbs8JWJDZh7aQ6VgHnQXBPevIUI/6lZk9f3Pps4
-i2Z+JU7cHiFexjS1eFEApJ2G5kTJHbkd60X6qm55NILWj0gPca0Q270TKytzqcPK8eE5KRX8cjgz
-NqdME5RzysB0p8GlJT1fegAln2RlQfw+4llslw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3fd2afa9-5e63-4ba5-a952-c7e5f6e8eee4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tY4Godd9gqpGvxsDU5xZTXuy6jV6awmlEyd90eqJiqWQmSQU8oLKNLrJxTrF2yQ8QBx0n28eTnnD
+Ayx27GOzNQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cba9c7a8-2932-4cc7-98ab-a77815a142f7"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>w4liC55EiUvfrh8ZWvtNSw4X8zlA637QtyGP5M3U7hjQegMPmNKFfO/tv/TjEX8TCQGLYghmfkAP
+/tf6fO4wLw==</DigestValue></Reference></SignedInfo><SignatureValue>BRIr7BP4D/bEACoV6QeNnkPZ8P83HJkP8vDIt0azcw/5laL3SjYyLz6yyfVLdx64iW+tnvZrSRJD
+zImL1dYX4flsLBDeSZd6Pue9CmIdUW9OxTd4a2MX6RYHZegPo1BjdCVTxiJlNmmxK+U25YcbukSl
+iNyn5dLGOoO0K87NPHmFAlARGvL1W4Y3QT2wTOla70omtnVEibj3xaIE2LgPWVdO3wxMhJIQmfxI
+prDJEqlUF6LzuWAp18jZg8Vv71vtJ71cpJuV/AoBXH67+SKmvI4KBXrJdSyuX6OrPqSz+Ux0+Q4B
+eh9a6qjM0NEX3yPseUA4g6KZqKt38WVfTh7wow==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1262,4 +968,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_69df4204-77c1-4876-837b-f4a3b6a9a15e" Target="#_b732221d-b5d8-413a-8ad1-e5e3c086ab76"><Timestamp>2018-11-16 12:44:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cba9c7a8-2932-4cc7-98ab-a77815a142f7" Target="#_3fd2afa9-5e63-4ba5-a952-c7e5f6e8eee4"><Timestamp>2018-11-16 13:05:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
