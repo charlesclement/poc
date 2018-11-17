@@ -1493,8 +1493,23 @@
     <elementParameter field="TEXT" name="LOOP_QUERY_BASE" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/checkVatResponse&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
-      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
-      <elementValue elementRef="QUERY" value="&quot;countryCode&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_countryCode"/>
+      <elementValue elementRef="QUERY" value="countryCode"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_vatNumber"/>
+      <elementValue elementRef="QUERY" value="vatNumber"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_requestDate"/>
+      <elementValue elementRef="QUERY" value="requestDate"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_valid"/>
+      <elementValue elementRef="QUERY" value="valid"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_name"/>
+      <elementValue elementRef="QUERY" value="name"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_address"/>
+      <elementValue elementRef="QUERY" value="address"/>
       <elementValue elementRef="NODECHECK" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LIMIT" value=""/>
@@ -1506,37 +1521,253 @@
     <elementParameter field="CHECK" name="IGNORE_NS" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tExtractXMLField_1">
-      <column comment="" key="false" length="-1" name="countryCode" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="-1" name="countryCode" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column defaultValue="" key="false" length="255" name="errorXMLField" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="832" posY="64">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="832" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_u50c4Oq7EeiqKvtEYp5pqg-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_2">
-      <column comment="" key="false" length="-1" name="countryCode" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" label="stg_rtdms" name="sortie">
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="200" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="sortie" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row4.VAT_countryCode" name="VAT_countryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.VAT_vatNumber" name="VAT_vatNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.VAT_requestDate" name="VAT_requestDate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.VAT_valid" name="VAT_valid" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.VAT_name" name="VAT_name" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.VAT_address" name="VAT_address" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row4.VAT_vatNumber " name="STG_VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="TalendDate.getCurrentDate() " name="Loading_Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row4.VAT_countryCode+' '+row4.VAT_vatNumber " name="VAT_Complet" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row4" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="VAT_countryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_vatNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_requestDate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_valid" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_name" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_address" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="MYSQL_5"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MYSQL"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="context.Mysql_local_Server"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="context.Mysql_local_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="context.Mysql_local_Database"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="context.Mysql_local_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;dq_cdb&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mysql_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="context.Mysql_local_AdditionalParams"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" show="false" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" show="false" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_countryCode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_vatNumber"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_requestDate"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_valid"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_name"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_address"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_VAT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_Complet"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" show="false" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="stg_rtdms" name="tDBOutput_1">
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="200" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+    <metadata connector="REJECT" label="stg_rtdms" name="REJECT">
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="true" length="200" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBInput_1">
@@ -1570,29 +1801,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tExtractXMLField_1" offsetLabelX="0" offsetLabelY="0" source="tExtractXMLField_1" target="tLogRow_2">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="valid"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="address"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="countryCode"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="requestDate"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="name"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-      <elementValue elementRef="TRACE_COLUMN" value="vatNumber"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
-    </elementParameter>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tExtractXMLField_1" offsetLabelX="0" offsetLabelY="0" source="tExtractXMLField_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
+  <connection connectorName="FLOW" label="sortie" lineStyle="0" metaname="sortie" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="sortie"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -1604,13 +1819,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d92ad959-6b59-4bde-b0c1-7498bbc5d553"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>bmdYa4Afm4/OzOpWgK05ET2JvRasWdV83wC2hqoqDHHHRvjrkeulj+8+VhiRaDEO7JDlrJOTfCbs
-UaOMgP0eAQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fc2341ca-665d-4a61-8df3-603d4a8770ea"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4hPWiJuSJBP6G1XLhBL20M6u8VAyotf6x83f2GqAzc1QxaolagT/MvJsh8cG7w/xMSNsaYwSxAez
-D3gSWcvo9Q==</DigestValue></Reference></SignedInfo><SignatureValue>gq5iv+Qn/p7c7cFf4Fpmu2/zhiUxTiNclA0zZeUgP0ffg+V75fpcICy3K9GpPt8qOYepkyrPf4Ss
-P6qWc4hHhTTAEruU6b4hIjYFZAnMXjZqTxjl7BtDt4LzE4kOg1UF2L6JwFJ7zB7yrMAuLpKkb4vI
-U+y2sp/MDnA83kEdbAiN+1yrt0PbhLrfeIhNQoaxtBpLNBHYb67SR9r6sR65vbahGkLKNxORIjMh
-IkcUeUdjkzUA0wtnQtmAM8x4g/IcesREbmWec/AodPvnSFdco4BdoxOBBJrRifRhTSk5AZvaxl0N
-ygPK+Zj+GhV+MIQcyTjWVzeNrD+TKMfKwerCIQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_58990ad0-d78e-4775-a898-c8f732f2e864"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>niHicKO2M7fSZTPGKXD+3QVLWcBrOXMxNMm6DP3fbdrXip0tmZenqN2MYACGKDnD32QwIRq6C6A8
+zfqeExovVA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a31bcfc3-d1e1-4b9b-be7f-516d51117c35"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>S2q2jvo4CjoEDEhWqnOC1xs1mo/M/CeKoDa4pJamMiJr9DfFx/zTX9bzBIsoud0heSus2nxyzAYl
+P1yvL8xWZA==</DigestValue></Reference></SignedInfo><SignatureValue>b2ElllRA8lX5gSuebvJzKihTeuSdRSotjRbXmPkaA8QCFs+07d75LflZhtT99FtcEX5r3K/ekClx
+OFs0Wy0N6LYosXWeWpZb2lvOp7/sLnLLatpI05ZqLQXH56mYSZgF0PITaMV4GCF3c/Dyp5DyMa7i
+jv2A0CW8w0cahXdVztL/zRC/3Mseu3I9D/4p5nW4TSIfTyvuFR0o5Q3uYQ7rPvzZuQvdHPsWB/Sd
+ik4scImGueN+EjmbsQrG5RAxZD5rkei1OpA+P0xxr3sA/i5r0wJs0Sh9mgYW2IkJ+QPelpev9FRW
+tcYFavUrbb7yG1MI+zCVZtmHaT7urWc3bL9y8Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1634,4 +1849,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fc2341ca-665d-4a61-8df3-603d4a8770ea" Target="#_d92ad959-6b59-4bde-b0c1-7498bbc5d553"><Timestamp>2018-11-17 23:29:00</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a31bcfc3-d1e1-4b9b-be7f-516d51117c35" Target="#_58990ad0-d78e-4775-a898-c8f732f2e864"><Timestamp>2018-11-17 23:32:24</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
