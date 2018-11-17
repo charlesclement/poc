@@ -241,6 +241,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="VAT_address"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_Complet"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_lat"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_lon"/>
@@ -289,7 +291,7 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_Complet"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
@@ -397,6 +399,9 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -469,7 +474,7 @@
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -673,7 +678,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Customer" name="Customer" nullable="true" type="id_String"/>
@@ -772,6 +777,7 @@
         <mapperTableEntries name="VAT_valid" nullable="true" type="id_String"/>
         <mapperTableEntries name="VAT_name" nullable="true" type="id_String"/>
         <mapperTableEntries name="VAT_address" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_Complet" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_lat" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_lon" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_road" nullable="true" type="id_String"/>
@@ -796,7 +802,7 @@
         <mapperTableEntries name="OSM_Valid" nullable="true" type="id_String"/>
         <mapperTableEntries name="ID" nullable="true" type="id_String"/>
         <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="VAT_Complet" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Source" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -2024,6 +2030,7 @@
         <mapperTableEntries name="OSM_Valid" nullable="true" type="id_String"/>
         <mapperTableEntries name="ID" nullable="true" type="id_String"/>
         <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="Source" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
@@ -2175,6 +2182,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Source"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
@@ -2357,6 +2366,9 @@
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
@@ -2385,13 +2397,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a8e3f548-8ef8-46a3-a7d9-6af3e3b4ffde"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9+JpyNxlDLQUfL93GrPyLkm/tTLW1dV6Go2p+Y0flJPs/wTv7L7tyYfqeFQOSNBDvMNmx1cE9ypn
-Dgb/AkKjZg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f1fa84dc-12e9-4cf6-a93f-b15f3cd27848"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FMf7gFioc+Wf1iLRfMcmumI3FnoSSPtuARjA5/yFQdVgAqQKbk18ppQPa4gI00i9/B5O0wlaTbv/
-+Fc3sZtL1Q==</DigestValue></Reference></SignedInfo><SignatureValue>B1EV+HvUVttDyNM3LfJCh3EzSYKt0jcKVyaHDt2ajnURBs3l4R6Vu//2nk7zZ5GpOmlFTX2J3KyB
-8cs0yXJpxbJCt8gx260NB+WcDfYYSYJBfMKtQKvGRq6KaiPzGfpM2crZ0ASlJq8NePzyzuV2zN9W
-exFQObLTpVzJQLy6Xwjz9nvqeO09SCgwV+crs86HsjdtA1QIYBolv7uJJK/6B23pnzEtgEVhUrdT
-tsH/izM9h+BEbXKHro8BzyEbUelkuCegxOKjNyKn3+EXwQDpykcGh2t6T0HxHofeE3m+cl49xekn
-mzsllCy3a1lWPf35f17HHD4HAujTHLlWBb7TCw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_693732ff-0058-4e10-a1f4-ad54b86f6892"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xfAoqANVHSHiJix7sI7kVLoqpy4uDzandqJoQwNB7S/351lXp7+/++EbfL2NpYgPDuWNAf9dMwm7
+Nd7MgiIk2g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_53d1e266-cf89-4171-a329-6f6b997492b5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>c0BrZminM/klcNyZrEmW+vA42SM8kN8hKJEejsNCglsakoWhQw7RDrlTwhdPw7P0Ukb6oWpm382w
+BA0860hJRQ==</DigestValue></Reference></SignedInfo><SignatureValue>eZmmBQW3/UQ0eaE5y4PQ3UZEvmSX+ZqBMqDgo73HhJUd3mwSWmJpV86eNTTakAOSFcir3NJX5ApU
+egezHzRpo5AH74baF65NzR9vQoL3eVH+/t1HeqS0/BUf9U41wiFi3VwrDbKBOnfjzUFM6Wje4oKp
+fldOXIrhjY09die+TPrOge5Qc1gTY5HLG/g5ecbHJKuVec7CMG5oQEntcIC66N33EtMCSuvRUoae
+yAL6XzZ63f/tHyrPKighuh8oYGA9zR31nZP/mNyD04gLIlbKDHcC/DcnNSpFB9kVCTHdzGsA50f3
+tnqE3nMZLV3u5by9/X6Ue+pzD9rkhxyISsmhtg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2415,4 +2427,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f1fa84dc-12e9-4cf6-a93f-b15f3cd27848" Target="#_a8e3f548-8ef8-46a3-a7d9-6af3e3b4ffde"><Timestamp>2018-11-17 14:30:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_53d1e266-cf89-4171-a329-6f6b997492b5" Target="#_693732ff-0058-4e10-a1f4-ad54b86f6892"><Timestamp>2018-11-17 14:30:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
