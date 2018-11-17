@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.analysis="http://dataquality.analysis" xmi:id="_ubv_cOp8Eeisjp3QMvY80w" name="Analyse de redondance" creationDate="2018-11-17T16:23:24.772+0100">
+<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_ubv_cOp8Eeisjp3QMvY80w" name="Analyse de redondance" creationDate="2018-11-17T16:23:24.772+0100" defaultContext="Default">
+  <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
   <taggedValue xmi:id="_ubv_cep8Eeisjp3QMvY80w" tag="Status" value="development"/>
   <taggedValue xmi:id="_ubv_cup8Eeisjp3QMvY80w" tag="Author" value="charlesclement@eval11351.talend.com"/>
-  <taggedValue xmi:id="_ubv_c-p8Eeisjp3QMvY80w" tag="Purpose"/>
-  <taggedValue xmi:id="_ubv_dOp8Eeisjp3QMvY80w" tag="Description"/>
+  <taggedValue xmi:id="_ubv_c-p8Eeisjp3QMvY80w" tag="Purpose" value=""/>
+  <taggedValue xmi:id="_ubv_dOp8Eeisjp3QMvY80w" tag="Description" value=""/>
   <taggedValue xmi:id="_ubv_dep8Eeisjp3QMvY80w" tag="Version" value="0.1"/>
-  <context xmi:id="_ubv_dup8Eeisjp3QMvY80w"/>
+  <taggedValue xmi:id="_4bY4Yep8Eeisjp3QMvY80w" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+  <taggedValue xmi:id="_4bb7sup8Eeisjp3QMvY80w" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+  <context xmi:id="_ubv_dup8Eeisjp3QMvY80w">
+    <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_ZFjD2uQiEeirA5cfncl2TA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_TL2_k90XEeinyYgpzgK3Rg"/>
+  </context>
   <results xmi:id="_ubv_d-p8Eeisjp3QMvY80w">
     <resultMetadata xmi:id="_ubv_eOp8Eeisjp3QMvY80w"/>
+    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_4bb7sOp8Eeisjp3QMvY80w">
+      <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_ZFjDwOQiEeirA5cfncl2TA"/>
+      <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Row Comparison/Row_Comparison_0.1.definition#_jMh4gJE3Ed2HGNmGoaS-_w"/>
+      <columnSetA href="../../../metadata/connections/Mysql_local_0.1.item#_ZFjD2uQiEeirA5cfncl2TA"/>
+      <columnSetB href="../../../metadata/connections/Mysql_local_0.1.item#_TL2_k90XEeinyYgpzgK3Rg"/>
+    </indicators>
+    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_4bb7sep8Eeisjp3QMvY80w">
+      <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_TL1wsN0XEeinyYgpzgK3Rg"/>
+      <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Row Comparison/Row_Comparison_0.1.definition#_jMh4gJE3Ed2HGNmGoaS-_w"/>
+      <columnSetA href="../../../metadata/connections/Mysql_local_0.1.item#_TL2_k90XEeinyYgpzgK3Rg"/>
+      <columnSetB href="../../../metadata/connections/Mysql_local_0.1.item#_ZFjD2uQiEeirA5cfncl2TA"/>
+    </indicators>
   </results>
   <parameters xmi:id="_ubv_eep8Eeisjp3QMvY80w" analysisType="Columns Comparison Analysis"/>
+  <contextType xmi:id="_4bY4YOp8Eeisjp3QMvY80w" confirmationNeeded="false" name="Default"/>
 </dataquality.analysis:Analysis>
