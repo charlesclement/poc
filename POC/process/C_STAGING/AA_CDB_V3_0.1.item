@@ -156,13 +156,13 @@
     <elementParameter field="TEXT" name="USER" value="context.Mysql_local_Login"/>
     <elementParameter field="PASSWORD" name="PASS" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - ods_rtdms"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - ods_cdb"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ods_cdb&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `ods_cdb`.`Customer`, &#10;  `ods_cdb`.`OwnerRU`, &#10;  `ods_cdb`.`CommonName`, &#10;  `ods_cdb`.`LegalName`, &#10;  `ods_cdb`.`OrganisationNo`, &#10;  `ods_cdb`.`VAT`, &#10;  `ods_cdb`.`ChamberOfCom`, &#10;  `ods_cdb`.`Parma`, &#10;  `ods_cdb`.`SICCode`, &#10;  `ods_cdb`.`AdressLine1`, &#10;  `ods_cdb`.`sAddrLine2`, &#10;  `ods_cdb`.`sAddrLine3`, &#10;  `ods_cdb`.`sPostalCode`, &#10;  `ods_cdb`.`sCity`, &#10;  `ods_cdb`.`sStateProvince`, &#10;  `ods_cdb`.`Country`, &#10;  `ods_cdb`.`CountryCode`, &#10;  `ods_cdb`.`SalesChannel`, &#10;  `ods_cdb`.`Phone`, &#10;  `ods_cdb`.`ID`, &#10;  `ods_cdb`.`Loading_Date`&#10;FROM `ods_cdb`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `ods_cdb`.`Customer`, &#10;  `ods_cdb`.`OwnerRU`, &#10;  `ods_cdb`.`CommonName`, &#10;  `ods_cdb`.`LegalName`, &#10;  `ods_cdb`.`OrganisationNo`, &#10;  `ods_cdb`.`VAT`, &#10;  `ods_cdb`.`ChamberOfCom`, &#10;  `ods_cdb`.`Parma`, &#10;  `ods_cdb`.`SICCode`, &#10;  `ods_cdb`.`AdressLine1`, &#10;  `ods_cdb`.`sAddrLine2`, &#10;  `ods_cdb`.`sAddrLine3`, &#10;  `ods_cdb`.`sPostalCode`, &#10;  `ods_cdb`.`sCity`, &#10;  `ods_cdb`.`sStateProvince`, &#10;  `ods_cdb`.`Country`, &#10;  `ods_cdb`.`CountryCode`, &#10;  `ods_cdb`.`SalesChannel`, &#10;  `ods_cdb`.`ID`, &#10;  `ods_cdb`.`Loading_Date`&#10;FROM `ods_cdb`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -209,8 +209,6 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SalesChannel"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
@@ -218,7 +216,7 @@
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="ods_rtdms" name="tDBInput_2">
+    <metadata connector="FLOW" label="ods_cdb" name="tDBInput_2">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -271,9 +269,6 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -421,7 +416,6 @@
         <mapperTableEntries name="Country" nullable="true" type="id_String"/>
         <mapperTableEntries name="CountryCode" nullable="true" type="id_String"/>
         <mapperTableEntries name="SalesChannel" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries name="ID" nullable="true" type="id_Integer"/>
         <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
       </inputTables>
@@ -1055,13 +1049,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2373b013-513c-4d59-91ed-9996c36ae439"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>sZqMRb2VtOYIWSqtVeOt2U/KkdLf47pboerWrLvwp9Hnjdgq9pi4oihiDseSgTl3NDJMeVnB1p9Y
-rG3lD2ylAw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4ba6de7d-d07b-4d39-b756-952ef0f73c9a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VVFAO4KtpFfq7ijQL4WYHzSGselguYcubGNmEdL9bGW5aXe3R21ju4ifK1H8oEf/I446gGN+iQrf
-JFYbxhrzIQ==</DigestValue></Reference></SignedInfo><SignatureValue>o23W7ukxnbVOEIsM1SAOCj7oGEhaRE64oF5orW+bxPth8oCjE5kIqhVDYc7LviFeGNeKdPtGxUIL
-V/1BaI2SyiwSIV1YbKnc552cKMRGSWzqIaDIauBNEJknVGChsVfNhEHoKcG09IdR5JVe74F8LE8L
-GU/pl3ab0EmKi7amsv5tngYhiAHGqjdpj8Fqr2WxsYmj3at1mVGrkTY8HH5Dfs5LQBygquYXHy3Q
-wG3WIMQUA7mgC7XETP4InE2WQkqgbSeOP6VQ8UYTATYkc6N92FHh6tLvkEEJ4I5qW2NY3j3E1i54
-omlq5c6c5YmDR85r2NTCoC9oCZmwlUQ3x4eG0Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d48ca802-e7c4-4e07-ba04-4fab484638ae"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rSHSgz7lykpkl+5e86bmdCnecRv/y4k4UtyKbYbu+s3S9aN5qS2xb/QmWu+oQUGrfKK1WoeA36AA
+sr99AUY5rg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_274b98ce-4d90-4d9b-97ac-582210e41f95"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>L1TOKhLLxQxdwmk+GtgROkkAlnlYMFoZ48xM0RJg457RdN57waU0+DXy5y1m7qBdfLMUBXEFc4TG
+JV8hcWV6SQ==</DigestValue></Reference></SignedInfo><SignatureValue>GIWj7mV4dwc4f0ZPJXMmyU9Py8hRiAwq7ydVMZI4GhmSHRNJGsqb/Sxkdsv9muuGCsKtHMYB8Lt9
+yzN5UPudn2y4O2npG70N1bnR2AxVA8bm7S2I858jWRGjJ9QJXDHSbEjAZhlItyqGbVYtpGM99ZzN
+qwMLfvbwFF/a6JCl0+Uy9Bz4bhuSM8BdQrMafMbSkECMCqwtof/gA4DQSt8VdHvu+9wQKHB6+iik
+z8ruLCHrEGmIJnsXZP9HhDPxYl9b0Ee3vSidYKaNMA3TOrNZy1gJIjNys4dV71rJWuEl4zx3gS7l
+wiU+95BQPt0E++EWjCyoJvEUXvNE8iBmRnRRoA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1085,4 +1079,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4ba6de7d-d07b-4d39-b756-952ef0f73c9a" Target="#_2373b013-513c-4d59-91ed-9996c36ae439"><Timestamp>2018-11-17 12:58:48</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_274b98ce-4d90-4d9b-97ac-582210e41f95" Target="#_d48ca802-e7c4-4e07-ba04-4fab484638ae"><Timestamp>2018-11-17 12:59:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
