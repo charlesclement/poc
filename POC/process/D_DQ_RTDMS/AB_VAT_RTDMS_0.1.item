@@ -289,6 +289,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_Complet"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -465,6 +467,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -665,6 +670,9 @@
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="FILTER" label="dq_rtdms" name="FILTER">
@@ -842,6 +850,9 @@
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="dq_rtdms" name="REJECT">
@@ -1017,6 +1028,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1681,13 +1695,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f3e06728-55c3-42ef-b6da-dedbbc4f18f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>m0srG21KiqxJzFwWhOOMM/3YtqALFmyIqyNb8siH2vIHWZiCtTAx5sfAw7dj8uo1ZKK0i0/Hq+MZ
-5gNRlC50xQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6606b29f-4f43-42c8-bcb5-4099aacfff2f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2eouyyuJMHXMmERkAwD5P5TmpvrXYNUHhqDTQVYfxxK2E4mDIqoXfh3yenNZiVJ+/NNgsdfEJwKw
-V4iPT6IMeQ==</DigestValue></Reference></SignedInfo><SignatureValue>bolIBusXSNQwJ3Wzq4YZBQbXpXuHNMCbVMx8E8O3zVCiliCXfxJvug1b8fIRsHK4eky6KtWOtL/C
-lDqkF5OqRl6jZbxDWUYlbtbdDR9EvoLgUs/pu5kOKHM346tQqkZ/QXoJi1kISOGwafF2dJ/tDFHm
-zVw0vsYrgoHHHYNmqULvf/1qZJrG0WHMgQVicFnNrwtRMzRAMJ0Xh2nxdwYkok/gtRX+7YjIlPDR
-G32zIlBDJ9ximGFKoPegLSZEh0Gnd5oeSihqySShuBZFKL8I04OgUu1EOvD2/gJszNia3jmpxVOF
-x+U86CB1jdtHF/nd5kBvitkoHFumM7YUSf1e6w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ae49dd44-f4d8-462e-bcb2-62abb9f817cc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IaK/H3emFsmnrsTWinllh3WUWu+6UPV9gXSCYJT/uhqdumz6M66AZKni8oUDcvhEnQEbCiK2C+o5
++eZDQvy2hw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cdeb2a9c-63ac-41cb-81d9-8495961ee27e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cSieOVNBNcKIpUaXULZOLlXCz/Nf53YJWUtHqUPlPYt5AY/rB7JhVcSc6vgDBC9GSovStBddfspp
+enxedFhPvQ==</DigestValue></Reference></SignedInfo><SignatureValue>wOUjD9XSIYocuJ+14eYt0LWkGMRerzclADIt/G69aMxSmTcaiqk8dMXKYciQhd0jhU7HXbq78Nrj
+qRoMwGKjaLO+eg5O9zob3+NE+spZpo1Edl1asPmPqkYLBDn1XM1zYfKc5q4tkX/cYHej5F+6Njzx
+WzdFeFWC2VkgF2hrktlhHhG6v8Q/VCSkVFv7YSpjW703A39V7yfHjBh73MsfztOKW45ZOi9vTRpm
+poWflbHtWNSwqpikSWWp0e3dpsvo5J3ls+iYBQ1Egh4pUTpWiNg6vaMDPXkur3JhElHWpmMXiris
+/R96dGSUSQHtmofo2JoZrIw7AXinMzb+Ah/lEA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1711,4 +1725,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6606b29f-4f43-42c8-bcb5-4099aacfff2f" Target="#_f3e06728-55c3-42ef-b6da-dedbbc4f18f9"><Timestamp>2018-11-17 13:53:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cdeb2a9c-63ac-41cb-81d9-8495961ee27e" Target="#_ae49dd44-f4d8-462e-bcb2-62abb9f817cc"><Timestamp>2018-11-17 13:56:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
