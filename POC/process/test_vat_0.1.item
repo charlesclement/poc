@@ -1501,39 +1501,21 @@
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row7">
         <nodes expression="" name="payload" type="id_Document" xpath="row7/payload">
-          <children main="true" name="soap:Envelope" type="id_String" xpath="row7.payload:/soap:Envelope">
-            <children defaultValue="http://schemas.xmlsoap.org/soap/envelope/" name="soap" nodeType="NAME_SPACE" type="soap" xpath="row7.payload:/soap:Envelope/xmlns:soap"/>
-            <children loop="true" main="true" name="soap:Body" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body">
-              <children name="checkVatResponse" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse">
-                <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/xmlns:(default)"/>
-                <children name="countryCode" outgoingConnections="//@node.8/@nodeData/@connections.0" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode/xmlns:(default)"/>
-                </children>
-                <children name="vatNumber" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/vatNumber">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/vatNumber/xmlns:(default)"/>
-                </children>
-                <children name="requestDate" pattern="&quot;dd-MM-yyyy&quot;" type="id_Date" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/requestDate">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/requestDate/xmlns:(default)"/>
-                </children>
-                <children name="valid" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/valid">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/valid/xmlns:(default)"/>
-                </children>
-                <children name="name" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/name">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/name/xmlns:(default)"/>
-                </children>
-                <children name="address" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/address">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/address/xmlns:(default)"/>
-                </children>
-              </children>
-            </children>
+          <children main="true" name="rootTag" type="id_String" xpath="row7.payload:/rootTag">
+            <children name="countryCode" outgoingConnections="//@node.8/@nodeData/@connections.0" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/rootTag/countryCode"/>
+            <children loop="true" main="true" name="vatNumber" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/rootTag/vatNumber"/>
+            <children name="requestDate" pattern="&quot;dd-MM-yyyy&quot;" type="id_Date" xpath="row7.payload:/rootTag/requestDate"/>
+            <children name="valid" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/rootTag/valid"/>
+            <children name="name" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/rootTag/name"/>
+            <children name="address" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/rootTag/address"/>
           </children>
         </nodes>
       </inputTrees>
       <outputTrees name="out1">
-        <nodes expression=" [row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode]" incomingConnections="//@node.8/@nodeData/@connections.0" name="countryCode" type="id_String" xpath="out1/countryCode"/>
+        <nodes expression=" [row7.payload:/rootTag/countryCode]" incomingConnections="//@node.8/@nodeData/@connections.0" name="countryCode" type="id_String" xpath="out1/countryCode"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
-      <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.1/@children.0/@children.1" target="//@node.8/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.0" target="//@node.8/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="96">
@@ -1631,13 +1613,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_dc68880e-11b2-4777-96ae-39ef1d55ab79"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+hhwcZpJKxfzKdf/EvEAKAYtTKc+4i+GVUkf4ed9FcqPS+zFJC2dwZkmm/6EdkPE2kDKBZU0awQQ
-7kDJMipvvw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_17f2de4a-db5e-4257-8962-7478ddb0c8eb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>v3p8ueATBhIoPYNOm5fAe/NZbvtFehItVzQI4NJVKIt/4p+Rzvei9dvZAUIRhlSRyyklVsnV2PlN
-AbFbqXzFbA==</DigestValue></Reference></SignedInfo><SignatureValue>Y5X/Bh4vGV/qCp9Ilhc+wSY8PxUKF78rNO+aGwae2frezRdkDOfMNV9nAGHSuJ02Xpc3W08bKgPt
-+Hk8jIWnLmth4pv1pRnUwfefuJKK9cz9x1Vy94qRaEpBcaQVDL2WrJaHVze0OAIaAXXkqVDKHbIX
-BYItHFGFqNGQ3YXrqxHynYQRxXsNoclPPMC0+wE2gqF8U0uJHYrrApmIALB5isMK3ChyNi5Dj3ik
-smn0jTQHbr3UdoYR6XW2A5mLamKOd5U6UkZw1vTytlj8f3yMC2megU6egjr8myzv5rtNhoI4heAc
-t5dwdnRdEgogPUHa+D8qq88zkjRXnhjeOdU1Eg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_65400328-2c02-41e5-8fbf-4ccb37f2f5ef"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BUrpRChcUaYMrp2cOVlelu7vAU0yCAlX2MK5L3izX831yCpu+NVcYmOy9j2ZzZL+WconQG8HDFm4
+NLMe1+Dh1A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_92c3ced6-b820-4a5f-a5d7-01959f3565d3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ptEB1iQIUfSmAiQuHspHSPvaWekPvLpJpQ2rkqGbgGTgWGhxJQdZi/iDwaNtvepNlebd9r+A/E0U
+2kKx1gR4vQ==</DigestValue></Reference></SignedInfo><SignatureValue>LROPRpbzJBzVFyk5+mF8qQgSTIZb94p6BN5Bg98K7gz99kHGF27iDHBzlJN9MD290SGGqHzS0sBJ
+GKNDzbffyBqDDTvwhmGOS2FnuUToQVDcIXajidJti/MuU+Rm9jM256KJ/O7ZFf4phYiKicKctcdN
+y/nxqXpfUG5hBK8PFfkwEzeCZhZDUYTxrkbDQgX615qpPhf2MziRs+4Z2HJ3ODrOCzFv5MmT63vd
+qkhKPO0w/CVanzNMKpklpUNLYonXTo5AiJi47FfOR1V7AF06TBjFleFxilOEM290ApgkmgdZYXVq
+SK3CupxhJmmLp3lheYNHFeyW9XGr0Bw8fIZOxg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1661,4 +1643,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_17f2de4a-db5e-4257-8962-7478ddb0c8eb" Target="#_dc68880e-11b2-4777-96ae-39ef1d55ab79"><Timestamp>2018-11-17 21:56:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_92c3ced6-b820-4a5f-a5d7-01959f3565d3" Target="#_65400328-2c02-41e5-8fbf-4ccb37f2f5ef"><Timestamp>2018-11-17 21:58:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
