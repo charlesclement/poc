@@ -1637,14 +1637,14 @@
   <node componentName="tFileOutputXML" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputXML_1"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;D:/Volvo/07_Rejet/vat.xml&quot;"/>
-    <elementParameter field="CHECK" name="INPUT_IS_DOCUMENT" value="false"/>
-    <elementParameter field="COLUMN_LIST" name="DOCUMENT_COL" show="false" value="faultCode"/>
-    <elementParameter field="TEXT" name="ROW_TAG" value="&quot;row&quot;"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="CHECK" name="INPUT_IS_DOCUMENT" value="true"/>
+    <elementParameter field="COLUMN_LIST" name="DOCUMENT_COL" value="faultCode"/>
+    <elementParameter field="TEXT" name="ROW_TAG" show="false" value="&quot;row&quot;"/>
+    <elementParameter field="CHECK" name="SPLIT" show="false" value="false"/>
     <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
     <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="TABLE" name="ROOT_TAGS"/>
-    <elementParameter field="TABLE" name="MAPPING">
+    <elementParameter field="TABLE" name="ROOT_TAGS" show="false"/>
+    <elementParameter field="TABLE" name="MAPPING" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="faultCode"/>
       <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
@@ -1670,17 +1670,17 @@
       <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
       <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
     </elementParameter>
-    <elementParameter field="CHECK" name="USE_DYNAMIC_GROUPING" value="false"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_GROUPING" show="false" value="false"/>
     <elementParameter field="TABLE" name="GROUP_BY" show="false"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" show="false" value="false"/>
     <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" show="false" value="false"/>
     <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
     <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="TRIM" show="false" value="false"/>
+    <elementParameter field="CHECK" name="TRIM" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFileOutputXML_1">
       <column defaultValue="" key="false" length="1024" name="faultCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1732,13 +1732,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d602094c-f44a-4e83-a442-3937e2c3d504"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uHYdIFTbIQDdsv0edDbGbBjWB02y6O07TCqcaWpTxL62WCJ20eWeFBKWMKfT7wzB965+/TGhKKxD
-Gd2udwxYQA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_56c6bb87-c7a2-4e03-aa2a-22748bab3f81"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SsybS0qprDqR/+2+HY7mOwaIEgOOo3ikuQRdXzGZztMrgQO6GoAscJuUwlgpbS5KJ8+j9DxoMqhy
-blLHBsmWbQ==</DigestValue></Reference></SignedInfo><SignatureValue>iNUWWfUmHmKxuHDFjJzjkJf/mI9rbYTQpWi+q55d7ptvpdIWOZI/8pczysKyT5IxMP50CfE/OPHE
-3KS5F95O4NDji9ndA76ta18MlFQ5NKqAo+qU1EzWXsU3vfns+xe+Qkc8YC+268Jzu2XJ8ZkEphTs
-H4R+M5szzWLcpAI1NiWPuBf8WcLLYdAAzOX8pqySjRESZCQXWNRyiP2GZB3QM+iRq0GIRZ0SmXX/
-RuBjbfTJm+0BDxYjrXLNpW9ex5b+ePph5nk7VqctmxiYKNZqV7nAAobws0obktNu8Q5t2jPQ1c78
-s/6roiOD9RlE+0dVk5b/BZIl8Gksv0y8iRuRDQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1b35fe45-db08-4678-8704-d610d8403bc6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZuBr4I/P+p/MBlnWHS4V61bZpU/OmRZ4PjmXKF6AesyQMR01t6cHjss2zJV2HvjAJZA01urNxfi2
+2QpuSAm6zQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6d9c0c18-b169-4ef4-b9bb-2cb1cc313bce"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3dqJVsdsE+AqF5DU9Hr+8+dYcqCQcjGb1c3BjUks5O1XO7S3Tawc6NbqG+5HYrTad+ALje/cTXad
+JE8jPNJXFQ==</DigestValue></Reference></SignedInfo><SignatureValue>SIrtLsbdgEg/kpU5gL7FWP6T0T4xkjPhNBe8AFt0dcrvIY5d5krFjzSoHsXVmnSCXZGRmOc9NaRL
+OZygxv1RMShIWQLauE6R6xFKwrpIPxWMUnTaU7AgEEKpfbiAwO1WPHzm7mFm2hJY5DctfJovet/G
+k8/IFfD5eB9EUwzhFvSRygxdImuw8U5zeY0xwQclV9Po5LspHEqXbdZ5Yo2osJeomnbsYxcCelvu
+X6eon6h8UItvztOo/iQI+NgoCwuXmpSv3IYBu6FkDgu8LdxuW/+8S3cvwfD5x+zYsa1d+DsGNQVM
+QnkL+II7kfPiUVsmobjYXzvgsBR+GrkmNbcA/w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1762,4 +1762,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_56c6bb87-c7a2-4e03-aa2a-22748bab3f81" Target="#_d602094c-f44a-4e83-a442-3937e2c3d504"><Timestamp>2018-11-17 22:21:36</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6d9c0c18-b169-4ef4-b9bb-2cb1cc313bce" Target="#_1b35fe45-db08-4678-8704-d610d8403bc6"><Timestamp>2018-11-17 22:23:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
