@@ -1464,42 +1464,27 @@
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="KEEP_ORDER_FOR_DOCUMENT" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="out1" name="out1">
+    <metadata label="out1" name="out1">
       <column comment="" key="false" length="-1" name="countryCode" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="vatNumber" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="requestDate" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="valid" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="name" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="address" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row3">
         <nodes expression="" name="payload" type="id_Document" xpath="row3/payload">
           <children expression="" main="true" name="checkVatResponse" type="id_String" xpath="row3.payload:/checkVatResponse">
             <children expression="" name="countryCode" outgoingConnections="//@node.7/@nodeData/@connections.0" type="id_String" xpath="row3.payload:/checkVatResponse/countryCode"/>
-            <children loop="true" main="true" name="vatNumber" outgoingConnections="//@node.7/@nodeData/@connections.1" type="id_String" xpath="row3.payload:/checkVatResponse/vatNumber"/>
-            <children name="requestDate" outgoingConnections="//@node.7/@nodeData/@connections.2" type="id_String" xpath="row3.payload:/checkVatResponse/requestDate"/>
-            <children name="valid" outgoingConnections="//@node.7/@nodeData/@connections.3" type="id_String" xpath="row3.payload:/checkVatResponse/valid"/>
-            <children name="name" outgoingConnections="//@node.7/@nodeData/@connections.4" type="id_String" xpath="row3.payload:/checkVatResponse/name"/>
-            <children name="address" outgoingConnections="//@node.7/@nodeData/@connections.5" type="id_String" xpath="row3.payload:/checkVatResponse/address"/>
+            <children loop="true" main="true" name="vatNumber" type="id_String" xpath="row3.payload:/checkVatResponse/vatNumber"/>
+            <children name="requestDate" type="id_String" xpath="row3.payload:/checkVatResponse/requestDate"/>
+            <children name="valid" type="id_String" xpath="row3.payload:/checkVatResponse/valid"/>
+            <children name="name" type="id_String" xpath="row3.payload:/checkVatResponse/name"/>
+            <children name="address" type="id_String" xpath="row3.payload:/checkVatResponse/address"/>
           </children>
         </nodes>
       </inputTrees>
       <outputTrees name="out1">
         <nodes expression="[row3.payload:/checkVatResponse/countryCode]" incomingConnections="//@node.7/@nodeData/@connections.0" name="countryCode" type="id_String" xpath="out1/countryCode"/>
-        <nodes expression="[row3.payload:/checkVatResponse/vatNumber]" incomingConnections="//@node.7/@nodeData/@connections.1" name="vatNumber" type="id_String" xpath="out1/vatNumber"/>
-        <nodes expression="[row3.payload:/checkVatResponse/requestDate]" incomingConnections="//@node.7/@nodeData/@connections.2" name="requestDate" type="id_String" xpath="out1/requestDate"/>
-        <nodes expression="[row3.payload:/checkVatResponse/valid]" incomingConnections="//@node.7/@nodeData/@connections.3" name="valid" type="id_String" xpath="out1/valid"/>
-        <nodes expression="[row3.payload:/checkVatResponse/name]" incomingConnections="//@node.7/@nodeData/@connections.4" name="name" type="id_String" xpath="out1/name"/>
-        <nodes expression="[row3.payload:/checkVatResponse/address]" incomingConnections="//@node.7/@nodeData/@connections.5" name="address" type="id_String" xpath="out1/address"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
       <connections source="//@node.7/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.0" target="//@node.7/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.7/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.1" target="//@node.7/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.7/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.2" target="//@node.7/@nodeData/@outputTrees.0/@nodes.2" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.7/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.3" target="//@node.7/@nodeData/@outputTrees.0/@nodes.3" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.7/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.4" target="//@node.7/@nodeData/@outputTrees.0/@nodes.4" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.7/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.5" target="//@node.7/@nodeData/@outputTrees.0/@nodes.5" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="768" posY="128">
@@ -1518,27 +1503,12 @@
     <elementParameter field="TABLE" name="LENGTHS" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="requestDate"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="valid"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="name"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="address"/>
-      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out1" name="tLogRow_2">
       <column comment="" key="false" length="-1" name="countryCode" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="vatNumber" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="requestDate" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="valid" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="name" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="address" nullable="true" originalLength="-1" precision="-1" sourceType="id_String" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBInput_1">
@@ -1582,13 +1552,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1d7fc0b0-d439-4b02-a736-937544504bf2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vjT4JiXPgmMDQHfJi9Im0kO1Xs6ctcMgxnHAlV2/TXok3bCpfPWR+bZ4RAMqa8Lc3AIS5RLSw+50
-E/8IzyaK3A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d20c3623-09e0-44a4-92b0-6e81c680102f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>L2MjmAu+/02l+txV9hdDHSzV7gvmRDRrAHGXHofgGdLnxR8xyrjY5vF5FMLZ73qr3rrwkjI+L/aW
-hs1O1W2d5A==</DigestValue></Reference></SignedInfo><SignatureValue>D5ItTyV4F1AtZNAL/gwEKHIiu5UweJ4S22I1zJPSj3rd5tkBNlMztVUxRMlItm8loiTXFNo4p7qG
-f4PAPw4jFDdNWQG5+Vx+oLRCTW4fnDvw/js0lvYj4cqApmnozwGtcmsE2FoEUeaUrbXvYxTaMiCG
-Ho0BNZuwUZosGlsLgKzSP/k0lJHFqYx/O/I7CYINik7zjxKrcw4xkboZrD226Z4zjUF3Sa7SN0KQ
-sPkxbXjytndVyUigHcQHaYQtylQdc84yal81+5V/aq+VbOdY+yWwmdydxofrnZt65AQD9fCmhIhr
-8vvL63V0AkDmpwG5KyhDevEfCDgugPJVj+z+mA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9c5cc85a-3db5-483b-9e2d-68ed9b3f6b31"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ivKUdSz01HUgCXAx4U0HxEZ9+XPUQwNs6mQ5F+KbJnLZ/PskOQH6DFKBXiP7Q/iNBHBtrMDOUYlA
+mT242wGgVg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c2d0009a-35bd-4817-ba26-24a4d10646f0"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oRg2n/kq/f6KkEzkA2wDqmWTi1bfQ2qOAfhIx2y89rPfHNs4eZY5oe+ekZ/IICpnaPqX8CH0sQcZ
+C8LN1KzN2Q==</DigestValue></Reference></SignedInfo><SignatureValue>EVO0H+BtdSdFYINCDzR+PPsxu5RZwaAGCxIHGl6jIwksFIEWdizky6fzBiptdRVNUCpUhsj+/2zX
+b0cPpIaAX1mj+rn+q9NSyjozN40bLlAYqqgoOheIYZs7HvxQ5/2dtncs0Rfp+rkIU8H6JBhX5qUT
+sSF0WuDBddnokfCHwIC6eJh3PgeFYVzHf7T54GxgsRu7ogPloW0YcNz/qib4w+lGYV6mY46P7J26
+VnzFuSDaI0awMQ5StSA0XLCaRxjrwcxK0HkvSKF/p/0xeO4J47+7xXo6/RZ2h8VGpYWllrTbBD7B
+HNS4knbv2AS0daL4kgLpKnCFM2CCRYkDjoHwSQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1612,4 +1582,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d20c3623-09e0-44a4-92b0-6e81c680102f" Target="#_1d7fc0b0-d439-4b02-a736-937544504bf2"><Timestamp>2018-11-17 22:55:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c2d0009a-35bd-4817-ba26-24a4d10646f0" Target="#_9c5cc85a-3db5-483b-9e2d-68ed9b3f6b31"><Timestamp>2018-11-17 22:56:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
