@@ -1504,7 +1504,7 @@
       <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1519,7 +1519,6 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="200" name="ID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1541,12 +1540,11 @@
       </inputTrees>
       <outputTrees name="out1">
         <nodes expression="[row7.payload:/checkVatResponse/countryCode]" incomingConnections="//@node.8/@nodeData/@connections.0" name="VAT_countryCode" type="id_String" xpath="out1/VAT_countryCode"/>
-        <nodes expression=" [row7.payload:/checkVatResponse/vatNumber]" incomingConnections="//@node.8/@nodeData/@connections.1" name="VAT_vatNumber" type="id_String" xpath="out1/VAT_vatNumber"/>
+        <nodes expression=" [row7.payload:/checkVatResponse/vatNumber]" incomingConnections="//@node.8/@nodeData/@connections.1" key="true" name="VAT_vatNumber" type="id_String" xpath="out1/VAT_vatNumber"/>
         <nodes expression="[row7.payload:/checkVatResponse/requestDate]" incomingConnections="//@node.8/@nodeData/@connections.2" name="VAT_requestDate" type="id_String" xpath="out1/VAT_requestDate"/>
         <nodes expression="[row7.payload:/checkVatResponse/valid]" incomingConnections="//@node.8/@nodeData/@connections.3" name="VAT_valid" type="id_String" xpath="out1/VAT_valid"/>
         <nodes expression="[row7.payload:/checkVatResponse/name]" incomingConnections="//@node.8/@nodeData/@connections.4" name="VAT_name" type="id_String" xpath="out1/VAT_name"/>
         <nodes expression="[row7.payload:/checkVatResponse/address]" incomingConnections="//@node.8/@nodeData/@connections.5" name="VAT_address" type="id_String" xpath="out1/VAT_address"/>
-        <nodes expression="((String)globalMap.get(&quot;tESBConsumer_1_CORRELATION_ID&quot;))" name="ID" type="id_String" xpath="out1/ID"/>
         <nodes expression="TalendDate.getCurrentDate() " name="Loading_Date" type="id_Date" xpath="out1/Loading_Date"/>
         <nodes expression="[row7.payload:/checkVatResponse/countryCode]+' ' [row7.payload:/checkVatResponse/vatNumber] " incomingConnections="//@node.8/@nodeData/@connections.6 //@node.8/@nodeData/@connections.7" name="VAT_Complet" type="id_String" xpath="out1/VAT_Complet"/>
       </outputTrees>
@@ -1557,8 +1555,8 @@
       <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.3" target="//@node.8/@nodeData/@outputTrees.0/@nodes.3" xsi:type="TalendXMLMap:Connection"/>
       <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.4" target="//@node.8/@nodeData/@outputTrees.0/@nodes.4" xsi:type="TalendXMLMap:Connection"/>
       <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.5" target="//@node.8/@nodeData/@outputTrees.0/@nodes.5" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.0" target="//@node.8/@nodeData/@outputTrees.0/@nodes.8" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.1" target="//@node.8/@nodeData/@outputTrees.0/@nodes.8" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.0" target="//@node.8/@nodeData/@outputTrees.0/@nodes.7" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.8/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.1" target="//@node.8/@nodeData/@outputTrees.0/@nodes.7" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="96">
@@ -1624,11 +1622,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -1652,7 +1645,7 @@
       <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1667,7 +1660,6 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="200" name="ID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1678,7 +1670,7 @@
       <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="true" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1693,7 +1685,6 @@
       <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="200" name="ID" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1774,13 +1765,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f51c234b-5e8b-4e7f-acbf-455d09d5c1e2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SDyE6GCNL3DUadFGRFMhQb+qT+mHV8oPnAyNgzFawnfGwayqWFCkbbd7dmvcUG9VM0KDjw84oLoT
-kqs7UMxFRw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b21613ff-ba35-422c-9852-244b5f992b8d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+7vNxu+4c6Zd6FOOPrJM7DFDNtJrrJD73W76ncxxd9WlcR4/XYe5Gc9awtp68/HmRIsYHxeDi3hO
-RV3MRxPECw==</DigestValue></Reference></SignedInfo><SignatureValue>x80Gr4iuTihpg55y4NLjq9nSY+1GvT0Y4nmG3vOD11kPh7yahshq1p02P8bBm0saDpSauRG2mb0x
-HMG26pKjAYWtQifzfAYwWEG+uqIx1vd5kK9nwybTMDVoKAO+VRTpZaXg6D9V1WPyrmG0pw90oyhy
-BLPhU1UnlBzrc7cmzrEJr2zJKuKCh+/R5J2Oc8ZVua8BoTHvdBus7WWyZhE0oGw26AGyQvthZ9Lh
-LX5/x5J3H9FS3EPOW6Uv16Ub9Rumkbl2JIIOoTAmR7QRP5KF+wOrZIWza8B+pCpAWminsWflozPl
-yMUSyayWQNfpmY/FsVvJ8GxdFk+rmsOLTS3Z6A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_61510d68-04dd-4e4a-b609-eee9be13c049"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XLwSh9YschY1ro39NjTEZZ5j41hSTlSAUdhl8317teqNH224/dIfWij7bxvb7NLpYdCIhYHs7hZB
+jcX1WCA+dQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3aa1ce21-a841-40a6-8c5e-71015e64a462"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>r5rrbcg1MgME0ow+AtLex9ri59MnlwVbaFeWVMviURZFVNf0BGxha48uzv9MUFPvNFFy0wR4LXN1
+fySO5Yhgrg==</DigestValue></Reference></SignedInfo><SignatureValue>dZWTJ3Nc0TNOejYJdJ6EO4xhyMSf8M5bBvk7QwfUd1WBnaY82pARhzS7ShGPKvmnza6mYX0JMOpC
+W/P397trFhipGbN2rQdD5Tmk7OOfKdA5OR0oeU3un/8SXAhNRYajU0dl8CPfh3p7jKUPQfTq08pm
+OMQZBdNkfwqC2XQZNR2f//XdGzlw9sL3eIN9zjSHnRA6Zr0YrWPT0NB1IWc/pRnFKaIz+KleYeXI
+8YNcijdgUhn3p3csflC4Fp5OaFrryoBuylY1KtuuVsLh3qXqX7y7EXJ8R6VbyF7qnV1JpYYSsKzW
+0CeLFJVOVbHEC6uxJM30LjVavwocnziWZR/iIw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1804,4 +1795,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b21613ff-ba35-422c-9852-244b5f992b8d" Target="#_f51c234b-5e8b-4e7f-acbf-455d09d5c1e2"><Timestamp>2018-11-17 22:06:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3aa1ce21-a841-40a6-8c5e-71015e64a462" Target="#_61510d68-04dd-4e4a-b609-eee9be13c049"><Timestamp>2018-11-17 22:07:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
