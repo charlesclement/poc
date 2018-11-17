@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0">
+  <TalendMetadata:XmlFileConnection Encoding="UTF-8" XmlFilePath="D:/Volvo/06_Structure/VAT_out.xml" dataPackage="_T2VXkeqyEeisjp3QMvY80w" fileContent="3C636865636B566174526573706F6E736520786D6C6E733D2275726E3A65632E6575726F70612E65753A74617875643A766965733A73657276696365733A636865636B5661743A7479706573223E0D0A2020202020202020203C636F756E747279436F64653E42453C2F636F756E747279436F64653E0D0A2020202020202020203C7661744E756D6265723E303233343935383437333C2F7661744E756D6265723E0D0A2020202020202020203C72657175657374446174653E323031382D31312D31372B30313A30303C2F72657175657374446174653E0D0A2020202020202020203C76616C69643E66616C73653C2F76616C69643E0D0A2020202020202020203C6E616D653E2D2D2D3C2F6E616D653E0D0A2020202020202020203C616464726573733E2D2D2D3C2F616464726573733E0D0A3C2F636865636B566174526573706F6E73653E0D0A" inputModel="false" label="Copy_of_VAT_out" name="Copy_of_VAT_out" outputFilePath="" xmi:id="_zTHSAOqzEeisjp3QMvY80w">
+    <root Attribute="main" Order="1" RelatedColumn="" Type="id_String" XMLPath="/soap:Envelope" xmi:id="_pEuLYOqzEeisjp3QMvY80w"/>
+    <root Attribute="ns" DefaultValue="http://schemas.xmlsoap.org/soap/envelope/" Order="1" RelatedColumn="" Type="soap" XMLPath="soap" xmi:id="_pEuLYeqzEeisjp3QMvY80w"/>
+    <loop Attribute="main" Order="2" RelatedColumn="" Type="id_String" XMLPath="/soap:Envelope/soap:Body" xmi:id="_pEuLYuqzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="3" RelatedColumn="" Type="id_String" XMLPath="/soap:Envelope/soap:Body/checkVatResponse" xmi:id="_pEuLY-qzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="4" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEuLZOqzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="5" RelatedColumn="countryCode" Type="id_String" XMLPath="/soap:Envelope/soap:Body/checkVatResponse/countryCode" xmi:id="_pEvZgOqzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="6" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEvZgeqzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="7" RelatedColumn="vatNumber" Type="id_String" XMLPath="/soap:Envelope/soap:Body/checkVatResponse/vatNumber" xmi:id="_pEvZguqzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="8" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEvZg-qzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="9" RelatedColumn="requestDate" Type="id_Date" XMLPath="/soap:Envelope/soap:Body/checkVatResponse/requestDate" xmi:id="_pEvZhOqzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="10" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEvZheqzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="11" RelatedColumn="valid" Type="id_String" XMLPath="/soap:Envelope/soap:Body/checkVatResponse/valid" xmi:id="_pEvZhuqzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="12" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEvZh-qzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="13" RelatedColumn="name" Type="id_String" XMLPath="/soap:Envelope/soap:Body/checkVatResponse/name" xmi:id="_pEvZiOqzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="14" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEvZieqzEeisjp3QMvY80w"/>
+    <loop Attribute="branch" Order="15" RelatedColumn="address" Type="id_String" XMLPath="/soap:Envelope/soap:Body/checkVatResponse/address" xmi:id="_pEvZiuqzEeisjp3QMvY80w"/>
+    <loop Attribute="ns" DefaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" Order="16" RelatedColumn="" Type="" XMLPath="" xmi:id="_pEvZi-qzEeisjp3QMvY80w"/>
+  </TalendMetadata:XmlFileConnection>
+  <orgomg.cwm.resource.record:RecordFile dataManager="_zTHSAOqzEeisjp3QMvY80w" name="default" xmi:id="_T2VXkeqyEeisjp3QMvY80w">
+    <ownedElement id="_JOcy0OqyEeisjp3QMvY80w" label="metadata" xmi:id="_T2VXkuqyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataTable">
+      <feature label="countryCode" length="200" name="countryCode" pattern="&quot;dd-MM-yyyy&quot;" talendType="id_String" xmi:id="_T2VXk-qyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataColumn"/>
+      <feature label="vatNumber" length="200" name="vatNumber" pattern="&quot;dd-MM-yyyy&quot;" talendType="id_String" xmi:id="_T2VXlOqyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataColumn"/>
+      <feature label="requestDate" length="16" name="requestDate" pattern="&quot;dd-MM-yyyy&quot;" talendType="id_Date" xmi:id="_T2VXleqyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataColumn"/>
+      <feature label="valid" length="200" name="valid" pattern="&quot;dd-MM-yyyy&quot;" talendType="id_String" xmi:id="_T2VXluqyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataColumn"/>
+      <feature label="name" length="200" name="name" pattern="&quot;dd-MM-yyyy&quot;" talendType="id_String" xmi:id="_T2VXl-qyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataColumn"/>
+      <feature label="address" length="200" name="address" pattern="&quot;dd-MM-yyyy&quot;" talendType="id_String" xmi:id="_T2VXmOqyEeisjp3QMvY80w" xsi:type="TalendMetadata:MetadataColumn"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e1b78a57-e445-47c7-b887-90081f48d1e5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jdyI+UJ5nRbphI4xKRspCxS7+hsQ24EvredAE5N2Ar6VIBSqNcnUGa3Mq7YPmrBREHs5zX17S0L7
+XDjKw2nCIQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_920048a5-2097-422d-bdd6-863c9e02a856"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZuqJ8hGg2m4MNhM1gQnZaKbtax3cQHIqoylmgqBBQVK+7kcpAhTv1B9PNdg/hcqo8mGniYxrvso3
+G8anhOV6qg==</DigestValue></Reference></SignedInfo><SignatureValue>nru4xr998d6RxRcLY5g9oA+4SWIv4VQGUDXqVryE0x29eND0+TTlhQhQK2FOcBJfVpXOQw/ev642
+Apb9IMzTgM8yuhdspKIzCcMftkkz3I5wwx8QQ1GujXeQpE/P0cfcZwBLLyL+A303LJQ8i6oLnS7W
+6CdcT9ZVtsPPnAMhL7WvzWbnltqeW4HMW3+3t1zjpeAQe7/IR5g80wBmLVqLpXmIjTeoz8KYNNxn
+vwGQX8Ujhtpi/qoqyZMcbY6BvP8ZsLXWYcUHu9h/MyZwklHXNDNZyIy5zD1nEaB04bcgxK3Oeowv
+7wXiQ8WGaEZa9qK8TgkX9VVCpJhTl4u0n+hlXw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
+RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
+LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
+VQQIDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1ImRDEpMCcGA1UEAwwg
+RGVmYXVsdCBjb2RlLXNpZ25pbmcgY2VydGlmaWNhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQDiCz1II/o6hDUWu/ygxTCT2o/fYxVzPW23AoONQC/Vuiqh0COyLIgaMTjBPmQdTQFq
+rmM5tD64gi4TEQF+Z3iYt3daLdQUfaW9SzaMlY+XVNz5xnMBVDuiSHJSFE9lKnhgbKAHvOeoJo46
+UgWwb1za0WpRckDtjKcntwEK1orZCgrcIo1nDvFXyB5n0KfpLyktEOa0bSHde50MPbvQeB66XlEb
+lhjfs5S9WnAUja9RgqdwqZoI0ss+x/pjkQygDT8f17MktM21HOtg09lJlhMGJckhgD7jUF5tfYGM
+sv/O27g5CToFhxOnutDtsrDw7AkEQIml8KJp97bQLAFlLnh1AgMBAAGjge0wgeowHQYDVR0OBBYE
+FFzdy6ZfpUX8JwkM/SUrqkwLNqWAMB8GA1UdIwQYMBaAFOd9C3L8tYGZxoAr2SzsgnMytaj3MAsG
+A1UdDwQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAJBgNVHRMEAjAAMHsGCWCGSAGG+EIBDQRu
+FmxEZWZhdWx0IHRoaXJkIHBhcnR5IGNvZGUtc2lnbmluZyBjZXJ0aWZpY2F0ZS4gTm8gY29tbWl0
+bWVudCBpcyBtYWRlIG9uIHRoZSBjb250ZW50IHNpZ25lZCBieSB0aGUgdGhpcmQgcGFydHkwDQYJ
+KoZIhvcNAQELBQADggIBAKzYdnzoFgrRtDLSSzWtwuOrGo5+1RPoDHm/1dlbVnB7oZzUwfRGwZT5
+ser0V7OZyt9wWR8iQ2ka30fHWrNAosNtlIkF88s5YZw7OOIMxR+qYA99BnWLa79DZVIuukI2f5qJ
+Cr9nw6Oygo8CWeNMWhtXcvV4gqROhb2QMBrvWBw9QvNK1XMdtPShfWiXwyPzzRKgwqrN2meXtOY3
+S+MXu6u+RUD9EYeElp9M+9Yp+zRySl5/s+0sbvo7qz369dlsw8XhKXT+s4YQQe3Sx14Kg3SDFXKn
+QcVgycaZMOw4YUxOeP2hKOHnNuOMORfu3qlYkN/0RMGjn6r4PU4+yL276TiWI5b8J06y4leng2as
+r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
+EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
+BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
+6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_920048a5-2097-422d-bdd6-863c9e02a856" Target="#_e1b78a57-e445-47c7-b887-90081f48d1e5"><Timestamp>2018-11-17 21:57:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
