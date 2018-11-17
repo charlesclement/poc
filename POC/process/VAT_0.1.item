@@ -701,16 +701,7 @@
   <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFilterRow_1"/>
     <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="||"/>
-    <elementParameter field="TABLE" name="CONDITIONS">
-      <elementValue elementRef="INPUT_COLUMN" value="STG_VAT"/>
-      <elementValue elementRef="FUNCTION" value="$source == null? false : $source.matches($target) $operator true"/>
-      <elementValue elementRef="OPERATOR" value="=="/>
-      <elementValue elementRef="RVALUE" value="&quot;0456414001&quot;"/>
-      <elementValue elementRef="INPUT_COLUMN" value="Customer"/>
-      <elementValue elementRef="FUNCTION" value="$source == null? false : $source.matches($target) $operator true"/>
-      <elementValue elementRef="OPERATOR" value="=="/>
-      <elementValue elementRef="RVALUE" value="&quot;2126197170&quot;"/>
-    </elementParameter>
+    <elementParameter field="TABLE" name="CONDITIONS"/>
     <elementParameter field="CHECK" name="USE_ADVANCED" value="false"/>
     <elementParameter field="MEMO_JAVA" name="ADVANCED_COND" show="false" value="// code sample : use input_row to define the condition.&#10;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#10;// replace the following expression by your own filter condition &#10;input_row.columnName1.equals(input_row.columnName2)&#10;&#9;&#9;&#9;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -1622,6 +1613,63 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
+  <node componentName="tFileOutputXML" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputXML_1"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/Volvo/07_Rejet/vat.xml&quot;"/>
+    <elementParameter field="CHECK" name="INPUT_IS_DOCUMENT" value="false"/>
+    <elementParameter field="COLUMN_LIST" name="DOCUMENT_COL" show="false" value="faultCode"/>
+    <elementParameter field="TEXT" name="ROW_TAG" value="&quot;row&quot;"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="TABLE" name="ROOT_TAGS"/>
+    <elementParameter field="TABLE" name="MAPPING">
+      <elementValue elementRef="SCHEMA_COLUMN" value="faultCode"/>
+      <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
+      <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="faultString"/>
+      <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
+      <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="faultActor"/>
+      <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
+      <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="faultNode"/>
+      <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
+      <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="faultRole"/>
+      <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
+      <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="faultDetail"/>
+      <elementValue elementRef="AS_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN_NAME" value="true"/>
+      <elementValue elementRef="LABEL" value="&quot;label&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_GROUPING" value="false"/>
+    <elementParameter field="TABLE" name="GROUP_BY" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="1"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="TRIM" show="false" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputXML_1">
+      <column defaultValue="" key="false" length="1024" name="faultCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1024" name="faultString" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1024" name="faultActor" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1024" name="faultNode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="1024" name="faultRole" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="faultDetail" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Document" usefulColumn="true"/>
+    </metadata>
+  </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
@@ -1641,7 +1689,11 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
   </connection>
-  <connection connectorName="RESPONSE" label="sortie_vat1" lineStyle="0" metaname="RESPONSE" offsetLabelX="0" offsetLabelY="0" source="tESBConsumer_1" target="tXMLMap_2">
+  <connection connectorName="RESPONSE" label="sortie_vat1" lineStyle="0" metaname="RESPONSE" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tESBConsumer_1" target="tXMLMap_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
+  </connection>
+  <connection connectorName="FAULT" label="row3" lineStyle="0" metaname="FAULT" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tESBConsumer_1" target="tFileOutputXML_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
@@ -1659,13 +1711,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a8e1c480-9240-4c13-b0d2-00b6ccb8689f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OTE5VeCnZcG6I7zfK59AW8aic0+IVqlHl7PvX88fJ1o3xk7H06yhZKvWXJpFPAIIPjOniJO/T5cc
-WcxrtTECbQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e1dfe051-417e-4872-8d6f-04db46aa573a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1eY3f54/Mwz6qJ7UW9jKcPRRVSFeGnwqw1jL8mdDv37r6QDI1AKR4i8uLU1KEj/5GKZ/wUa/nt01
-Xda3KNrSXQ==</DigestValue></Reference></SignedInfo><SignatureValue>A6sEAUoIz+NQ3GYRae533+0vm/2mMWZzrxI0+ZuerC2MSRRvVSsRGqrylfiL2dbvZSwl/587O4OJ
-b54ecBGk6J9j/maLktezQmGx3ym/6uXHOS0b3sMuGdlG6zrLrIKCH9ILV9N/QcdnsXC9nc173BVK
-cEujJb+zLyLLz/zh5W7/o5vW/1WLvacwpuCzVTjEHwahmszi8pElILsZ4lkAsk51Wb4CJeG0IJjR
-TbIveYv2Ch00LKQKHJWeZupqssT7u9FY//NKTVYnP940mvN13z++CHVAF2C+oc6zLIrdkqcGHY80
-OuSEF4NpNYu+/rO8dchjHpVLMWfNgPzyqwiGgg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_384fa112-e021-4b37-aa74-a7cdedb45087"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0SybacOq59/3NKZW4+mC6PtxGrb7UURHGO+zjaL75sBDtRV9V9iuk+eLVM7DQ40VAsm5UlJgKqAg
+BGRVMd3ZaQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f60a82e7-1af4-494c-8bfb-f4f06e25dc52"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cZQ+k5TFqJiaPO/w1Y9ie17m8IZBhXgAPZi/a+ZjQOhhcHMyxBE6c1jVV3OZacl7tichnnfqQl5G
+trGkScnf2Q==</DigestValue></Reference></SignedInfo><SignatureValue>J+46Dc4Z6OOJQT8qpLFfESALby+z2EDYMz4whKOABOovogKgU+jfSm9HBjLDmedX7cREgl7Dz6bW
+qnic0uF0+XvzbHAawB+63SPvv+zZ1EJvyNcDkyHxbiMxUkvV3QLWLsuz1EWoAeg+F3fHzuvgKlzt
+mD3ht0AWxljaYz6BpLzNXkdDgDR7deyPHiMnFXJBVOidoy2Zb40UacF7XyezR3IduwkBH6fO29V2
+YvxiBBF6rtUP1oaqd3s6gcLq+qTAUArAN8eeGUnUCewXwCXvuqqcv6vDRxwnXrtzAIyZ7Dd/JGW5
+06dxs0wdPRT95HatTrDg6ohkZfjlQp5Sid6ywg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1689,4 +1741,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e1dfe051-417e-4872-8d6f-04db46aa573a" Target="#_a8e1c480-9240-4c13-b0d2-00b6ccb8689f"><Timestamp>2018-11-17 22:17:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f60a82e7-1af4-494c-8bfb-f4f06e25dc52" Target="#_384fa112-e021-4b37-aa74-a7cdedb45087"><Timestamp>2018-11-17 22:20:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
