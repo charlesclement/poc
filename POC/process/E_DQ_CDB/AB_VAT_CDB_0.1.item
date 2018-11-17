@@ -1051,7 +1051,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="160">
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="352" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
@@ -1133,7 +1133,34 @@
       <connections source="//@node.2/@nodeData/@inputTrees.0/@nodes.6" target="//@node.2/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
-  <node componentName="tWebService" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="224">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="448" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="countryCode"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="vatNumber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="Input" name="tLogRow_1">
+      <column comment="" key="false" length="0" name="countryCode" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="vatNumber" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tWebService" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWebService_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_gmIeMONPEeiPfJdv9puJpw"/>
@@ -1461,7 +1488,7 @@
       <column comment="" key="false" length="0" name="address" nullable="true" pattern="" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="544" posY="160">
+  <node componentName="tXMLMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="768" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tXMLMap_1"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="false"/>
@@ -1495,37 +1522,37 @@
     </metadata>
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row4">
-        <nodes name="countryCode" outgoingConnections="//@node.4/@nodeData/@connections.0 //@node.4/@nodeData/@connections.7" type="id_String" xpath="row4/countryCode"/>
-        <nodes name="vatNumber" outgoingConnections="//@node.4/@nodeData/@connections.1 //@node.4/@nodeData/@connections.6 //@node.4/@nodeData/@connections.8" type="id_String" xpath="row4/vatNumber"/>
-        <nodes name="requestDate" outgoingConnections="//@node.4/@nodeData/@connections.2" type="id_String" xpath="row4/requestDate"/>
-        <nodes name="valid" outgoingConnections="//@node.4/@nodeData/@connections.3" type="id_String" xpath="row4/valid"/>
-        <nodes name="name" outgoingConnections="//@node.4/@nodeData/@connections.4" type="id_String" xpath="row4/name"/>
-        <nodes name="address" outgoingConnections="//@node.4/@nodeData/@connections.5" type="id_String" xpath="row4/address"/>
+        <nodes name="countryCode" outgoingConnections="//@node.5/@nodeData/@connections.0 //@node.5/@nodeData/@connections.7" type="id_String" xpath="row4/countryCode"/>
+        <nodes name="vatNumber" outgoingConnections="//@node.5/@nodeData/@connections.1 //@node.5/@nodeData/@connections.6 //@node.5/@nodeData/@connections.8" type="id_String" xpath="row4/vatNumber"/>
+        <nodes name="requestDate" outgoingConnections="//@node.5/@nodeData/@connections.2" type="id_String" xpath="row4/requestDate"/>
+        <nodes name="valid" outgoingConnections="//@node.5/@nodeData/@connections.3" type="id_String" xpath="row4/valid"/>
+        <nodes name="name" outgoingConnections="//@node.5/@nodeData/@connections.4" type="id_String" xpath="row4/name"/>
+        <nodes name="address" outgoingConnections="//@node.5/@nodeData/@connections.5" type="id_String" xpath="row4/address"/>
       </inputTrees>
       <outputTrees name="out">
-        <nodes expression="row4.countryCode" incomingConnections="//@node.4/@nodeData/@connections.0" name="VAT_countryCode" type="id_String" xpath="out/VAT_countryCode"/>
-        <nodes expression="row4.vatNumber" incomingConnections="//@node.4/@nodeData/@connections.1" name="VAT_vatNumber" type="id_String" xpath="out/VAT_vatNumber"/>
-        <nodes expression="row4.requestDate" incomingConnections="//@node.4/@nodeData/@connections.2" name="VAT_requestDate" type="id_String" xpath="out/VAT_requestDate"/>
-        <nodes expression="row4.valid" incomingConnections="//@node.4/@nodeData/@connections.3" name="VAT_valid" type="id_String" xpath="out/VAT_valid"/>
-        <nodes expression="row4.name" incomingConnections="//@node.4/@nodeData/@connections.4" name="VAT_name" type="id_String" xpath="out/VAT_name"/>
-        <nodes expression="row4.address" incomingConnections="//@node.4/@nodeData/@connections.5" name="VAT_address" type="id_String" xpath="out/VAT_address"/>
-        <nodes expression="row4.vatNumber" incomingConnections="//@node.4/@nodeData/@connections.6" key="true" name="STG_VAT" pattern="" type="id_String" xpath="out/STG_VAT"/>
+        <nodes expression="row4.countryCode" incomingConnections="//@node.5/@nodeData/@connections.0" name="VAT_countryCode" type="id_String" xpath="out/VAT_countryCode"/>
+        <nodes expression="row4.vatNumber" incomingConnections="//@node.5/@nodeData/@connections.1" name="VAT_vatNumber" type="id_String" xpath="out/VAT_vatNumber"/>
+        <nodes expression="row4.requestDate" incomingConnections="//@node.5/@nodeData/@connections.2" name="VAT_requestDate" type="id_String" xpath="out/VAT_requestDate"/>
+        <nodes expression="row4.valid" incomingConnections="//@node.5/@nodeData/@connections.3" name="VAT_valid" type="id_String" xpath="out/VAT_valid"/>
+        <nodes expression="row4.name" incomingConnections="//@node.5/@nodeData/@connections.4" name="VAT_name" type="id_String" xpath="out/VAT_name"/>
+        <nodes expression="row4.address" incomingConnections="//@node.5/@nodeData/@connections.5" name="VAT_address" type="id_String" xpath="out/VAT_address"/>
+        <nodes expression="row4.vatNumber" incomingConnections="//@node.5/@nodeData/@connections.6" key="true" name="STG_VAT" pattern="" type="id_String" xpath="out/STG_VAT"/>
         <nodes expression="TalendDate.getCurrentDate() " name="Loading_Date" pattern="&quot;dd-MM-yyyy&quot;" type="id_Date" xpath="out/Loading_Date"/>
-        <nodes expression="row4.countryCode+' '+row4.vatNumber " incomingConnections="//@node.4/@nodeData/@connections.7 //@node.4/@nodeData/@connections.8" name="VAT_Complet" pattern="" type="id_String" xpath="out/VAT_Complet"/>
+        <nodes expression="row4.countryCode+' '+row4.vatNumber " incomingConnections="//@node.5/@nodeData/@connections.7 //@node.5/@nodeData/@connections.8" name="VAT_Complet" pattern="" type="id_String" xpath="out/VAT_Complet"/>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.0" target="//@node.4/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.1" target="//@node.4/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.2" target="//@node.4/@nodeData/@outputTrees.0/@nodes.2" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.3" target="//@node.4/@nodeData/@outputTrees.0/@nodes.3" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.4" target="//@node.4/@nodeData/@outputTrees.0/@nodes.4" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.5" target="//@node.4/@nodeData/@outputTrees.0/@nodes.5" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.1" target="//@node.4/@nodeData/@outputTrees.0/@nodes.6" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.0" target="//@node.4/@nodeData/@outputTrees.0/@nodes.8" xsi:type="TalendXMLMap:Connection"/>
-      <connections source="//@node.4/@nodeData/@inputTrees.0/@nodes.1" target="//@node.4/@nodeData/@outputTrees.0/@nodes.8" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.0" target="//@node.5/@nodeData/@outputTrees.0/@nodes.0" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.1" target="//@node.5/@nodeData/@outputTrees.0/@nodes.1" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.2" target="//@node.5/@nodeData/@outputTrees.0/@nodes.2" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.3" target="//@node.5/@nodeData/@outputTrees.0/@nodes.3" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.4" target="//@node.5/@nodeData/@outputTrees.0/@nodes.4" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.5" target="//@node.5/@nodeData/@outputTrees.0/@nodes.5" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.1" target="//@node.5/@nodeData/@outputTrees.0/@nodes.6" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.0" target="//@node.5/@nodeData/@outputTrees.0/@nodes.8" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.5/@nodeData/@inputTrees.0/@nodes.1" target="//@node.5/@nodeData/@outputTrees.0/@nodes.8" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="224">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
@@ -1697,9 +1724,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
-  <connection connectorName="FLOW" label="copyOfout" lineStyle="0" metaname="copyOfout" offsetLabelX="0" offsetLabelY="0" source="tXMLMap_2" target="tWebService_2">
+  <connection connectorName="FLOW" label="copyOfout" lineStyle="0" metaname="copyOfout" offsetLabelX="0" offsetLabelY="0" source="tXMLMap_2" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfout"/>
+  </connection>
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tWebService_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
   <connection connectorName="OUTPUT" label="row4" lineStyle="0" metaname="tWebService_2" offsetLabelX="0" offsetLabelY="0" source="tWebService_2" target="tXMLMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -1722,13 +1753,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b2f2c9f8-3590-4e94-8713-07ef0af6dead"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zJOfQ1EM59CnDT1FwTqrwQI9TZ12H72DpuxyCHTMKFCkDjoiCAqvFoX6dHmQgUKzsLNDHgPVyqcK
-gr4fFh/ptQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_254c7422-576c-4504-a642-f7ef8425e9a6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yZKbVHPVAz3K/l6QwN1uA606srC3/szLsfJYXXhtFyQeX0k2Re+FWslJCtuTl93zm9q4zbvDJuSD
-nGWMTNahWw==</DigestValue></Reference></SignedInfo><SignatureValue>umrWTqWA3NZ2YFuEJgW7v3gIg/Z3XtT1KAIVEoCJDBd53AAW+ZCVG4tlYLrI4yVzRSNmBZ1jjz8z
-Ot2VsugZqZQ+yiBKDGdtrqj1+4TpOixTdVwKbMv0/nAFAUgUUbXO63PTbd/y5pmEk/f5EdsEVZYy
-3KlTEElk8p2ZVgPpRAqm5opX/19eFaYF/AxPdpKDYgd7yrPsbNm8xsahZfauSyfhY6dUMY12Pu9M
-TNQkfsF6Q9YDBQcycmFzB1/KHZ6518FgLKtW/bs6Qjw1zMNEU6x252AX2LBzNRN8ENpE5uyAxG+Z
-QULwSKylRsZMiqoSLH7M3cLcTDu3IRgDKELzEw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_dcff0579-b446-4cec-9ea8-d4957f356afe"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>KnWr1vG6AyoI/fbQRDXr5xeZcXccqUIdp3RFliN1qvoOby/9X2A8vnoW8lyxkmPIAB8Y4pdGfHQp
+1IwhOTBuBw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_96b4f76a-af36-4c93-a5f9-2f34b72d73e6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>svyf3E/rLi2cjywvhBcPrntYl1a4hvSXU6sTgEdMMl1/NJFbh8i8jd4gKftUUyiA1I1JSLnvSNbz
+/2s0TCU19w==</DigestValue></Reference></SignedInfo><SignatureValue>hgsAq3bny9WBvQ/oO7sZp6p3W2Qv9WfFW6pmLvDKDHzEom7jFioQBvuQ3ZNhZ+i+8kVBMTqRX/Um
+i5ye4/qnMIpwv7HvFP3scv4hVihwlPo8KF6TifiC6QT4ET9uz2RtUd8AwVcrWiLgmlUxQLMYfH8k
+WWnvL2e9Lr7ZYjGmKNWSsJtOU/hKNo8MNuc7DOl+VWF6UPdKfI2LuypahDT1EcUTwKEp9tOE9zv9
+7B3ogRK7EldkbGC1JZ/d2OarKdqrSYymZM1xg/oOjgaTipObXDnSyC9mLuyv1t+toAfODPiVvLrH
+u69cbDR70wnb/H2EigMz85oXl8TETQxekGYvhQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1752,4 +1783,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_254c7422-576c-4504-a642-f7ef8425e9a6" Target="#_b2f2c9f8-3590-4e94-8713-07ef0af6dead"><Timestamp>2018-11-17 15:45:29</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_96b4f76a-af36-4c93-a5f9-2f34b72d73e6" Target="#_dcff0579-b446-4cec-9ea8-d4957f356afe"><Timestamp>2018-11-17 15:48:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
