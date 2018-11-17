@@ -1524,28 +1524,28 @@
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row7">
         <nodes expression="" name="payload" type="id_Document" xpath="row7/payload">
-          <children loop="true" main="true" name="soap:Envelope" type="id_String" xpath="row7.payload:/soap:Envelope">
-            <children defaultValue="http://schemas.xmlsoap.org/soap/envelope/" name="soap" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/xmlns:soap"/>
-            <children name="soap:Body" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body">
-              <children name="checkVatResponse" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse">
-                <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/xmlns:"/>
-                <children name="countryCode" outgoingConnections="//@node.8/@nodeData/@connections.0" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode/xmlns:"/>
+          <children main="true" name="soap:Envelope" type="id_String" xpath="row7.payload:/soap:Envelope">
+            <children defaultValue="http://schemas.xmlsoap.org/soap/envelope/" name="soap" nodeType="NAME_SPACE" type="soap" xpath="row7.payload:/soap:Envelope/xmlns:soap"/>
+            <children main="true" name="soap:Body" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body">
+              <children main="true" name="checkVatResponse" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse">
+                <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/xmlns:(default)"/>
+                <children name="countryCode" outgoingConnections="//@node.8/@nodeData/@connections.0" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode">
+                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/countryCode/xmlns:(default)"/>
                 </children>
-                <children name="vatNumber" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/vatNumber">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/vatNumber/xmlns:"/>
+                <children loop="true" main="true" name="vatNumber" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/vatNumber">
+                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/vatNumber/xmlns:(default)"/>
                 </children>
                 <children name="requestDate" pattern="&quot;dd-MM-yyyy&quot;" type="id_Date" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/requestDate">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/requestDate/xmlns:"/>
+                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/requestDate/xmlns:(default)"/>
                 </children>
-                <children name="valid" type="id_Boolean" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/valid">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/valid/xmlns:"/>
+                <children name="valid" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/valid">
+                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/valid/xmlns:(default)"/>
                 </children>
-                <children name="name" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/name">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/name/xmlns:"/>
+                <children name="name" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/name">
+                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/name/xmlns:(default)"/>
                 </children>
-                <children name="address" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/address">
-                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/address/xmlns:"/>
+                <children name="address" pattern="&quot;dd-MM-yyyy&quot;" type="id_String" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/address">
+                  <children defaultValue="urn:ec.europa.eu:taxud:vies:services:checkVat:types" name="(default)" nodeType="NAME_SPACE" type="" xpath="row7.payload:/soap:Envelope/soap:Body/checkVatResponse/address/xmlns:(default)"/>
                 </children>
               </children>
             </children>
@@ -1701,13 +1701,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_57eb2332-4da1-4f63-8088-78dac6b6e3f3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rcVl374YeDUd4khPBa9nKjE9Qd8xEDr79bsHYrEtTFVjlQpHRyIXYT1oXAoUSYfIx7w6/mNoZPim
-7MujNfHZ6g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d3b28d0c-cfa1-4cec-a639-0ecc14ae5ad4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+xi7nMcC66fVsBw+2riuGmAvgpMVnIQri4OYqZmksuUlGEBiXL2kg5zqMYQ6Aw/opPnKUngZZru3
-rbTsQt+Vwg==</DigestValue></Reference></SignedInfo><SignatureValue>fU52whANxRObDohEnfKWV3QMUy2hO8ek9eLEfx/RKoUtJm575qKW6D5lnl0Eh8qBzLtXEqwSIzn+
-cG0/gVPUndHXb7MleeiqgWDNXwECkZiKj2sm4XA5i+zyGNja9nCkhySJ8O8od5alH705jjNkm7f6
-XWM9O9lGPzsrxDZlDo253Bf9VDvVMPwQHSbYsX2CahujQ2pB+vohoekkBruG8MZT1fDdQKtxuY8k
-5+Sl3kxBGLkVCjSe9N3WfC769vfXRWKdnXVb2JkPEW5dvw6EJyDnx1L1N/qFvVlZxbqyEgvoYxsP
-GdnOQHSTwigs3mibAnG8Log87wj9Ild8tpnQlg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5006d0fc-b028-4458-b41c-bfd5c08b6b36"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TaEWufZctJhZmFiSUP2h7AgTqSYmKaSLgSvDz3oteXyFaqXes6kPQxkmOduDYiGxLANxtiMaCKZu
+9lVqGMFcMg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c44df52e-008e-4391-8eb5-95e46605aef6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3T+Nr0t5zBvKBhG6ceRZ+Ja45aIH2X4SEZ9+NDsu5AVTS+8S0TcEjts6lVOnjqWHeHIEY9hPhq8V
+RmcNrDkTwQ==</DigestValue></Reference></SignedInfo><SignatureValue>2wKgYMVnSOony21Yf/D+y+fTEb+6wcGYZPV05RLxeJstd+Fa6KY72HHf6AKCtBNlP5b+hhp+TR30
+xjWXE0XtTqiMAmcFnlHx6vmbmGR/PHnzdhactY0ZQzeT2EhuPleXVnfPim6QU9OYtqmPj6G177IO
+QSVqW+fuX5O7vjUmKmPrxS4snICYRJ5C3TV74D7DkwE9lkZh14rVxqzsLwtAO8diUR6wYTjMoOm1
+h+t32TabvRwrGlejQPIOCF242ZLEZR3ynqJxMc/CIpLmKwJ/1r/5cSrVIesNQhvLpic1PK9w69Hb
+jAqmuSFSppZQtgSex9smYdD1KAH9yt+7MC9QJg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1731,4 +1731,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d3b28d0c-cfa1-4cec-a639-0ecc14ae5ad4" Target="#_57eb2332-4da1-4f63-8088-78dac6b6e3f3"><Timestamp>2018-11-17 21:47:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c44df52e-008e-4391-8eb5-95e46605aef6" Target="#_5006d0fc-b028-4458-b41c-bfd5c08b6b36"><Timestamp>2018-11-17 21:50:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
