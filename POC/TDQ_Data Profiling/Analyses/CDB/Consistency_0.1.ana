@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_tCO5oOs-EeiqKvtEYp5pqg" name="Consistency" creationDate="2018-11-18T15:31:57.751+0100" defaultContext="Default">
+    <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_ngSPYN0ZEeinyYgpzgK3Rg"/>
     <taggedValue xmi:id="_tCO5oes-EeiqKvtEYp5pqg" tag="Status" value="development"/>
     <taggedValue xmi:id="_tCO5ous-EeiqKvtEYp5pqg" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_tCO5o-s-EeiqKvtEYp5pqg" tag="Purpose" value="consistent and correlative with different representations of the same information across multiple datasets"/>
@@ -10,9 +12,174 @@
     <taggedValue xmi:id="_vx2hkus-EeiqKvtEYp5pqg" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_vx3IoOs-EeiqKvtEYp5pqg" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
     <taggedValue xmi:id="_vx6zAOs-EeiqKvtEYp5pqg" tag="Is Use Sample Data" value="false"/>
-    <context xmi:id="_tCO5pus-EeiqKvtEYp5pqg"/>
+    <context xmi:id="_tCO5pus-EeiqKvtEYp5pqg">
+      <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiAt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiBt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiDt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiEt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiGt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiHt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiIt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiJt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiKt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiLt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiMt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiNt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiOt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiPt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiQt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiRt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiSt0SEeinyYgpzgK3Rg"/>
+    </context>
     <results xmi:id="_tCO5p-s-EeiqKvtEYp5pqg">
       <resultMetadata xmi:id="_tCO5qOs-EeiqKvtEYp5pqg"/>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTX1wOs_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTX1wes_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiAt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTYc0es_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTYc0us_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiBt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_bTYc1Os_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTYc1es_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTYc1us_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTYc1-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_bTYc2Os_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTYc2es_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfKgOs_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfKges_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfxkOs_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxkes_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiDt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxk-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxlOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiEt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfxlus_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxl-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxmOs_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxmes_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxm-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxnOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiGt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxnus_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxn-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiHt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxoes_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxous_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiIt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxpOs_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxpes_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiJt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxp-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxqOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiKt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxqus_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxq-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiLt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfxres_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxrus_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiMt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxr-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxsOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiMt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxsus_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxs-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiNt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfxtOs_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxtes_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiNt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxt-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxuOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiOt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxuus_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxu-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiPt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxves_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxvus_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiQt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfxv-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxwOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiQt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxwus_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxw-s_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiRt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_bTfxxes_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxxus_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiSt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_bTfxx-s_EeiqKvtEYp5pqg">
+        <parameters xmi:id="_bTfxyOs_EeiqKvtEYp5pqg"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiSt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_bTfxyes_EeiqKvtEYp5pqg" name="Phone Number">
+        <parameters xmi:id="_bTfxyus_EeiqKvtEYp5pqg">
+          <dataValidDomain xmi:id="_bTfxy-s_EeiqKvtEYp5pqg">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_S7m6oIyhEd6Dle_8xC0lwg"/>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiSt0SEeinyYgpzgK3Rg"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+      </indicators>
     </results>
     <parameters xmi:id="_tCO5qes-EeiqKvtEYp5pqg" dataFilter="_vx6zAes-EeiqKvtEYp5pqg" analysisType="Multiple Column Analysis"/>
     <contextType xmi:id="_vx2hkOs-EeiqKvtEYp5pqg" confirmationNeeded="false" name="Default"/>

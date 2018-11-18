@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:orgomg.cwm.objectmodel.core="http:///orgomg/cwm/objectmodel/core.ecore">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:orgomg.cwm.objectmodel.core="http:///orgomg/cwm/objectmodel/core.ecore">
   <dataquality.domain.pattern:Pattern xmi:id="_S7m6oIyhEd6Dle_8xC0lwg" name="Phone Number" supplierDependency="_ngSPYN0ZEeinyYgpzgK3Rg">
     <taggedValue xmi:id="_S7m6oYyhEd6Dle_8xC0lwg" tag="Author" value="Tim N Tousley"/>
     <taggedValue xmi:id="_S7m6ooyhEd6Dle_8xC0lwg" tag="Description" value="Very flexible phone number entry. -- There are many valid ways to enter a phone number, and often there is other data that a restrictive Regex pattern will not abide. -- This pattern accepts any number of letters, commas, pound signs, slashes, spaces, periods, parenthesis, hyphens, plus signs, and asterisks... but amongst it scans for a minimum of 7 digits (modify {7} to adjust the minimum number of required digits (i.e. 10 for area code + phone number, 18 for long international numbers). -- This pattern does not attempt to restrict the entered phone number format in any way, but instead just verfies that enough digits for one was entered. -- Data in excess of the 7 required digits is allowed. -- I've posted another submission that forces compliance for US phone numbers."/>
@@ -10,5 +10,7 @@
       <expression xmi:id="_S7m6p4yhEd6Dle_8xC0lwg" body="'^([a-zA-Z,#/ \.\(\)\-\+\*]*[0-9]){7}[0-9a-zA-Z,#/ \.\(\)\-\+\*]*$'" language="SQL"/>
     </components>
   </dataquality.domain.pattern:Pattern>
-  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_ngSPYN0ZEeinyYgpzgK3Rg" kind="Usage" supplier="_S7m6oIyhEd6Dle_8xC0lwg"/>
+  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_ngSPYN0ZEeinyYgpzgK3Rg" kind="Usage" supplier="_S7m6oIyhEd6Dle_8xC0lwg">
+    <client xsi:type="dataquality.analysis:Analysis" href="../../../../TDQ_Data Profiling/Analyses/CDB/Consistency_0.1.ana#_tCO5oOs-EeiqKvtEYp5pqg"/>
+  </orgomg.cwm.objectmodel.core:Dependency>
 </xmi:XMI>
