@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataquality.rules:MatchRuleDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.rules="http://dataquality.rules" xmi:id="_cDHzUOshEeiqKvtEYp5pqg" name="pivot">
+  <taggedValue xmi:id="_cDHzUeshEeiqKvtEYp5pqg" tag="Status" value="development"/>
+  <taggedValue xmi:id="_cDHzUushEeiqKvtEYp5pqg" tag="Author" value="charlesclement@eval11351.talend.com"/>
+  <taggedValue xmi:id="_cDHzU-shEeiqKvtEYp5pqg" tag="Purpose"/>
+  <taggedValue xmi:id="_cDHzVOshEeiqKvtEYp5pqg" tag="Description"/>
+  <taggedValue xmi:id="_cDHzVeshEeiqKvtEYp5pqg" tag="Version" value="0.1"/>
+  <taggedValue xmi:id="_cDHzVushEeiqKvtEYp5pqg" tag="Validation_Status" value="true"/>
+  <blockKeys xmi:id="_cDIaYOshEeiqKvtEYp5pqg" name="Common_Name" column="CommonName">
+    <preAlgorithm xmi:id="_cDIaYeshEeiqKvtEYp5pqg" algorithmType="removeDiacriticalMarks" algorithmParameters=""/>
+    <algorithm xmi:id="_cDIaYushEeiqKvtEYp5pqg" algorithmType="first_N_Char" algorithmParameters="1"/>
+    <postAlgorithm xmi:id="_cDIaY-shEeiqKvtEYp5pqg" algorithmType="NON_ALGO" algorithmParameters=""/>
+  </blockKeys>
+  <blockKeys xmi:id="_cDIaZOshEeiqKvtEYp5pqg" name="Legal_Name" column="LegalName">
+    <preAlgorithm xmi:id="_cDIaZeshEeiqKvtEYp5pqg" algorithmType="removeDiacriticalMarks" algorithmParameters=""/>
+    <algorithm xmi:id="_cDIaZushEeiqKvtEYp5pqg" algorithmType="first_N_Char" algorithmParameters="1"/>
+    <postAlgorithm xmi:id="_cDIaZ-shEeiqKvtEYp5pqg" algorithmType="NON_ALGO" algorithmParameters=""/>
+  </blockKeys>
+  <matchRules xmi:id="_cDIaaOshEeiqKvtEYp5pqg" name="Règle de rapprochement 1">
+    <matchKeys xmi:id="_cDIaaeshEeiqKvtEYp5pqg" name="legalname" column="LegalName" confidenceWeight="1" handleNull="nullMatchNull" threshold="1.0" tokenizationType="No">
+      <algorithm xmi:id="_cDIaaushEeiqKvtEYp5pqg" algorithmType="LEVENSHTEIN" algorithmParameters=""/>
+    </matchKeys>
+    <matchKeys xmi:id="_cDIaa-shEeiqKvtEYp5pqg" name="commonname" column="CommonName" confidenceWeight="1" handleNull="nullMatchNull" threshold="1.0" tokenizationType="No">
+      <algorithm xmi:id="_cDIabOshEeiqKvtEYp5pqg" algorithmType="LEVENSHTEIN" algorithmParameters=""/>
+    </matchKeys>
+  </matchRules>
+  <appliedBlockKeys xmi:id="_cDIabeshEeiqKvtEYp5pqg" name="BLOCK_KEY" column="BLOCK_KEY"/>
+  <survivorshipKeys xmi:id="_cDIabushEeiqKvtEYp5pqg" name="legalname" column="LegalName" allowManualResolution="true">
+    <function xmi:id="_cDIab-shEeiqKvtEYp5pqg" algorithmType="Concatenate" algorithmParameters=","/>
+  </survivorshipKeys>
+  <survivorshipKeys xmi:id="_cDIacOshEeiqKvtEYp5pqg" name="commonname" column="CommonName" allowManualResolution="true">
+    <function xmi:id="_cDIaceshEeiqKvtEYp5pqg" algorithmType="Concatenate" algorithmParameters=","/>
+  </survivorshipKeys>
+  <survivorshipKeys xmi:id="_cDIacushEeiqKvtEYp5pqg" name="VAT" column="VAT" allowManualResolution="true">
+    <function xmi:id="_cDIac-shEeiqKvtEYp5pqg" algorithmType="Concatenate" algorithmParameters=","/>
+  </survivorshipKeys>
+</dataquality.rules:MatchRuleDefinition>
