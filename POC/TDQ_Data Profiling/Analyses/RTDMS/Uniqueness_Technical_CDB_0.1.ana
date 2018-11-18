@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_vGpEketCEeiqKvtEYp5pqg" name="Uniqueness_Technical_CDB" creationDate="2018-11-18T15:58:22.232+0100" defaultContext="Default">
+    <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+    <taggedValue xmi:id="_vGpEkutCEeiqKvtEYp5pqg" tag="Status" value="development"/>
+    <taggedValue xmi:id="_vGpEk-tCEeiqKvtEYp5pqg" tag="Author" value="charlesclement@eval11351.talend.com"/>
+    <taggedValue xmi:id="_vGpElOtCEeiqKvtEYp5pqg" tag="Purpose" value="Are any individual pieces of data from the dataset recorded more than once technically"/>
+    <taggedValue xmi:id="_vGpEletCEeiqKvtEYp5pqg" tag="Description" value="Are any individual pieces of data from the dataset recorded more than once technically"/>
+    <taggedValue xmi:id="_vGpElutCEeiqKvtEYp5pqg" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_vGpEl-tCEeiqKvtEYp5pqg" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_vGpEmOtCEeiqKvtEYp5pqg" tag="PREVIEW_ROW_NUMBER" value="50"/>
+    <taggedValue xmi:id="_vGpEmetCEeiqKvtEYp5pqg" tag="Is Use Sample Data" value="false"/>
+    <taggedValue xmi:id="_vGpEmutCEeiqKvtEYp5pqg" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <context xmi:id="_vGproOtCEeiqKvtEYp5pqg">
+      <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiDt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiJt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiKt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiLt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiMt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiNt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiOt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiPt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiQt0SEeinyYgpzgK3Rg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiSt0SEeinyYgpzgK3Rg"/>
+    </context>
+    <results xmi:id="_vGproetCEeiqKvtEYp5pqg">
+      <resultMetadata xmi:id="_vGproutCEeiqKvtEYp5pqg" executionDate="2018-11-18T16:00:10.648+0100" executionDuration="52" message="" executionNumber="3" lastRunOk="true" lastExecutionNumberOk="3"/>
+      <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_vGpro-tCEeiqKvtEYp5pqg" count="962" computed="true" listRows="ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A6578700000000077040000000078" uniqueCount="962" distinctCount="962">
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Multiple_Column_Simple_Statistics_0.1.definition#_JoeMkM-jEd6qN5aKpPNGTg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_vGprpOtCEeiqKvtEYp5pqg" body="SELECT `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone`,COUNT(*) FROM `volvo`.`ods_rtdms`  GROUP BY `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone`" language="SQL"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiCt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiDt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiFt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiJt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiKt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiLt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiMt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiNt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiOt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiPt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiQt0SEeinyYgpzgK3Rg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_pXhiSt0SEeinyYgpzgK3Rg"/>
+        <rowCountIndicator xmi:id="_vGprpetCEeiqKvtEYp5pqg" count="962" computed="true">
+          <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_vGprputCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM `volvo`.`ods_rtdms` " language="SQL"/>
+          <builtInIndicatorDefinition xmi:id="_vGprp-tCEeiqKvtEYp5pqg" name="Row Count" label="Row Count">
+            <taggedValue xmi:id="_vGprqOtCEeiqKvtEYp5pqg" tag="Description" value="counts the number of rows"/>
+            <taggedValue xmi:id="_vGprqetCEeiqKvtEYp5pqg" tag="Purpose" value="evaluates the number of records"/>
+            <sqlGenericExpression xmi:id="_vGprqutCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+          </builtInIndicatorDefinition>
+        </rowCountIndicator>
+        <uniqueCountIndicator xmi:id="_vGprq-tCEeiqKvtEYp5pqg" count="962" computed="true" uniqueValueCount="962">
+          <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_vGprrOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone`, COUNT(*) mycount FROM `volvo`.`ods_rtdms`  GROUP BY `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone` HAVING mycount = 1) AS myquery" language="MySQL"/>
+          <builtInIndicatorDefinition xmi:id="_vGprretCEeiqKvtEYp5pqg" name="Unique Count" label="Unique Count">
+            <taggedValue xmi:id="_vGprrutCEeiqKvtEYp5pqg" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
+            <taggedValue xmi:id="_vGprr-tCEeiqKvtEYp5pqg" tag="Purpose" value="evaluates the number of unique records"/>
+            <sqlGenericExpression xmi:id="_vGprsOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="SQL"/>
+            <sqlGenericExpression xmi:id="_vGprsetCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount = 1) AS myquery" language="MySQL"/>
+            <sqlGenericExpression xmi:id="_vGprsutCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) myquery" language="Oracle"/>
+            <sqlGenericExpression xmi:id="_vGprs-tCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount = 1) AS myquery" language="Teradata"/>
+            <sqlGenericExpression xmi:id="_vGprtOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="Microsoft SQL Server"/>
+            <sqlGenericExpression xmi:id="_vGprtetCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1) AS myquery" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+            <sqlGenericExpression xmi:id="_vGprtutCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
+          </builtInIndicatorDefinition>
+        </uniqueCountIndicator>
+        <distinctCountIndicator xmi:id="_vGprt-tCEeiqKvtEYp5pqg" count="962" computed="true" distinctValueCount="962">
+          <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_vGpruOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT DISTINCT `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone` FROM `volvo`.`ods_rtdms` ) A" language="SQL"/>
+          <builtInIndicatorDefinition xmi:id="_vGpruetCEeiqKvtEYp5pqg" name="Distinct Count" label="Distinct Count">
+            <taggedValue xmi:id="_vGpruutCEeiqKvtEYp5pqg" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
+            <taggedValue xmi:id="_vGpru-tCEeiqKvtEYp5pqg" tag="Purpose" value="evaluates the number of distinct records"/>
+            <sqlGenericExpression xmi:id="_vGprvOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
+          </builtInIndicatorDefinition>
+        </distinctCountIndicator>
+        <duplicateCountIndicator xmi:id="_vGprvetCEeiqKvtEYp5pqg" count="962" computed="true" duplicateValueCount="0">
+          <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_vGprvutCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone`, COUNT(*) mycount FROM `volvo`.`ods_rtdms`  m  GROUP BY `CommonName`,`LegalName`,`VAT`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`Phone` HAVING mycount > 1) AS myquery" language="MySQL"/>
+          <builtInIndicatorDefinition xmi:id="_vGprv-tCEeiqKvtEYp5pqg" name="Duplicate Count" label="Duplicate Count">
+            <taggedValue xmi:id="_vGprwOtCEeiqKvtEYp5pqg" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
+            <taggedValue xmi:id="_vGprwetCEeiqKvtEYp5pqg" tag="Purpose" value="evaluates the number of duplicated records"/>
+            <sqlGenericExpression xmi:id="_vGprwutCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) AS myquery" language="SQL"/>
+            <sqlGenericExpression xmi:id="_vGprw-tCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount > 1) AS myquery" language="MySQL"/>
+            <sqlGenericExpression xmi:id="_vGprxOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Oracle"/>
+            <sqlGenericExpression xmi:id="_vGprxetCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING mycount > 1) AS myquery" language="Teradata"/>
+            <sqlGenericExpression xmi:id="_vGprxutCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Microsoft SQL Server"/>
+            <sqlGenericExpression xmi:id="_vGprx-tCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) mycount FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) AS myquery" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+            <sqlGenericExpression xmi:id="_vGpryOtCEeiqKvtEYp5pqg" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
+          </builtInIndicatorDefinition>
+        </duplicateCountIndicator>
+      </indicators>
+    </results>
+    <parameters xmi:id="_vGpryetCEeiqKvtEYp5pqg" dataFilter="_vGpry-tCEeiqKvtEYp5pqg" analysisType="Column Set Analysis"/>
+    <contextType xmi:id="_vGpryutCEeiqKvtEYp5pqg" confirmationNeeded="false" name="Default"/>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_vGpry-tCEeiqKvtEYp5pqg" name="Analysis Data Filter">
+    <ranges xmi:id="_vGprzOtCEeiqKvtEYp5pqg">
+      <expressions xmi:id="_vGprzetCEeiqKvtEYp5pqg">
+        <expression xsi:type="relational:TdExpression" xmi:id="_vGprzutCEeiqKvtEYp5pqg" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
