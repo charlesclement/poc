@@ -3,6 +3,7 @@
   <dataquality.analysis:Analysis xmi:id="_2sHpcO0JEeidmJUNeAS2Pw" name="Accuracy" creationDate="2018-11-20T22:18:41.541+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_NZs0oO0KEeidmJUNeAS2Pw"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_sKdWoO0LEeidmJUNeAS2Pw"/>
     <taggedValue xmi:id="_2sHpce0JEeidmJUNeAS2Pw" tag="Status" value="development"/>
     <taggedValue xmi:id="_2sHpcu0JEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_2sHpc-0JEeidmJUNeAS2Pw" tag="Purpose" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it ?"/>
@@ -16,8 +17,6 @@
       <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xEuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xGuywEeiof8jSeXJ-ng"/>
@@ -46,6 +45,15 @@
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_sJKWIO0LEeidmJUNeAS2Pw" name="OwnerRU_code_Volvo">
+        <parameters xmi:id="_sJKWIe0LEeidmJUNeAS2Pw">
+          <dataValidDomain xmi:id="_sJKWIu0LEeidmJUNeAS2Pw">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_SZV-cO0KEeidmJUNeAS2Pw"/>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
       </indicators>
     </results>
