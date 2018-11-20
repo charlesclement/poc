@@ -37,7 +37,7 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xVuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_vGproetCEeiqKvtEYp5pqg">
-      <resultMetadata xmi:id="_vGproutCEeiqKvtEYp5pqg" executionDate="2018-11-20T18:29:45.812+0100" executionDuration="2850" message="" executionNumber="8" lastRunOk="true" lastExecutionNumberOk="8"/>
+      <resultMetadata xmi:id="_vGproutCEeiqKvtEYp5pqg" executionDate="2018-11-20T23:05:56.162+0100" executionDuration="4086" message="" executionNumber="9" lastRunOk="true" lastExecutionNumberOk="9"/>
       <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_vGpro-tCEeiqKvtEYp5pqg" count="88017" computed="true" listRows="ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A6578700000000077040000000078" uniqueCount="88017" distinctCount="88017">
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Multiple_Column_Simple_Statistics_0.1.definition#_JoeMkM-jEd6qN5aKpPNGTg"/>
         <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_vGprpOtCEeiqKvtEYp5pqg" body="SELECT `Customer`,`OwnerRU`,`CommonName`,`LegalName`,`OrganisationNo`,`VAT`,`ChamberOfCom`,`Parma`,`SICCode`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`SalesChannel`,`Phone`,`ID`,`Loading_Date`,`Source`,COUNT(*) FROM `volvo`.`ods_pivot`  WHERE source='CDB' GROUP BY `Customer`,`OwnerRU`,`CommonName`,`LegalName`,`OrganisationNo`,`VAT`,`ChamberOfCom`,`Parma`,`SICCode`,`AdressLine1`,`sAddrLine2`,`sAddrLine3`,`sPostalCode`,`sCity`,`sStateProvince`,`Country`,`CountryCode`,`SalesChannel`,`Phone`,`ID`,`Loading_Date`,`Source`" language="SQL"/>
@@ -121,6 +121,9 @@
       <contextParameter xmi:id="_ol_p0-zpEeim48sZh7XtIw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='RTDMS'"/>
     </contextType>
   </dataquality.analysis:Analysis>
+  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_SY-jUO0QEeidmJUNeAS2Pw" kind="Usage" supplier="_vGpEketCEeiqKvtEYp5pqg">
+    <client xsi:type="dataquality.reports:TdReport" href="../../Reports/Volvo/AA_Before_CDB_0.1.rep#_KK9ZAO0QEeidmJUNeAS2Pw"/>
+  </orgomg.cwm.objectmodel.core:Dependency>
   <dataquality.domain:Domain xmi:id="_vGpry-tCEeiqKvtEYp5pqg" name="Uniqueness_Technical">
     <ranges xmi:id="_vGprzOtCEeiqKvtEYp5pqg">
       <expressions xmi:id="_vGprzetCEeiqKvtEYp5pqg">
@@ -128,7 +131,4 @@
       </expressions>
     </ranges>
   </dataquality.domain:Domain>
-  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_SY-jUO0QEeidmJUNeAS2Pw" kind="Usage" supplier="_vGpEketCEeiqKvtEYp5pqg">
-    <client xsi:type="dataquality.reports:TdReport" href="../../Reports/Volvo/AA_Before_CDB_0.1.rep#_KK9ZAO0QEeidmJUNeAS2Pw"/>
-  </orgomg.cwm.objectmodel.core:Dependency>
 </xmi:XMI>
