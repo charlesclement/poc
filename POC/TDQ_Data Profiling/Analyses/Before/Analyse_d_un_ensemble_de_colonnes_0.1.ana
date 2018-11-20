@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <dataquality.analysis:Analysis xmi:id="_QUjhsN9gEeid7v2-FZr9SQ" name="Analyse d'un ensemble de colonnes" creationDate="2018-11-03T13:01:53.993+0100" defaultContext="Default">
+  <dataquality.analysis:Analysis xmi:id="_QUjhsN9gEeid7v2-FZr9SQ" name="Analyse d'un ensemble de colonnes" creationDate="2018-11-03T13:01:53.993+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
     <taggedValue xmi:id="_QUjhsd9gEeid7v2-FZr9SQ" tag="Status" value="development"/>
     <taggedValue xmi:id="_QUjhst9gEeid7v2-FZr9SQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_QUjhs99gEeid7v2-FZr9SQ" tag="Purpose" value=""/>
     <taggedValue xmi:id="_QUjhtN9gEeid7v2-FZr9SQ" tag="Description" value=""/>
     <taggedValue xmi:id="_QUjhtd9gEeid7v2-FZr9SQ" tag="Version" value="0.1"/>
-    <taggedValue xmi:id="_QfuP4d9gEeid7v2-FZr9SQ" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_QfuP4d9gEeid7v2-FZr9SQ" tag="ANA_LAST_RUN_CONTEXT" value="CDB"/>
     <taggedValue xmi:id="_QfuP4t9gEeid7v2-FZr9SQ" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_QfveAN9gEeid7v2-FZr9SQ" tag="Is Use Sample Data" value="false"/>
     <taggedValue xmi:id="_QfveAd9gEeid7v2-FZr9SQ" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
@@ -74,12 +74,17 @@
       </indicators>
     </results>
     <parameters xmi:id="_QUjhvt9gEeid7v2-FZr9SQ" dataFilter="_QfwFEN9gEeid7v2-FZr9SQ" analysisType="Column Set Analysis"/>
-    <contextType xmi:id="_QfuP4N9gEeid7v2-FZr9SQ" confirmationNeeded="false" name="Default"/>
+    <contextType xmi:id="_8KyUkOzoEeim48sZh7XtIw" confirmationNeeded="false" name="CDB">
+      <contextParameter xmi:id="_8KyUkezoEeim48sZh7XtIw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;source='CDB'&quot;"/>
+    </contextType>
+    <contextType xmi:id="_8KyUkuzoEeim48sZh7XtIw" confirmationNeeded="false" name="RTDMS">
+      <contextParameter xmi:id="_8KyUk-zoEeim48sZh7XtIw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;source='RTDMS'&quot;"/>
+    </contextType>
   </dataquality.analysis:Analysis>
   <dataquality.domain:Domain xmi:id="_QfwFEN9gEeid7v2-FZr9SQ" name="Analyse d'un ensemble de colonnes">
     <ranges xmi:id="_QfwFEd9gEeid7v2-FZr9SQ">
       <expressions xmi:id="_QfwFEt9gEeid7v2-FZr9SQ">
-        <expression xsi:type="relational:TdExpression" xmi:id="_QfwFE99gEeid7v2-FZr9SQ" body="" language="SQL"/>
+        <expression xsi:type="relational:TdExpression" xmi:id="_QfwFE99gEeid7v2-FZr9SQ" body="context.Source" language="SQL"/>
       </expressions>
     </ranges>
   </dataquality.domain:Domain>
