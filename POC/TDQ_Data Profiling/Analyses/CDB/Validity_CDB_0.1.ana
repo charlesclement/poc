@@ -430,16 +430,16 @@
     </results>
     <parameters xmi:id="_tCO5qes-EeiqKvtEYp5pqg" dataFilter="_vx6zAes-EeiqKvtEYp5pqg" analysisType="Multiple Column Analysis"/>
     <contextType xmi:id="_E_548OzaEeiof8jSeXJ-ng" confirmationNeeded="false" name="CDB">
-      <contextParameter xmi:id="_E_548ezaEeiof8jSeXJ-ng" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;CDB&quot;"/>
+      <contextParameter xmi:id="_E_548ezaEeiof8jSeXJ-ng" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;source='CDB'&quot;"/>
     </contextType>
     <contextType xmi:id="_E_548uzaEeiof8jSeXJ-ng" confirmationNeeded="false" name="RTDMS">
-      <contextParameter xmi:id="_E_548-zaEeiof8jSeXJ-ng" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;RTDMS&quot;"/>
+      <contextParameter xmi:id="_E_548-zaEeiof8jSeXJ-ng" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;source='RTDMS'&quot;"/>
     </contextType>
   </dataquality.analysis:Analysis>
   <dataquality.domain:Domain xmi:id="_vx6zAes-EeiqKvtEYp5pqg" name="Validity_CDB">
     <ranges xmi:id="_vx6zAus-EeiqKvtEYp5pqg">
       <expressions xmi:id="_vx6zA-s-EeiqKvtEYp5pqg">
-        <expression xsi:type="relational:TdExpression" xmi:id="_vx6zBOs-EeiqKvtEYp5pqg" body="source=&quot;CDB&quot;" language="SQL"/>
+        <expression xsi:type="relational:TdExpression" xmi:id="_vx6zBOs-EeiqKvtEYp5pqg" body="context.Source" language="SQL"/>
       </expressions>
     </ranges>
   </dataquality.domain:Domain>
