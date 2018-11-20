@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <dataquality.analysis:Analysis xmi:id="_tCO5oOs-EeiqKvtEYp5pqg" name="Validity_CDB" creationDate="2018-11-18T15:31:57.751+0100" defaultContext="Default">
+  <dataquality.analysis:Analysis xmi:id="_tCO5oOs-EeiqKvtEYp5pqg" name="Validity_CDB" creationDate="2018-11-18T15:31:57.751+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_ngSPYN0ZEeinyYgpzgK3Rg"/>
     <taggedValue xmi:id="_tCO5oes-EeiqKvtEYp5pqg" tag="Status" value="development"/>
@@ -8,7 +8,7 @@
     <taggedValue xmi:id="_tCO5o-s-EeiqKvtEYp5pqg" tag="Purpose" value="Is the data presented in the correct and pre-defined format, type or range so as to be applicable to the given analytical task."/>
     <taggedValue xmi:id="_tCO5pOs-EeiqKvtEYp5pqg" tag="Description" value="Is the data presented in the correct and pre-defined format, type or range so as to be applicable to the given analytical task.&#xD;&#xA;"/>
     <taggedValue xmi:id="_tCO5pes-EeiqKvtEYp5pqg" tag="Version" value="0.1"/>
-    <taggedValue xmi:id="_vx2hkes-EeiqKvtEYp5pqg" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_vx2hkes-EeiqKvtEYp5pqg" tag="ANA_LAST_RUN_CONTEXT" value="CDB"/>
     <taggedValue xmi:id="_vx2hkus-EeiqKvtEYp5pqg" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_vx3IoOs-EeiqKvtEYp5pqg" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
     <taggedValue xmi:id="_vx6zAOs-EeiqKvtEYp5pqg" tag="Is Use Sample Data" value="false"/>
@@ -430,7 +430,12 @@
       </indicators>
     </results>
     <parameters xmi:id="_tCO5qes-EeiqKvtEYp5pqg" dataFilter="_vx6zAes-EeiqKvtEYp5pqg" analysisType="Multiple Column Analysis"/>
-    <contextType xmi:id="_vx2hkOs-EeiqKvtEYp5pqg" confirmationNeeded="false" name="Default"/>
+    <contextType xmi:id="_E_548OzaEeiof8jSeXJ-ng" confirmationNeeded="false" name="CDB">
+      <contextParameter xmi:id="_E_548ezaEeiof8jSeXJ-ng" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;CDB&quot;"/>
+    </contextType>
+    <contextType xmi:id="_E_548uzaEeiof8jSeXJ-ng" confirmationNeeded="false" name="RTDMS">
+      <contextParameter xmi:id="_E_548-zaEeiof8jSeXJ-ng" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="&quot;RTDMS&quot;"/>
+    </contextType>
   </dataquality.analysis:Analysis>
   <dataquality.domain:Domain xmi:id="_vx6zAes-EeiqKvtEYp5pqg" name="Validity_CDB">
     <ranges xmi:id="_vx6zAus-EeiqKvtEYp5pqg">
