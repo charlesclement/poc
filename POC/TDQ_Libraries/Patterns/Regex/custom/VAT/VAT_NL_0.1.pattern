@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.domain.pattern:Pattern xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmi:id="_JMbRAO0MEeidmJUNeAS2Pw" name="VAT_NL">
-  <taggedValue xmi:id="_JMbRAe0MEeidmJUNeAS2Pw" tag="Status" value="development"/>
-  <taggedValue xmi:id="_JMbRAu0MEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
-  <taggedValue xmi:id="_JMbRA-0MEeidmJUNeAS2Pw" tag="Purpose" value=""/>
-  <taggedValue xmi:id="_JMbRBO0MEeidmJUNeAS2Pw" tag="Description" value=""/>
-  <taggedValue xmi:id="_JMbRBe0MEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
-  <taggedValue xmi:id="_JMbRBu0MEeidmJUNeAS2Pw" tag="Validation_Status" value="true"/>
-  <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_JMb4EO0MEeidmJUNeAS2Pw" expressionType="REGEXP">
-    <expression xmi:id="_JMb4Ee0MEeidmJUNeAS2Pw" body="'(NL)?[0-9]{9}B[0-9]{2}'" language="MySQL" modificationDate="2018-11-20 22:35:10"/>
-  </components>
-</dataquality.domain.pattern:Pattern>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:orgomg.cwm.objectmodel.core="http:///orgomg/cwm/objectmodel/core.ecore">
+  <dataquality.domain.pattern:Pattern xmi:id="_JMbRAO0MEeidmJUNeAS2Pw" name="VAT_NL" supplierDependency="_0kHTwO0MEeidmJUNeAS2Pw">
+    <taggedValue xmi:id="_JMbRAe0MEeidmJUNeAS2Pw" tag="Status" value="development"/>
+    <taggedValue xmi:id="_JMbRAu0MEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+    <taggedValue xmi:id="_JMbRA-0MEeidmJUNeAS2Pw" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_JMbRBO0MEeidmJUNeAS2Pw" tag="Description" value=""/>
+    <taggedValue xmi:id="_JMbRBe0MEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_JMbRBu0MEeidmJUNeAS2Pw" tag="Validation_Status" value="true"/>
+    <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_JMb4EO0MEeidmJUNeAS2Pw" expressionType="REGEXP">
+      <expression xmi:id="_JMb4Ee0MEeidmJUNeAS2Pw" body="'(NL)?[0-9]{9}B[0-9]{2}'" language="MySQL" modificationDate="2018-11-20 22:35:10"/>
+    </components>
+  </dataquality.domain.pattern:Pattern>
+  <orgomg.cwm.objectmodel.core:Dependency xmi:id="_0kHTwO0MEeidmJUNeAS2Pw" kind="Usage" supplier="_JMbRAO0MEeidmJUNeAS2Pw">
+    <client xsi:type="dataquality.analysis:Analysis" href="../../../../../TDQ_Data Profiling/Analyses/AA_Before/Accuracy_0.1.ana#_2sHpcO0JEeidmJUNeAS2Pw"/>
+  </orgomg.cwm.objectmodel.core:Dependency>
+</xmi:XMI>
