@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:orgomg.cwm.objectmodel.core="http:///orgomg/cwm/objectmodel/core.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <dataquality.analysis:Analysis xmi:id="_SF2R4N7sEeiAxo_Xf4VPDg" name="Match_Analysis_CDB" supplierDependency="_8XX_EOp3Eeisjp3QMvY80w" creationDate="2018-10-31T14:42:01.883+0100" defaultContext="Default">
+  <dataquality.analysis:Analysis xmi:id="_SF2R4N7sEeiAxo_Xf4VPDg" name="Uniqueness_CDB" supplierDependency="_8XX_EOp3Eeisjp3QMvY80w" creationDate="2018-10-31T14:42:01.883+0100" defaultContext="Default">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
     <taggedValue xmi:id="_SF2R4d7sEeiAxo_Xf4VPDg" tag="PREVIEW_ROW_NUMBER" value="10000"/>
     <taggedValue xmi:id="_SF2R4t7sEeiAxo_Xf4VPDg" tag="Status" value="development"/>
     <taggedValue xmi:id="_SF2R497sEeiAxo_Xf4VPDg" tag="Author" value="charlesclement@eval11351.talend.com"/>
-    <taggedValue xmi:id="_SF2R5N7sEeiAxo_Xf4VPDg" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_SF2R5N7sEeiAxo_Xf4VPDg" tag="Purpose" value="Are any individual pieces of data from the dataset recorded more than once"/>
     <taggedValue xmi:id="_SF2R5d7sEeiAxo_Xf4VPDg" tag="Description" value=""/>
     <taggedValue xmi:id="_SF2R5t7sEeiAxo_Xf4VPDg" tag="Version" value="0.1"/>
     <taggedValue xmi:id="_SF2R597sEeiAxo_Xf4VPDg" tag="TEMP_DATA_DIR" value=""/>
@@ -49,6 +49,9 @@
             </matchKeys>
           </matchRules>
           <appliedBlockKeys xmi:id="_IDBG0Op4Eeisjp3QMvY80w" name="BLOCK_KEY" column="BLOCK_KEY"/>
+          <survivorshipKeys xmi:id="_XqowYOzzEeidmJUNeAS2Pw" name="legalname" allowManualResolution="true">
+            <function xmi:id="_XqowYezzEeidmJUNeAS2Pw" algorithmType="Concatenate" algorithmParameters=","/>
+          </survivorshipKeys>
         </builtInMatchRuleDefinition>
       </indicators>
     </results>
