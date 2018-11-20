@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_2sHpcO0JEeidmJUNeAS2Pw" name="Accuracy" creationDate="2018-11-20T22:18:41.541+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_NZs0oO0KEeidmJUNeAS2Pw"/>
@@ -22,42 +22,90 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_2sHpd-0JEeidmJUNeAS2Pw">
-      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw"/>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_NYukQO0KEeidmJUNeAS2Pw" name="Customer_Code_Volvo">
+      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw" executionDate="2018-11-20T22:37:26.455+0100" executionDuration="505" message="" executionNumber="1" lastRunOk="true" lastExecutionNumberOk="1"/>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_NYukQO0KEeidmJUNeAS2Pw" name="Customer_Code_Volvo" count="88979" computed="true" matchingValueCount="88017" notMatchingValueCount="962">
         <parameters xmi:id="_NYukQe0KEeidmJUNeAS2Pw">
           <dataValidDomain xmi:id="_NYukQu0KEeidmJUNeAS2Pw">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_E02esO0KEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_eRXDYO0MEeidmJUNeAS2Pw" name="Customer_Code_Volvo">
+              <taggedValue xmi:id="_eRXDYe0MEeidmJUNeAS2Pw" tag="Status" value="development"/>
+              <taggedValue xmi:id="_eRXDYu0MEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_eRXDY-0MEeidmJUNeAS2Pw" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_eRXDZO0MEeidmJUNeAS2Pw" tag="Description" value=""/>
+              <taggedValue xmi:id="_eRXDZe0MEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_eRXDZu0MEeidmJUNeAS2Pw" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_eRXDZ-0MEeidmJUNeAS2Pw" expressionType="REGEXP">
+                <expression xmi:id="_eRXDaO0MEeidmJUNeAS2Pw" body="'^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$'" language="MySQL"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_eUIDgO0MEeidmJUNeAS2Pw" body="SELECT COUNT(CASE WHEN `Customer` REGEXP BINARY '^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_sJKWIO0LEeidmJUNeAS2Pw" name="OwnerRU_code_Volvo">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_sJKWIO0LEeidmJUNeAS2Pw" name="OwnerRU_code_Volvo" count="88979" computed="true" matchingValueCount="88017" notMatchingValueCount="962">
         <parameters xmi:id="_sJKWIe0LEeidmJUNeAS2Pw">
           <dataValidDomain xmi:id="_sJKWIu0LEeidmJUNeAS2Pw">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_SZV-cO0KEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_eSdPkO0MEeidmJUNeAS2Pw" name="OwnerRU_code_Volvo">
+              <taggedValue xmi:id="_eSdPke0MEeidmJUNeAS2Pw" tag="Status" value="development"/>
+              <taggedValue xmi:id="_eSdPku0MEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_eSdPk-0MEeidmJUNeAS2Pw" tag="Purpose"/>
+              <taggedValue xmi:id="_eSdPlO0MEeidmJUNeAS2Pw" tag="Description"/>
+              <taggedValue xmi:id="_eSdPle0MEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_eSdPlu0MEeidmJUNeAS2Pw" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_eSdPl-0MEeidmJUNeAS2Pw" expressionType="REGEXP">
+                <expression xmi:id="_eSdPmO0MEeidmJUNeAS2Pw" body="'^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$'" language="MySQL"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_eUIqkO0MEeidmJUNeAS2Pw" body="SELECT COUNT(CASE WHEN `OwnerRU` REGEXP BINARY '^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_ds0L4O0MEeidmJUNeAS2Pw" name="VAT_BE">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_ds0L4O0MEeidmJUNeAS2Pw" name="VAT_BE" count="88979" computed="true" matchingValueCount="65856" notMatchingValueCount="23123">
         <parameters xmi:id="_ds0L4e0MEeidmJUNeAS2Pw">
           <dataValidDomain xmi:id="_ds0L4u0MEeidmJUNeAS2Pw">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_BE_0.1.pattern#_E_mEgN90Eeid7v2-FZr9SQ"/>
+            <builtInPatterns xmi:id="_eTRu8O0MEeidmJUNeAS2Pw" name="VAT_BE">
+              <taggedValue xmi:id="_eTRu8e0MEeidmJUNeAS2Pw" tag="Status" value="development"/>
+              <taggedValue xmi:id="_eTRu8u0MEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_eTRu8-0MEeidmJUNeAS2Pw" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_eTRu9O0MEeidmJUNeAS2Pw" tag="Description" value=""/>
+              <taggedValue xmi:id="_eTRu9e0MEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_eTRu9u0MEeidmJUNeAS2Pw" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_eTRu9-0MEeidmJUNeAS2Pw" expressionType="REGEXP">
+                <expression xmi:id="_eTRu-O0MEeidmJUNeAS2Pw" body="'(BE)?0[0-9]{9}'" language="MySQL" modificationDate="2018-11-17 14:48:22"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_eUJRoO0MEeidmJUNeAS2Pw" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY '(BE)?0[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_ds0L4-0MEeidmJUNeAS2Pw" name="VAT_FR">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_ds0L4-0MEeidmJUNeAS2Pw" name="VAT_FR" count="88979" computed="true" matchingValueCount="67703" notMatchingValueCount="21276">
         <parameters xmi:id="_ds0L5O0MEeidmJUNeAS2Pw">
           <dataValidDomain xmi:id="_ds0L5e0MEeidmJUNeAS2Pw">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_FR_0.1.pattern#_rTgggO0LEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_eUEZIO0MEeidmJUNeAS2Pw" name="VAT_FR">
+              <taggedValue xmi:id="_eUEZIe0MEeidmJUNeAS2Pw" tag="Status" value="development"/>
+              <taggedValue xmi:id="_eUEZIu0MEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_eUEZI-0MEeidmJUNeAS2Pw" tag="Purpose"/>
+              <taggedValue xmi:id="_eUFAMO0MEeidmJUNeAS2Pw" tag="Description"/>
+              <taggedValue xmi:id="_eUFAMe0MEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_eUFAMu0MEeidmJUNeAS2Pw" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_eUFAM-0MEeidmJUNeAS2Pw" expressionType="REGEXP">
+                <expression xmi:id="_eUFANO0MEeidmJUNeAS2Pw" body="'(FR)?[0-9A-Z]{2}[0-9]{9}'" language="MySQL"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_eUJRoe0MEeidmJUNeAS2Pw" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY '(FR)?[0-9A-Z]{2}[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
     </results>
     <parameters xmi:id="_2sHpee0JEeidmJUNeAS2Pw" dataFilter="_NZxGEO0KEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
