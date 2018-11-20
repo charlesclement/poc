@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <dataquality.analysis:Analysis xmi:id="_w3nh8O0OEeidmJUNeAS2Pw" name="Completeness" creationDate="2018-11-20T22:53:49.964+0100" defaultContext="Default">
+  <dataquality.analysis:Analysis xmi:id="_w3nh8O0OEeidmJUNeAS2Pw" name="Completeness" creationDate="2018-11-20T22:53:49.964+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
     <taggedValue xmi:id="_w3nh8e0OEeidmJUNeAS2Pw" tag="Status" value="development"/>
     <taggedValue xmi:id="_w3nh8u0OEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_w3nh8-0OEeidmJUNeAS2Pw" tag="Purpose" value="Is all the intended data being produced in the data set or is any of it missing ?"/>
     <taggedValue xmi:id="_w3nh9O0OEeidmJUNeAS2Pw" tag="Description" value="Is all the intended data being produced in the data set or is any of it missing?"/>
     <taggedValue xmi:id="_w3nh9e0OEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
-    <taggedValue xmi:id="_2bjEke0OEeidmJUNeAS2Pw" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_2bjEke0OEeidmJUNeAS2Pw" tag="ANA_LAST_RUN_CONTEXT" value="CDB"/>
     <taggedValue xmi:id="_2bjEku0OEeidmJUNeAS2Pw" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_2bjroO0OEeidmJUNeAS2Pw" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
     <taggedValue xmi:id="_2bk6A-0OEeidmJUNeAS2Pw" tag="Is Use Sample Data" value="false"/>
@@ -531,12 +531,17 @@
       </indicators>
     </results>
     <parameters xmi:id="_w3nh-e0OEeidmJUNeAS2Pw" dataFilter="_2blg0O0OEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
-    <contextType xmi:id="_2bjEkO0OEeidmJUNeAS2Pw" confirmationNeeded="false" name="Default"/>
+    <contextType xmi:id="__zE0oO0OEeidmJUNeAS2Pw" confirmationNeeded="false" name="CDB">
+      <contextParameter xmi:id="__zE0oe0OEeidmJUNeAS2Pw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='CDB'"/>
+    </contextType>
+    <contextType xmi:id="__zE0ou0OEeidmJUNeAS2Pw" confirmationNeeded="false" name="RTDMS">
+      <contextParameter xmi:id="__zE0o-0OEeidmJUNeAS2Pw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='RTDMS'"/>
+    </contextType>
   </dataquality.analysis:Analysis>
   <dataquality.domain:Domain xmi:id="_2blg0O0OEeidmJUNeAS2Pw" name="Completeness">
     <ranges xmi:id="_2blg0e0OEeidmJUNeAS2Pw">
       <expressions xmi:id="_2blg0u0OEeidmJUNeAS2Pw">
-        <expression xsi:type="relational:TdExpression" xmi:id="_2blg0-0OEeidmJUNeAS2Pw" body="" language="SQL"/>
+        <expression xsi:type="relational:TdExpression" xmi:id="_2blg0-0OEeidmJUNeAS2Pw" body="context.Source" language="SQL"/>
       </expressions>
     </ranges>
   </dataquality.domain:Domain>
