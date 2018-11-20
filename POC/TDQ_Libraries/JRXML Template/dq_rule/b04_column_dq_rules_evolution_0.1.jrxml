@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="b04_column_dq_rules_evolution" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="5" bottomMargin="5">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.3310000000000017"/>
+	<property name="ireport.x" value="8"/>
+	<property name="ireport.y" value="548"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="NEED_TITLE" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new Boolean(true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO_FILE" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[logo file]]></parameterDescription>
+	</parameter>
+	<parameter name="REPORT_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Report identifer
+_JTP_EBIoEd6pt-TgDw7oCA]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_JTP_EBIoEd6pt-TgDw7oCA"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_FROM" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter from]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new java.sql.Timestamp(new Date("01/01/1970").getTime())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_TO" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter to]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new java.sql.Timestamp(new Date("01/01/2222").getTime())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ANA_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Analysis identifier
+_IpFnwBIoEd6pt-TgDw7oCA]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_IpFnwBIoEd6pt-TgDw7oCA"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TITLE_FILE" class="java.lang.String">
+		<parameterDescription><![CDATA[title file]]></parameterDescription>
+	</parameter>
+	<parameter name="DateFormatterUTC" class="java.text.DateFormat">
+		<defaultValueExpression><![CDATA[$P{REPORT_FORMAT_FACTORY}.createDateFormat("yyyy-MM-dd HH:mm:ss",$P{REPORT_LOCALE}, java.util.TimeZone.getTimeZone("UTC"))]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DateFormatterLocal" class="java.text.DateFormat">
+		<defaultValueExpression><![CDATA[$P{REPORT_FORMAT_FACTORY}.createDateFormat("yyyy-MM-dd HH:mm:ss",$P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ELT_CTX_GROUP_ID" class="java.lang.String">
+	     <defaultValueExpression><![CDATA["EMPTY (TDQ)"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ELT_CTX_NAME" class="java.lang.String">
+	     <defaultValueExpression><![CDATA["EMPTY (TDQ)"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    VERS.PR_NAME,
+    VERS.PR_DISPLAY_VERSION,
+	VAL.REP_RUNTIME AS AN_RUNTIME_FILED,
+	ANA.REP_UUID,
+	ANA.AN_UUID,
+	ANA.REP_LABEL,
+	ANA.AN_LABEL,
+	ANA.REP_CREATION_DATE ,
+	(case when ANA.REP_AUTHOR LIKE 'NULL TALEND' then ' ' else ANA.REP_AUTHOR end) AS REP_AUTHOR ,
+	(case when ANA.AN_AUTHOR LIKE 'NULL TALEND'  then ' ' else ANA.AN_AUTHOR end) AS AN_AUTHOR ,
+	ANA.REP_STATUS,
+	ELEMENT.ELT_CONNECTION_UUID,
+	(CASE WHEN ELEMENT.ELT_CATALOG_NAME='N/A (TDQ)' THEN ' ' ELSE  ELEMENT.ELT_CATALOG_NAME END) AS ELT_CATALOG_NAME,
+	(CASE WHEN ELEMENT.ELT_CONNECTION_NAME='N/A (TDQ)' then ' ' else ELEMENT.ELT_CONNECTION_NAME END) AS    ELT_CONNECTION_NAME_1,
+	(CASE WHEN ELEMENT.ELT_SCHEMA_NAME='N/A (TDQ)' then ' ' else ELEMENT.ELT_SCHEMA_NAME END) AS ELT_SCHEMA_NAME_1,
+	ELEMENT.ELT_PROJECT_NAME,
+    ELEMENT.ELT_TABLE_NAME,
+	ELEMENT.ELT_COLUMN_NAME,
+	DEFIND.IND_CATEG_UUID,
+	DEFIND.IND_UUID,
+	DEFIND.IND_CATEGORY,
+	DEFIND.IND_LABEL,
+	VAL.AN_DURATION/1000 AS AN_DURATION,
+	VAL.INDV_ROW_COUNT,
+        VAL.INDV_INT_VALUE as MATCH_INT_VALUE,
+	COALESCE(CASE WHEN VAL.INDV_DTHRESH_OK = 'U' then 'N/A' end,'N/A') AS INDV_DTHRESH_OK,
+	VAL.INDV_DTHRESH_LOW ,
+	VAL.INDV_DTHRESH_HI ,
+	COALESCE(CASE WHEN VAL.INDV_ITHRESH_OK  = 'U' then 'N/A' end,'N/A') AS INDV_ITHRESH_OK,
+	VAL.INDV_ITHRESH_LOW  ,
+	VAL.INDV_ITHRESH_HI,
+	COALESCE(CASE WHEN VAL.INDV_EXP_VAL_OK  = 'U' then 'N/A' end,'N/A') AS INDV_EXP_VAL_OK,
+	VAL.INDV_EXP_VAL ,
+	IOPTION.INO_CASE_SENSITIVE,
+	COALESCE((case when IOPTION.INO_REGEXP like 'NULL%' then ' ' else IOPTION.INO_REGEXP end ),' ') AS INO_REGEXP_LABEL,
+	IOPTION.INO_COUNT_NULLS,
+	IOPTION.INO_COUNT_BLANKS
+FROM TDQ_INDICATOR_VALUE  VAL
+	INNER JOIN    TDQ_V_ANALYSIS   ANA  ON ANA.AN_PK=VAL.ANALYSIS_PK
+	INNER JOIN  TDQ_V_ALL_RUN_ANALYSIS  ALLANA ON ALLANA.ANALYSIS_PK=VAL.ANALYSIS_PK AND ALLANA.AN_RUNTIME=VAL.AN_RUNTIME
+	INNER JOIN  TDQ_V_ANALYZED_ELEMENT   ELEMENT ON  ELEMENT.ELT_PK=VAL.ELEMENT_PK AND ELEMENT.ELT_CTX_GROUP_ID=$P{ELT_CTX_GROUP_ID} AND ELEMENT.ELT_CTX_NAME=$P{ELT_CTX_NAME}
+	INNER JOIN  TDQ_V_INDICATOR_DEFINITION DEFIND ON DEFIND.IND_PK=VAL.INDICATOR_PK
+	INNER JOIN  TDQ_INDICATOR_OPTIONS IOPTION ON IOPTION.ino_pk =VAL.OPTION_PK
+	CROSS JOIN TDQ_PRODUCT VERS
+WHERE VAL.AN_RUNTIME>=$P{RUN_TIME_FROM} AND VAL.AN_RUNTIME <=$P{RUN_TIME_TO} AND DEFIND.IND_CATEG_UUID IN ('_8i9eQBI5Ed6TWL6NwMMHzQ', '_ccKHEBF2Ed2PKb6nEJEvhw')
+AND    ANA.REP_UUID =$P{REPORT_UUID} AND ANA.AN_UUID=$P{ANA_UUID}
+ORDER BY VAL.REP_RUNTIME DESC, ANA.REP_UUID,ANA.AN_UUID, DEFIND.IND_UUID,  ELEMENT.ELT_CONNECTION_UUID,DEFIND.IND_CATEG_UUID]]>
+	</queryString>
+    <field name="PR_NAME" class="java.lang.String"/>
+    <field name="PR_DISPLAY_VERSION" class="java.lang.String"/>
+	<field name="AN_RUNTIME_FILED" class="java.sql.Timestamp"/>
+	<field name="REP_UUID" class="java.lang.String"/>
+	<field name="AN_UUID" class="java.lang.String"/>
+	<field name="REP_LABEL" class="java.lang.String"/>
+	<field name="AN_LABEL" class="java.lang.String"/>
+	<field name="REP_CREATION_DATE" class="java.sql.Timestamp"/>
+	<field name="REP_AUTHOR" class="java.lang.String"/>
+	<field name="AN_AUTHOR" class="java.lang.String"/>
+	<field name="REP_STATUS" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_UUID" class="java.lang.String"/>
+	<field name="ELT_CATALOG_NAME" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_NAME_1" class="java.lang.String"/>
+	<field name="ELT_SCHEMA_NAME_1" class="java.lang.String"/>
+	<field name="ELT_TABLE_NAME" class="java.lang.String"/>
+	<field name="ELT_COLUMN_NAME" class="java.lang.String"/>
+	<field name="IND_CATEG_UUID" class="java.lang.String"/>
+	<field name="IND_UUID" class="java.lang.String"/>
+	<field name="IND_CATEGORY" class="java.lang.String"/>
+	<field name="IND_LABEL" class="java.lang.String"/>
+	<field name="AN_DURATION" class="java.math.BigDecimal"/>
+	<field name="INDV_ROW_COUNT" class="java.lang.Long"/>
+	<field name="MATCH_INT_VALUE" class="java.lang.Long"/>
+	<field name="INDV_DTHRESH_OK" class="java.lang.String"/>
+	<field name="INDV_DTHRESH_LOW" class="java.lang.Long"/>
+	<field name="INDV_DTHRESH_HI" class="java.lang.Long"/>
+	<field name="INDV_ITHRESH_OK" class="java.lang.String"/>
+	<field name="INDV_ITHRESH_LOW" class="java.lang.Long"/>
+	<field name="INDV_ITHRESH_HI" class="java.lang.Long"/>
+	<field name="INDV_EXP_VAL_OK" class="java.lang.String"/>
+	<field name="INDV_EXP_VAL" class="java.lang.String"/>
+	<field name="INO_CASE_SENSITIVE" class="java.lang.String"/>
+	<field name="INO_REGEXP_LABEL" class="java.lang.String"/>
+	<field name="INO_COUNT_NULLS" class="java.lang.String"/>
+	<field name="INO_COUNT_BLANKS" class="java.lang.String"/>
+	<field name="ELT_PROJECT_NAME" class="java.lang.String"/>
+	<variable name="percMatch" class="java.lang.Double" resetType="Group" resetGroup="ANALYSIS">
+		<variableExpression><![CDATA[Double.valueOf(  (100)* ($F{MATCH_INT_VALUE}.doubleValue()) /($F{INDV_ROW_COUNT}.doubleValue()) )]]></variableExpression>
+	</variable>
+	<variable name="percMatchRound" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[Double.isNaN($V{percMatch}) ? new BigDecimal("0"): new BigDecimal($V{percMatch}.toString()).setScale(7,BigDecimal.ROUND_HALF_UP)]]></variableExpression>
+	</variable>
+	<group name="CATALOG">
+		<groupExpression><![CDATA[$F{ELT_CONNECTION_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="185">
+				<subreport>
+					<reportElement x="7" y="0" width="524" height="180"/>
+					<subreportParameter name="AN_RUNTIME">
+						<subreportParameterExpression><![CDATA[$F{AN_RUNTIME_FILED}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="AN_AUTHOR">
+						<subreportParameterExpression><![CDATA[$F{AN_AUTHOR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ELT_SCHEMA_NAME">
+						<subreportParameterExpression><![CDATA[$F{ELT_SCHEMA_NAME_1}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ELT_CONNECTION_NAME">
+						<subreportParameterExpression><![CDATA[$F{ELT_CONNECTION_NAME_1}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="REP_LABEL">
+						<subreportParameterExpression><![CDATA[$F{REP_LABEL}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="AN_DURATION">
+						<subreportParameterExpression><![CDATA[$F{AN_DURATION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ELT_CATALOG_NAME">
+						<subreportParameterExpression><![CDATA[$F{ELT_CATALOG_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ELT_PROJECT_NAME">
+						<subreportParameterExpression><![CDATA[$F{ELT_PROJECT_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="AN_LABEL">
+						<subreportParameterExpression><![CDATA[$F{AN_LABEL}+" ["+$F{IND_CATEGORY}+"]"]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="TABLE_COLUMN">
+						<subreportParameterExpression><![CDATA[": "+$F{ELT_TABLE_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="TITLE_FILE">
+						<subreportParameterExpression><![CDATA[$P{TITLE_FILE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["s01_column_subreport.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="ANALYSIS">
+		<groupExpression><![CDATA[$F{AN_UUID}]]></groupExpression>
+		<groupFooter>
+			<band height="550">
+				<timeSeriesChart>
+					<chart evaluationTime="Group" evaluationGroup="ANALYSIS">
+						<reportElement key="element-1" mode="Transparent" x="7" y="7" width="524" height="251" backcolor="#000000"/>
+						<box>
+							<pen lineWidth="1.0" lineColor="#AEB0B2"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+						</box>
+						<chartTitle color="#000000">
+							<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+							<titleExpression><![CDATA["Count Evolution"]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle>
+							<subtitleExpression><![CDATA["Matching Dq Rules"]]></subtitleExpression>
+						</chartSubtitle>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF">
+							<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						</chartLegend>
+					</chart>
+					<timeSeriesDataset timePeriod="Second">
+						<dataset resetType="Group" resetGroup="ANALYSIS"/>
+						<timeSeries>
+							<seriesExpression><![CDATA[$F{IND_LABEL}]]></seriesExpression>
+							<timePeriodExpression><![CDATA[$P{DateFormatterUTC}.parse($P{DateFormatterLocal}.format($F{AN_RUNTIME_FILED}))]]></timePeriodExpression>
+							<valueExpression><![CDATA[$F{MATCH_INT_VALUE}]]></valueExpression>
+							<labelExpression><![CDATA["Matching DQ Rules"]]></labelExpression>
+						</timeSeries>
+					</timeSeriesDataset>
+					<timeSeriesPlot>
+						<plot backcolor="#FFFFFF" labelRotation="15.0">
+							<seriesColor seriesOrder="0" color="#F49320"/>
+							<seriesColor seriesOrder="1" color="#8077B2"/>
+							<seriesColor seriesOrder="2" color="#BED530"/>
+							<seriesColor seriesOrder="3" color="#239DBE"/>
+							<seriesColor seriesOrder="4" color="#FAD410"/>
+							<seriesColor seriesOrder="5" color="#EA1C24"/>
+							<seriesColor seriesOrder="6" color="#C0835B"/>
+							<seriesColor seriesOrder="7" color="#EC1785"/>
+							<seriesColor seriesOrder="8" color="#A49B64"/>
+							<seriesColor seriesOrder="9" color="#F4781E"/>
+							<seriesColor seriesOrder="10" color="#80A8C9"/>
+							<seriesColor seriesOrder="11" color="#BEA92A"/>
+							<seriesColor seriesOrder="12" color="#257EAF"/>
+							<seriesColor seriesOrder="13" color="#FAAE0F"/>
+							<seriesColor seriesOrder="14" color="#FAD410"/>
+							<seriesColor seriesOrder="15" color="#EB682F"/>
+							<seriesColor seriesOrder="16" color="#EA1C24"/>
+						</plot>
+						<timeAxisFormat>
+							<axisFormat>
+								<labelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</tickLabelFont>
+							</axisFormat>
+						</timeAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#02109F" tickLabelColor="#02109F" axisLineColor="#02109F">
+								<labelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+					</timeSeriesPlot>
+				</timeSeriesChart>
+				<timeSeriesChart>
+					<chart evaluationTime="Group" evaluationGroup="ANALYSIS">
+						<reportElement key="element-2" mode="Transparent" x="7" y="264" width="524" height="280" backcolor="#000000"/>
+						<box>
+							<pen lineWidth="1.0" lineColor="#AEB0B2"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+						</box>
+						<chartTitle color="#000000">
+							<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+							<titleExpression><![CDATA["Percentage Evolution"]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle>
+							<subtitleExpression><![CDATA["% Matching Dq Rules"]]></subtitleExpression>
+						</chartSubtitle>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF">
+							<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						</chartLegend>
+					</chart>
+					<timeSeriesDataset timePeriod="Second">
+						<dataset resetType="Group" resetGroup="ANALYSIS"/>
+						<timeSeries>
+							<seriesExpression><![CDATA[$F{IND_LABEL}]]></seriesExpression>
+							<timePeriodExpression><![CDATA[$P{DateFormatterUTC}.parse($P{DateFormatterLocal}.format($F{AN_RUNTIME_FILED}))]]></timePeriodExpression>
+							<valueExpression><![CDATA[$V{percMatchRound}]]></valueExpression>
+							<labelExpression><![CDATA["% Matching Dq Rules"]]></labelExpression>
+						</timeSeries>
+					</timeSeriesDataset>
+					<timeSeriesPlot>
+						<plot backcolor="#FFFFFF" labelRotation="15.0">
+							<seriesColor seriesOrder="0" color="#F49320"/>
+							<seriesColor seriesOrder="1" color="#8077B2"/>
+							<seriesColor seriesOrder="2" color="#BED530"/>
+							<seriesColor seriesOrder="3" color="#239DBE"/>
+							<seriesColor seriesOrder="4" color="#FAD410"/>
+							<seriesColor seriesOrder="5" color="#EA1C24"/>
+							<seriesColor seriesOrder="6" color="#C0835B"/>
+							<seriesColor seriesOrder="7" color="#EC1785"/>
+							<seriesColor seriesOrder="8" color="#A49B64"/>
+							<seriesColor seriesOrder="9" color="#F4781E"/>
+							<seriesColor seriesOrder="10" color="#80A8C9"/>
+							<seriesColor seriesOrder="11" color="#BEA92A"/>
+							<seriesColor seriesOrder="12" color="#257EAF"/>
+							<seriesColor seriesOrder="13" color="#FAAE0F"/>
+							<seriesColor seriesOrder="14" color="#FAD410"/>
+							<seriesColor seriesOrder="15" color="#EB682F"/>
+							<seriesColor seriesOrder="16" color="#EA1C24"/>
+						</plot>
+						<timeAxisFormat>
+							<axisFormat>
+								<labelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</tickLabelFont>
+							</axisFormat>
+						</timeAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#02109F" tickLabelColor="#02109F" axisLineColor="#02109F">
+								<labelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont>
+									<font fontName="Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</tickLabelFont>
+							</axisFormat>
+						</valueAxisFormat>
+					</timeSeriesPlot>
+				</timeSeriesChart>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="44">
+			<printWhenExpression><![CDATA[$P{NEED_TITLE}]]></printWhenExpression>
+			<image>
+				<reportElement key="image-1" stretchType="RelativeToBandHeight" mode="Transparent" x="7" y="8" width="97" height="30"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression class="java.io.File"><![CDATA[new File($P{LOGO_FILE} )]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16">
+			<textField isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="7" y="0" width="92" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="222" y="0" width="92" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="437" y="0" width="92" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="28">
+			<textField isBlankWhenNull="false">
+                <reportElement key="textField" x="312" y="18" width="222" height="9"/>
+                <box>
+                    <topPen lineWidth="0.0" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="6"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{PR_NAME}+" @V"+$F{PR_DISPLAY_VERSION}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="7" y="0" width="95" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="222" y="0" width="95" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="437" y="0" width="95" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="b07_match_basic" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="5" bottomMargin="5">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.4641000000000108"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="347"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFE4C4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFE2BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#FAEBD7">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFE4BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="leftTableColumn">
+		<parameter name="ana_uuid" class="java.lang.String"/>
+		<parameter name="report_uuid" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select elt_table_name, elt_column_name FROM TDQ_V_ANALYZED_ELEMENT TA INNER JOIN TDQ_ANALYZED_SET ON TA.ELT_PK=TDQ_ANALYZED_SET.ELT_A_PK,
+(select	distinct min(A.match_ind_pk) as min_value from (
+		select match_ind_pk, elt_table_name, elt_column_name
+		FROM TDQ_V_ANALYZED_ELEMENT TA
+			INNER JOIN TDQ_ANALYZED_SET T ON TA.ELT_PK=T.ELT_A_PK
+			INNER JOIN TDQ_MATCH_INDVALUE TMATCH on T.MATCH_IND_PK=TMATCH.M_PK
+			INNER JOIN  TDQ_V_ANALYSIS ANA  ON ANA.AN_PK=TMATCH.ANALYSIS_PK
+			INNER JOIN  TDQ_V_LAST_RUN_MATCH_ANALYSIS  ILASTRUNT ON  (ILASTRUNT.ANALYSIS_PK =TMATCH.ANALYSIS_PK AND ILASTRUNT.AN_RUNTIME=TMATCH.AN_RUNTIME)
+     WHERE  ANA.REP_UUID=$P{report_uuid} and ANA.AN_UUID=$P{ana_uuid}
+	) A
+) B
+where TDQ_ANALYZED_SET.match_ind_pk = B.min_value]]>
+		</queryString>
+		<field name="ELT_TABLE_NAME" class="java.lang.String"/>
+		<field name="ELT_COLUMN_NAME" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="rightTableColumn">
+		<parameter name="report_uuid" class="java.lang.String"/>
+		<parameter name="ana_uuid" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select elt_table_name,elt_column_name FROM TDQ_V_ANALYZED_ELEMENT TA INNER JOIN TDQ_ANALYZED_SET ON TA.ELT_PK=TDQ_ANALYZED_SET.ELT_A_PK,
+(select	distinct max(A.match_ind_pk) as max_value from (
+		select match_ind_pk, elt_table_name, elt_column_name
+		FROM TDQ_V_ANALYZED_ELEMENT TA
+			INNER JOIN TDQ_ANALYZED_SET T ON TA.ELT_PK=T.ELT_A_PK
+			INNER JOIN TDQ_MATCH_INDVALUE TMATCH on T.MATCH_IND_PK=TMATCH.M_PK
+			INNER JOIN  TDQ_V_ANALYSIS ANA  ON ANA.AN_PK=TMATCH.ANALYSIS_PK
+			INNER JOIN  TDQ_V_LAST_RUN_MATCH_ANALYSIS  ILASTRUNT ON  (ILASTRUNT.ANALYSIS_PK =TMATCH.ANALYSIS_PK AND ILASTRUNT.AN_RUNTIME=TMATCH.AN_RUNTIME)
+     WHERE  ANA.REP_UUID=$P{report_uuid}  and ANA.AN_UUID=$P{ana_uuid}
+	) A
+) B
+where TDQ_ANALYZED_SET.match_ind_pk = B.max_value]]>
+		</queryString>
+		<field name="ELT_TABLE_NAME" class="java.lang.String"/>
+		<field name="ELT_COLUMN_NAME" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="NEED_TITLE" class="java.lang.Boolean">
+		<parameterDescription><![CDATA[show title]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new Boolean(false)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO_FILE" class="java.lang.String">
+		<parameterDescription><![CDATA[Logo file]]></parameterDescription>
+	</parameter>
+	<parameter name="REPORT_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Report id
+_YrsBUBIrEd6lIfD2YhI34g]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_YrsBUBIrEd6lIfD2YhI34g"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_FROM" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter from]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new java.sql.Timestamp(new Date("01/01/1970").getTime())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_TO" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter to]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new java.sql.Timestamp(new Date("01/01/2222").getTime())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ANA_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Analysis id
+_UX4p0BIrEd6lIfD2YhI34g]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_UX4p0BIrEd6lIfD2YhI34g"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TITLE_FILE" class="java.lang.String">
+		<parameterDescription><![CDATA[title file]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+ VERS.PR_NAME,
+ VERS.PR_DISPLAY_VERSION,
+ TMATCH.AN_RUNTIME,
+ TMATCH.AN_DURATION/1000 AS AN_DURATION,
+ ANA.REP_UUID,
+ ANA.AN_UUID,
+ ANA.REP_LABEL,
+ ANA.AN_LABEL,
+ (CASE WHEN ANA.REP_AUTHOR LIKE 'NULL TALEND' THEN ' ' ELSE ANA.REP_AUTHOR END) AS REP_AUTHOR ,
+ (CASE WHEN ANA.AN_AUTHOR LIKE 'NULL TALEND' THEN ' ' ELSE ANA.AN_AUTHOR END) AS AN_AUTHOR ,
+ COALESCE(IOPTION.INO_REGEXP,' ') AS INO_REGEXP,
+ DEFIND.IND_CATEGORY,
+ DEFIND.IND_LABEL,
+ DEFIND.IND_UUID,
+ CALAND.CAL_DATE,
+ TA.ELT_PROJECT_NAME,
+ case when TA.ELT_CONNECTION_UUID='N/A (TDQ)' then ' ' ELSE  TA.ELT_CONNECTION_UUID END
+  AS ELT_CONNECTION_UUID,
+ case when TA.ELT_CONNECTION_NAME='N/A (TDQ)' then ' ' ELSE TA.ELT_CONNECTION_NAME   END
+  AS ELT_CONNECTION_NAME,
+ case when TA.ELT_CATALOG_NAME='N/A (TDQ)' then ' ' ELSE  TA.ELT_CATALOG_NAME   END
+  AS ELT_CATALOG_NAME,
+ case when TA.ELT_SCHEMA_NAME='N/A (TDQ)' then ' ' ELSE  TA.ELT_SCHEMA_NAME   END
+  AS ELT_SCHEMA_NAME,
+ case when TA.ELT_TABLE_NAME='N/A (TDQ)' then  ' ' ELSE  TA.ELT_TABLE_NAME   END
+  AS ELT_TABLE_NAME,
+ CASE WHEN TA.ELT_CATALOG_NAME='N/A (TDQ)' THEN
+   CASE WHEN TA.ELT_SCHEMA_NAME='N/A (TDQ)' THEN  '.' ELSE  TA.ELT_SCHEMA_NAME END
+  ELSE CASE WHEN TA.ELT_SCHEMA_NAME='N/A (TDQ)' THEN TA.ELT_CATALOG_NAME ELSE
+  CONCAT(TA.ELT_CATALOG_NAME,TA.ELT_SCHEMA_NAME) END END AS  ELT_CATALOG_SCHEMA,
+ TA.ELT_COLUMN_NAME AS  ELT_COLUMN_NAME,
+
+ (TMATCH.INDV_ROW_COUNT - TMATCH.INDV_MATCH_COUNT) as INDV_NOTMATCH_COUNT,
+ TMATCH.INDV_MATCH_PERCENT as INDV_MATCH_PERCENT,
+ TMATCH.INDV_MATCH_COUNT,
+ TMATCH.INDV_ROW_COUNT,
+ TMATCH.INDV_DTHRESH_OK,
+ TMATCH.INDV_DTHRESH_LOW,
+ TMATCH.INDV_DTHRESH_HI,
+ TMATCH.INDV_ITHRESH_OK,
+ TMATCH.INDV_ITHRESH_LOW,
+ TMATCH.INDV_ITHRESH_HI,
+ TMATCH.INDV_EXP_VAL_OK,
+ TMATCH.INDV_EXP_VAL
+FROM TDQ_V_ANALYZED_ELEMENT TA
+ INNER JOIN (select * from TDQ_ANALYZED_SET T
+where T.an_set_pk in (select min(an_set_pk) an_set_pk from TDQ_ANALYZED_SET group by MATCH_IND_PK)
+) T ON TA.ELT_PK=T.ELT_A_PK
+ INNER JOIN TDQ_MATCH_INDVALUE TMATCH on T.MATCH_IND_PK=TMATCH.M_PK
+ INNER JOIN  TDQ_V_ANALYSIS ANA  ON ANA.AN_PK=TMATCH.ANALYSIS_PK
+ INNER JOIN  TDQ_V_INDICATOR_DEFINITION DEFIND ON DEFIND.IND_PK= TMATCH.INDICATOR_PK
+ INNER JOIN  TDQ_INDICATOR_OPTIONS IOPTION ON IOPTION.INO_PK=TMATCH.OPTION_PK
+ INNER JOIN  TDQ_V_LAST_RUN_MATCH_ANALYSIS  ILASTRUNT ON  (ILASTRUNT.ANALYSIS_PK =TMATCH.ANALYSIS_PK AND ILASTRUNT.AN_RUNTIME=TMATCH.AN_RUNTIME)
+ INNER JOIN  TDQ_CALENDAR  CALAND ON CALAND.CAL_PK=TMATCH.CALENDAR_PK
+ CROSS JOIN  TDQ_PRODUCT VERS
+
+WHERE TMATCH.AN_RUNTIME>=$P{RUN_TIME_FROM} AND TMATCH.AN_RUNTIME <=$P{RUN_TIME_TO} AND DEFIND.IND_UUID ='_jMh4gJE3Ed2HGNmGoaS-_w'
+and ANA.REP_UUID=$P{REPORT_UUID}  and ANA.AN_UUID=$P{ANA_UUID}
+AND TMATCH.REP_RUNTIME in (
+ select max(rep_runtime) from TDQ_MATCH_INDVALUE
+join TDQ_ANALYSIS ON TDQ_ANALYSIS.AN_PK=TDQ_MATCH_INDVALUE.ANALYSIS_PK
+AND TDQ_ANALYSIS.REP_UUID=$P{REPORT_UUID} AND TDQ_ANALYSIS.AN_UUID=$P{ANA_UUID}
+ )
+ORDER BY DEFIND.IND_CATEGORY,DEFIND.IND_UUID ,ELT_CONNECTION_NAME, ELT_CATALOG_NAME, ELT_SCHEMA_NAME, ELT_TABLE_NAME,INDV_MATCH_COUNT DESC]]>
+	</queryString>
+    <field name="PR_NAME" class="java.lang.String"/>
+    <field name="PR_DISPLAY_VERSION" class="java.lang.String"/>
+	<field name="AN_RUNTIME" class="java.sql.Timestamp"/>
+	<field name="AN_DURATION" class="java.math.BigDecimal"/>
+	<field name="REP_UUID" class="java.lang.String"/>
+	<field name="AN_UUID" class="java.lang.String"/>
+	<field name="REP_LABEL" class="java.lang.String"/>
+	<field name="AN_LABEL" class="java.lang.String"/>
+	<field name="REP_AUTHOR" class="java.lang.String"/>
+	<field name="AN_AUTHOR" class="java.lang.String"/>
+	<field name="INO_REGEXP" class="java.lang.String"/>
+	<field name="IND_CATEGORY" class="java.lang.String"/>
+	<field name="IND_LABEL" class="java.lang.String"/>
+	<field name="IND_UUID" class="java.lang.String"/>
+	<field name="CAL_DATE" class="java.sql.Date"/>
+	<field name="ELT_PROJECT_NAME" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_UUID" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_NAME" class="java.lang.String"/>
+	<field name="ELT_CATALOG_NAME" class="java.lang.String"/>
+	<field name="ELT_SCHEMA_NAME" class="java.lang.String"/>
+	<field name="ELT_TABLE_NAME" class="java.lang.String"/>
+	<field name="ELT_CATALOG_SCHEMA" class="java.lang.String"/>
+	<field name="ELT_COLUMN_NAME" class="java.lang.String"/>
+	<field name="INDV_NOTMATCH_COUNT" class="java.lang.Long"/>
+	<field name="INDV_MATCH_PERCENT" class="java.math.BigDecimal"/>
+	<field name="INDV_MATCH_COUNT" class="java.lang.Long"/>
+	<field name="INDV_ROW_COUNT" class="java.lang.Long"/>
+	<field name="INDV_DTHRESH_OK" class="java.lang.String"/>
+	<field name="INDV_DTHRESH_LOW" class="java.lang.Long"/>
+	<field name="INDV_DTHRESH_HI" class="java.lang.Long"/>
+	<field name="INDV_ITHRESH_OK" class="java.lang.String"/>
+	<field name="INDV_ITHRESH_LOW" class="java.lang.Long"/>
+	<field name="INDV_ITHRESH_HI" class="java.lang.Long"/>
+	<field name="INDV_EXP_VAL_OK" class="java.lang.String"/>
+	<field name="INDV_EXP_VAL" class="java.lang.String"/>
+	<variable name="match_per" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{INDV_MATCH_COUNT}.doubleValue()*100/$F{INDV_ROW_COUNT}.doubleValue()]]></variableExpression>
+	</variable>
+	<variable name="notMatch_per" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{INDV_NOTMATCH_COUNT}.doubleValue()*100/$F{INDV_ROW_COUNT}.doubleValue()]]></variableExpression>
+	</variable>
+	<variable name="tableNameList" class="java.util.List" calculation="System">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[new ArrayList()]]></initialValueExpression>
+	</variable>
+	<variable name="matchValueList" class="java.util.List" calculation="System">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[new ArrayList()]]></initialValueExpression>
+	</variable>
+	<group name="ANALYSIS">
+		<groupExpression><![CDATA[$F{AN_UUID}.concat($F{IND_CATEGORY})]]></groupExpression>
+		<groupHeader>
+			<band height="185">
+				<subreport>
+					<reportElement x="7" y="0" width="524" height="180"/>
+					<subreportParameter name="AN_RUNTIME">
+						<subreportParameterExpression><![CDATA[$F{AN_RUNTIME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="REP_LABEL">
+						<subreportParameterExpression><![CDATA[$F{REP_LABEL}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="AN_AUTHOR">
+						<subreportParameterExpression><![CDATA[$F{AN_AUTHOR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="AN_DURATION">
+						<subreportParameterExpression><![CDATA[$F{AN_DURATION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ELT_PROJECT_NAME">
+						<subreportParameterExpression><![CDATA[$F{ELT_PROJECT_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="AN_LABEL">
+						<subreportParameterExpression><![CDATA[$F{AN_LABEL}+" ["+$F{IND_CATEGORY}+"]"]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="ELT_CATALOG_SCHEMA">
+						<subreportParameterExpression><![CDATA[$F{ELT_CATALOG_SCHEMA}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="TITLE_FILE">
+						<subreportParameterExpression><![CDATA[$P{TITLE_FILE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA["s02_match_sub_summary.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="181">
+				<stackedBarChart>
+					<chart customizerClass="org.talend.dataquality.reporting.TalendChartCustomizer">
+						<reportElement key="element-1" stretchType="RelativeToBandHeight" x="7" y="9" width="524" height="164" isPrintInFirstWholeBand="true"/>
+						<box>
+							<pen lineWidth="1.0" lineColor="#AEB0B2"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#AEB0B2"/>
+						</box>
+						<chartTitle color="#000000">
+							<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+							<titleExpression><![CDATA[$F{IND_LABEL}]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF">
+							<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						</chartLegend>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="ANALYSIS" incrementType="Group" incrementGroup="Detail1"/>
+						<categorySeries>
+							<seriesExpression><![CDATA["not matching"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{tableNameList}.get($V{COLUMN_COUNT}-1)]]></categoryExpression>
+							<valueExpression><![CDATA[$V{notMatch_per}]]></valueExpression>
+							<labelExpression><![CDATA[$V{notMatch_per}.equals( Double.NaN )?"N/A":new DecimalFormat("##.00").format($V{notMatch_per})]]></labelExpression>
+						</categorySeries>
+						<categorySeries>
+							<seriesExpression><![CDATA["matching"]]></seriesExpression>
+							<categoryExpression><![CDATA[$V{tableNameList}.get($V{COLUMN_COUNT}-1)]]></categoryExpression>
+							<valueExpression><![CDATA[$V{match_per}]]></valueExpression>
+							<labelExpression><![CDATA[$V{match_per}.equals( Double.NaN )?"N/A":new DecimalFormat("##.00").format($V{match_per})]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true">
+						<plot orientation="Horizontal">
+							<seriesColor seriesOrder="0" color="#FE4932"/>
+							<seriesColor seriesOrder="1" color="#4BBD66"/>
+						</plot>
+						<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+						<categoryAxisFormat>
+							<axisFormat>
+								<labelFont>
+									<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont/>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont>
+									<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</barPlot>
+				</stackedBarChart>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="CONNECTION">
+		<groupExpression><![CDATA[$F{ELT_CONNECTION_NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="92">
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="4" y="91" width="527" height="1" forecolor="#C1D82F" backcolor="#C1D82F"/>
+				</line>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="364" y="74" width="80" height="14"/>
+					<box>
+						<pen lineWidth="1.0" lineColor="#C1D82F"/>
+						<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["# NOT MATCH"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="102" y="74" width="80" height="14"/>
+					<box>
+						<pen lineWidth="1.0" lineColor="#C1D82F"/>
+						<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["# ROWS"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="450" y="74" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="1.0" lineColor="#C1D82F"/>
+						<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="DejaVu Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["% NOT MATCH"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="276" y="74" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="1.0" lineColor="#C1D82F"/>
+						<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="DejaVu Serif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["% MATCH"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="189" y="74" width="80" height="14"/>
+					<box>
+						<pen lineWidth="1.0" lineColor="#C1D82F"/>
+						<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["# MATCH"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="5" y="74" width="91" height="14"/>
+					<box>
+						<pen lineWidth="1.0" lineColor="#C1D82F"/>
+						<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+						<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif" size="8"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["TABLE"]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement key="table 1" positionType="Float" stretchType="RelativeToTallestObject" x="7" y="24" width="190" height="38" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="leftTableColumn">
+							<datasetParameter name="ana_uuid">
+								<datasetParameterExpression><![CDATA[$P{ANA_UUID}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="report_uuid">
+								<datasetParameterExpression><![CDATA[$P{REPORT_UUID}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:column width="190">
+							<jr:tableHeader height="18" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0" lineColor="#C1D82F"/>
+									<topPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<leftPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<bottomPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<rightPen lineWidth="0.0" lineColor="#C1D82F"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="190" height="18"/>
+									<box>
+										<pen lineWidth="1.0" lineColor="#C1D82F"/>
+										<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Source Han Sans" size="10" pdfFontName="Source Han Sans" pdfEncoding="Identity-H"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA["Element(s) from "+ $F{ELT_TABLE_NAME}]]></textFieldExpression>
+								</textField>
+							</jr:tableHeader>
+							<jr:detailCell style="table 1_TD" height="18" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0" lineColor="#C1D82F"/>
+									<topPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<leftPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<bottomPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<rightPen lineWidth="0.0" lineColor="#C1D82F"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="190" height="18"/>
+									<box>
+										<pen lineWidth="1.0" lineColor="#C1D82F"/>
+										<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Source Han Sans" size="8" pdfFontName="Source Han Sans" pdfEncoding="Identity-H"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_COLUMN_NAME}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+				<textField>
+					<reportElement x="7" y="6" width="235" height="14"/>
+					<box>
+						<pen lineWidth="0.0" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="DejaVu Serif" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Analyzed Column Sets:"]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement key="table 1" positionType="Float" stretchType="RelativeToTallestObject" x="197" y="24" width="190" height="38" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="rightTableColumn">
+							<datasetParameter name="ana_uuid">
+								<datasetParameterExpression><![CDATA[$P{ANA_UUID}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="report_uuid">
+								<datasetParameterExpression><![CDATA[$P{REPORT_UUID}]]></datasetParameterExpression>
+							</datasetParameter>
+						</datasetRun>
+						<jr:column width="190">
+							<jr:tableHeader height="18" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0" lineColor="#C1D82F"/>
+									<topPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<leftPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<bottomPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<rightPen lineWidth="0.0" lineColor="#C1D82F"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="190" height="18"/>
+									<box>
+										<pen lineWidth="1.0" lineColor="#C1D82F"/>
+										<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Source Han Sans" size="10" pdfFontName="Source Han Sans" pdfEncoding="Identity-H"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA["Element(s) from "+ $F{ELT_TABLE_NAME}]]></textFieldExpression>
+								</textField>
+							</jr:tableHeader>
+							<jr:detailCell style="table 1_TD" height="18" rowSpan="1">
+								<box>
+									<pen lineWidth="0.0" lineColor="#C1D82F"/>
+									<topPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<leftPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<bottomPen lineWidth="0.0" lineColor="#C1D82F"/>
+									<rightPen lineWidth="0.0" lineColor="#C1D82F"/>
+								</box>
+								<textField isStretchWithOverflow="true">
+									<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="190" height="18"/>
+									<box>
+										<pen lineWidth="1.0" lineColor="#C1D82F"/>
+										<topPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<leftPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<bottomPen lineWidth="1.0" lineColor="#C1D82F"/>
+										<rightPen lineWidth="1.0" lineColor="#C1D82F"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Source Han Sans" size="8" pdfFontName="Source Han Sans" pdfEncoding="Identity-H"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_COLUMN_NAME}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="51">
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="RelativeToBandHeight" x="5" y="8" width="524" height="14"/>
+					<textElement>
+						<font fontName="DejaVu Sans"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{matchValueList}.get(0)
++"% of the data from the A set ("
++$V{tableNameList}.get(0)
++") are found in data from the B set ("+$V{tableNameList}.get($V{tableNameList}.size()-1)
++")."]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="4" y="0" width="527" height="1" forecolor="#C1D82F" backcolor="#C1D82F"/>
+				</line>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="RelativeToBandHeight" x="5" y="33" width="524" height="14"/>
+					<textElement>
+						<font fontName="DejaVu Sans"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{matchValueList}.get($V{matchValueList}.size()-1)
++"% of the data from the B set ("
++$V{tableNameList}.get($V{tableNameList}.size()-1)
++") are found in data from the A set ("+$V{tableNameList}.get(0)
++")."]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Detail1">
+		<groupExpression><![CDATA[$F{ELT_CONNECTION_UUID}+$F{ELT_TABLE_NAME}+$V{COLUMN_COUNT}]]></groupExpression>
+		<groupHeader>
+			<band height="18">
+				<line>
+					<reportElement key="line-6" positionType="Float" x="5" y="16" width="525" height="1" forecolor="#AEB0B2"/>
+				</line>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+					<reportElement key="textField-16" stretchType="RelativeToBandHeight" mode="Transparent" x="6" y="3" width="90" height="13" forecolor="#000000" backcolor="#FFFFFF">
+						<printWhenExpression><![CDATA[$V{tableNameList}.contains($F{ELT_TABLE_NAME}) ? $V{tableNameList}.add($F{ELT_TABLE_NAME}+"(*)") : $V{tableNameList}.add($F{ELT_TABLE_NAME})]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="Source Han Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Source Han Sans" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{tableNameList}.get( $V{COLUMN_COUNT})]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField-22" mode="Transparent" x="102" y="2" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{INDV_ROW_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField-24" mode="Transparent" x="189" y="2" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{INDV_MATCH_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-26" mode="Transparent" x="276" y="2" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF">
+						<printWhenExpression><![CDATA[$F{INDV_ROW_COUNT}==0L ? $V{matchValueList}.add("N/A") : $V{matchValueList}.add(new DecimalFormat("##0.00").format($F{INDV_MATCH_COUNT}.doubleValue()*100/$F{INDV_ROW_COUNT}.doubleValue()))]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="Source Han Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Source Han Sans" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{matchValueList}.get($V{COLUMN_COUNT})]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField-27" mode="Transparent" x="364" y="2" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{INDV_NOTMATCH_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-28" mode="Transparent" x="450" y="2" width="80" height="14" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{INDV_ROW_COUNT}==0L? "N/A": (new DecimalFormat("##0.00").format($F{INDV_NOTMATCH_COUNT}.doubleValue()*100/$F{INDV_ROW_COUNT}.doubleValue()))]]></textFieldExpression>
+				</textField>
+				<line direction="BottomUp">
+					<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="530" y="0" width="1" height="18" forecolor="#C1D82F"/>
+				</line>
+				<line direction="BottomUp">
+					<reportElement stretchType="RelativeToBandHeight" x="4" y="0" width="1" height="18" forecolor="#C1D82F"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="50">
+			<printWhenExpression><![CDATA[$P{NEED_TITLE}]]></printWhenExpression>
+			<image>
+				<reportElement key="image-1" stretchType="RelativeToBandHeight" mode="Transparent" x="7" y="8" width="97" height="30"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression class="java.io.File"><![CDATA[new File($P{LOGO_FILE})]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16">
+			<textField isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="7" y="0" width="92" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="222" y="0" width="92" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="437" y="0" width="92" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="28">
+			<textField isBlankWhenNull="false">
+                <reportElement key="textField" x="312" y="18" width="222" height="9"/>
+                <box>
+                    <topPen lineWidth="0.0" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="DejaVu Sans" size="6"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{PR_NAME}+" @V"+$F{PR_DISPLAY_VERSION}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="7" y="0" width="95" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="222" y="0" width="95" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY" stretchType="RelativeToTallestObject" x="437" y="0" width="95" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

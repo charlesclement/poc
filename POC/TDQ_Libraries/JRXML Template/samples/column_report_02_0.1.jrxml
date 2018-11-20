@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="classic" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="REPORT_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[The report unique identifier]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_8HkLkIMGEd2mdZbViCcF7A"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_FROM" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter from]]></parameterDescription>
+	</parameter>
+	<parameter name="RUN_TIME_TO" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter to]]></parameterDescription>
+	</parameter>
+	<parameter name="ANA_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Analysis identifier]]></parameterDescription>
+	</parameter>
+	<parameter name="LOGO_FILE" class="java.lang.String">
+		<parameterDescription><![CDATA[Logo file]]></parameterDescription>
+	</parameter>
+	<parameter name="NEED_TITLE" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new Boolean(true)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     TDQ_V_IND_HISTO TDQ_V_IND_HISTO
+WHERE RUN_TIME>=$P{RUN_TIME_FROM} AND RUN_TIME <=$P{RUN_TIME_TO} AND AN_UUID=$P{ANA_UUID}
+ORDER BY REP_UUID, AN_UUID, ELT_UUID,IND_CATEG_UUID]]>
+	</queryString>
+	<field name="REP_UUID" class="java.lang.String"/>
+	<field name="AN_UUID" class="java.lang.String"/>
+	<field name="REP_LABEL" class="java.lang.String"/>
+	<field name="AN_LABEL" class="java.lang.String"/>
+	<field name="AN_CREATION_DATE" class="java.sql.Timestamp"/>
+	<field name="AN_AUTHOR" class="java.lang.String"/>
+	<field name="AN_DATA_FILTER" class="java.lang.String"/>
+	<field name="REP_CREATION_DATE" class="java.sql.Timestamp"/>
+	<field name="REP_AUTHOR" class="java.lang.String"/>
+	<field name="REP_STATUS" class="java.lang.String"/>
+	<field name="ELT_UUID" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_UUID" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_NAME" class="java.lang.String"/>
+	<field name="ELT_CATALOG_NAME" class="java.lang.String"/>
+	<field name="ELT_SCHEMA_NAME" class="java.lang.String"/>
+	<field name="ELT_TABLE_NAME" class="java.lang.String"/>
+	<field name="ELT_COLUMN_NAME" class="java.lang.String"/>
+	<field name="IND_LABEL" class="java.lang.String"/>
+	<field name="IND_CATEG_UUID" class="java.lang.String"/>
+	<field name="INO_REGEXP" class="java.lang.String"/>
+	<field name="IND_CATEGORY" class="java.lang.String"/>
+	<field name="CAL_DATE" class="java.sql.Date"/>
+	<field name="TIME_HOUR" class="java.lang.Integer"/>
+	<field name="TIME_MINUTE" class="java.lang.Integer"/>
+	<field name="RUN_TIME" class="java.sql.Timestamp"/>
+	<field name="INDV_INT_VALUE" class="java.lang.Integer"/>
+	<field name="INDV_ROW_COUNT" class="java.lang.Integer"/>
+	<filterExpression><![CDATA[$P{REPORT_UUID} != null ? Boolean.valueOf($F{REP_UUID}.equals( $P{REPORT_UUID} )) : Boolean.FALSE]]></filterExpression>
+	<group name="REP_UUID">
+		<groupExpression><![CDATA[$F{REP_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<rectangle radius="0">
+					<reportElement key="rectangle" mode="Opaque" x="0" y="0" width="535" height="25" forecolor="#8080FF" backcolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText" x="0" y="0" width="145" height="23" forecolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Report]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField" x="145" y="0" width="389" height="23" forecolor="#FFFFFF"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{REP_LABEL}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="10">
+				<line direction="BottomUp">
+					<reportElement key="line" x="1" y="4" width="534" height="1" forecolor="#000000"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="AN_UUID" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{AN_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<rectangle radius="0">
+					<reportElement key="rectangle" mode="Opaque" x="0" y="0" width="535" height="25" forecolor="#FF0000" backcolor="#FFE1B9"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText" x="0" y="0" width="145" height="23" forecolor="#000000"/>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Analysis]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField" x="145" y="0" width="389" height="23" forecolor="#000000"/>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_LABEL}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="10">
+				<line direction="BottomUp">
+					<reportElement key="line" x="1" y="4" width="534" height="1" forecolor="#8080FF"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="ELT_UUID">
+		<groupExpression><![CDATA[$F{ELT_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<staticText>
+					<reportElement key="staticText" x="0" y="0" width="145" height="23" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Analyzed element]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField" x="145" y="0" width="389" height="23" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_COLUMN_NAME}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="5">
+				<line direction="BottomUp">
+					<reportElement key="line" x="1" y="4" width="534" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="IND_CATEG_UUID">
+		<groupExpression><![CDATA[$F{IND_CATEG_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<staticText>
+					<reportElement key="staticText" x="0" y="0" width="145" height="23" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Indicator Catigory]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="textField" x="145" y="0" width="389" height="23" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{IND_CATEGORY}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="491">
+				<line direction="BottomUp">
+					<reportElement key="line" x="1" y="4" width="534" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<timeSeriesChart>
+					<chart>
+						<reportElement key="element-1" x="0" y="14" width="535" height="218"/>
+						<chartTitle color="#000000">
+							<titleExpression><![CDATA["Row counts"]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+					</chart>
+					<timeSeriesDataset timePeriod="Minute">
+						<dataset resetType="Group" resetGroup="IND_CATEG_UUID"/>
+						<timeSeries>
+							<seriesExpression><![CDATA[$F{IND_CATEG_UUID}.equals("_ccKHEBF2Ed2PKb6nEJEvhw")?$F{IND_LABEL}:$F{INO_REGEXP}]]></seriesExpression>
+							<timePeriodExpression><![CDATA[$F{RUN_TIME}]]></timePeriodExpression>
+							<valueExpression><![CDATA[$F{INDV_INT_VALUE}]]></valueExpression>
+							<itemHyperlink/>
+						</timeSeries>
+					</timeSeriesDataset>
+					<timeSeriesPlot>
+						<plot/>
+						<timeAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</timeAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</timeSeriesPlot>
+				</timeSeriesChart>
+				<timeSeriesChart>
+					<chart>
+						<reportElement key="element-2" x="0" y="248" width="535" height="240"/>
+						<chartTitle color="#000000">
+							<titleExpression><![CDATA["Frequencies (%)"]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+					</chart>
+					<timeSeriesDataset timePeriod="Minute">
+						<dataset resetType="Group" resetGroup="IND_CATEG_UUID"/>
+						<timeSeries>
+							<seriesExpression><![CDATA[$F{IND_CATEG_UUID}.equals("_ccKHEBF2Ed2PKb6nEJEvhw")?$F{IND_LABEL}:$F{INO_REGEXP}]]></seriesExpression>
+							<timePeriodExpression><![CDATA[$F{RUN_TIME}]]></timePeriodExpression>
+							<valueExpression><![CDATA[$F{INDV_ROW_COUNT}.doubleValue() > 0 ? Double.valueOf($F{INDV_INT_VALUE}.doubleValue()*100/$F{INDV_ROW_COUNT}.doubleValue()) : Double.valueOf(-1)]]></valueExpression>
+							<itemHyperlink/>
+						</timeSeries>
+					</timeSeriesDataset>
+					<timeSeriesPlot>
+						<plot/>
+						<timeAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</timeAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</timeSeriesPlot>
+				</timeSeriesChart>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="81">
+			<printWhenExpression><![CDATA[$P{NEED_TITLE}]]></printWhenExpression>
+			<line>
+				<reportElement key="line" x="0" y="3" width="534" height="1" forecolor="#808080"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="staticText-1" x="61" y="6" width="412" height="38" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Indicators Evolution in Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="60" y="7" width="412" height="37" forecolor="#999999"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Indicators Evolution in Time]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="61" y="53" width="412" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Report \"" + $F{REP_LABEL} + "\""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="60" y="53" width="412" height="23" forecolor="#999999"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Report \"" + $F{REP_LABEL} + "\""]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="484" y="7" width="50" height="46"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{LOGO_FILE}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY" x="430" y="10" width="95" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY_PAGECOUNT" x="530" y="10" width="5" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="0" y="27" width="535" height="1" forecolor="#000000"/>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY" x="1" y="10" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY_PAGECOUNT" x="49" y="10" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY" x="230" y="10" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY_PAGECOUNT" x="278" y="10" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<line direction="BottomUp">
+				<reportElement key="line" x="0" y="0" width="535" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement key="line" x="0" y="19" width="535" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+			<staticText>
+				<reportElement key="staticText-3" x="20" y="4" width="61" height="16"/>
+				<textElement/>
+				<text><![CDATA[Indicator]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="81" y="4" width="73" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IND_LABEL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="154" y="4" width="142" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.valueOf($F{RUN_TIME})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="296" y="4" width="61" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[String.valueOf($F{INDV_INT_VALUE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY" x="429" y="16" width="95" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY_PAGECOUNT" x="529" y="16" width="5" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-2" x="-1" y="11" width="535" height="1" forecolor="#000000"/>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY" x="0" y="16" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY_PAGECOUNT" x="48" y="16" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY" x="229" y="16" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY_PAGECOUNT" x="277" y="16" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

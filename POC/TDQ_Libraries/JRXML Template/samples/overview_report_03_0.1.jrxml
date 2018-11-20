@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_03" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="REPORT_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Report identifier]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_SFR5oIilEd2vLpRtgJZmlg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_FROM" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter from]]></parameterDescription>
+	</parameter>
+	<parameter name="RUN_TIME_TO" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter to]]></parameterDescription>
+	</parameter>
+	<parameter name="ANA_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Analysis identifier]]></parameterDescription>
+		<defaultValueExpression><![CDATA["__6n18P2mEd265aRYEVmmqg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO_FILE" class="java.lang.String">
+		<parameterDescription><![CDATA[Logo file]]></parameterDescription>
+	</parameter>
+	<parameter name="DB_TYPE" class="java.lang.Integer">
+		<parameterDescription><![CDATA[0: Catalog
+1: Schema
+2: PostgreSQL]]></parameterDescription>
+	</parameter>
+	<parameter name="NEED_TITLE" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new Boolean(true)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     TDQ_ANALYSIS.AN_UUID AS AN_UUID,
+     TDQ_ANALYSIS.AN_LABEL AS AN_LABEL,
+     TDQ_ANALYSIS.REP_UUID AS REP_UUID,
+     TDQ_ANALYSIS.AN_CREATION_DATE AS AN_CREATION_DATE,
+     TDQ_ANALYSIS.AN_AUTHOR AS AN_AUTHOR,
+     TDQ_ANALYSIS.AN_DATA_FILTER AS AN_DATA_FILTER,
+     TDQ_ANALYSIS.AN_STATUS AS AN_STATUS,
+     TDQ_ANALYSIS.REP_CREATION_DATE AS REP_CREATION_DATE,
+     TDQ_ANALYSIS.REP_LABEL AS REP_LABEL,
+     TDQ_ANALYSIS.REP_AUTHOR AS REP_AUTHOR,
+     TDQ_ANALYSIS.REP_STATUS AS REP_STATUS,
+     TDQ_ANALYSIS.AN_BEGIN_DATE AS AN_BEGIN_DATE,
+     TDQ_ANALYSIS.AN_END_DATE AS AN_END_DATE,
+     TDQ_ANALYSIS.AN_VERSION AS AN_VERSION,
+     TDQ_OVERVIEW_INDVALUE.TV_NAME AS TV_NAME,
+     TDQ_OVERVIEW_INDVALUE.ELT_PK AS ELT_PK,
+     TDQ_OVERVIEW_INDVALUE.IND_PK AS IND_PK,
+     TDQ_OVERVIEW_INDVALUE.TV_CATALOGCOUNT AS TV_CATALOGCOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_SCHEMACOUNT AS TV_SCHEMACOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_TABLECOUNT AS TV_TABLECOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_ROWCOUNT AS TV_ROWCOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_KEYCOUNT AS TV_KEYCOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_INDEXCOUNT AS TV_INDEXCOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_TRIGGERCOUNT AS TV_TRIGGERCOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_VIEWCOUNT AS TV_VIEWCOUNT,
+     TDQ_OVERVIEW_INDVALUE.TV_TABLE_FILTER AS TV_TABLE_FILTER,
+     TDQ_OVERVIEW_INDVALUE.TV_VIEW_FILTER AS TV_VIEW_FILTER,
+     TDQ_OVERVIEW_INDVALUE.AN_RUNTIME AS AN_RUNTIME,
+     TDQ_OVERVIEW_INDVALUE.AN_DURATION AS AN_DURATION,
+     TDQ_ANALYZED_ELEMENT.ELT_CATALOG_NAME AS ELT_CATALOG_NAME,
+     TDQ_ANALYZED_ELEMENT.ELT_SCHEMA_NAME AS ELT_SCHEMA_NAME,
+     TDQ_ANALYZED_ELEMENT.ELT_CONNECTION_NAME AS ELT_CONNECTION_NAME,
+     TDQ_ANALYZED_ELEMENT.ELT_UUID AS ELT_UUID
+FROM
+     TDQ_OVERVIEW_INDVALUE TDQ_OVERVIEW_INDVALUE INNER JOIN TDQ_ANALYSIS TDQ_ANALYSIS ON TDQ_OVERVIEW_INDVALUE.AN_PK = TDQ_ANALYSIS.AN_PK
+     INNER JOIN TDQ_ANALYZED_ELEMENT TDQ_ANALYZED_ELEMENT ON TDQ_OVERVIEW_INDVALUE.ELT_PK = TDQ_ANALYZED_ELEMENT.ELT_PK
+WHERE AN_UUID = $P{ANA_UUID}
+ AND AN_RUNTIME = ( SELECT max(AN_RUNTIME) FROM TDQ_OVERVIEW_INDVALUE TDQ_OVERVIEW_INDVALUE  INNER JOIN TDQ_ANALYSIS TDQ_ANA on TDQ_OVERVIEW_INDVALUE.AN_PK = TDQ_ANA.AN_PK where TDQ_OVERVIEW_INDVALUE.AN_RUNTIME>=$P{RUN_TIME_FROM} AND TDQ_OVERVIEW_INDVALUE.AN_RUNTIME <=$P{RUN_TIME_TO} AND TDQ_ANA.AN_UUID=$P{ANA_UUID} )
+ORDER BY
+     TDQ_ANALYZED_ELEMENT.ELT_CATALOG_NAME ASC,
+     TDQ_ANALYZED_ELEMENT.ELT_SCHEMA_NAME ASC,
+     TDQ_OVERVIEW_INDVALUE.TV_NAME ASC]]>
+	</queryString>
+	<field name="AN_UUID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_LABEL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REP_UUID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_CREATION_DATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_AUTHOR" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_DATA_FILTER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_STATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REP_CREATION_DATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REP_LABEL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REP_AUTHOR" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REP_STATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_BEGIN_DATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_END_DATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_VERSION" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ELT_PK" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IND_PK" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_CATALOGCOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_SCHEMACOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_TABLECOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_ROWCOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_KEYCOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_INDEXCOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_TRIGGERCOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_VIEWCOUNT" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_TABLE_FILTER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TV_VIEW_FILTER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_RUNTIME" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AN_DURATION" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ELT_CATALOG_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ELT_SCHEMA_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ELT_CONNECTION_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ELT_UUID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="hasSchema" class="java.lang.Boolean" resetType="None">
+		<variableExpression><![CDATA[Boolean.valueOf($F{ELT_SCHEMA_NAME} != null)]]></variableExpression>
+	</variable>
+	<filterExpression><![CDATA[$P{REPORT_UUID} != null ? Boolean.valueOf($F{REP_UUID}.equals( $P{REPORT_UUID} )) : Boolean.FALSE]]></filterExpression>
+	<group name="UUID_Analysis" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{AN_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="69">
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="65" y="0" width="187" height="17"/>
+					<box>
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_LABEL}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement key="line-1" positionType="FixRelativeToBottom" x="0" y="17" width="535" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-2" x="0" y="0" width="56" height="17"/>
+					<textElement>
+						<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Analysis:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-4" x="0" y="17" width="56" height="14"/>
+					<textElement>
+						<font isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Summary:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-5" x="0" y="35" width="104" height="14"/>
+					<textElement/>
+					<text><![CDATA[Connection:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-8" x="323" y="36" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[Execution date:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="3" y="50" width="101" height="15"/>
+					<textElement/>
+					<text><![CDATA[Execution duration (s):]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-5" x="106" y="51" width="92" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_DURATION} != null ? String.valueOf($F{AN_DURATION}.intValue()/1000.0d) : "N/A"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-6" x="106" y="34" width="207" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_CONNECTION_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-8" x="401" y="36" width="92" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{AN_RUNTIME}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-9" x="391" y="5" width="132" height="12"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_AUTHOR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" x="323" y="5" width="63" height="12"/>
+					<textElement/>
+					<text><![CDATA[Author:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Catalog">
+		<groupExpression><![CDATA[$F{ELT_CATALOG_NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<printWhenExpression><![CDATA[new Boolean(!$F{ELT_CATALOG_NAME}.equals( "N/A (TDQ)" ))]]></printWhenExpression>
+				<line>
+					<reportElement key="line-1" positionType="FixRelativeToBottom" x="19" y="17" width="500" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="16" y="0" width="49" height="17"/>
+					<textElement>
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Catalog:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="65" y="0" width="248" height="17"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_CATALOG_NAME}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Schema">
+		<groupExpression><![CDATA[$F{ELT_SCHEMA_NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<printWhenExpression><![CDATA[new Boolean(!$F{ELT_SCHEMA_NAME}.equals( "N/A (TDQ)" ))]]></printWhenExpression>
+				<line>
+					<reportElement key="line-1" positionType="FixRelativeToBottom" x="65" y="24" width="454" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="64" y="5" width="52" height="17"/>
+					<textElement>
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Schema:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="113" y="5" width="246" height="17"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_SCHEMA_NAME}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="summary">
+		<groupExpression><![CDATA[$F{TV_NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="85">
+				<printWhenExpression><![CDATA[new Boolean((($P{DB_TYPE}.intValue()==1?true:!$F{ELT_CATALOG_NAME}.equals("N/A (TDQ)"))&&($P{DB_TYPE}.intValue()!=2?true:!$F{ELT_SCHEMA_NAME}.equals("N/A (TDQ)")))&&($F{TV_NAME}==null||$F{TV_NAME}.trim().equals( "" )))]]></printWhenExpression>
+				<frame>
+					<reportElement x="64" y="0" width="400" height="84"/>
+					<line>
+						<reportElement x="51" y="39" width="335" height="1" isRemoveLineWhenBlank="true" forecolor="#3399FF"/>
+						<graphicElement>
+							<pen lineStyle="Dashed"/>
+						</graphicElement>
+					</line>
+					<staticText>
+						<reportElement x="7" y="62" width="148" height="17">
+							<printWhenExpression><![CDATA[new Boolean($F{TV_TABLECOUNT}.longValue()+$F{TV_VIEWCOUNT}.longValue()>0)]]></printWhenExpression>
+						</reportElement>
+						<textElement>
+							<font size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Tables/Views]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="51" y="21" width="74" height="18"/>
+						<textElement textAlignment="Center">
+							<font size="10"/>
+						</textElement>
+						<text><![CDATA[#Tables]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="155" y="62" width="77" height="18">
+							<printWhenExpression><![CDATA[new Boolean($F{TV_TABLECOUNT}.longValue()+$F{TV_VIEWCOUNT}.longValue()>0)]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Rows]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="258" y="40" width="64" height="16"/>
+						<textElement textAlignment="Center"/>
+						<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_KEYCOUNT}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="52" y="39" width="73" height="17"/>
+						<textElement textAlignment="Center"/>
+						<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_TABLECOUNT}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="258" y="21" width="64" height="18"/>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Keys]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="0" width="51" height="17"/>
+						<textElement>
+							<font size="10" isBold="false"/>
+						</textElement>
+						<text><![CDATA[Summary:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="314" y="62" width="71" height="19">
+							<printWhenExpression><![CDATA[new Boolean($F{TV_TABLECOUNT}.longValue()+$F{TV_VIEWCOUNT}.longValue()>0)]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Indexes]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="125" y="21" width="69" height="18"/>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Rows]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="322" y="40" width="64" height="16"/>
+						<textElement textAlignment="Center"/>
+						<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_INDEXCOUNT}]]></textFieldExpression>
+					</textField>
+					<line>
+						<reportElement key="line-1" positionType="FixRelativeToBottom" x="7" y="80" width="378" height="1" forecolor="#808080">
+							<printWhenExpression><![CDATA[new Boolean($F{TV_TABLECOUNT}.longValue()+$F{TV_VIEWCOUNT}.longValue()>0)]]></printWhenExpression>
+						</reportElement>
+						<graphicElement>
+							<pen lineWidth="0.25"/>
+						</graphicElement>
+					</line>
+					<staticText>
+						<reportElement x="322" y="21" width="64" height="18"/>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Indexes]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="194" y="39" width="64" height="17"/>
+						<textElement textAlignment="Center"/>
+						<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_VIEWCOUNT}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="232" y="62" width="82" height="17">
+							<printWhenExpression><![CDATA[new Boolean($F{TV_TABLECOUNT}.longValue()+$F{TV_VIEWCOUNT}.longValue()>0)]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Keys]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="125" y="39" width="69" height="17"/>
+						<textElement textAlignment="Center"/>
+						<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_ROWCOUNT}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="194" y="21" width="64" height="18"/>
+						<textElement textAlignment="Center"/>
+						<text><![CDATA[#Views]]></text>
+					</staticText>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="54">
+			<printWhenExpression><![CDATA[$P{NEED_TITLE}]]></printWhenExpression>
+			<line>
+				<reportElement key="line" x="0" y="3" width="534" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="15" width="505" height="29"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isUnderline="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Report \"" + $F{REP_LABEL} + "\""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-21" x="16" y="15" width="469" height="29" forecolor="#999999"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isUnderline="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Report \"" + $F{REP_LABEL} + "\""]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="484" y="4" width="50" height="40"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{LOGO_FILE}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY" x="430" y="1" width="95" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY_PAGECOUNT" x="530" y="1" width="5" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line" x="0" y="18" width="535" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY" x="1" y="1" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY_PAGECOUNT" x="49" y="1" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY" x="230" y="1" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY_PAGECOUNT" x="278" y="1" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="19"/>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<printWhenExpression><![CDATA[new Boolean($F{TV_NAME}!=null&&!$F{TV_NAME}.trim().equals( "" ))]]></printWhenExpression>
+			<textField>
+				<reportElement x="73" y="0" width="146" height="19"/>
+				<textElement>
+					<font size="10" isBold="false" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TV_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="1" width="71" height="18"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_INDEXCOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="219" y="0" width="79" height="19"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_ROWCOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="82" height="19"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{TV_KEYCOUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY" x="430" y="6" width="95" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY_PAGECOUNT" x="530" y="6" width="5" height="19"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line" x="0" y="1" width="535" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY" x="1" y="6" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY_PAGECOUNT" x="49" y="6" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY" x="230" y="6" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY_PAGECOUNT" x="278" y="6" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

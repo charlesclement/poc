@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_01" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<subDataset name="frequencies"/>
+	<parameter name="REPORT_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Report identifier]]></parameterDescription>
+		<defaultValueExpression><![CDATA["_SFR5oIilEd2vLpRtgJZmlg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RUN_TIME_FROM" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter from]]></parameterDescription>
+	</parameter>
+	<parameter name="RUN_TIME_TO" class="java.sql.Timestamp">
+		<parameterDescription><![CDATA[Analysis executed date filter to]]></parameterDescription>
+	</parameter>
+	<parameter name="ANA_UUID" class="java.lang.String">
+		<parameterDescription><![CDATA[Analysis identifier]]></parameterDescription>
+	</parameter>
+	<parameter name="LOGO_FILE" class="java.lang.String">
+		<parameterDescription><![CDATA[Logo file]]></parameterDescription>
+	</parameter>
+	<parameter name="NEED_TITLE" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new Boolean(true)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select distinct
+
+t_an.REP_UUID AS REP_UUID,
+t_an.REP_LABEL AS REP_LABEL,
+t_an.REP_CREATION_DATE AS REP_CREATION_DATE,
+case when t_an.REP_AUTHOR = 'TALEND NULL'
+  then 'None'
+  else t_an.REP_AUTHOR end AS REP_AUTHOR,
+t_an.REP_STATUS AS REP_STATUS,
+
+t_an.AN_UUID AS AN_UUID,
+t_an.AN_LABEL AS AN_LABEL,
+t_an.AN_CREATION_DATE AS AN_CREATION_DATE,
+case when t_an.AN_AUTHOR = 'NULL TALEND'
+  then 'none' 
+  else t_an.AN_AUTHOR end AS AN_AUTHOR,
+t_an.AN_STATUS AS AN_STATUS,
+t_an.AN_DATA_FILTER AS AN_DATA_FILTER,
+
+t_ae.ELT_UUID AS ELT_UUID,
+t_ae.ELT_CONNECTION_UUID AS ELT_CONNECTION_UUID,
+t_ae.ELT_CONNECTION_NAME AS ELT_CONNECTION_NAME,
+t_ae.ELT_CATALOG_NAME AS ELT_CATALOG_NAME,
+t_ae.ELT_SCHEMA_NAME AS ELT_SCHEMA_NAME,
+t_ae.ELT_TABLE_NAME AS ELT_TABLE_NAME,
+t_ae.ELT_COLUMN_NAME AS ELT_COLUMN_NAME,
+t_ae.ELT_VERSION AS ELT_VERSION,
+
+t_id.IND_CATEGORY AS  IND_CATEGORY,
+t_id.IND_UUID AS  IND_UUID,
+t_id.IND_LABEL AS  IND_LABEL,
+t_id.IND_CATEG_UUID AS  IND_CATEG_UUID,
+t_id.IND_VERSION AS  IND_VERSION,
+
+case when t_iv.INDV_VALUE_TYPE_INDICATOR= 'I'
+        then t_iv.INDV_INT_VALUE
+        else  t_iv.INDV_REAL_VALUE end   AS  INDV_VALUE,
+
+t_iv.IND_TYPE AS  IND_TYPE,
+t_iv.INDV_ROW_COUNT AS  ROW_COUNT,
+t_iv.INDV_VALUE_TYPE_INDICATOR AS  TYPE_INDICATOR,
+t_iv.AN_DURATION AS AN_DURATION,
+t_iv.INDV_DATE_VALUE AS INDV_DATE_VALUE,
+case when t_iv.INDV_DTHRESH_OK = 'U' then 'N/A' end AS INDV_DTHRESH_OK,
+t_iv.INDV_DTHRESH_LOW AS INDV_DTHRESH_LOW,
+t_iv.INDV_DTHRESH_HI AS INDV_DTHRESH_HI,
+case when t_iv.INDV_ITHRESH_OK  = 'U' then 'N/A' end AS INDV_ITHRESH_OK,
+t_iv.INDV_ITHRESH_LOW AS INDV_ITHRESH_LOW,
+t_iv.INDV_ITHRESH_HI AS INDV_ITHRESH_HI,
+case when t_iv.INDV_EXP_VAL_OK  = 'U' then 'N/A' end AS INDV_EXP_VAL_OK,
+t_iv.INDV_EXP_VAL AS INDV_EXP_VAL,
+
+t_val.VAL_STRING AS VAL_STRING,
+t_val.VAL_PK AS VAL_PK,
+
+cal.CAL_DATE AS DT_DAY,
+dtime.TIME_LABEL AS DT_TIME,
+t_iv.AN_RUNTIME AS RUN_TIME,
+
+t_opt.INO_REGEXP AS REGEX_LABEL
+
+from
+     TDQ_INDICATOR_VALUE t_iv
+     inner JOIN TDQ_V_INDICATOR_DEFINITION t_id  ON t_id.IND_PK = t_iv.INDICATOR_PK
+     inner join TDQ_V_ANALYSIS t_an  ON t_iv.ANALYSIS_PK= t_an.AN_PK
+     inner join TDQ_V_ANALYZED_ELEMENT t_ae  ON t_iv.ELEMENT_PK= t_ae.ELT_PK
+     inner join TDQ_CALENDAR cal ON cal.CAL_PK = t_iv.CALENDAR_PK
+     inner join TDQ_DAY_TIME dtime ON dtime.TIME_PK =  t_iv.TIME_PK
+     inner join TDQ_V_LAST_RUN_ANALYSIS lra ON (lra.analysis_pk = t_iv.analysis_pk and lra.cal_pk = t_iv.calendar_pk and lra.time_pk = t_iv.time_pk)
+     inner join TDQ_VALUES t_val  ON t_iv.VALUE_PK= t_val.VAL_PK
+     inner join TDQ_INDICATOR_OPTIONS t_opt ON t_iv.option_pk=t_opt.ino_pk
+WHERE 
+	t_iv.AN_RUNTIME>=$P{RUN_TIME_FROM} AND t_iv.AN_RUNTIME <=$P{RUN_TIME_TO} AND AN_UUID=$P{ANA_UUID}
+ORDER BY AN_UUID,ELT_UUID,IND_CATEGORY,IND_UUID]]>
+	</queryString>
+	<field name="REP_UUID" class="java.lang.String"/>
+	<field name="REP_LABEL" class="java.lang.String"/>
+	<field name="REP_CREATION_DATE" class="java.sql.Timestamp"/>
+	<field name="REP_AUTHOR" class="java.lang.String"/>
+	<field name="REP_STATUS" class="java.lang.String"/>
+	<field name="AN_UUID" class="java.lang.String"/>
+	<field name="AN_LABEL" class="java.lang.String"/>
+	<field name="AN_CREATION_DATE" class="java.sql.Timestamp"/>
+	<field name="AN_AUTHOR" class="java.lang.String"/>
+	<field name="AN_STATUS" class="java.lang.String"/>
+	<field name="AN_DATA_FILTER" class="java.lang.String"/>
+	<field name="ELT_UUID" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_UUID" class="java.lang.String"/>
+	<field name="ELT_CONNECTION_NAME" class="java.lang.String"/>
+	<field name="ELT_CATALOG_NAME" class="java.lang.String"/>
+	<field name="ELT_SCHEMA_NAME" class="java.lang.String"/>
+	<field name="ELT_TABLE_NAME" class="java.lang.String"/>
+	<field name="ELT_COLUMN_NAME" class="java.lang.String"/>
+	<field name="ELT_VERSION" class="java.lang.Integer"/>
+	<field name="IND_CATEGORY" class="java.lang.String"/>
+	<field name="IND_UUID" class="java.lang.String"/>
+	<field name="IND_LABEL" class="java.lang.String"/>
+	<field name="IND_CATEG_UUID" class="java.lang.String"/>
+	<field name="IND_VERSION" class="java.lang.Integer"/>
+	<field name="INDV_VALUE" class="java.lang.Double"/>
+	<field name="IND_TYPE" class="java.lang.String"/>
+	<field name="ROW_COUNT" class="java.lang.Integer"/>
+	<field name="TYPE_INDICATOR" class="java.lang.String"/>
+	<field name="AN_DURATION" class="java.lang.Integer"/>
+	<field name="INDV_DTHRESH_OK" class="java.lang.String"/>
+	<field name="INDV_DTHRESH_LOW" class="java.lang.Integer"/>
+	<field name="INDV_DTHRESH_HI" class="java.lang.Integer"/>
+	<field name="INDV_ITHRESH_OK" class="java.lang.String"/>
+	<field name="INDV_ITHRESH_LOW" class="java.lang.Integer"/>
+	<field name="INDV_ITHRESH_HI" class="java.lang.Integer"/>
+	<field name="INDV_EXP_VAL_OK" class="java.lang.String"/>
+	<field name="INDV_EXP_VAL" class="java.lang.String"/>
+	<field name="VAL_STRING" class="java.lang.String"/>
+	<field name="VAL_PK" class="java.lang.Integer"/>
+	<field name="DT_DAY" class="java.sql.Date"/>
+	<field name="DT_TIME" class="java.lang.String"/>
+	<field name="RUN_TIME" class="java.sql.Timestamp"/>
+	<field name="REGEX_LABEL" class="java.lang.String"/>
+	<field name="INDV_DATE_VALUE" class="java.sql.Timestamp"/>
+	<sortField name="AN_UUID"/>
+	<sortField name="ELT_UUID"/>
+	<sortField name="IND_CATEG_UUID"/>
+	<sortField name="IND_UUID" order="Descending"/>
+	<variable name="FullyQualifiedColumn" class="java.lang.String" resetType="Group" resetGroup="UUID_ELT">
+		<initialValueExpression><![CDATA[($F{ELT_TABLE_NAME}!=null ? $F{ELT_TABLE_NAME}+".":"") + 
+($F{ELT_COLUMN_NAME}!=null ? $F{ELT_COLUMN_NAME}:"")]]></initialValueExpression>
+	</variable>
+	<variable name="rowCount" class="java.lang.Integer" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[$F{ROW_COUNT}]]></variableExpression>
+	</variable>
+	<variable name="hasSchema" class="java.lang.Boolean" resetType="None">
+		<variableExpression><![CDATA[Boolean.valueOf($F{ELT_SCHEMA_NAME} != null)]]></variableExpression>
+	</variable>
+	<variable name="IndicatorLabel" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[$F{IND_LABEL}]]></variableExpression>
+	</variable>
+	<variable name="isTextStatistics" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf("_ccKHERF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></variableExpression>
+	</variable>
+	<variable name="isSimpleStatistics" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf("_ccKHEBF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_ccKHEBF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="label_print" class="java.lang.String" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[($V{isTextStatistics}.booleanValue() ||$V{isSimpleStatistics}.booleanValue() || $V{isSummaryStatistics}.booleanValue())?
+$F{IND_LABEL}:$F{VAL_STRING}]]></variableExpression>
+		<initialValueExpression><![CDATA[($V{isTextStatistics}.booleanValue() ||$V{isSimpleStatistics}.booleanValue() || $V{isSummaryStatistics}.booleanValue())?
+$F{IND_LABEL}:$F{VAL_STRING}]]></initialValueExpression>
+	</variable>
+	<variable name="isSummaryStatistics" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf("_ccKuIBF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_ccKuIBF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="indicatorValue" class="java.lang.Double" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA["_ccIR4BF2Ed2PKb6nEJEvhw".equals($F{IND_UUID}) || "_ccI48RF2Ed2PKb6nEJEvhw".equals($F{IND_UUID}) ? Double.valueOf($F{INDV_VALUE}.doubleValue()/$F{ROW_COUNT}.doubleValue()) : $F{INDV_VALUE}]]></variableExpression>
+	</variable>
+	<variable name="isAdvancedStatistics" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf("_ccKuIRF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_ccKuIRF2Ed2PKb6nEJEvhw".equals($F{IND_CATEG_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="isPatternStatistics" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf("_tJjIwIDEEd2nDvn5vy_C5A".equals($F{IND_CATEG_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_tJjIwIDEEd2nDvn5vy_C5A".equals($F{IND_CATEG_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="frequency" class="java.lang.Double" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[(-1.0d == $V{rowCount}.doubleValue() || 0 == $V{rowCount}.intValue()) ? 
+Double.valueOf(Double.NaN) : 
+Double.valueOf($F{INDV_VALUE}.doubleValue()*100/$V{rowCount}.doubleValue())]]></variableExpression>
+	</variable>
+	<variable name="isFrequencyIndicator" class="java.lang.Boolean" resetType="Group" resetGroup="UUID_IND">
+		<variableExpression><![CDATA[Boolean.valueOf("_ccIR4hF2Ed2PKb6nEJEvhw".equals($F{IND_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_ccIR4hF2Ed2PKb6nEJEvhw".equals($F{IND_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="isLowFrequencyIndicator" class="java.lang.Boolean" resetType="Group" resetGroup="UUID_IND">
+		<variableExpression><![CDATA[Boolean.valueOf("_-0C00JOtEd2Iyo0dtkB9pA".equals($F{IND_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_-0C00JOtEd2Iyo0dtkB9pA".equals($F{IND_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="isModeIndicator" class="java.lang.Boolean" resetType="Group" resetGroup="UUID_IND">
+		<variableExpression><![CDATA[Boolean.valueOf("_ccIR4RF2Ed2PKb6nEJEvhw".equals($F{IND_UUID}))]]></variableExpression>
+	</variable>
+	<variable name="isSoundexFrequencyIndicator" class="java.lang.Boolean" resetType="Group" resetGroup="UUID_IND">
+		<variableExpression><![CDATA[Boolean.valueOf("_VGep4Pa7Ed24-N3PsP_o-w".equals($F{IND_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_VGep4Pa7Ed24-N3PsP_o-w".equals($F{IND_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="isLowSoundexFrequencyIndicator" class="java.lang.Boolean" resetType="Group" resetGroup="UUID_IND">
+		<variableExpression><![CDATA[Boolean.valueOf("_AjKIEPbBEd24-N3PsP_o-w".equals($F{IND_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_AjKIEPbBEd24-N3PsP_o-w".equals($F{IND_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="isSoundexStatistics" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf("_entEUPbCEd298st2mPm9SA".equals($F{IND_CATEG_UUID}))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf("_entEUPbCEd298st2mPm9SA".equals($F{IND_CATEG_UUID}))]]></initialValueExpression>
+	</variable>
+	<variable name="isPatternFinderStatistic" class="java.lang.Boolean" resetType="Group" resetGroup="CATEGORY_GRP">
+		<variableExpression><![CDATA[Boolean.valueOf($F{IND_CATEG_UUID}.equals( "_0n3BsJR-Ed2XO-JvLwVAwg" ))]]></variableExpression>
+	</variable>
+	<variable name="isPatternFreqeuencyIndicator" class="java.lang.Boolean" resetType="Group" resetGroup="UUID_IND">
+		<variableExpression><![CDATA[Boolean.valueOf($F{IND_UUID}.equals( "_OCTbwJR_Ed2XO-JvLwVAwg" ))]]></variableExpression>
+		<initialValueExpression><![CDATA[Boolean.valueOf($F{IND_UUID}.equals( "_OCTbwJR_Ed2XO-JvLwVAwg" ))]]></initialValueExpression>
+	</variable>
+	<filterExpression><![CDATA[$P{REPORT_UUID} != null ? Boolean.valueOf($F{REP_UUID}.equals( $P{REPORT_UUID} )) : Boolean.FALSE]]></filterExpression>
+	<group name="UUID_Analysis" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{AN_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="107">
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="65" y="0" width="187" height="17"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_LABEL}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement key="line-1" positionType="FixRelativeToBottom" x="0" y="17" width="535" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-2" x="0" y="0" width="56" height="17"/>
+					<textElement>
+						<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Analysis:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-4" x="0" y="17" width="104" height="14"/>
+					<textElement>
+						<font isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Summary:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-5" x="0" y="35" width="104" height="14"/>
+					<textElement/>
+					<text><![CDATA[Connection:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-6" x="0" y="51" width="104" height="14"/>
+					<textElement/>
+					<text><![CDATA[Catalog:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-7" x="0" y="69" width="104" height="14" printWhenGroupChanges="UUID_Analysis">
+						<printWhenExpression><![CDATA[$V{hasSchema}]]></printWhenExpression>
+					</reportElement>
+					<textElement/>
+					<text><![CDATA[Schema:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-8" x="323" y="36" width="111" height="15"/>
+					<textElement/>
+					<text><![CDATA[Execution date:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-9" x="323" y="50" width="111" height="15"/>
+					<textElement/>
+					<text><![CDATA[Execution duration (s):]]></text>
+				</staticText>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-4" x="106" y="50" width="207" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_CATALOG_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-5" x="443" y="50" width="92" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_DURATION} != null ? String.valueOf($F{AN_DURATION}.intValue()/1000.0d) : "N/A"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-6" x="106" y="34" width="207" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_CONNECTION_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-7" x="106" y="68" width="207" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{ELT_SCHEMA_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-8" x="443" y="36" width="92" height="15"/>
+					<textElement/>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{RUN_TIME}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-9" x="391" y="5" width="132" height="12"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AN_AUTHOR}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" x="323" y="5" width="63" height="12"/>
+					<textElement/>
+					<text><![CDATA[Author:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="4"/>
+		</groupFooter>
+	</group>
+	<group name="UUID_ELT">
+		<groupExpression><![CDATA[$F{ELT_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="100" y="2" width="299" height="18"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{FullyQualifiedColumn}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement key="line-2" positionType="FixRelativeToBottom" x="0" y="20" width="535" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement key="staticText-3" x="18" y="2" width="82" height="16"/>
+					<textElement>
+						<font isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<text><![CDATA[Column:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="CATEGORY_GRP">
+		<groupExpression><![CDATA[$F{IND_CATEGORY}]]></groupExpression>
+		<groupHeader>
+			<band height="45">
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField" x="100" y="3" width="299" height="20"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement>
+						<font size="14" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{IND_CATEGORY}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement key="line-3" positionType="FixRelativeToBottom" x="0" y="23" width="534" height="1" forecolor="#808080"/>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<frame>
+					<reportElement x="1" y="23" width="535" height="20">
+						<printWhenExpression><![CDATA[Boolean.valueOf(!$V{isAdvancedStatistics}.booleanValue()&&!$V{isSoundexStatistics}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textField evaluationTime="Group" evaluationGroup="CATEGORY_GRP" isBlankWhenNull="false">
+						<reportElement key="textField-1" x="100" y="4" width="167" height="12"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Indicator"]]></textFieldExpression>
+					</textField>
+					<textField pattern="##0.00" isBlankWhenNull="false">
+						<reportElement key="textField-2" x="332" y="4" width="102" height="12">
+							<printWhenExpression><![CDATA[Boolean.valueOf($V{isSimpleStatistics}.booleanValue()||$V{isPatternStatistics}.booleanValue())]]></printWhenExpression>
+						</reportElement>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Frequency (%)"]]></textFieldExpression>
+					</textField>
+					<textField pattern="##0.00" isBlankWhenNull="false">
+						<reportElement key="textField-3" x="266" y="4" width="66" height="12">
+							<printWhenExpression><![CDATA[Boolean.valueOf(!$V{isPatternStatistics}.booleanValue())]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Value"]]></textFieldExpression>
+					</textField>
+					<line>
+						<reportElement key="line-4" positionType="FixRelativeToBottom" x="0" y="16" width="534" height="1" forecolor="#808080"/>
+					</line>
+					<textField pattern="##0.00" isBlankWhenNull="false">
+						<reportElement key="textField-11" x="435" y="4" width="100" height="12">
+							<printWhenExpression><![CDATA[Boolean.valueOf(!$V{isAdvancedStatistics}.booleanValue())]]></printWhenExpression>
+						</reportElement>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Indicator Ok"]]></textFieldExpression>
+					</textField>
+					<textField pattern="##0.00" isBlankWhenNull="false">
+						<reportElement key="textField-14" x="266" y="4" width="66" height="12">
+							<printWhenExpression><![CDATA[$V{isPatternStatistics}]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Match Count"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="287">
+				<printWhenExpression><![CDATA[Boolean.valueOf(!$V{isModeIndicator}.booleanValue())]]></printWhenExpression>
+				<bar3DChart>
+					<chart evaluationTime="Group" evaluationGroup="CATEGORY_GRP">
+						<reportElement key="element-91" x="13" y="5" width="521" height="275">
+							<printWhenExpression><![CDATA[Boolean.valueOf(!$F{TYPE_INDICATOR}.equals( "D" )&&($V{isSummaryStatistics}.booleanValue() || $V{isSimpleStatistics}.booleanValue() || $V{isTextStatistics}.booleanValue()))]]></printWhenExpression>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<chartTitle color="#000099">
+							<titleExpression><![CDATA[$F{IND_CATEGORY}]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="CATEGORY_GRP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA[$F{IND_LABEL}]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{IND_LABEL}]]></categoryExpression>
+							<valueExpression><![CDATA[$V{indicatorValue}]]></valueExpression>
+							<labelExpression><![CDATA[$F{INDV_DATE_VALUE}.toGMTString()]]></labelExpression>
+							<itemHyperlink/>
+						</categorySeries>
+					</categoryDataset>
+					<bar3DPlot isShowLabels="true">
+						<plot labelRotation="30.0"/>
+						<categoryAxisLabelExpression><![CDATA["Indicators "]]></categoryAxisLabelExpression>
+						<categoryAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisLabelExpression><![CDATA[" Counts"]]></valueAxisLabelExpression>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</bar3DPlot>
+				</bar3DChart>
+				<barChart>
+					<chart isShowLegend="false">
+						<reportElement key="element-94" x="13" y="5" width="520" height="275" isRemoveLineWhenBlank="true">
+							<printWhenExpression><![CDATA[$V{isPatternStatistics}]]></printWhenExpression>
+						</reportElement>
+						<chartTitle color="#000000">
+							<titleExpression><![CDATA["Percentage of pattern matching data"]]></titleExpression>
+						</chartTitle>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="CATEGORY_GRP"/>
+						<categorySeries>
+							<seriesExpression><![CDATA[$F{REGEX_LABEL}]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{REGEX_LABEL}]]></categoryExpression>
+							<valueExpression><![CDATA[$V{frequency}]]></valueExpression>
+							<itemHyperlink/>
+						</categorySeries>
+					</categoryDataset>
+					<barPlot isShowLabels="true">
+						<plot>
+							<seriesColor seriesOrder="0" color="#00CC33"/>
+							<seriesColor seriesOrder="1" color="#00CC33"/>
+							<seriesColor seriesOrder="2" color="#00CC33"/>
+							<seriesColor seriesOrder="3" color="#00CC33"/>
+						</plot>
+						<categoryAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</barPlot>
+				</barChart>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="UUID_IND">
+		<groupExpression><![CDATA[$F{IND_UUID}]]></groupExpression>
+		<groupHeader>
+			<band height="78">
+				<frame>
+					<reportElement x="0" y="41" width="534" height="37" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf("_ccIR4RF2Ed2PKb6nEJEvhw".equals($F{IND_UUID}))]]></printWhenExpression>
+					</reportElement>
+					<textField isBlankWhenNull="false">
+						<reportElement key="textField-16" x="100" y="21" width="167" height="12"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Indicator"]]></textFieldExpression>
+					</textField>
+					<textField pattern="" isBlankWhenNull="false">
+						<reportElement key="textField-17" x="267" y="21" width="66" height="12"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Value"]]></textFieldExpression>
+					</textField>
+					<textField pattern="##0.00" isBlankWhenNull="false">
+						<reportElement key="textField-19" x="435" y="21" width="98" height="12"/>
+						<textElement>
+							<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Indicator Ok"]]></textFieldExpression>
+					</textField>
+					<line>
+						<reportElement key="line-5" positionType="FixRelativeToBottom" x="-1" y="35" width="535" height="1" forecolor="#808080"/>
+					</line>
+					<textField>
+						<reportElement x="17" y="0" width="140" height="18"/>
+						<textElement/>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{IND_LABEL}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="1" y="4" width="534" height="36" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[Boolean.valueOf($V{isFrequencyIndicator}.booleanValue()||$V{isLowFrequencyIndicator}.booleanValue()||$V{isPatternFreqeuencyIndicator}.booleanValue()||$V{isSoundexStatistics}.booleanValue())]]></printWhenExpression>
+					</reportElement>
+					<textField>
+						<reportElement x="17" y="0" width="140" height="18"/>
+						<textElement/>
+						<textFieldExpression class="java.lang.String"><![CDATA[$F{IND_LABEL}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="100" y="21" width="166" height="12"/>
+						<textElement>
+							<font size="8" isBold="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Data value"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="267" y="21" width="100" height="12"/>
+						<textElement>
+							<font size="8" isBold="true"/>
+						</textElement>
+						<textFieldExpression class="java.lang.String"><![CDATA["Distinct Count"]]></textFieldExpression>
+					</textField>
+					<line>
+						<reportElement key="line-4" positionType="FixRelativeToBottom" x="0" y="33" width="533" height="1" forecolor="#808080"/>
+					</line>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="288">
+				<printWhenExpression><![CDATA[Boolean.valueOf($V{isFrequencyIndicator}.booleanValue()||$V{isLowFrequencyIndicator}.booleanValue()||$V{isPatternFreqeuencyIndicator}.booleanValue()||$V{isSoundexStatistics}.booleanValue())]]></printWhenExpression>
+				<bar3DChart>
+					<chart evaluationTime="Group" evaluationGroup="UUID_IND">
+						<reportElement key="element-93" x="13" y="8" width="520" height="275" isRemoveLineWhenBlank="true"/>
+						<box>
+							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.0" lineColor="#000000"/>
+							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Group" resetGroup="UUID_IND"/>
+						<categorySeries>
+							<seriesExpression><![CDATA[$F{VAL_STRING} == null ? "Null" : $F{VAL_STRING}]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{VAL_STRING} == null ? "Null" : $F{VAL_STRING}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{INDV_VALUE}]]></valueExpression>
+							<itemHyperlink/>
+						</categorySeries>
+					</categoryDataset>
+					<bar3DPlot isShowLabels="true">
+						<plot orientation="Horizontal"/>
+						<categoryAxisFormat>
+							<axisFormat>
+								<labelFont>
+									<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont/>
+							</axisFormat>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont>
+									<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+								</labelFont>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</bar3DPlot>
+				</bar3DChart>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="49">
+			<printWhenExpression><![CDATA[$P{NEED_TITLE}]]></printWhenExpression>
+			<line>
+				<reportElement key="line" x="0" y="3" width="534" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="13" y="15" width="505" height="29"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isUnderline="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Report \"" + $F{REP_LABEL} + "\""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-21" x="27" y="16" width="473" height="29" forecolor="#999999"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isUnderline="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Report \"" + $F{REP_LABEL} + "\""]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="484" y="4" width="50" height="45"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{LOGO_FILE}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY" x="430" y="1" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_RIGHT_PRESENTATIONKEY_PAGECOUNT" x="530" y="1" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line" x="0" y="18" width="535" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY" x="1" y="1" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_LEFT_PRESENTATIONKEY_PAGECOUNT" x="49" y="1" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY" x="230" y="1" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="TOP_MIDDLE_PRESENTATIONKEY_PAGECOUNT" x="278" y="1" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20"/>
+	</columnHeader>
+	<detail>
+		<band height="19">
+			<line>
+				<reportElement key="line" positionType="FixRelativeToBottom" x="0" y="17" width="535" height="1" forecolor="#808080"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField pattern="##0.##" isBlankWhenNull="false">
+				<reportElement key="textField" x="267" y="3" width="119" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$V{isModeIndicator}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TYPE_INDICATOR}.equals("D")?$F{INDV_DATE_VALUE}.toGMTString():$V{indicatorValue}.toString()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="100" y="3" width="167" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!$V{isFrequencyIndicator}.booleanValue()&&!$V{isLowFrequencyIndicator}.booleanValue()&&!$V{isSoundexStatistics}.booleanValue()&&!$V{isPatternFreqeuencyIndicator}.booleanValue()&&!$V{isPatternFinderStatistic}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IND_LABEL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField" x="333" y="3" width="102" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf($V{isSimpleStatistics}.booleanValue()||$V{isPatternStatistics}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{frequency}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Group" evaluationGroup="CATEGORY_GRP" pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-12" x="433" y="3" width="102" height="12" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[Boolean.valueOf("N".equals($F{INDV_ITHRESH_OK})&&!$V{isFrequencyIndicator}.booleanValue()&&!$V{isLowFrequencyIndicator}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="true" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{INDV_ITHRESH_OK}]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-13" x="433" y="3" width="102" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf(!"N".equals($F{INDV_ITHRESH_OK}) && !$V{isFrequencyIndicator}.booleanValue()&&!$V{isLowFrequencyIndicator}.booleanValue()&&!$V{isSoundexStatistics}.booleanValue()&&!$V{isPatternFreqeuencyIndicator}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{INDV_ITHRESH_OK}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-15" x="100" y="3" width="167" height="12">
+					<printWhenExpression><![CDATA[Boolean.valueOf($V{isFrequencyIndicator}.booleanValue()||$V{isLowFrequencyIndicator}.booleanValue()||$V{isSoundexStatistics}.booleanValue()||$V{isPatternFreqeuencyIndicator}.booleanValue()||$V{isPatternFinderStatistic}.booleanValue())]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{VAL_STRING}]]></textFieldExpression>
+			</textField>
+			<textField pattern="##0.##" isBlankWhenNull="false">
+				<reportElement key="textField-20" x="267" y="3" width="66" height="12">
+					<printWhenExpression><![CDATA[$V{isModeIndicator}]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{VAL_STRING}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="27">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY" x="430" y="6" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_RIGHT_PRESENTATIONKEY_PAGECOUNT" x="530" y="6" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line" x="0" y="1" width="535" height="1" forecolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY" x="1" y="6" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_LEFT_PRESENTATIONKEY_PAGECOUNT" x="49" y="6" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY" x="230" y="6" width="95" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="BOTTOM_MIDDLE_PRESENTATIONKEY_PAGECOUNT" x="278" y="6" width="5" height="19"/>
+				<textElement>
+					<font fontName="Times-Roman" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
