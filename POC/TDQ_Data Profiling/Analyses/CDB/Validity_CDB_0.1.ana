@@ -2,6 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_tCO5oOs-EeiqKvtEYp5pqg" name="Validity_CDB" creationDate="2018-11-18T15:31:57.751+0100" defaultContext="RTDMS">
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_ngSPYN0ZEeinyYgpzgK3Rg"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_zzL40OzaEeiof8jSeXJ-ng"/>
     <taggedValue xmi:id="_tCO5oes-EeiqKvtEYp5pqg" tag="Status" value="development"/>
     <taggedValue xmi:id="_tCO5ous-EeiqKvtEYp5pqg" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_tCO5o-s-EeiqKvtEYp5pqg" tag="Purpose" value="Is the data presented in the correct and pre-defined format, type or range so as to be applicable to the given analytical task."/>
@@ -284,6 +285,15 @@
           <charactersMapping xmi:id="_9N6tyOy1Eeiof8jSeXJ-ng" language="Netezza" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
           <charactersMapping xmi:id="_9N6tyey1Eeiof8jSeXJ-ng" name="Characters mapping on Hive" language="Hive" charactersToReplace="0123456789abcdefghijklmnopqrstuvwxyz?aê???éèù??üABCDEFGHIJKLMNOPQRSTUVWXYZ??ê???éèù??ü" replacementCharacters="9999999999aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
         </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_zyMaUOzaEeiof8jSeXJ-ng" name="postal_code_belgium">
+        <parameters xmi:id="_zyMaUezaEeiof8jSeXJ-ng">
+          <dataValidDomain xmi:id="_zyMaUuzaEeiof8jSeXJ-ng">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_GkK9gOzZEeiof8jSeXJ-ng"/>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
       </indicators>
       <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_8phnRey1Eeiof8jSeXJ-ng" computed="true">
         <parameters xmi:id="_8phnRuy1Eeiof8jSeXJ-ng"/>
