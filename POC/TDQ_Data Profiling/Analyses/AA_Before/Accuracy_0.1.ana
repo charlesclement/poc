@@ -1,13 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.analysis="http://dataquality.analysis" xmi:id="_2sHpcO0JEeidmJUNeAS2Pw" name="Accuracy" creationDate="2018-11-20T22:18:41.541+0100">
-  <taggedValue xmi:id="_2sHpce0JEeidmJUNeAS2Pw" tag="Status" value="development"/>
-  <taggedValue xmi:id="_2sHpcu0JEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
-  <taggedValue xmi:id="_2sHpc-0JEeidmJUNeAS2Pw" tag="Purpose" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it ?"/>
-  <taggedValue xmi:id="_2sHpdO0JEeidmJUNeAS2Pw" tag="Description" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it? Input forms contain a lot of mandatory fields where dummy values (i.e. NULL values) have to be entered due to a lack of knowledge about the effects. The available data elements are inadequate for distinguishing between two data objects without any doubt (duplicates). Different systems deliver different data elements for a specific set of facts (inconsistency)."/>
-  <taggedValue xmi:id="_2sHpde0JEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
-  <context xmi:id="_2sHpdu0JEeidmJUNeAS2Pw"/>
-  <results xmi:id="_2sHpd-0JEeidmJUNeAS2Pw">
-    <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw"/>
-  </results>
-  <parameters xmi:id="_2sHpee0JEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
-</dataquality.analysis:Analysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_2sHpcO0JEeidmJUNeAS2Pw" name="Accuracy" creationDate="2018-11-20T22:18:41.541+0100" defaultContext="RTDMS">
+    <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_NZs0oO0KEeidmJUNeAS2Pw"/>
+    <taggedValue xmi:id="_2sHpce0JEeidmJUNeAS2Pw" tag="Status" value="development"/>
+    <taggedValue xmi:id="_2sHpcu0JEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+    <taggedValue xmi:id="_2sHpc-0JEeidmJUNeAS2Pw" tag="Purpose" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it ?"/>
+    <taggedValue xmi:id="_2sHpdO0JEeidmJUNeAS2Pw" tag="Description" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it? Input forms contain a lot of mandatory fields where dummy values (i.e. NULL values) have to be entered due to a lack of knowledge about the effects. The available data elements are inadequate for distinguishing between two data objects without any doubt (duplicates). Different systems deliver different data elements for a specific set of facts (inconsistency)."/>
+    <taggedValue xmi:id="_2sHpde0JEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_NYtWJO0KEeidmJUNeAS2Pw" tag="ANA_LAST_RUN_CONTEXT" value="CDB"/>
+    <taggedValue xmi:id="_NYtWJe0KEeidmJUNeAS2Pw" tag="PREVIEW_ROW_NUMBER" value="50"/>
+    <taggedValue xmi:id="_NYt9MO0KEeidmJUNeAS2Pw" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <taggedValue xmi:id="_NYvyYO0KEeidmJUNeAS2Pw" tag="Is Use Sample Data" value="false"/>
+    <context xmi:id="_2sHpdu0JEeidmJUNeAS2Pw">
+      <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xEuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xGuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xHuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xIuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xKuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xLuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xOuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xPuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xRuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xTuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xUuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xVuywEeiof8jSeXJ-ng"/>
+    </context>
+    <results xmi:id="_2sHpd-0JEeidmJUNeAS2Pw">
+      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw"/>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_NYukQO0KEeidmJUNeAS2Pw" name="Customer_Code_Volvo">
+        <parameters xmi:id="_NYukQe0KEeidmJUNeAS2Pw">
+          <dataValidDomain xmi:id="_NYukQu0KEeidmJUNeAS2Pw">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_E02esO0KEeidmJUNeAS2Pw"/>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+      </indicators>
+    </results>
+    <parameters xmi:id="_2sHpee0JEeidmJUNeAS2Pw" dataFilter="_NZxGEO0KEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
+    <contextType xmi:id="_NYtWIO0KEeidmJUNeAS2Pw" confirmationNeeded="false" name="CDB">
+      <contextParameter xmi:id="_NYtWIe0KEeidmJUNeAS2Pw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='CDB'"/>
+    </contextType>
+    <contextType xmi:id="_NYtWIu0KEeidmJUNeAS2Pw" confirmationNeeded="false" name="RTDMS">
+      <contextParameter xmi:id="_NYtWI-0KEeidmJUNeAS2Pw" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='RTDMS'"/>
+    </contextType>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_NZxGEO0KEeidmJUNeAS2Pw" name="Accuracy">
+    <ranges xmi:id="_NZxGEe0KEeidmJUNeAS2Pw">
+      <expressions xmi:id="_NZxGEu0KEeidmJUNeAS2Pw">
+        <expression xsi:type="relational:TdExpression" xmi:id="_NZxGE-0KEeidmJUNeAS2Pw" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
