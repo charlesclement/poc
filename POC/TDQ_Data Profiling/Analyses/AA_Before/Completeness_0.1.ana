@@ -34,23 +34,23 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_w3nh9-0OEeidmJUNeAS2Pw">
-      <resultMetadata xmi:id="_w3nh-O0OEeidmJUNeAS2Pw" executionDate="2018-11-20T22:54:30.669+0100" executionDuration="8056" message="" executionNumber="1" lastRunOk="true" lastExecutionNumberOk="1"/>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bjro-0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <resultMetadata xmi:id="_w3nh-O0OEeidmJUNeAS2Pw" executionDate="2018-11-20T22:55:35.679+0100" executionDuration="1614" message="" executionNumber="2" lastRunOk="true" lastExecutionNumberOk="2"/>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bjro-0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bjrpO0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27z5E-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Customer` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27z5E-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Customer` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2ytnYO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_2ytnYe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_2ytnYu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_2ytnY-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bjrq-0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bjrq-0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bjrrO0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_270gEu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Customer`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Customer`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_270gEu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Customer`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Customer`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2zC-kO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_2zC-ke0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_2zC-ku0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -61,22 +61,22 @@
           <sqlGenericExpression xmi:id="_2zC-l-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSsu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSsu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkSs-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271HIO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `OwnerRU` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271HIO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `OwnerRU` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2zMvkO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_2zMvke0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_2zMvku0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_2zMvk-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSuu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSuu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkSu-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271uMe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`OwnerRU`) FROM `volvo`.`ods_pivot` WHERE TRIM(`OwnerRU`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271uMe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`OwnerRU`) FROM `volvo`.`ods_pivot` WHERE TRIM(`OwnerRU`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2zfqgO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_2zgRkO0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_2zgRke0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -91,7 +91,7 @@
         <parameters xmi:id="_2bkSv-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271uMu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `CommonName` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271uMu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `CommonName` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2zrQsO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_2zrQse0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_2zrQsu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
@@ -102,7 +102,7 @@
         <parameters xmi:id="_2bkSx-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728UO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`CommonName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`CommonName`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728UO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`CommonName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`CommonName`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2z_ZwO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_2z_Zwe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_2z_Zwu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -117,7 +117,7 @@
         <parameters xmi:id="_2bkSy-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728Ue0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `LegalName` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728Ue0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `LegalName` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20Jx0O0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_20Jx0e0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_20Jx0u0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
@@ -128,7 +128,7 @@
         <parameters xmi:id="_2bkS0-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_273jYu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`LegalName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`LegalName`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_273jYu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`LegalName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`LegalName`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20cswO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_20cswe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_20cswu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -139,22 +139,22 @@
           <sqlGenericExpression xmi:id="_20csx-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS1u0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS1u0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkS1-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xEuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_274KcO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `OrganisationNo` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_274KcO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `OrganisationNo` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20l2sO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_20l2se0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_20l2su0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_20l2s-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS3u0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true" blankCount="1">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS3u0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="1">
         <parameters xmi:id="_2bkS3-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xEuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_274xge0OEeidmJUNeAS2Pw" body="SELECT COUNT(`OrganisationNo`) FROM `volvo`.`ods_pivot` WHERE TRIM(`OrganisationNo`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_274xge0OEeidmJUNeAS2Pw" body="SELECT COUNT(`OrganisationNo`) FROM `volvo`.`ods_pivot` WHERE TRIM(`OrganisationNo`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2028cO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_2028ce0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_2028cu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -165,22 +165,22 @@
           <sqlGenericExpression xmi:id="_2028d-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS4u0OEeidmJUNeAS2Pw" count="88979" nullCount="36" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS4u0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkS4-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275YkO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `VAT` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275YkO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `VAT` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20_fUO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_20_fUe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_20_fUu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_20_fU-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS6u0OEeidmJUNeAS2Pw" count="88979" nullCount="36" computed="true" blankCount="1">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS6u0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="1">
         <parameters xmi:id="_2bkS6-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275_oe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`VAT`) FROM `volvo`.`ods_pivot` WHERE TRIM(`VAT`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275_oe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`VAT`) FROM `volvo`.`ods_pivot` WHERE TRIM(`VAT`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_21TBUO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_21TBUe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_21TBUu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -191,22 +191,22 @@
           <sqlGenericExpression xmi:id="_21TBV-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS7u0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS7u0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkS7-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xGuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_276msO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `ChamberOfCom` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_276msO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `ChamberOfCom` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_21eAcO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_21eAce0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_21eAcu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_21eAc-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS9u0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true" blankCount="1">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS9u0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="1">
         <parameters xmi:id="_2bkS9-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xGuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_277Nwe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`ChamberOfCom`) FROM `volvo`.`ods_pivot` WHERE TRIM(`ChamberOfCom`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_277Nwe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`ChamberOfCom`) FROM `volvo`.`ods_pivot` WHERE TRIM(`ChamberOfCom`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_21ywkO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_21ywke0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_21ywku0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -217,22 +217,22 @@
           <sqlGenericExpression xmi:id="_21ywl-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS-u0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS-u0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkS--0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xHuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_277Nwu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Parma` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_277Nwu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Parma` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_218hkO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_218hke0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_218hku0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_218hk-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTAu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true" blankCount="5">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTAu0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="5">
         <parameters xmi:id="_2bkTA-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xHuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_278b4u0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Parma`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Parma`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_278b4u0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Parma`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Parma`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_22QDkO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_22QDke0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_22QDku0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -243,22 +243,22 @@
           <sqlGenericExpression xmi:id="_22QDl-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTBu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTBu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTB-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xIuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279C8O0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `SICCode` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279C8O0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `SICCode` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_22YmcO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_22Ymce0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_22Ymcu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_22Ymc-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTDu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTDu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTD-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xIuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279qAe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`SICCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`SICCode`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279qAe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`SICCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`SICCode`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_22tWkO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_22tWke0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_22tWku0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -269,22 +269,22 @@
           <sqlGenericExpression xmi:id="_22tWl-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTEu0OEeidmJUNeAS2Pw" count="88979" nullCount="13" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTEu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTE-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279qAu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `AdressLine1` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279qAu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `AdressLine1` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_224VsO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_224Vse0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_224Vsu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_224Vs-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTGu0OEeidmJUNeAS2Pw" count="88979" nullCount="13" computed="true" blankCount="1219">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTGu0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="1219">
         <parameters xmi:id="_2bkTG-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27-4IO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`AdressLine1`) FROM `volvo`.`ods_pivot` WHERE TRIM(`AdressLine1`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27-4IO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`AdressLine1`) FROM `volvo`.`ods_pivot` WHERE TRIM(`AdressLine1`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_23KCgO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_23KCge0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_23KCgu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -295,22 +295,22 @@
           <sqlGenericExpression xmi:id="_23KCh-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTHu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTHu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTH-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xKuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27-4Ie0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sAddrLine2` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27-4Ie0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sAddrLine2` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_23SlYO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_23SlYe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_23SlYu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_23SlY-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTJu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true" blankCount="87779">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTJu0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="87779">
         <parameters xmi:id="_2bkTJ-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xKuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27_fMu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sAddrLine2`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sAddrLine2`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27_fMu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sAddrLine2`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sAddrLine2`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_23kSMO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_23kSMe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_23kSMu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -321,22 +321,22 @@
           <sqlGenericExpression xmi:id="_23kSN-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTKu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTKu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTK-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xLuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AGQO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sAddrLine3` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AGQO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sAddrLine3` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_23s1EO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_23s1Ee0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_23s1Eu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_23s1E-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTMu0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true" blankCount="87987">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTMu0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="87987">
         <parameters xmi:id="_2bkTM-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xLuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AtUe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sAddrLine3`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sAddrLine3`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AtUe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sAddrLine3`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sAddrLine3`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24BlMO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_24BlMe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_24BlMu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -347,22 +347,22 @@
           <sqlGenericExpression xmi:id="_24BlN-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTNu0OEeidmJUNeAS2Pw" count="88979" nullCount="27" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTNu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTN-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AtUu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sPostalCode` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AtUu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sPostalCode` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24KvIO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_24KvIe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_24KvIu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_24KvI-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTPu0OEeidmJUNeAS2Pw" count="88979" nullCount="27" computed="true" blankCount="212">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTPu0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="212">
         <parameters xmi:id="_2bkTP-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7cO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sPostalCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sPostalCode`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7cO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sPostalCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sPostalCode`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24dDAO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_24dDAe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_24dDAu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -373,22 +373,22 @@
           <sqlGenericExpression xmi:id="_24dDB-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTQu0OEeidmJUNeAS2Pw" count="88979" nullCount="13" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTQu0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bkTQ-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7ce0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sCity` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7ce0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sCity` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24mM8O0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_24m0AO0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_24m0Ae0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_24m0Au0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk5xe0OEeidmJUNeAS2Pw" count="88979" nullCount="13" computed="true" blankCount="135">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk5xe0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="135">
         <parameters xmi:id="_2bk5xu0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Cigu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sCity`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sCity`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Cigu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sCity`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sCity`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_248yQO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_248yQe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_248yQu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -399,22 +399,22 @@
           <sqlGenericExpression xmi:id="_248yR-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk5ye0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk5ye0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bk5yu0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xOuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28DJkO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sStateProvince` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28DJkO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sStateProvince` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_25LbwO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_25Lbwe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_25Lbwu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_25Lbw-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk50e0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true" blankCount="86768">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk50e0OEeidmJUNeAS2Pw" count="88979" computed="true" blankCount="86768">
         <parameters xmi:id="_2bk50u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xOuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Dwoe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sStateProvince`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sStateProvince`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Dwoe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sStateProvince`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sStateProvince`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_25ouwO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_25ouwe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_25ouwu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -425,22 +425,22 @@
           <sqlGenericExpression xmi:id="_25oux-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk51e0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk51e0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bk51u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xPuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Dwou0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Country` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Dwou0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Country` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_252xMO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_252xMe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_252xMu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_252xM-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk53e0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk53e0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bk53u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xPuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28E-wO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Country`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Country`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28E-wO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Country`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Country`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_26MvcO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_26Mvce0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_26Mvcu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -455,7 +455,7 @@
         <parameters xmi:id="_2bk54u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28E-we0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `CountryCode` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28E-we0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `CountryCode` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_26XukO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_26Xuke0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_26Xuku0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
@@ -466,7 +466,7 @@
         <parameters xmi:id="_2bk56u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Fl0u0OEeidmJUNeAS2Pw" body="SELECT COUNT(`CountryCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`CountryCode`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Fl0u0OEeidmJUNeAS2Pw" body="SELECT COUNT(`CountryCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`CountryCode`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_26ts0O0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_26ts0e0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_26ts0u0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -477,22 +477,22 @@
           <sqlGenericExpression xmi:id="_26ts1-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk57e0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk57e0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bk57u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xRuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28GM4O0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `SalesChannel` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28GM4O0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `SalesChannel` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_265TAO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_265TAe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_265TAu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_265TA-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk59e0OEeidmJUNeAS2Pw" count="88979" nullCount="962" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk59e0OEeidmJUNeAS2Pw" count="88979" computed="true">
         <parameters xmi:id="_2bk59u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xRuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Gz8e0OEeidmJUNeAS2Pw" body="SELECT COUNT(`SalesChannel`) FROM `volvo`.`ods_pivot` WHERE TRIM(`SalesChannel`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Gz8e0OEeidmJUNeAS2Pw" body="SELECT COUNT(`SalesChannel`) FROM `volvo`.`ods_pivot` WHERE TRIM(`SalesChannel`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_27OqMO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_27OqMe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_27OqMu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -503,22 +503,22 @@
           <sqlGenericExpression xmi:id="_27OqN-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk5-e0OEeidmJUNeAS2Pw" count="88979" nullCount="88162" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk5-e0OEeidmJUNeAS2Pw" count="88979" nullCount="88017" computed="true">
         <parameters xmi:id="_2bk5-u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Gz8u0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Phone` IS NULL " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Gz8u0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Phone` IS NULL  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_27ZCQO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_27ZCQe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_27ZCQu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_27ZCQ-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk6Ae0OEeidmJUNeAS2Pw" count="88979" nullCount="88162" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk6Ae0OEeidmJUNeAS2Pw" count="88979" nullCount="88017" computed="true">
         <parameters xmi:id="_2bk6Au0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28ICEO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Phone`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Phone`) = '' " language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28ICEO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Phone`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Phone`) = ''  AND (source='CDB')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_27tLUO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_27tLUe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_27tLUu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
