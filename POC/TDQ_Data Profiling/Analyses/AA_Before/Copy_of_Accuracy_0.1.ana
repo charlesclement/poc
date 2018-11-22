@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_EKGI0O57Eei4YYJkQSdBeA" name="Copy_of_Accuracy" creationDate="2018-11-20T22:18:41.541+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
-    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_NZs0oO0KEeidmJUNeAS2Pw"/>
-    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_sKdWoO0LEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_BE_0.1.pattern#_aDgjMN90Eeid7v2-FZr9SQ"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_FR_0.1.pattern#_dv7xUO0MEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_NL_0.1.pattern#_0kHTwO0MEeidmJUNeAS2Pw"/>
-    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Country_Code_Volvo_0.1.pattern#_dHg0gO0OEeidmJUNeAS2Pw"/>
     <taggedValue xmi:id="_EKGI0e57Eei4YYJkQSdBeA" tag="Status" value="development"/>
     <taggedValue xmi:id="_EKGI0u57Eei4YYJkQSdBeA" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_EKGI0-57Eei4YYJkQSdBeA" tag="Purpose" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it ?"/>
@@ -19,37 +16,25 @@
     <taggedValue xmi:id="_EKGv4O57Eei4YYJkQSdBeA" tag="Is Use Sample Data" value="false"/>
     <context xmi:id="_EKGv4e57Eei4YYJkQSdBeA">
       <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_EKGv4u57Eei4YYJkQSdBeA">
-      <resultMetadata xmi:id="_EKGv4-57Eei4YYJkQSdBeA" executionDate="2018-11-20T23:17:13.710+0100" executionDuration="731" message="" executionNumber="11" lastRunOk="true" lastExecutionNumberOk="11"/>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_EKGv5O57Eei4YYJkQSdBeA" name="Customer_Code_Volvo" count="88979" computed="true" matchingValueCount="88017" notMatchingValueCount="962">
-        <parameters xmi:id="_EKGv5e57Eei4YYJkQSdBeA">
-          <dataValidDomain xmi:id="_EKGv5u57Eei4YYJkQSdBeA">
-            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_E02esO0KEeidmJUNeAS2Pw"/>
-          </dataValidDomain>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_EKGv5-57Eei4YYJkQSdBeA" body="SELECT COUNT(CASE WHEN `Customer` REGEXP BINARY '^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
-      </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_EKGv6O57Eei4YYJkQSdBeA" name="OwnerRU_code_Volvo" count="88979" computed="true" matchingValueCount="88017" notMatchingValueCount="962">
-        <parameters xmi:id="_EKGv6e57Eei4YYJkQSdBeA">
-          <dataValidDomain xmi:id="_EKGv6u57Eei4YYJkQSdBeA">
-            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_SZV-cO0KEeidmJUNeAS2Pw"/>
-          </dataValidDomain>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_EKGv6-57Eei4YYJkQSdBeA" body="SELECT COUNT(CASE WHEN `OwnerRU` REGEXP BINARY '^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
-      </indicators>
+      <resultMetadata xmi:id="_EKGv4-57Eei4YYJkQSdBeA" executionDate="2018-11-22T18:21:56.202+0100" executionDuration="532" message="" executionNumber="12" lastRunOk="true" lastExecutionNumberOk="12"/>
       <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_EKGv7O57Eei4YYJkQSdBeA" name="VAT_BE" count="88979" computed="true" matchingValueCount="65592" notMatchingValueCount="23387">
         <parameters xmi:id="_EKGv7e57Eei4YYJkQSdBeA">
           <dataValidDomain xmi:id="_EKGv7u57Eei4YYJkQSdBeA">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_BE_0.1.pattern#_E_mEgN90Eeid7v2-FZr9SQ"/>
+            <builtInPatterns xmi:id="_HGZh4O57Eei4YYJkQSdBeA" name="VAT_BE">
+              <taggedValue xmi:id="_HGZh4e57Eei4YYJkQSdBeA" tag="Status" value="development"/>
+              <taggedValue xmi:id="_HGZh4u57Eei4YYJkQSdBeA" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_HGZh4-57Eei4YYJkQSdBeA" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_HGZh5O57Eei4YYJkQSdBeA" tag="Description" value=""/>
+              <taggedValue xmi:id="_HGZh5e57Eei4YYJkQSdBeA" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_HGZh5u57Eei4YYJkQSdBeA" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_HGZh5-57Eei4YYJkQSdBeA" expressionType="REGEXP">
+                <expression xmi:id="_HGZh6O57Eei4YYJkQSdBeA" body="'BE?0[0-9]{9}'" language="MySQL" modificationDate="2018-11-20 22:40:21"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
@@ -60,6 +45,17 @@
         <parameters xmi:id="_EKGv8e57Eei4YYJkQSdBeA">
           <dataValidDomain xmi:id="_EKGv8u57Eei4YYJkQSdBeA">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_FR_0.1.pattern#_rTgggO0LEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_HHlNoO57Eei4YYJkQSdBeA" name="VAT_FR">
+              <taggedValue xmi:id="_HHlNoe57Eei4YYJkQSdBeA" tag="Status" value="development"/>
+              <taggedValue xmi:id="_HHlNou57Eei4YYJkQSdBeA" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_HHlNo-57Eei4YYJkQSdBeA" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_HHlNpO57Eei4YYJkQSdBeA" tag="Description" value=""/>
+              <taggedValue xmi:id="_HHlNpe57Eei4YYJkQSdBeA" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_HHlNpu57Eei4YYJkQSdBeA" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_HHl0sO57Eei4YYJkQSdBeA" expressionType="REGEXP">
+                <expression xmi:id="_HHl0se57Eei4YYJkQSdBeA" body="'FR?[0-9A-Z]{2}[0-9]{9}'" language="MySQL" modificationDate="2018-11-20 22:40:58"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
@@ -70,21 +66,22 @@
         <parameters xmi:id="_EKGv9e57Eei4YYJkQSdBeA">
           <dataValidDomain xmi:id="_EKGv9u57Eei4YYJkQSdBeA">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_NL_0.1.pattern#_JMbRAO0MEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_HIl6QO57Eei4YYJkQSdBeA" name="VAT_NL">
+              <taggedValue xmi:id="_HIl6Qe57Eei4YYJkQSdBeA" tag="Status" value="development"/>
+              <taggedValue xmi:id="_HIl6Qu57Eei4YYJkQSdBeA" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_HIl6Q-57Eei4YYJkQSdBeA" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_HIl6RO57Eei4YYJkQSdBeA" tag="Description" value=""/>
+              <taggedValue xmi:id="_HIl6Re57Eei4YYJkQSdBeA" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_HIl6Ru57Eei4YYJkQSdBeA" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_HIl6R-57Eei4YYJkQSdBeA" expressionType="REGEXP">
+                <expression xmi:id="_HIl6SO57Eei4YYJkQSdBeA" body="'(NL)?[0-9]{9}B[0-9]{2}'" language="MySQL" modificationDate="2018-11-20 22:35:10"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
         <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_EKGv9-57Eei4YYJkQSdBeA" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY '(NL)?[0-9]{9}B[0-9]{2}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
-      </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_EKGv-O57Eei4YYJkQSdBeA" name="Country_Code_Volvo" count="88979" computed="true" matchingValueCount="88979">
-        <parameters xmi:id="_EKGv-e57Eei4YYJkQSdBeA">
-          <dataValidDomain xmi:id="_EKGv-u57Eei4YYJkQSdBeA">
-            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/Country_Code_Volvo_0.1.pattern#_VxPKgO0OEeidmJUNeAS2Pw"/>
-          </dataValidDomain>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_EKGv--57Eei4YYJkQSdBeA" body="SELECT COUNT(CASE WHEN `CountryCode` REGEXP BINARY '^[A-Z][A-Z]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
     </results>
     <parameters xmi:id="_EKGv_O57Eei4YYJkQSdBeA" dataFilter="_EKGwAe57Eei4YYJkQSdBeA" analysisType="Multiple Column Analysis"/>
@@ -95,7 +92,7 @@
       <contextParameter xmi:id="_EKGwAO57Eei4YYJkQSdBeA" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='RTDMS'"/>
     </contextType>
   </dataquality.analysis:Analysis>
-  <dataquality.domain:Domain xmi:id="_EKGwAe57Eei4YYJkQSdBeA" name="Analysis Data Filter">
+  <dataquality.domain:Domain xmi:id="_EKGwAe57Eei4YYJkQSdBeA" name="Copy_of_Accuracy">
     <ranges xmi:id="_EKGwAu57Eei4YYJkQSdBeA">
       <expressions xmi:id="_EKGwA-57Eei4YYJkQSdBeA">
         <expression xsi:type="relational:TdExpression" xmi:id="_EKGwBO57Eei4YYJkQSdBeA" body="" language="SQL"/>
