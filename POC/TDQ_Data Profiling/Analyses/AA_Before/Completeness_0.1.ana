@@ -34,8 +34,8 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_w3nh9-0OEeidmJUNeAS2Pw">
-      <resultMetadata xmi:id="_w3nh-O0OEeidmJUNeAS2Pw" executionDate="2018-11-23T11:38:56.944+0100" executionDuration="2098" message="" executionNumber="8" lastRunOk="true" lastExecutionNumberOk="8"/>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bjro-0OEeidmJUNeAS2Pw" count="88979" computed="true">
+      <resultMetadata xmi:id="_w3nh-O0OEeidmJUNeAS2Pw" executionDate="2018-11-23T11:39:37.921+0100" executionDuration="2016" message="" executionNumber="9" lastRunOk="true" lastExecutionNumberOk="9"/>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bjro-0OEeidmJUNeAS2Pw" count="88017" computed="true">
         <parameters xmi:id="_2bjrpO0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
@@ -46,7 +46,7 @@
           <sqlGenericExpression xmi:id="_2ytnY-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bjrq-0OEeidmJUNeAS2Pw" count="88979" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bjrq-0OEeidmJUNeAS2Pw" count="88017" computed="true">
         <parameters xmi:id="_2bjrrO0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
@@ -61,7 +61,18 @@
           <sqlGenericExpression xmi:id="_2zC-l-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSsu0OEeidmJUNeAS2Pw" count="88979" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_EPmcAO8MEei_b7MObsODRw" count="88017" computed="true">
+        <parameters xmi:id="_EPmcAe8MEei_b7MObsODRw"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_E2uGYO8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_E2OXIO8MEei_b7MObsODRw" name="Row Count" label="Row Count">
+          <taggedValue xmi:id="_E2OXIe8MEei_b7MObsODRw" tag="Description" value="counts the number of rows"/>
+          <taggedValue xmi:id="_E2OXIu8MEei_b7MObsODRw" tag="Purpose" value="evaluates the number of records"/>
+          <sqlGenericExpression xmi:id="_E2OXI-8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSsu0OEeidmJUNeAS2Pw" count="88017" computed="true">
         <parameters xmi:id="_2bkSs-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
@@ -72,7 +83,7 @@
           <sqlGenericExpression xmi:id="_2zMvk-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSuu0OEeidmJUNeAS2Pw" count="88979" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSuu0OEeidmJUNeAS2Pw" count="88017" computed="true">
         <parameters xmi:id="_2bkSu-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
@@ -87,7 +98,18 @@
           <sqlGenericExpression xmi:id="_2zgRlu0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSvu0OEeidmJUNeAS2Pw" count="88979" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_EPpfUO8MEei_b7MObsODRw" count="88017" computed="true">
+        <parameters xmi:id="_EPpfUe8MEei_b7MObsODRw"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_E2uGYu8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_E2dAoO8MEei_b7MObsODRw" name="Row Count" label="Row Count">
+          <taggedValue xmi:id="_E2dAoe8MEei_b7MObsODRw" tag="Description" value="counts the number of rows"/>
+          <taggedValue xmi:id="_E2dAou8MEei_b7MObsODRw" tag="Purpose" value="evaluates the number of records"/>
+          <sqlGenericExpression xmi:id="_E2dAo-8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSvu0OEeidmJUNeAS2Pw" count="88017" computed="true">
         <parameters xmi:id="_2bkSv-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
@@ -98,7 +120,7 @@
           <sqlGenericExpression xmi:id="_2zrQs-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSxu0OEeidmJUNeAS2Pw" count="88979" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSxu0OEeidmJUNeAS2Pw" count="88017" computed="true">
         <parameters xmi:id="_2bkSx-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
@@ -111,6 +133,17 @@
           <sqlGenericExpression xmi:id="_2z_Zxe0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%>  WHERE LTRIM(RTRIM(&lt;%=__COLUMN_NAMES__%>)) = '' &lt;%=__AND_WHERE_CLAUSE__%>" language="DB2"/>
           <sqlGenericExpression xmi:id="_2z_Zxu0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%>  WHERE LTRIM(RTRIM(&lt;%=__COLUMN_NAMES__%>)) = '' &lt;%=__AND_WHERE_CLAUSE__%>" language="Microsoft SQL Server"/>
           <sqlGenericExpression xmi:id="_2z_Zx-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_EPpfUu8MEei_b7MObsODRw" count="88017" computed="true">
+        <parameters xmi:id="_EPpfU-8MEei_b7MObsODRw"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_E2uGYe8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_E2ljgO8MEei_b7MObsODRw" name="Row Count" label="Row Count">
+          <taggedValue xmi:id="_E2ljge8MEei_b7MObsODRw" tag="Description" value="counts the number of rows"/>
+          <taggedValue xmi:id="_E2ljgu8MEei_b7MObsODRw" tag="Purpose" value="evaluates the number of records"/>
+          <sqlGenericExpression xmi:id="_E2ljg-8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
       <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSyu0OEeidmJUNeAS2Pw" count="88979" computed="true">
