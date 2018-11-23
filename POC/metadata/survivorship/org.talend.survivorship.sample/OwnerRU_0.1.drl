@@ -7,7 +7,7 @@ rule "OwnerRU"
 when
     $input : RecordIn( dataset.isMostCommon( ownerru, "OwnerRU", true) )  
 then
-    dataset.survive( $input.TALEND_INTERNAL_ID, "CommonName", drools.getRule().getName());
+    dataset.survive( $input.TALEND_INTERNAL_ID, "OwnerRU", drools.getRule().getName());
 
 end
 
