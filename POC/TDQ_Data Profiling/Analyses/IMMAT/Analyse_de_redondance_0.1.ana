@@ -14,11 +14,11 @@
     <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_TL2-490XEeinyYgpzgK3Rg"/>
   </context>
   <results xmi:id="_ubv_d-p8Eeisjp3QMvY80w">
-    <resultMetadata xmi:id="_ubv_eOp8Eeisjp3QMvY80w" executionDate="2018-11-23T14:50:21.652+0100" executionDuration="3646" message="" executionNumber="4" lastRunOk="true" lastExecutionNumberOk="4"/>
-    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_4bb7sOp8Eeisjp3QMvY80w" count="962" computed="true" matchingValueCount="134" notMatchingValueCount="828">
+    <resultMetadata xmi:id="_ubv_eOp8Eeisjp3QMvY80w" executionDate="2018-11-23T14:54:41.224+0100" executionDuration="3920" message="" executionNumber="5" lastRunOk="true" lastExecutionNumberOk="5"/>
+    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_4bb7sOp8Eeisjp3QMvY80w" count="962" computed="true" matchingValueCount="18" notMatchingValueCount="944">
       <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_ZFjDwOQiEeirA5cfncl2TA"/>
       <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Row Comparison/Row_Comparison_0.1.definition#_jMh4gJE3Ed2HGNmGoaS-_w"/>
-      <instantiatedExpressions xmi:id="_5BAG4Op8Eeisjp3QMvY80w" body="SELECT COUNT(*) FROM `volvo`.`dq_rtdms` A LEFT JOIN `volvo`.`immat` B ON ( (A.`STG_VAT` = B.`TVA`) ) WHERE (B.`TVA` IS NULL )" language="SQL"/>
+      <instantiatedExpressions xmi:id="_5BAG4Op8Eeisjp3QMvY80w" body="SELECT COUNT(*) FROM `volvo`.`dq_rtdms` A LEFT JOIN `volvo`.`immat` B ON ( (A.`LegalName` = B.`C_NAME`) ) WHERE (B.`C_NAME` IS NULL )" language="SQL"/>
       <builtInIndicatorDefinition xmi:id="_5A4LEOp8Eeisjp3QMvY80w" name="Row Comparison" label="Row Comparison">
         <taggedValue xmi:id="_5A4yIOp8Eeisjp3QMvY80w" tag="Purpose" value="Compare content of two column sets"/>
         <taggedValue xmi:id="_5A4yIep8Eeisjp3QMvY80w" tag="Description" value="Counts the number of data from a column set A that match data of a column set B"/>
@@ -28,10 +28,10 @@
       <columnSetA href="../../../metadata/connections/Mysql_local_0.1.item#_ZFjDzuQiEeirA5cfncl2TA"/>
       <columnSetB href="../../../metadata/connections/Mysql_local_0.1.item#_TL2-490XEeinyYgpzgK3Rg"/>
     </indicators>
-    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_4bb7sep8Eeisjp3QMvY80w" count="15919" computed="true" matchingValueCount="734" notMatchingValueCount="15185">
+    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_4bb7sep8Eeisjp3QMvY80w" count="15919" computed="true" matchingValueCount="127" notMatchingValueCount="15792">
       <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_TL1wsN0XEeinyYgpzgK3Rg"/>
       <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Row Comparison/Row_Comparison_0.1.definition#_jMh4gJE3Ed2HGNmGoaS-_w"/>
-      <instantiatedExpressions xmi:id="_5BAG4ep8Eeisjp3QMvY80w" body="SELECT COUNT(*) FROM `volvo`.`immat` A LEFT JOIN `volvo`.`dq_rtdms` B ON ( (A.`TVA` = B.`STG_VAT`) ) WHERE (B.`STG_VAT` IS NULL )" language="SQL"/>
+      <instantiatedExpressions xmi:id="_5BAG4ep8Eeisjp3QMvY80w" body="SELECT COUNT(*) FROM `volvo`.`immat` A LEFT JOIN `volvo`.`dq_rtdms` B ON ( (A.`C_NAME` = B.`LegalName`) ) WHERE (B.`LegalName` IS NULL )" language="SQL"/>
       <builtInIndicatorDefinition xmi:id="_5A9DkOp8Eeisjp3QMvY80w" name="Row Comparison" label="Row Comparison">
         <taggedValue xmi:id="_5A9Dkep8Eeisjp3QMvY80w" tag="Purpose" value="Compare content of two column sets"/>
         <taggedValue xmi:id="_5A9Dkup8Eeisjp3QMvY80w" tag="Description" value="Counts the number of data from a column set A that match data of a column set B"/>
