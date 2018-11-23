@@ -1679,26 +1679,12 @@
     <nodeData xsi:type="tdqmatching:MatchingData">
       <ruleMatchers>
         <joinkeys>
-          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
-          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
-          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
-          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
-          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
-          <columnMap key="INPUT_COLUMN" value="CommonName"/>
-          <columnMap key="CUSTOM_MATCHER" value=""/>
+          <columnMap key="INPUT_COLUMN" value="VAT"/>
+          <columnMap key="MATCHING_TYPE" value="Exact"/>
+          <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
           <columnMap key="TOKENIZATION_TYPE" value="No"/>
-          <columnMap key="PARAMETER" value=","/>
-        </joinkeys>
-        <joinkeys>
-          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
-          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
-          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
-          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
           <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
-          <columnMap key="INPUT_COLUMN" value="LegalName"/>
-          <columnMap key="CUSTOM_MATCHER" value=""/>
-          <columnMap key="TOKENIZATION_TYPE" value="No"/>
-          <columnMap key="PARAMETER" value=","/>
+          <columnMap key="HANDLE_NULL" value="nullMatchNone"/>
         </joinkeys>
         <matchParamMap key="INTERVAL_RULE" value="0.85"/>
         <matchParamMap key="MATCHING_ALGORITHM" value="Simple VSR Matcher"/>
@@ -2684,14 +2670,28 @@
     <nodeData xsi:type="tdqmatching:MatchingData">
       <ruleMatchers>
         <joinkeys>
-          <columnMap key="MATCHING_TYPE" value="Exact"/>
-          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
-          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
-          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
-          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
-          <columnMap key="INPUT_COLUMN" value="VAT"/>
+          <columnMap key="INPUT_COLUMN" value="CommonName"/>
+          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
           <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
           <columnMap key="TOKENIZATION_TYPE" value="No"/>
+          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
+          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
+        </joinkeys>
+        <joinkeys>
+          <columnMap key="INPUT_COLUMN" value="LegalName"/>
+          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
+          <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
+          <columnMap key="TOKENIZATION_TYPE" value="No"/>
+          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
+          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
+        </joinkeys>
+        <joinkeys>
+          <columnMap key="INPUT_COLUMN" value="STG_Adresse"/>
+          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
+          <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
+          <columnMap key="TOKENIZATION_TYPE" value="No"/>
+          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
+          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
         </joinkeys>
         <matchParamMap key="INTERVAL_RULE" value="0.85"/>
         <matchParamMap key="MATCHING_ALGORITHM" value="Simple VSR Matcher"/>
@@ -5038,13 +5038,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_514effbe-0fbc-454d-8567-e77371ea1d1b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>aCEkTtngaOSZa7PYfSGiVfiQZyITqLjOspUicaUYYPJcWuPzn/3M+QxOQnJ7hi9fr6zCypSqHVNx
-70WVoK+3Zw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_03464af0-ab3e-45b2-b42e-8e6470c49365"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7ueLTGLLfAsydTUxd2SYD+7yF4IPKutVORr81uDIXFYKuZgLGu6rWLSyQEQ+mIpkH7dKmL5/EOwE
-IHWb5+j4Kw==</DigestValue></Reference></SignedInfo><SignatureValue>sDuRJNDkkq/ZWxSq9z1BGwkvrs8TfGRcWSCHDq5n2SJcqEjoHSYMpDvOVEueCtcQWp7ckjF0bNAU
-b7qvPWerwrPxcL9JBkR6cl8Sjq34eu8RmrQdz6GdcqBG8G3GT/ltu87znLH/4NvAyhQVmvIud+rC
-4gjhC9f4g/2XRz3OlndIXvedHLLyL4qyHahsNwvFdcjC6xdNCggtsUBZzpVVHO1VcYCrqVwBl4xi
-dzN7dowGJprg/+KxvUdmOIg4we47a7qjcMPByBafoVXfS4t9X0kzaL42Ah0xBwVO8YO+n0lTMhHP
-YfiTyzejjlclk90JKmq6G9VL7KCCc74QFNUMnw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fdf5c616-6e19-4a22-977d-f48a9b0a406b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nXTUskz3GSTjLAQe8Ex5HbUnJxTnU9r+WEIabxTHEkyYh1yh6Ps5FVuUkmQI5VBUPI+0nXXV3qiH
+DLD/spQWcQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bb671bc2-068f-4226-8cf1-128385bb9b4b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>o0HwSTJoNRkVXmYmiSVqXj+++sKtn0IALRGXbGRTEdjkEhZ0CTKKdj8EOlLyfKi8Ql/lPT9FbzNo
+wnoXc9q3fA==</DigestValue></Reference></SignedInfo><SignatureValue>1KmUhyGpPJfWuOgvuUwt0bh4XK3S0NhhLivSmEz1EOCJaIP/vP7lUek2r3ky84FUFGxcYEzJLPd/
+nr/4y9NYVz8Hmlmw151ZwAqgFV8JyaDsQQtJnFu8FWnexb2N+MpmlmAfjXTHgECBJ1Q0PeBNV1b2
+nqzJp9knebaPd6Y9a0XJII0IFCkaN5jwaDRaqPUvBYPWAxy4JdGW3CvMv7LrYuJVfiXuTrRtsECG
+vZF5hR8lBWGjNQjHQAPAhyRtg36E18CW8RR+h33fFQk1VxeBAGNmL8fWt59zAsOOx1k+LheDu5Ce
+jLDONauJ9JUggS32Shg7q3L6Ick5XyyXUsu1Nw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -5068,4 +5068,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_03464af0-ab3e-45b2-b42e-8e6470c49365" Target="#_514effbe-0fbc-454d-8567-e77371ea1d1b"><Timestamp>2018-11-23 17:27:54</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bb671bc2-068f-4226-8cf1-128385bb9b4b" Target="#_fdf5c616-6e19-4a22-977d-f48a9b0a406b"><Timestamp>2018-11-23 17:57:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
