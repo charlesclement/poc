@@ -22,7 +22,7 @@
     <talend.job.path>poc/ad_normalization_0_1</talend.job.path>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
     <talend.project.name>POC</talend.project.name>
-    <talend.product.version>7.0.1.20180903_1027-patch</talend.product.version>
+    <talend.product.version>7.0.1.20181114_0937-patch</talend.product.version>
     <talend.job.finalName>ad_normalization_0_1</talend.job.finalName>
     <talend.pigudf.groupid>org.example.poc.pigudf</talend.pigudf.groupid>
     <talend.routine.groupid>org.example.poc.code</talend.routine.groupid>
@@ -53,6 +53,11 @@
     <dependency>
       <groupId>org.talend.libraries</groupId>
       <artifactId>log4j-1.2.16</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>mysql-connector-java-5.1.30-bin</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
@@ -259,7 +264,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <survivorship.rules.dir>${current.resources.dir}/metadata/survivorship/</survivorship.rules.dir>
+        <survivorship.rules.dir>${current.int-resources.dir}/metadata/survivorship/</survivorship.rules.dir>
       </properties>
     </profile>
   </profiles>
