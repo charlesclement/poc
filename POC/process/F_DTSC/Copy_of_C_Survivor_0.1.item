@@ -515,7 +515,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_3IT8AO8TEei_b7MObsODRw-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_GOrMgPDoEei9-of3lG08sA-tMap_1-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -1076,10 +1076,17 @@
       <elementValue elementRef="OUTPUT_COLUMN" value="VAT_countryCode"/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
       <elementValue elementRef="RELATION" value="SEQ"/>
-      <elementValue elementRef="RULE_NAME" value="&quot;VAT_vatNumber&quot;"/>
-      <elementValue elementRef="INPUT_COLUMN" value="VAT_vatNumber"/>
+      <elementValue elementRef="RULE_NAME" value="&quot;VAT_valid&quot;"/>
+      <elementValue elementRef="INPUT_COLUMN" value="VAT_valid"/>
       <elementValue elementRef="FUNCTION" value="MostComplete"/>
       <elementValue elementRef="VALUE" value="&quot;&quot;"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="VAT_valid"/>
+      <elementValue elementRef="IGNORE_NULL" value="false"/>
+      <elementValue elementRef="RELATION" value="MC"/>
+      <elementValue elementRef="RULE_NAME" value="&quot;VAT_vatNumber&quot;"/>
+      <elementValue elementRef="INPUT_COLUMN" value="VAT_valid"/>
+      <elementValue elementRef="FUNCTION" value="Expression"/>
+      <elementValue elementRef="VALUE" value="&quot;true&quot;"/>
       <elementValue elementRef="OUTPUT_COLUMN" value="VAT_vatNumber"/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
       <elementValue elementRef="RELATION" value="SEQ"/>
@@ -1282,66 +1289,65 @@
     <elementParameter field="CHECK" name="DEFINE_CONFLICT" value="false"/>
     <elementParameter field="TABLE" name="CONFLICT_TABLE" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="SURVIVOR_RELATION" name="drools" show="false" value="_hC_dUO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_country" show="false" value="_hJV88O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_lat" show="false" value="_hNJe4O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OrganisationNo" show="false" value="_hQ7ysO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT" show="false" value="_hUs4YO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="sCity" show="false" value="_hYdXAO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_countryCode" show="false" value="_hcMngO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_Complet" show="false" value="_hf8fEO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_county" show="false" value="_hjsWoO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_city_district" show="false" value="_hn6vUO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="STG_Adresse" show="false" value="_hrrN8O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_Valid" show="false" value="_hvbFgO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="StandardizedPhoneNumber" show="false" value="_hzJH4O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="LegalName" show="false" value="_h24YYO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="GID" show="false" value="_h6vksO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_city_district" show="false" value="_h-zlUO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="sStateProvince" show="false" value="_iCmgMO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_county" show="false" value="_iGZbEO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="IsValidPhoneNumber" show="false" value="_iKOyMO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_lon" show="false" value="_iOEJUO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_address" show="false" value="_iR0n8O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="sAddrLine3" show="false" value="_iVlGkO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="sAddrLine2" show="false" value="_iZWMQO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_valid" show="false" value="_idHR8O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="Country" show="false" value="_ig5lwO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_postcode" show="false" value="_ikqrcO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="ChamberOfCom" show="false" value="_iofbgO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="SICCode" show="false" value="_isRvUO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_state" show="false" value="_iwDcEO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="Parma" show="false" value="_iz-50O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="STG_VAT" show="false" value="_i32GIO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_road" show="false" value="_i7oZ8O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_vatNumber" show="false" value="_i_XqcO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="sPostalCode" show="false" value="_jDJXMO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_postcode" show="false" value="_jG5OwO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_town" show="false" value="_jKtXwO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="IsPossiblePhoneNumber" show="false" value="_jOiu4O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OwnerRU" show="false" value="_jSW34O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_country_code" show="false" value="_jWGIYO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="SalesChannel" show="false" value="_jZ3OEO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_town" show="false" value="_jdr-IO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_lat" show="false" value="_jhijYO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_requestDate" show="false" value="_jlTCAO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="Phone" show="false" value="_jpF84O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="AdressLine1" show="false" value="_js3poO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="CountryCode" show="false" value="_jwqkgO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="VAT_name" show="false" value="_j0eGcO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="CommonName" show="false" value="_j4QaQO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_country" show="false" value="_j8A44O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_Valid" show="false" value="_kAdUAO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_state" show="false" value="_kERdAO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="PhoneNumberType" show="false" value="_kIICQO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_lon" show="false" value="_kL69IO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="STG_Phone" show="false" value="_kPtQ8O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_road" show="false" value="_kTgy4O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="ErrorMessage" show="false" value="_kXUU0O9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="IsAlreadyStandard" show="false" value="_kbFagO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_country_code" show="false" value="_ke3uUO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="customer" show="false" value="_kir3UO9YEeiahqw0tTYLWw"/>
-    <elementParameter field="SURVIVOR_RELATION" name="SurvivorFlow" show="false" value="_kmbH0O9YEeiahqw0tTYLWw"/>
+    <elementParameter field="SURVIVOR_RELATION" name="drools" show="false" value="_MSR4QPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_country" show="false" value="_MZt9APDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_lat" show="false" value="_MeP3sPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OrganisationNo" show="false" value="_MiNxsPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT" show="false" value="_MmGzMPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="sCity" show="false" value="_MqFUQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT_countryCode" show="false" value="_MuIt0PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT_Complet" show="false" value="_MyAhMPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_county" show="false" value="_M190IPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_city_district" show="false" value="_M55R4PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="STG_Adresse" show="false" value="_M9_uwPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_Valid" show="false" value="_NB4wQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="StandardizedPhoneNumber" show="false" value="_NF2DMPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="LegalName" show="false" value="_NJyvEPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="GID" show="false" value="_NNqicPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_city_district" show="false" value="_NRmnQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="sStateProvince" show="false" value="_NVm9gPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_county" show="false" value="_NZibQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="IsValidPhoneNumber" show="false" value="_Nda1sPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_lon" show="false" value="_NhgrgPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT_address" show="false" value="_NlX30PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="sAddrLine3" show="false" value="_NpRgYPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="sAddrLine2" show="false" value="_NtJTwPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT_valid" show="false" value="_NxEKcPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="Country" show="false" value="_N1GV4PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_postcode" show="false" value="_N5JIYPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="ChamberOfCom" show="false" value="_N9FNMPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="SICCode" show="false" value="_OA-OsPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_state" show="false" value="_OE4eUPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="Parma" show="false" value="_OIyt8PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="STG_VAT" show="false" value="_OM0SUPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_road" show="false" value="_OQt64PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="sPostalCode" show="false" value="_OU4pMPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_postcode" show="false" value="_OYtZQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_town" show="false" value="_OdRJIPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="IsPossiblePhoneNumber" show="false" value="_OhF5MPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OwnerRU" show="false" value="_OlAI0PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_country_code" show="false" value="_Oo6YcPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="SalesChannel" show="false" value="_Os0BAPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_town" show="false" value="_Owws4PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_lat" show="false" value="_O0mEAPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT_requestDate" show="false" value="_O4eecPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="Phone" show="false" value="_O8WR0PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="AdressLine1" show="false" value="_PATkwPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="CountryCode" show="false" value="_PEMmQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="VAT_name" show="false" value="_PIDykPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="CommonName" show="false" value="_PL6-4PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_country" show="false" value="_PP0AYPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_Valid" show="false" value="_PTu3EPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_state" show="false" value="_PX4XQPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="PhoneNumberType" show="false" value="_Pbz1APDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_lon" show="false" value="_PgBmoPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="STG_Phone" show="false" value="_PkhFEPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_road" show="false" value="_Po09UPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="ErrorMessage" show="false" value="_Ps8oUPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="IsAlreadyStandard" show="false" value="_PxZqgPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="OSM_VAT_country_code" show="false" value="_P1qfcPDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="customer" show="false" value="_P5i54PDpEei9-of3lG08sA"/>
+    <elementParameter field="SURVIVOR_RELATION" name="SurvivorFlow" show="false" value="_P-JGAPDpEei9-of3lG08sA"/>
     <metadata connector="FLOW" name="tRuleSurvivorship_1">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -3754,13 +3760,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0f52a999-721d-460c-9e68-6104937dd300"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ffixz+ZmwlDUCqVLxNwbT5JEG7QY9w0uZU1hxO+eDoXtoI+ryLc/YliY+1MrBlJO3w2EJnj8KBIZ
-CAIVfiV/KA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_412d712b-ac6b-48f3-9885-6be9cff3efb1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JVnKciE4Z9r5JGHjaqlc2J3BXKIAZfewUncTngN3OjneL61NvM9Wa9Enuk/z5p5ONTQLvVXbxspU
-QgO2HTjHFQ==</DigestValue></Reference></SignedInfo><SignatureValue>MOW2HoWBJV0GWghyEqNIwtKpKhxDcpigblFRYSHLtCBwFRRbWa+MQOO+PMRmIagreLMKEOPVHoIG
-r75cJI/OOGzVus+BvoCAx1/4sUsoO2eYB1WjqoVtU40R3YY3V0ygngdCFw3jYaLZOPZLrXOEvp1d
-3Cac1E/SrLxhrp0epbT15gtCy9Jm5K9hm0Ok+SHJYzpew2uU9054WMSNI0N5R5+TpnC/jcpVpS69
-CMxeuVp+K8mwT8qcZ+z3DWtkLBRbzToJVl6wvIvCPZGYFufxhhhZS0ZHxejeORa72B4iKXSDjAL+
-3PTAmTyfOPfU3ioA6cbxSH66Y2NCWlDn/H3U+w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7e080891-b0d8-40b6-87e9-b02866472b6a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>c0D13IVAUbnH9XSZaVOS9U/w3Kq7aCwppoZaeGA7Pnuxc4GFrXv2BugqDRhksQx0QcU/X6PoSsh+
+/ZVQAKzT3A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f5a45997-efd0-4099-bd3d-5b83234b7b4a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>34zHKpLNp2r1uIvpCXtKlDSwu1QRiXhqOL4FxfUn7LejlfPP5ja3fGof9ghyI1qjBtyHaIQm8B/C
+UqJcYMPqQw==</DigestValue></Reference></SignedInfo><SignatureValue>DJkoZYOpOpA29/ERZUaYcJhns63SGC91oqqpZUL9881q32PcXps2mqvH5KR2RQ85YwCZKgX530Yt
+h4gPxtj4epYqGoefCGUVMPLGcUlDgXrOw2p4CgzrNohqlr0vnRIJ7ZGPlfjIPI9QsJO2SANwzzf4
+kareEe2w3d8hrdFSijsbB914pdNPxCnZEBIt5EDzMLmXO1ygkunoRhFr3DICdD0GvCIxTfjJSvZy
+E4Euo3p9+ji45DHTkhqSFp0AZswigFJ0W0lIZ1Ril6vxBc2qB1cwjeiBCXfLJRbs1gPovi2sLCTt
+zlQQqNaENMPh5UEx6YItCvJ7rtHl+xTyPEI/PQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -3784,4 +3790,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_412d712b-ac6b-48f3-9885-6be9cff3efb1" Target="#_0f52a999-721d-460c-9e68-6104937dd300"><Timestamp>2018-11-25 19:27:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f5a45997-efd0-4099-bd3d-5b83234b7b4a" Target="#_7e080891-b0d8-40b6-87e9-b02866472b6a"><Timestamp>2018-11-25 19:40:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
