@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:tdqmatching="http://www.talend.org/tdqmatching" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:tdqmatching="http://www.talend.org/tdqmatching" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default">
     <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
     <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
@@ -492,7 +492,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tGenKey" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="128">
+  <node componentName="tGenKey" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="32" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tGenKey_1"/>
     <elementParameter field="MATCH_RULE_IMEX_CONTROLLER" name="MATCH_RULE_IMEX" value="false"/>
     <elementParameter field="TABLE" name="ALGO">
@@ -696,11 +696,340 @@
       <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMatchGroup" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="64">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="160" posY="192">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_3oUj8PDjEei9-of3lG08sA-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="dq_pivot" name="out">
+      <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsAlreadyStandard" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="PhoneNumberType" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="ErrorMessage" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_countryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_vatNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_requestDate" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_address" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="VAT_Complet" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_city_district" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_town" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_county" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_state" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_postcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_lat" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_city_district" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_town" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_county" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_state" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_postcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_country_code" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row2.Customer" name="Customer" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OwnerRU" name="OwnerRU" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE(row2.CommonName) " name="CommonName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE(row2.LegalName) " name="LegalName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OrganisationNo" name="OrganisationNo" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE(row2.VAT)" name="VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.STG_VAT" name="STG_VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.ChamberOfCom" name="ChamberOfCom" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Parma" name="Parma" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.SICCode" name="SICCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.AdressLine1" name="AdressLine1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.sAddrLine2" name="sAddrLine2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.sAddrLine3" name="sAddrLine3" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.sPostalCode" name="sPostalCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.sCity" name="sCity" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.sStateProvince" name="sStateProvince" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Country" name="Country" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.CountryCode" name="CountryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE(row2.STG_Adresse) " name="STG_Adresse" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.SalesChannel" name="SalesChannel" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Phone" name="Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.STG_Phone" name="STG_Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.StandardizedPhoneNumber" name="StandardizedPhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.IsValidPhoneNumber" name="IsValidPhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.IsPossiblePhoneNumber" name="IsPossiblePhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.IsAlreadyStandard" name="IsAlreadyStandard" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.PhoneNumberType" name="PhoneNumberType" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.ErrorMessage" name="ErrorMessage" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_countryCode" name="VAT_countryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_vatNumber" name="VAT_vatNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_requestDate" name="VAT_requestDate" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_valid" name="VAT_valid" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_name" name="VAT_name" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_address" name="VAT_address" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT_Complet" name="VAT_Complet" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_lat" name="OSM_VAT_lat" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_lon" name="OSM_VAT_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_road" name="OSM_VAT_road" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_city_district" name="OSM_VAT_city_district" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_town" name="OSM_VAT_town" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_county" name="OSM_VAT_county" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_state" name="OSM_VAT_state" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_postcode" name="OSM_VAT_postcode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_country" name="OSM_VAT_country" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_country_code" name="OSM_VAT_country_code" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_VAT_Valid" name="OSM_VAT_Valid" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_lat" name="OSM_lat" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_lon" name="OSM_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_road" name="OSM_road" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_city_district" name="OSM_city_district" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_town" name="OSM_town" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_county" name="OSM_county" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_state" name="OSM_state" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_postcode" name="OSM_postcode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_country" name="OSM_country" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_country_code" name="OSM_country_code" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.OSM_Valid" name="OSM_Valid" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.ID" name="ID" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.Loading_Date" name="Loading_Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row2.Source" name="Source" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.T_GEN_KEY" name="T_GEN_KEY" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="ALL_ROWS" name="row2" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="Customer" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OwnerRU" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CommonName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="LegalName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OrganisationNo" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ChamberOfCom" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Parma" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SICCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="AdressLine1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="sAddrLine2" nullable="true" type="id_String"/>
+        <mapperTableEntries name="sAddrLine3" nullable="true" type="id_String"/>
+        <mapperTableEntries name="sPostalCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="sCity" nullable="true" type="id_String"/>
+        <mapperTableEntries name="sStateProvince" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Country" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CountryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_Adresse" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SalesChannel" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries name="StandardizedPhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="IsValidPhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="IsPossiblePhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="IsAlreadyStandard" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PhoneNumberType" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ErrorMessage" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_countryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_vatNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_requestDate" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_valid" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_name" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_address" nullable="true" type="id_String"/>
+        <mapperTableEntries name="VAT_Complet" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_lat" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_road" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_city_district" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_town" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_county" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_state" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_postcode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_country" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_country_code" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_Valid" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_lat" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_road" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_city_district" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_town" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_county" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_state" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_postcode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_country" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_country_code" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_Valid" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="Source" nullable="true" type="id_String"/>
+        <mapperTableEntries name="T_GEN_KEY" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMatchGroup" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMatchGroup_1"/>
     <elementParameter field="EXTERNAL" name="PREVIEW" value=""/>
     <elementParameter field="CHECK" name="GID_USE_STRING" show="false" value="true"/>
@@ -1679,19 +2008,21 @@
     <nodeData xsi:type="tdqmatching:MatchingData">
       <ruleMatchers>
         <joinkeys>
-          <columnMap key="INPUT_COLUMN" value="VAT"/>
           <columnMap key="MATCHING_TYPE" value="Exact"/>
+          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
+          <columnMap key="HANDLE_NULL" value="nullMatchNone"/>
+          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
+          <columnMap key="CONFIDENCE_WEIGHT" value="3"/>
+          <columnMap key="INPUT_COLUMN" value="VAT"/>
           <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
           <columnMap key="TOKENIZATION_TYPE" value="No"/>
-          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
-          <columnMap key="HANDLE_NULL" value="nullMatchNone"/>
         </joinkeys>
-        <matchParamMap key="INTERVAL_RULE" value="0.85"/>
+        <matchParamMap key="INTERVAL_RULE" value="100"/>
         <matchParamMap key="MATCHING_ALGORITHM" value="Simple VSR Matcher"/>
       </ruleMatchers>
     </nodeData>
   </node>
-  <node componentName="tMatchGroup" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="192">
+  <node componentName="tMatchGroup" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMatchGroup_2"/>
     <elementParameter field="EXTERNAL" name="PREVIEW" value=""/>
     <elementParameter field="CHECK" name="GID_USE_STRING" show="false" value="true"/>
@@ -2694,17 +3025,17 @@
           <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
           <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
           <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
-          <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
+          <columnMap key="CONFIDENCE_WEIGHT" value="3"/>
           <columnMap key="INPUT_COLUMN" value="STG_Adresse"/>
           <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
-          <columnMap key="TOKENIZATION_TYPE" value="No"/>
+          <columnMap key="TOKENIZATION_TYPE" value="Any order"/>
         </joinkeys>
-        <matchParamMap key="INTERVAL_RULE" value="0.85"/>
+        <matchParamMap key="INTERVAL_RULE" value="0.80"/>
         <matchParamMap key="MATCHING_ALGORITHM" value="Simple VSR Matcher"/>
       </ruleMatchers>
     </nodeData>
   </node>
-  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="96">
+  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tConvertType_2"/>
     <elementParameter field="TECHNICAL" name="IN_SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="IN_SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - dq_matching"/>
@@ -3118,7 +3449,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="96">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
@@ -3897,7 +4228,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="192">
+  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tConvertType_3"/>
     <elementParameter field="TECHNICAL" name="IN_SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="IN_SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - dq_matching"/>
@@ -4311,7 +4642,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="192">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
@@ -5090,7 +5421,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="288">
+  <node componentName="tConvertType" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tConvertType_4"/>
     <elementParameter field="TECHNICAL" name="IN_SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="IN_SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - dq_matching"/>
@@ -5504,7 +5835,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="288">
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="832" posY="288">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_3"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg"/>
@@ -6287,9 +6618,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tGenKey_1" offsetLabelX="0" offsetLabelY="0" source="tGenKey_1" target="tMatchGroup_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tGenKey_1" offsetLabelX="0" offsetLabelY="0" source="tGenKey_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMatchGroup_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
   </connection>
   <connection connectorName="FLOW_OUTPUT" label="row3" lineStyle="0" metaname="FLOW_OUTPUT" offsetLabelX="0" offsetLabelY="0" source="tMatchGroup_1" target="tMatchGroup_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -6324,13 +6659,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2279a5ff-56ef-4ab4-a1fa-dc558497780c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Wofx9KViuyCqZbihJA04odWdQDz4Px7BE02WpFN1HxwnhXIrzqTs7Ey6Q39+qEO8fDLj8or4uYLv
-wCfzb02fiQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_67b73079-d51e-489e-984b-4fac9d8a0ab2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>fhz+P/mz6zNgTynKQ2cqbRle992wHYiqiNzyf9tcYj4mpDsta2ucLd6YAGh1YX7Bu/+d6NAsoZhD
-smHqycD+uA==</DigestValue></Reference></SignedInfo><SignatureValue>VY4BpapDzP5od2MtiNyofF63so6gbJSxcVDUJkb/QZ95HOBs6WLekj3uQiKmHm7jgu6goxjWZ9cz
-l/CSygo3dDFXWdtQfDHSXci27gNvvfsvowZVO/QfH6C7CiQJbU6xtsNv1c31VXrR5riEsnRiZUZ6
-cpMhve8ld8jVJ2kOxb0WqQJVlyyKWF8yMkqkku3UDHbbIzhO6BJC4SSo84ZNDxjc8MCjOnOObzBT
-K7TaZnx8cyhIE7MkhIiUQz/jwypYi22/d31vbltXZJAIQC2u+uqr9ANW4kmLvLaYyzBwypyJAskF
-fO4foWYRyNopA8y5QEN4k11IAfYqMxQoGxEoYw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ddc9a42a-6240-4f4f-ae95-416ad1012e6a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JKAufJ23lhBWhOMhWwb9GPdJotYdTr72biVuTtp3luclgcso2Wh3qqyztJsesaz1Zf7mGKcLANzB
+shQYbkNilA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4a3a4746-e608-4b64-8ee1-e749736b737d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cFuytkzgbIO7F9yAlva86Uv1/0TqTx3AWLu4aCNQPeV+PwutlZR9MnEpRTJDQfog3A9DaZDjJ1e7
+sufoGkvIpQ==</DigestValue></Reference></SignedInfo><SignatureValue>dWPLQoKPRxErBRIasyge4rTaIeGdx4lNLGMNtRurxtlmapgRpz2jbAFsLAulNngucdH92y6K0a+x
+qegNebNqVhjEcii76ZNsLvrN4kvzTqM6Hy0QgAojqsso2gpLJoH2PTL08Ge80KrmWZBYmT7Www0Y
+RY9t6s6LF9bMu5B30aug1SoIJYLrOAk6RMhXLx8LxGf4vOHacVXXZietkJQYOv5apF5oSZac6Tq9
+zdLMMqs7JUEnS76qHHkrcsolx47ZtX4IrP8eQHADFGSu6QeWwtvCv+pfK5ZNXBCYct00M4rQRyLL
+hBgkT02YCX9OvdZihvt8vKNrplbaUvvvunaHeg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -6354,4 +6689,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_67b73079-d51e-489e-984b-4fac9d8a0ab2" Target="#_2279a5ff-56ef-4ab4-a1fa-dc558497780c"><Timestamp>2018-11-25 18:56:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4a3a4746-e608-4b64-8ee1-e749736b737d" Target="#_ddc9a42a-6240-4f4f-ae95-416ad1012e6a"><Timestamp>2018-11-25 19:10:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
