@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
-  <context confirmationNeeded="false" name="Default"/>
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
+    <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
+    <contextParameter comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="root"/>
+    <contextParameter comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="noDatetimeStringSync=true"/>
+  </context>
+  <context confirmationNeeded="false" name="Prod">
+    <contextParameter comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="root"/>
+    <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
+    <contextParameter comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
+    <contextParameter comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="noDatetimeStringSync=true"/>
+  </context>
+  <context confirmationNeeded="false" name="Dev">
+    <contextParameter comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="root"/>
+    <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
+    <contextParameter comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
+    <contextParameter comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="noDatetimeStringSync=true"/>
+  </context>
+  <context confirmationNeeded="false" name="Pprod">
+    <contextParameter comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="root"/>
+    <contextParameter comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="volvo"/>
+    <contextParameter comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="3306"/>
+    <contextParameter comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" repositoryContextId="_lwd2wN1JEeiJVaJ0nfyOPQ" type="id_String" value="noDatetimeStringSync=true"/>
+  </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
@@ -250,13 +281,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_44e367d9-ba13-45b3-85cf-540c9700572a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>3vPxxHiyItpjW1arp5kikjiPTIF4a+iDlvT52eDqMSmCL9pT1i77Gt/URTmF10VH6uDiCaAO1Lvk
-kh70ObAHGQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_12a95def-2a10-4656-8520-f0d914bf1567"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>QfGOSOV3+Dk/mTystXKRZVlxkgtFtthWICZtu7DQzy17qI4Cn+JmqeligEBoKkrFFE729OWoQ+pI
-bYqB1U6opA==</DigestValue></Reference></SignedInfo><SignatureValue>AhoiNblGY4ebaeLO61Muo089+lm5xowhcOPHvRGXLD/p54pG2v2le7gyoeGerRbgQ4F2rh6/D/vc
-WKh9IdeNjlcsOaZ+fLjzQfblfHYW/NXtvT58XBATj1RdzMPdjQjeuesyNEcKUOR8hNFeIa2XJKGh
-KhLTQgyjSWdQdC8DUdhd8+te4LA0bWaCw5Pe0iYL1VRV7r3uixZfO4B/Xk1EAcHfc5tBC0cDLSP9
-pjMOFm6Yo3Os8WJoXYY45eSFfBdNax+dqOttx4Ji5WEAlv6YiI4UskD9usWHscJffqrn7aSwvU6K
-ifeNQqYK23+JK9klgRtEZEoLTcF+xU00lRq04w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_296ca57e-4739-4d8f-9a7b-a2c58ef2d172"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>RIbRpNcnfV/PS95sdIFkdBykj2APUiLEo9EJVs1ygvOXSNuZPZcRFKDWcTvrob9f3jrqPmePADcI
+vPljLcjEhA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e9255b1e-45dd-4db3-a8ea-4bf93ece5344"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>m9dz5UZPiRURCKRpGrO/8GSFpP8T6RJr8gt3/31yTWludxYN3kGDbKh39JDzohBeZlCuKrWjZTao
+YCGsbN0OuQ==</DigestValue></Reference></SignedInfo><SignatureValue>zDhpwgMk/tAPInI+yHOXbXPI8lH9oVJD6lgYl/R/7NR2QnaMCib8hy5vVL/H+hYNr8TM+ijtpatO
+XHJwpgFjj59MjyRx/TllUVSnHXZifxluJOJoxHBVdg6TjuGZ4AcGqcvlz4c+G05fAkfzlMemwk2w
+PgSez7K4Cl+rQLPTIvIrE0jdyzURTd08Q57ayXhhZzpyytHZXnmSHeH66brW+/Gbrv4HjEk+tOvT
+3UU5652b9M5eMYVnB0xuDUNlkBuHEg2N6/zrYvJ/NOPiztKYTEZPKYXmOa5D0Nw2sOf3uUw6zyNu
+mup9jlpRZz9Niz1AhoLTY2CbUg7Fzbu1WTD7KQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -280,4 +311,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_12a95def-2a10-4656-8520-f0d914bf1567" Target="#_44e367d9-ba13-45b3-85cf-540c9700572a"><Timestamp>2018-11-26 14:41:40</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e9255b1e-45dd-4db3-a8ea-4bf93ece5344" Target="#_296ca57e-4739-4d8f-9a7b-a2c58ef2d172"><Timestamp>2018-11-26 14:41:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
