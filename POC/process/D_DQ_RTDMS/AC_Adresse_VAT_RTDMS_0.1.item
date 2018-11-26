@@ -1302,6 +1302,10 @@
       <elementValue elementRef="QUERY" value="&quot;lat&quot;"/>
       <elementValue elementRef="NODECHECK" value="false"/>
       <elementValue elementRef="ISARRAY" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="house_number"/>
+      <elementValue elementRef="QUERY" value="&quot;address/house_number&quot;"/>
+      <elementValue elementRef="NODECHECK" value="false"/>
+      <elementValue elementRef="ISARRAY" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="road"/>
       <elementValue elementRef="QUERY" value="&quot;address/road&quot;"/>
       <elementValue elementRef="NODECHECK" value="false"/>
@@ -1342,6 +1346,8 @@
       <elementValue elementRef="QUERY" value=""/>
       <elementValue elementRef="SCHEMA_COLUMN" value="lat"/>
       <elementValue elementRef="QUERY" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="house_number"/>
+      <elementValue elementRef="QUERY" value=""/>
       <elementValue elementRef="SCHEMA_COLUMN" value="road"/>
       <elementValue elementRef="QUERY" value=""/>
       <elementValue elementRef="SCHEMA_COLUMN" value="city_district"/>
@@ -1370,6 +1376,7 @@
       <column comment="" key="false" length="-1" name="display_name" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lon" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lat" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="house_number" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="road" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="city_district" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="town" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1383,6 +1390,7 @@
       <column comment="" key="false" length="-1" name="display_name" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lon" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lat" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="house_number" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="road" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="city_district" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="town" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1416,6 +1424,7 @@
       </column>
       <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_city_district" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_town" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1428,12 +1437,13 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="((String)globalMap.get(&quot;tRESTClient_2_CORRELATION_ID&quot;))" name="VAT_vatNumber" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.lat " name="OSM_VAT_lat" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.lon " name="OSM_VAT_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row5.house_number " name="OSM_house_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.road " name="OSM_VAT_road" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.city_district " name="OSM_VAT_city_district" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row5.town " name="OSM_VAT_town" nullable="true" type="id_String"/>
@@ -1448,6 +1458,7 @@
         <mapperTableEntries name="display_name" nullable="true" type="id_String"/>
         <mapperTableEntries name="lon" nullable="true" type="id_String"/>
         <mapperTableEntries name="lat" nullable="true" type="id_String"/>
+        <mapperTableEntries name="house_number" nullable="true" type="id_String"/>
         <mapperTableEntries name="road" nullable="true" type="id_String"/>
         <mapperTableEntries name="city_district" nullable="true" type="id_String"/>
         <mapperTableEntries name="town" nullable="true" type="id_String"/>
@@ -1503,6 +1514,11 @@
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_lon"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OSM_house_number"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -1567,6 +1583,7 @@
       </column>
       <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_city_district" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_town" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1584,6 +1601,7 @@
       </column>
       <column comment="" key="false" length="200" name="OSM_VAT_lat" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_city_district" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="OSM_VAT_town" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1622,6 +1640,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tExtractJSONFields_1" offsetLabelX="0" offsetLabelY="0" source="tExtractJSONFields_1" target="tMap_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="house_number"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
@@ -1660,6 +1683,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="OSM_VAT_country_code"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="OSM_house_number"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
@@ -1674,13 +1700,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_929eedd7-a31b-4aec-ae2d-6ef890da2313"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rRtfqQMriOsBAfl5I8DGDW5IAXFXEogtdQ+FM69+EoSSALGPkQoJ/fk8XU1siT/LplV2cHcgXegw
-KMFbE/NP4A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d8b0116e-d7a5-4fae-9fa0-40d4a76d56df"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Cq6i+8L7XvlB3VYyT59CyGtOA8aqnKz7WThc+aTXAQt1onGLOZ0S7iKeUqzN2ib25jp25AUl72Sm
-BPuB5c2gjQ==</DigestValue></Reference></SignedInfo><SignatureValue>WaMFu8ot/Dq7oli90A/+n0M8u7bfAc3H1AueLc9OAsTwBCtxehsNxVn5T7phzui2F0VsjTTu2/9y
-PKEly7kzQNOHETdfVhxoLLt7eEclrKDwXXzSkDTElDWKCTeviflF9abtDi/7eZE4TSlQxJeVIInS
-YpvN154HHECR1PUkSVz488eLYS+atHIQHsD8CjBTO6eS4w0OuC6bhj1uuxaU4fz01eyouY2a5YBZ
-SXvQxka4Xx95Bgv3iCl5PdNX45hAWwBedxHUJou8lEgOA6a7OtcFvJ8OZRkzMCzXFzERYjRGKj4e
-1mN0qatuCqMNWvKAI9M+ZTpgwJZ7Hh6UToML+A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c4cd659e-6d4d-4d49-a52d-da851c593da8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OyVPOpxjtb6wxRTEfK9v+y1mZZ4wym5ss8jbHUENbJzK31BxSy5e1z8rlJgFpGgrEHnoDmJhhAgH
+yz8dn83o3A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2923665e-06aa-4e1f-a0c6-ce0d9881fc40"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>g+5FYSU8EtHqbVhiy5cB1Yw30wv0XTWHSxHMpYNwrzhVR3Ja1Q8lu+5hTvV+MBt4+JDIeX3sTsYs
+DAgMZQrcjw==</DigestValue></Reference></SignedInfo><SignatureValue>d8podBK+jezFflsaN8/ppzA0qakkwz/3QZW6+KcUovIdZ0mpudlsxD3I3qgJfeoUnk7nuGPsOnSe
+RFVolB18blrh9r7/rhiALP1WzErJJnRxQRCTxNj3V28nUTb6ZrKAhK4IXlJxgi6WG00m/ledzGeB
+fhOa+Bet2oNu74lNE/STuDCJAu4QpdyDKgubuq2KXOh2qMkXJkIFk1M+COcEW1VhEAw89Z9F34Cg
+R2KCLeirXPq0oNxyHTEY/R80V+XcXVg3MAFCriSA7XYlW/PR+o+G7knCisu+SbXNC3WyiakAAE0A
+FrzNT/KhzgYijtqHI4IkHcMmjPcnTzQknHugNA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1704,4 +1730,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d8b0116e-d7a5-4fae-9fa0-40d4a76d56df" Target="#_929eedd7-a31b-4aec-ae2d-6ef890da2313"><Timestamp>2018-11-26 16:55:43</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2923665e-06aa-4e1f-a0c6-ce0d9881fc40" Target="#_c4cd659e-6d4d-4d49-a52d-da851c593da8"><Timestamp>2018-11-26 17:00:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
