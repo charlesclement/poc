@@ -5,7 +5,7 @@ rule "STG_VAT"
     dialect "mvel"
     ruleflow-group "STG_VATGroup"
 when
-    $input : RecordIn( dataset.isMostComplete( $input.TALEND_INTERNAL_ID ) )  
+    $input : RecordIn( dataset.isMostCommon( stg_vat, "STG_VAT", false) )  
 then
     dataset.survive( $input.TALEND_INTERNAL_ID, "STG_VAT", drools.getRule().getName());
 
