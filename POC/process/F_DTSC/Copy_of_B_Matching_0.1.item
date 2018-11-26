@@ -259,6 +259,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_lon"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_house_number"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_road"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_VAT_city_district"/>
@@ -280,6 +282,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_lat"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_lon"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OSM_house_number"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="OSM_road"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -420,6 +424,9 @@
       <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -451,6 +458,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -627,6 +637,9 @@
       <column comment="" key="false" length="200" name="OSM_VAT_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="200" name="OSM_VAT_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -658,6 +671,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_lon" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_road" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -899,7 +915,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Customer" name="Customer" nullable="true" type="id_String"/>
@@ -1002,6 +1018,7 @@
         <mapperTableEntries name="VAT_Complet" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_lat" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_VAT_house_number" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_road" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_city_district" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_VAT_town" nullable="true" type="id_String"/>
@@ -1013,6 +1030,7 @@
         <mapperTableEntries name="OSM_VAT_Valid" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_lat" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_lon" nullable="true" type="id_String"/>
+        <mapperTableEntries name="OSM_house_number" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_road" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_city_district" nullable="true" type="id_String"/>
         <mapperTableEntries name="OSM_town" nullable="true" type="id_String"/>
@@ -6659,13 +6677,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3dbb9d7c-9a18-4e55-bba3-d6576fcd4fb7"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PGXM8vU/eSCr3DiubsevPiykwNN/eRcBx/SdcBxSnYiK49/hfub/zhhYk0ss3jFkWindC51A6s9w
-0ciIKSWI+Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7499f198-d231-4951-8b8b-a776e8ee05cc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>R1LmdrXLeEswpTHef0nOldcQn5Nr3gZgvxQLv4ep+LRxamIMnK6t2HMZacT0N0K2qACuLxMIjXxH
-btRFcDbd9A==</DigestValue></Reference></SignedInfo><SignatureValue>xLYT4GEAd/JYBD9yJmAlkvtgImGugNIjH3UYDZECjJ6Qm7GyIKgBWCNIYQ9iVjOM0WgVS66qn79c
-asr3fkuXZi0CA7MjZspuxhriQLMX5TVQ8PU8OmQ2lb8sykBR4nPW2a9JioPiJRP5Y/TxI9T/+jFf
-aSVBS5YyrkfhCUD3+VbQcLfAY3T/bEU18kRYzSL7oXqgFF7x01poXAgs0HnKKuLoIysBkGvYNZyy
-KPJ9RWwAGJzbsZdKQTg2c1XypIVu8UmTekguVua/jzaKRavzFpai+IZrkpWX2WeEMjSFkLASBh5K
-ij8nuBXxJL1cKuYZcB74CJ6IssH//KvqM3GlZA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_57dfd086-8cc7-4c86-afbc-bfbb4e89da40"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pZDW0e3BlHlW5RjLKAHSJqocd90yUwATEG6kM4UbRDvLcno8HiLn505SAN5ThtJkEheiacxJoDmJ
+Zb4n95XEwA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_68b59051-ae6d-4a0f-9aa9-a47478bc3c3d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>EuzxX1UiOrGHYAp55NrH3XJOYSx+8X3lghKHnZlQTqe6o9FdMncPQVGkgguqcKRftEWdyAME7yFW
+S9hCvcU8vg==</DigestValue></Reference></SignedInfo><SignatureValue>uvbW+pgnFyPBt4OkvKrYDTZdXRNk/bm5tVHoAzHgCsuhJr9tzvLaAitmaCuKkTmq28ibozTjlt4T
+NqFFxSLElBBUGHp3qihwOqIY9xndwDZLNEIde0MfyVZ9T907Cu803OEGFbpF8qr37DE/o95pUrBW
+z0NLH7xCzq8qCVQFWFBinMTYI2R3DkbkwgWA1kvZiFppf29ZrE7wLvFW5YW0w3Ze4PHVO49nUlXA
+xfxzm8VGw5IhLBin3nzsAXVWRN8Itrci0SEt16TqrHbWlES7anPYSWxAtD4ffOIfHBdpzHWr4HFN
+blxm570X5RILRTnPXjYpXxA/vB6yqDuA2pZCpg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -6689,4 +6707,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7499f198-d231-4951-8b8b-a776e8ee05cc" Target="#_3dbb9d7c-9a18-4e55-bba3-d6576fcd4fb7"><Timestamp>2018-11-25 22:53:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_68b59051-ae6d-4a0f-9aa9-a47478bc3c3d" Target="#_57dfd086-8cc7-4c86-afbc-bfbb4e89da40"><Timestamp>2018-11-26 12:52:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
