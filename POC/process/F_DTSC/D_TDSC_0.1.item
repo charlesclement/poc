@@ -1303,7 +1303,618 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMatchGroup" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="160">
+  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFilterRow_11"/>
+    <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
+    <elementParameter field="TABLE" name="CONDITIONS">
+      <elementValue elementRef="INPUT_COLUMN" value="TDS_GID"/>
+      <elementValue elementRef="FUNCTION" value="$source == null? false : $source.matches($target) $operator true"/>
+      <elementValue elementRef="OPERATOR" value="=="/>
+      <elementValue elementRef="RVALUE" value="&quot;4b46887c-0e55-4ee6-8fb9-b79743d634ed&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_ADVANCED" value="false"/>
+    <elementParameter field="MEMO_JAVA" name="ADVANCED_COND" show="false" value="// code sample : use input_row to define the condition.&#10;// input_row.columnName1.equals(&quot;foo&quot;) ||!(input_row.columnName2.equals(&quot;bar&quot;))&#10;// replace the following expression by your own filter condition &#10;input_row.columnName1.equals(input_row.columnName2)&#10;&#9;&#9;&#9;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="out" name="tFilterRow_11">
+      <column comment="text" key="false" length="-1" name="Customer" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Customer"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OwnerRU" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OwnerRU"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="CommonName" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="CommonName"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="LegalName" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="LegalName"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OrganisationNo" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OrganisationNo"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_VAT"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ChamberOfCom" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ChamberOfCom"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Parma" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Parma"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="SICCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="SICCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="AdressLine1" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="AdressLine1"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sAddrLine2" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sAddrLine2"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sAddrLine3" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sAddrLine3"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sPostalCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sPostalCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sCity" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sCity"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sStateProvince" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sStateProvince"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="CountryCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="CountryCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_Adresse" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_Adresse"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="SalesChannel" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="SalesChannel"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Phone" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Phone"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_Phone" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_Phone"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="StandardizedPhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="StandardizedPhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsValidPhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsValidPhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsPossiblePhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsPossiblePhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsAlreadyStandard" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsAlreadyStandard"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="PhoneNumberType" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="PhoneNumberType"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ErrorMessage" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ErrorMessage"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_countryCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_countryCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_vatNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_vatNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_requestDate" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_requestDate"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_name" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_name"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_address" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_address"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_Complet" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_Complet"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_lat" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_lat"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_lon" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_lon"/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_road" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_road"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_city_district" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_city_district"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_town" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_town"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_county" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_county"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_state" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_state"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_postcode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_postcode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_country_code" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_country_code"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_Valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_Valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_lat" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_lat"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_lon" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_lon"/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_road" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_road"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_city_district" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_city_district"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_town" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_town"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_county" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_county"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_state" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_state"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_postcode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_postcode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_country_code" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_country_code"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_Valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_Valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ID" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ID"/>
+      </column>
+      <column comment="date" key="false" length="-1" name="Loading_Date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Loading_Date"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Source" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Source"/>
+      </column>
+      <column comment="" key="false" length="255" name="T_GEN_KEY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="TDS_GID" nullable="false" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="TDS_GID"/>
+      </column>
+      <column key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="GRP_SIZE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="MASTER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FILTER" label="out" name="FILTER">
+      <column comment="text" key="false" length="-1" name="Customer" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Customer"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OwnerRU" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OwnerRU"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="CommonName" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="CommonName"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="LegalName" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="LegalName"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OrganisationNo" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OrganisationNo"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_VAT"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ChamberOfCom" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ChamberOfCom"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Parma" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Parma"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="SICCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="SICCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="AdressLine1" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="AdressLine1"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sAddrLine2" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sAddrLine2"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sAddrLine3" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sAddrLine3"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sPostalCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sPostalCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sCity" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sCity"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sStateProvince" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sStateProvince"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="CountryCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="CountryCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_Adresse" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_Adresse"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="SalesChannel" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="SalesChannel"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Phone" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Phone"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_Phone" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_Phone"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="StandardizedPhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="StandardizedPhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsValidPhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsValidPhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsPossiblePhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsPossiblePhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsAlreadyStandard" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsAlreadyStandard"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="PhoneNumberType" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="PhoneNumberType"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ErrorMessage" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ErrorMessage"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_countryCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_countryCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_vatNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_vatNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_requestDate" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_requestDate"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_name" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_name"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_address" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_address"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_Complet" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_Complet"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_lat" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_lat"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_lon" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_lon"/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_road" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_road"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_city_district" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_city_district"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_town" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_town"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_county" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_county"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_state" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_state"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_postcode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_postcode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_country_code" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_country_code"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_Valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_Valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_lat" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_lat"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_lon" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_lon"/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_road" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_road"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_city_district" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_city_district"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_town" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_town"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_county" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_county"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_state" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_state"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_postcode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_postcode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_country_code" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_country_code"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_Valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_Valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ID" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ID"/>
+      </column>
+      <column comment="date" key="false" length="-1" name="Loading_Date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Loading_Date"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Source" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Source"/>
+      </column>
+      <column comment="" key="false" length="255" name="T_GEN_KEY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="TDS_GID" nullable="false" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="TDS_GID"/>
+      </column>
+      <column key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="GRP_SIZE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="MASTER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="REJECT" label="out" name="REJECT">
+      <column comment="text" key="false" length="-1" name="Customer" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Customer"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OwnerRU" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OwnerRU"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="CommonName" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="CommonName"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="LegalName" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="LegalName"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OrganisationNo" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OrganisationNo"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_VAT" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_VAT"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ChamberOfCom" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ChamberOfCom"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Parma" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Parma"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="SICCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="SICCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="AdressLine1" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="AdressLine1"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sAddrLine2" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sAddrLine2"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sAddrLine3" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sAddrLine3"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sPostalCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sPostalCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sCity" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sCity"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="sStateProvince" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="sStateProvince"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="CountryCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="CountryCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_Adresse" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_Adresse"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="SalesChannel" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="SalesChannel"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Phone" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Phone"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="STG_Phone" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="STG_Phone"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="StandardizedPhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="StandardizedPhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsValidPhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsValidPhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsPossiblePhoneNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsPossiblePhoneNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="IsAlreadyStandard" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="IsAlreadyStandard"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="PhoneNumberType" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="PhoneNumberType"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ErrorMessage" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ErrorMessage"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_countryCode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_countryCode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_vatNumber" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_vatNumber"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_requestDate" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_requestDate"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_name" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_name"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_address" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_address"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="VAT_Complet" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="VAT_Complet"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_lat" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_lat"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_lon" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_lon"/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_VAT_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_road" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_road"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_city_district" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_city_district"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_town" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_town"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_county" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_county"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_state" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_state"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_postcode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_postcode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_country_code" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_country_code"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_VAT_Valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_VAT_Valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_lat" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_lat"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_lon" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_lon"/>
+      </column>
+      <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_road" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_road"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_city_district" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_city_district"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_town" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_town"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_county" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_county"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_state" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_state"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_postcode" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_postcode"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_country" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_country"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_country_code" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_country_code"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="OSM_Valid" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="OSM_Valid"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="ID" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="ID"/>
+      </column>
+      <column comment="date" key="false" length="-1" name="Loading_Date" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd&quot;" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Loading_Date"/>
+      </column>
+      <column comment="text" key="false" length="-1" name="Source" nullable="true" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="Source"/>
+      </column>
+      <column comment="" key="false" length="255" name="T_GEN_KEY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="TDS_GID" nullable="false" originalLength="-1" pattern="" precision="-1" type="id_String" usefulColumn="true">
+        <additionalField key="AVRO_TECHNICAL_KEY" value="TDS_GID"/>
+      </column>
+      <column key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="GRP_SIZE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="MASTER" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMatchGroup" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMatchGroup_1"/>
     <elementParameter field="EXTERNAL" name="PREVIEW" value=""/>
     <elementParameter field="CHECK" name="GID_USE_STRING" show="false" value="true"/>
@@ -2711,7 +3322,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
-  <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMatchGroup_1">
+  <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tFilterRow_11">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="T_GEN_KEY"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -2723,6 +3334,10 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out"/>
   </connection>
+  <connection connectorName="FILTER" label="row4" lineStyle="0" metaname="tFilterRow_11" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_11" target="tMatchGroup_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
   <connection connectorName="FLOW_OUTPUT" label="row2" lineStyle="0" metaname="FLOW_OUTPUT" offsetLabelX="0" offsetLabelY="0" source="tMatchGroup_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
@@ -2732,13 +3347,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9486ef22-ee2f-4c7b-8977-85cd71a90239"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BWjl/GHpJou8QhTgJ0z7FcLyuMeG7BqGyI/T+/I4IpPSviRunI2R8sO1E8CEyC+6J4yl0x8AhPpF
-d0ELBJgKKg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c5260e7a-926a-4f0c-aa4c-9ac6d68ba185"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PqxTcbuaDNVKZkrxV0ejHkDgfXYcbyb82Fc4+96i3jH0VDVn8Z8askxEOclwMamOkLlLgGM5HIVZ
-LFxX9l79Fw==</DigestValue></Reference></SignedInfo><SignatureValue>3GgESCAN+nA6QiwEX1AgETX7M4Kb2mW98kj65DvJGMm4bhX5NHmsaAGe1AMWugChesYCU4dMVY7s
-S+Ly9NHpZM1P/jcKUXfAK1gNqv3AByxZ02/nqDCokp9ziI37Oc/beLoXTV/JNjI17dTX03Icgh5o
-3TW5daWUMNICeBrU7sbk7Bk+pQBH4yv3eZDUobWWLSKN52DKXCghTr2MzajUgI/6H+ZX9hrIA9J9
-uFzIKbFet2j9Ut8WuNODOwQ0UPA+frPsAU5GewP+J25rlLndkddBMGbMSaekBMzGkpYIWnvk4/k7
-eZW8gPL6NwwBwX1pb1XpuzTsIdfbUedRBFqc9g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6ce527a7-7509-45a3-825e-33ed70ea0b64"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IrkXz780EOXOvDPp+dEGPVLfwoYTbgfx8/PvhwT85kuwOkpyswmKqNWs3MJJG/22fmMYQw2Q4Lbk
+3oP2txafhQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6cfc0ca5-aa7a-4e95-bdf8-bae5b592eb9b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>O223j8gtu+N8ID1lspiXB8CM89cifZITeX0DbFLJmDVPnfR02y4mECZAdOX4TXwC7tN0uhJ5Z4rz
+J2bNlY3YaQ==</DigestValue></Reference></SignedInfo><SignatureValue>nNXQgfRF0q2nFT+9aJ6sm862c1Nj8D9FA5Z9FiUToCFFg30/xOP9P0SRqEygqXLmaD/+pOcZKVDm
+7c+w1rTgJrfgEMuqWZP/rOO7YWpnIIsQfbTErEXyQEsnDKNC2K4taiqTx5r7yNEzVMN5YGy9ZTWU
+ZQJwFX3kfqod+adaN24X9pKbhdasMT9+4zF8fR08uoh5VDMApSk7Rc+nQ0vusglPCnMmYmG6Tw9H
+UPQitc62NDuv2MM9UBNEuietiHY+Dj3V6roswIaC47uoo8DeQGImo/RM0tsvds0fcBnYR3qUrWjM
+pAo37lq4/rN59zKjgEJ6J1NftaiIn8eKa+WpSw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -2762,4 +3377,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c5260e7a-926a-4f0c-aa4c-9ac6d68ba185" Target="#_9486ef22-ee2f-4c7b-8977-85cd71a90239"><Timestamp>2018-11-30 10:39:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6cfc0ca5-aa7a-4e95-bdf8-bae5b592eb9b" Target="#_6ce527a7-7509-45a3-825e-33ed70ea0b64"><Timestamp>2018-11-30 10:41:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
