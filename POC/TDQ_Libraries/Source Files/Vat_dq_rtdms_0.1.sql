@@ -1,0 +1,1 @@
+SELECT VAT, STG_VAT, VAT_valid, VAT_Complet FROM volvo.dq_rtdms
