@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:dataquality.indicators.sql="http://dataquality.indicators.sql" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_o3RdQPdAEeiAt9bZghfKGw" name="RTDMS" creationDate="2018-12-03T22:16:02.704+0100">
+  <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+  <clientDependency href="../../../TDQ_Libraries/Rules/SQL/Demo_DQ_Rule_0.1.rules#_o3SrYPdAEeiAt9bZghfKGw"/>
+  <taggedValue xmi:id="_o3RdQfdAEeiAt9bZghfKGw" tag="Status" value="development"/>
+  <taggedValue xmi:id="_o3RdQvdAEeiAt9bZghfKGw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+  <taggedValue xmi:id="_o3RdQ_dAEeiAt9bZghfKGw" tag="Purpose"/>
+  <taggedValue xmi:id="_o3RdRPdAEeiAt9bZghfKGw" tag="Description"/>
+  <taggedValue xmi:id="_o3RdRfdAEeiAt9bZghfKGw" tag="Version" value="0.1"/>
+  <context xmi:id="_o3RdRvdAEeiAt9bZghfKGw">
+    <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+    <analysedElements xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
+  </context>
+  <results xmi:id="_o3RdR_dAEeiAt9bZghfKGw">
+    <resultMetadata xmi:id="_o3RdSPdAEeiAt9bZghfKGw"/>
+    <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_o3RdSfdAEeiAt9bZghfKGw">
+      <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
+      <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+    </indicators>
+    <indicators xsi:type="dataquality.indicators.sql:WhereRuleIndicator" xmi:id="_o3RdSvdAEeiAt9bZghfKGw">
+      <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
+      <indicatorDefinition href="../../../TDQ_Libraries/Rules/SQL/Demo_DQ_Rule_0.1.rules#_hXIKcA-ZEd6qupbF9NyF4w"/>
+    </indicators>
+  </results>
+  <parameters xmi:id="_o3RdS_dAEeiAt9bZghfKGw" analysisType="Table Analysis"/>
+</dataquality.analysis:Analysis>
