@@ -7,7 +7,7 @@
     <taggedValue xmi:id="_NL4Ks_c0EeiAt9bZghfKGw" tag="Purpose" value="Are any individual pieces of data from the dataset recorded more than once technically"/>
     <taggedValue xmi:id="_NL4KtPc0EeiAt9bZghfKGw" tag="Description" value="Are any individual pieces of data from the dataset recorded more than once technically"/>
     <taggedValue xmi:id="_NL4Ktfc0EeiAt9bZghfKGw" tag="Version" value="0.1"/>
-    <taggedValue xmi:id="_NL4Ktvc0EeiAt9bZghfKGw" tag="ANA_LAST_RUN_CONTEXT" value="CDB"/>
+    <taggedValue xmi:id="_NL4Ktvc0EeiAt9bZghfKGw" tag="ANA_LAST_RUN_CONTEXT" value="RTDMS"/>
     <taggedValue xmi:id="_NL4Kt_c0EeiAt9bZghfKGw" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_NL4KuPc0EeiAt9bZghfKGw" tag="Is Use Sample Data" value="false"/>
     <taggedValue xmi:id="_NL4Kufc0EeiAt9bZghfKGw" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
@@ -18,25 +18,25 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_NL4Ku_c0EeiAt9bZghfKGw">
-      <resultMetadata xmi:id="_NL4KvPc0EeiAt9bZghfKGw" executionDate="2018-12-03T20:54:14.543+0100" executionDuration="1564" message="" executionNumber="21" lastRunOk="true" lastExecutionNumberOk="21"/>
-      <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_NL4Kvfc0EeiAt9bZghfKGw" count="88017" computed="true" listRows="ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A6578700000000077040000000078" uniqueCount="86771" distinctCount="87376">
+      <resultMetadata xmi:id="_NL4KvPc0EeiAt9bZghfKGw" executionDate="2018-12-03T20:55:49.913+0100" executionDuration="176" message="" executionNumber="22" lastRunOk="true" lastExecutionNumberOk="22"/>
+      <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_NL4Kvfc0EeiAt9bZghfKGw" count="962" computed="true" listRows="ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A6578700000000077040000000078" uniqueCount="948" distinctCount="955">
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Multiple_Column_Simple_Statistics_0.1.definition#_JoeMkM-jEd6qN5aKpPNGTg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4Kvvc0EeiAt9bZghfKGw" body="SELECT `CommonName`,`LegalName`,`VAT`,COUNT(*) FROM `volvo`.`ods_pivot`  WHERE source='CDB' GROUP BY `CommonName`,`LegalName`,`VAT`" language="SQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4Kvvc0EeiAt9bZghfKGw" body="SELECT `CommonName`,`LegalName`,`VAT`,COUNT(*) FROM `volvo`.`ods_pivot`  WHERE source='RTDMS' GROUP BY `CommonName`,`LegalName`,`VAT`" language="SQL"/>
         <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <analyzedColumns xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
-        <rowCountIndicator xmi:id="_NL4Kv_c0EeiAt9bZghfKGw" count="88017" computed="true">
+        <rowCountIndicator xmi:id="_NL4Kv_c0EeiAt9bZghfKGw" count="962" computed="true">
           <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4KwPc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE source='CDB'" language="SQL"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4KwPc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE source='RTDMS'" language="SQL"/>
           <builtInIndicatorDefinition xmi:id="_NL4Kwfc0EeiAt9bZghfKGw" name="Row Count" label="Row Count">
             <taggedValue xmi:id="_NL4Kwvc0EeiAt9bZghfKGw" tag="Description" value="counts the number of rows"/>
             <taggedValue xmi:id="_NL4Kw_c0EeiAt9bZghfKGw" tag="Purpose" value="evaluates the number of records"/>
             <sqlGenericExpression xmi:id="_NL4KxPc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
           </builtInIndicatorDefinition>
         </rowCountIndicator>
-        <uniqueCountIndicator xmi:id="_NL4Kxfc0EeiAt9bZghfKGw" count="88017" computed="true" uniqueValueCount="86771">
+        <uniqueCountIndicator xmi:id="_NL4Kxfc0EeiAt9bZghfKGw" count="962" computed="true" uniqueValueCount="948">
           <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4Kxvc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT `CommonName`,`LegalName`,`VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE source='CDB' GROUP BY `CommonName`,`LegalName`,`VAT` HAVING mycount = 1) AS myquery" language="MySQL"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4Kxvc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT `CommonName`,`LegalName`,`VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE source='RTDMS' GROUP BY `CommonName`,`LegalName`,`VAT` HAVING mycount = 1) AS myquery" language="MySQL"/>
           <builtInIndicatorDefinition xmi:id="_NL4Kx_c0EeiAt9bZghfKGw" name="Unique Count" label="Unique Count">
             <taggedValue xmi:id="_NL4KyPc0EeiAt9bZghfKGw" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
             <taggedValue xmi:id="_NL4Kyfc0EeiAt9bZghfKGw" tag="Purpose" value="evaluates the number of unique records"/>
@@ -49,18 +49,18 @@
             <sqlGenericExpression xmi:id="_NL4K0Pc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
           </builtInIndicatorDefinition>
         </uniqueCountIndicator>
-        <distinctCountIndicator xmi:id="_NL4K0fc0EeiAt9bZghfKGw" count="88017" computed="true" distinctValueCount="87376">
+        <distinctCountIndicator xmi:id="_NL4K0fc0EeiAt9bZghfKGw" count="962" computed="true" distinctValueCount="955">
           <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4K0vc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT DISTINCT `CommonName`,`LegalName`,`VAT` FROM `volvo`.`ods_pivot`  WHERE source='CDB') A" language="SQL"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4K0vc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT DISTINCT `CommonName`,`LegalName`,`VAT` FROM `volvo`.`ods_pivot`  WHERE source='RTDMS') A" language="SQL"/>
           <builtInIndicatorDefinition xmi:id="_NL4K0_c0EeiAt9bZghfKGw" name="Distinct Count" label="Distinct Count">
             <taggedValue xmi:id="_NL4K1Pc0EeiAt9bZghfKGw" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
             <taggedValue xmi:id="_NL4K1fc0EeiAt9bZghfKGw" tag="Purpose" value="evaluates the number of distinct records"/>
             <sqlGenericExpression xmi:id="_NL4K1vc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
           </builtInIndicatorDefinition>
         </distinctCountIndicator>
-        <duplicateCountIndicator xmi:id="_NL4K1_c0EeiAt9bZghfKGw" count="88017" computed="true" duplicateValueCount="605">
+        <duplicateCountIndicator xmi:id="_NL4K1_c0EeiAt9bZghfKGw" count="962" computed="true" duplicateValueCount="7">
           <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4K2Pc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT `CommonName`,`LegalName`,`VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE source='CDB' GROUP BY `CommonName`,`LegalName`,`VAT` HAVING mycount > 1) AS myquery" language="MySQL"/>
+          <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NL4K2Pc0EeiAt9bZghfKGw" body="SELECT COUNT(*) FROM (SELECT `CommonName`,`LegalName`,`VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE source='RTDMS' GROUP BY `CommonName`,`LegalName`,`VAT` HAVING mycount > 1) AS myquery" language="MySQL"/>
           <builtInIndicatorDefinition xmi:id="_NL4K2fc0EeiAt9bZghfKGw" name="Duplicate Count" label="Duplicate Count">
             <taggedValue xmi:id="_NL4K2vc0EeiAt9bZghfKGw" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
             <taggedValue xmi:id="_NL4K2_c0EeiAt9bZghfKGw" tag="Purpose" value="evaluates the number of duplicated records"/>
