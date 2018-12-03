@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:dataquality.indicators.sql="http://dataquality.indicators.sql" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_o3RdQPdAEeiAt9bZghfKGw" name="RTDMS" creationDate="2018-12-03T22:16:02.704+0100">
-  <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
-  <clientDependency href="../../../TDQ_Libraries/Rules/SQL/Demo_DQ_Rule_0.1.rules#_o3SrYPdAEeiAt9bZghfKGw"/>
-  <taggedValue xmi:id="_o3RdQfdAEeiAt9bZghfKGw" tag="Status" value="development"/>
-  <taggedValue xmi:id="_o3RdQvdAEeiAt9bZghfKGw" tag="Author" value="charlesclement@eval11351.talend.com"/>
-  <taggedValue xmi:id="_o3RdQ_dAEeiAt9bZghfKGw" tag="Purpose"/>
-  <taggedValue xmi:id="_o3RdRPdAEeiAt9bZghfKGw" tag="Description"/>
-  <taggedValue xmi:id="_o3RdRfdAEeiAt9bZghfKGw" tag="Version" value="0.1"/>
-  <context xmi:id="_o3RdRvdAEeiAt9bZghfKGw">
-    <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
-    <analysedElements xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
-  </context>
-  <results xmi:id="_o3RdR_dAEeiAt9bZghfKGw">
-    <resultMetadata xmi:id="_o3RdSPdAEeiAt9bZghfKGw"/>
-    <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_o3RdSfdAEeiAt9bZghfKGw">
-      <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
-      <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-    </indicators>
-    <indicators xsi:type="dataquality.indicators.sql:WhereRuleIndicator" xmi:id="_o3RdSvdAEeiAt9bZghfKGw">
-      <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
-      <indicatorDefinition href="../../../TDQ_Libraries/Rules/SQL/Demo_DQ_Rule_0.1.rules#_hXIKcA-ZEd6qupbF9NyF4w"/>
-    </indicators>
-  </results>
-  <parameters xmi:id="_o3RdS_dAEeiAt9bZghfKGw" analysisType="Table Analysis"/>
-</dataquality.analysis:Analysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:dataquality.indicators.sql="http://dataquality.indicators.sql" xmlns:dataquality.rules="http://dataquality.rules" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_o3RdQPdAEeiAt9bZghfKGw" name="RTDMS" creationDate="2018-12-03T22:16:02.704+0100" defaultContext="Default">
+    <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
+    <clientDependency href="../../../TDQ_Libraries/Rules/SQL/Demo_DQ_Rule_0.1.rules#_o3SrYPdAEeiAt9bZghfKGw"/>
+    <taggedValue xmi:id="_o3RdQfdAEeiAt9bZghfKGw" tag="Status" value="development"/>
+    <taggedValue xmi:id="_o3RdQvdAEeiAt9bZghfKGw" tag="Author" value="charlesclement@eval11351.talend.com"/>
+    <taggedValue xmi:id="_o3RdQ_dAEeiAt9bZghfKGw" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_o3RdRPdAEeiAt9bZghfKGw" tag="Description" value=""/>
+    <taggedValue xmi:id="_o3RdRfdAEeiAt9bZghfKGw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_rOelMfdAEeiAt9bZghfKGw" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_rOfzUPdAEeiAt9bZghfKGw" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <context xmi:id="_o3RdRvdAEeiAt9bZghfKGw">
+      <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
+      <analysedElements xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
+    </context>
+    <results xmi:id="_o3RdR_dAEeiAt9bZghfKGw">
+      <resultMetadata xmi:id="_o3RdSPdAEeiAt9bZghfKGw" executionDate="2018-12-03T22:16:19.945+0100" executionDuration="324" message="Query not executed for indicator: &quot;Demo DQ Rule&quot; SQL query: SELECT COUNT(*) FROM `volvo`.`dq_pivot`   WHERE (example != ''). Exception: Unknown column 'example' in 'where clause'" executionNumber="1"/>
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_o3RdSfdAEeiAt9bZghfKGw" count="88979" computed="true">
+        <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_rbqsoPdAEeiAt9bZghfKGw" body="SELECT COUNT(*) FROM `volvo`.`dq_pivot` " language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_rbftgPdAEeiAt9bZghfKGw" name="Row Count" label="Row Count">
+          <taggedValue xmi:id="_rbftgfdAEeiAt9bZghfKGw" tag="Description" value="counts the number of rows"/>
+          <taggedValue xmi:id="_rbftgvdAEeiAt9bZghfKGw" tag="Purpose" value="evaluates the number of records"/>
+          <sqlGenericExpression xmi:id="_rbftg_dAEeiAt9bZghfKGw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators.sql:WhereRuleIndicator" xmi:id="_o3RdSvdAEeiAt9bZghfKGw" count="88979">
+        <analyzedElement xsi:type="relational:TdTable" href="../../../metadata/connections/Mysql_local_0.1.item#_FHUSEOp1Eeisjp3QMvY80w"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Rules/SQL/Demo_DQ_Rule_0.1.rules#_hXIKcA-ZEd6qupbF9NyF4w"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_rbqsofdAEeiAt9bZghfKGw" body="SELECT COUNT(*) FROM `volvo`.`dq_pivot`   WHERE (example != '')" language="MySQL"/>
+        <builtInIndicatorDefinition xsi:type="dataquality.rules:WhereRule" xmi:id="_rbnCQPdAEeiAt9bZghfKGw" name="Demo DQ Rule" criticalityLevel="1" whereExpression="example != ''">
+          <taggedValue xmi:id="_rbnCQfdAEeiAt9bZghfKGw" tag="Author" value="xqliu"/>
+          <taggedValue xmi:id="_rbnCQvdAEeiAt9bZghfKGw" tag="Description" value="demo"/>
+          <taggedValue xmi:id="_rbnCQ_dAEeiAt9bZghfKGw" tag="Purpose" value="demo"/>
+          <taggedValue xmi:id="_rbnCRPdAEeiAt9bZghfKGw" tag="Status" value="Draft"/>
+          <taggedValue xmi:id="_rbnCRfdAEeiAt9bZghfKGw" tag="Validation_Status" value="true"/>
+          <sqlGenericExpression xmi:id="_rbnCRvdAEeiAt9bZghfKGw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__JOIN_CLAUSE__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+    </results>
+    <parameters xmi:id="_o3RdS_dAEeiAt9bZghfKGw" dataFilter="_rOuc0PdAEeiAt9bZghfKGw" analysisType="Table Analysis"/>
+    <contextType xmi:id="_rOelMPdAEeiAt9bZghfKGw" confirmationNeeded="false" name="Default"/>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_rOuc0PdAEeiAt9bZghfKGw" name="RTDMS">
+    <ranges xmi:id="_rOuc0fdAEeiAt9bZghfKGw">
+      <expressions xmi:id="_rOuc0vdAEeiAt9bZghfKGw">
+        <expression xsi:type="relational:TdExpression" xmi:id="_rOuc0_dAEeiAt9bZghfKGw" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
