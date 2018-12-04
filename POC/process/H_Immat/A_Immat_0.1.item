@@ -1202,7 +1202,7 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out1">
+    <metadata name="out1">
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Content Type" value="Nominal"/>
         <additionalField key="Comment" value=""/>
@@ -1215,10 +1215,7 @@
         <additionalField key="Content Type" value="Nominal"/>
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="ID_IMMAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Content Type" value="Nominal"/>
-        <additionalField key="Comment" value=""/>
-      </column>
+      <column comment="" defaultValue="" key="false" length="10" name="ID_IMMAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="MATCHING_WEIGHT" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
@@ -1229,7 +1226,7 @@
         <mapperTableEntries expression="row3.CommonName " name="CommonName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.LegalName " name="LegalName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.ID_RTDMS " name="ID_RTDMS" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row3.ID " name="ID_IMMAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row3.ID " name="ID_IMMAT" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row3.MATCHING_DISTANCES " name="MATCHING_DISTANCES" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row3.MATCHING_WEIGHT " name="MATCHING_WEIGHT" nullable="true" type="id_Double"/>
       </outputTables>
@@ -1286,10 +1283,7 @@
         <additionalField key="Content Type" value="Nominal"/>
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="ID_IMMAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Content Type" value="Nominal"/>
-        <additionalField key="Comment" value=""/>
-      </column>
+      <column comment="" defaultValue="" key="false" length="10" name="ID_IMMAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="MATCHING_WEIGHT" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
@@ -1351,6 +1345,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="ID_IMMAT"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ID_IMMAT"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -1368,13 +1365,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_db7fa386-30a9-4f09-a73c-fb86a97d2b8c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5lsx1D3wi8kMbLuVmQ+7ihtYfEgR5uuG79JgO5sO1zXEbKRtyyHh9zq6vOHbgcw5V1acQX8BRjbp
-T2gpMt/Ceg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_40767ac8-7956-4f23-b157-7e3d396ff1c3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0uv+ntDyinsJ5aNFMHbl0KFKkspQPlKMhTCXc8IPBBb5J1Rg3N76q01YDDS5F2DpJGtdDIdC6OT9
-yZOAeFW5XA==</DigestValue></Reference></SignedInfo><SignatureValue>uPjycmlDUulUfExNYXg1nbUrbHo5+sFpgZEy7t2hmoCPIy+0jE/o4ExYacyuTUZqA2qGfflLr6Hr
-Ww6QDHynXPLAhDcT+/lWI9HlH6fdQ9gNrrP5o52lLWg7c3YXxRMU63qAIG2U8a88HWRvWvmKPf0j
-sbtBClYYhW7MGgXD4xa3KdFguhFArBT//mldtoZJk3ZW+eUT6MW4XOpgcrliMRkooVpjSLPM2GQ0
-Zz3BAy5tYMdIjn3xwj/FqI+cNwxCUd7RPg1qS3l+1aWzmPjRV55TRUFM9zU2VSZcpDj35YsQXKjS
-NWLLsYxx9kkhQgoy2JDQrsyPsk7aFSVn2rg4Ew==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d0ebf68d-e6fd-489e-9620-d94a2df2db1f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HRejWhWuIwVbM3EteJcevmPOjKaKZW4t6cNYJNchUD2/hOQf/1aGIyvQrIYJde7M/QXn49wt0n/P
+byw9v2diGQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f8fc6928-e8f7-4540-9f23-1e771b29a277"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>SlxkQncQdf787Hi5GLRDXfvKQs+i+HLSWkduRbnxwZMV8QtQDx0mJlu4y/aNYe7iGA6PmVtEmr6P
+VuHK5uz1hg==</DigestValue></Reference></SignedInfo><SignatureValue>mtbY7OWsWaMTDXOuNdHkoteAHdW84Lj0kABIhguloOt3vKnQIi3QkMtVJxTsMpv3yfJLDgN5A4p0
+QL/0ZvIp7Y1syrbb+ES1O+ehnhleoiBMPxP/Xl/IiLR9RPVW5KxHdsHBHUhiMHxj5ER+oAa+DjIz
+Rbg1SHSnEK0/iUDSZ5skBze7mMai3zi6OjAlJNh6tzwmVeF7Zsb3yqBeUqfW6A6y47+TX1GaCnSp
+O7oLhlu2gjs/eZW77plJFm8lFKglntsS4bFJ6B6HZITutbjghwIgN0GnXLExOawTAit6k+Pd3hXd
+FhPtIqPZhKot3BPD1MoNityNvtE2aSdFmMWiUQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1398,4 +1395,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_40767ac8-7956-4f23-b157-7e3d396ff1c3" Target="#_db7fa386-30a9-4f09-a73c-fb86a97d2b8c"><Timestamp>2018-12-04 19:25:00</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f8fc6928-e8f7-4540-9f23-1e771b29a277" Target="#_d0ebf68d-e6fd-489e-9620-d94a2df2db1f"><Timestamp>2018-12-04 19:25:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
