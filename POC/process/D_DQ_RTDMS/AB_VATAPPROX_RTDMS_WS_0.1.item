@@ -1371,9 +1371,9 @@
       </inputTrees>
       <outputTrees name="out">
         <nodes expression="" name="payload" type="id_Document" xpath="out/payload">
-          <children expression="" loop="true" main="true" name="checkVat" type="id_String" xpath="out.payload:/checkVat" xsi:type="TalendXMLMap:OutputTreeNode">
-            <children expression="row2.CountryCode" incomingConnections="//@node.4/@nodeData/@connections.1" name="countryCode" type="id_String" xpath="out.payload:/checkVat/countryCode" xsi:type="TalendXMLMap:OutputTreeNode"/>
-            <children expression="row2.STG_VAT" incomingConnections="//@node.4/@nodeData/@connections.0" name="vatNumber" type="id_String" xpath="out.payload:/checkVat/vatNumber" xsi:type="TalendXMLMap:OutputTreeNode"/>
+          <children expression="" loop="true" main="true" name="checkVatApproxResponse" type="id_String" xpath="out.payload:/checkVatApproxResponse" xsi:type="TalendXMLMap:OutputTreeNode">
+            <children expression="row2.CountryCode" incomingConnections="//@node.4/@nodeData/@connections.1" name="countryCode" type="id_String" xpath="out.payload:/checkVatApproxResponse/countryCode" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression="row2.STG_VAT" incomingConnections="//@node.4/@nodeData/@connections.0" name="vatNumber" type="id_String" xpath="out.payload:/checkVatApproxResponse/vatNumber" xsi:type="TalendXMLMap:OutputTreeNode"/>
           </children>
         </nodes>
       </outputTrees>
@@ -1817,13 +1817,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b603bbcc-29c4-4688-be90-94fb3b9281bf"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>k1Z0uoptTYbztmZ+W/Vw0uzJZPtppsxklsrNwNRbFHSAioLCQcq4OE+BfRZcgg32hz+5UcQSc/GY
-l8BhwnPHMw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_00628b39-79dc-45f4-a74b-ebb9f455cd3e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>o8gu33nzxr6qQQVPaDjiy9J1DJmF6nMLsHCvLhbTX+lgSH3QNWx98xCnSgT6MDyy08BcBptf+86H
-3JJdu4gNlA==</DigestValue></Reference></SignedInfo><SignatureValue>wQw+/+ICEsUWJq6FASE4Gcppl49JfK3LIZU/GMNgCAKxCOhxrujcgIKpoyDvSxw0SaZ/cxkBZldr
-/VnC3RYLOzLzrSLcx8ahOlv1xfRi/o1PNjUp+q254wf0xri17+gDMc2QshfQ80UGEiM6OYJ4kaKP
-MuKSL7YJAEUaiGpqMmxEprSbiogwc/oHIQOlKUB17BOnrlJ86RD83Rlp6xN4+wJ0Jswh5d4rPOt5
-otrxCaPggdC+NxhhQotbODV66SpO6HJDouYpt3vBvroT6NnbK7IpiaGtgw2war3X/f/TubfbbH2C
-OLIdDf33pW9PF2cPkHWSSlEWV4fAFX0BNubrjg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_13785388-3a9f-4120-8bbc-a97423febf46"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BnkvHF3VF8zVWsvT65VukclhH3PQ08Nfr8bUE0ZIqV3nh6dJGR1sPCYQt4Bzi+7T5b9HZdeCNlpQ
+s1j3+9U7ow==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3c563bec-0568-4b23-ad11-4ab7a29f7b47"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>31tG1hWbREPdCQH9pC/tNNrfGp20PCewVxkgCUZf8xto7purT/Z3fgF9HgXqTdO2thiXMQmRltTz
+vWF/Uay+5g==</DigestValue></Reference></SignedInfo><SignatureValue>OnL2vCapxqGuGC1VrqG1L5Ah4TXWA77Tycm5oVuk4OrnTXHw5tRkCSxWb7EIFY0MUsoACWT4gF9c
+sjq+nv3+cwnpm0UI2LcH3Tc2oR1q+rSjlvzIkZHJ0ZvJx3wQEdUrhO+IE78sIgGKygcGWJUg4DFD
+GAzRBJaX2IiqhqQR40Zg03q/TRXmRiAgNIBndDTPDg4Are6JMUpINDNjWA7xzJxqUk5WQX/nL8bt
+tm5PH+sl7XbU/juyObyHumN8C4PlXNL8DJxuPwKDQLppxzDno4vasAebZRLLJ8vrqqBBZuuxzR4n
+s5srEd94blSBcRNhyWZo3Q3wZWuVh0QFDjoGZw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1847,4 +1847,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_00628b39-79dc-45f4-a74b-ebb9f455cd3e" Target="#_b603bbcc-29c4-4688-be90-94fb3b9281bf"><Timestamp>2018-12-09 17:12:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3c563bec-0568-4b23-ad11-4ab7a29f7b47" Target="#_13785388-3a9f-4120-8bbc-a97423febf46"><Timestamp>2018-12-09 17:13:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
