@@ -8,6 +8,7 @@
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_FR_0.1.pattern#_dv7xUO0MEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_NL_0.1.pattern#_0kHTwO0MEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Country_Code_Volvo_0.1.pattern#_dHg0gO0OEeidmJUNeAS2Pw"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_zzL40OzaEeiof8jSeXJ-ng"/>
     <taggedValue xmi:id="_2sHpce0JEeidmJUNeAS2Pw" tag="Status" value="development"/>
     <taggedValue xmi:id="_2sHpcu0JEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_2sHpc-0JEeidmJUNeAS2Pw" tag="Purpose" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it ?"/>
@@ -23,6 +24,7 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_2sHpd-0JEeidmJUNeAS2Pw">
       <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw" executionDate="2018-12-10T18:26:59.857+0100" executionDuration="1082" message="" executionNumber="14" lastRunOk="true" lastExecutionNumberOk="14"/>
@@ -151,6 +153,15 @@
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
         <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_djwroO0OEeidmJUNeAS2Pw" body="SELECT COUNT(CASE WHEN `CountryCode` REGEXP BINARY '^[A-Z][A-Z]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_fMeZMPyhEeimdf0CgpRDAQ" name="postal_code_belgium">
+        <parameters xmi:id="_fMeZMfyhEeimdf0CgpRDAQ">
+          <dataValidDomain xmi:id="_fMeZMvyhEeimdf0CgpRDAQ">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_GkK9gOzZEeiof8jSeXJ-ng"/>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
       </indicators>
     </results>
     <parameters xmi:id="_2sHpee0JEeidmJUNeAS2Pw" dataFilter="_NZxGEO0KEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
