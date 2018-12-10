@@ -27,7 +27,7 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_2sHpd-0JEeidmJUNeAS2Pw">
-      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw" executionDate="2018-12-10T18:26:59.857+0100" executionDuration="1082" message="" executionNumber="14" lastRunOk="true" lastExecutionNumberOk="14"/>
+      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw" executionDate="2018-12-10T18:31:58.303+0100" executionDuration="597" message="" executionNumber="15" lastRunOk="true" lastExecutionNumberOk="15"/>
       <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_NYukQO0KEeidmJUNeAS2Pw" name="Customer_Code_Volvo" count="88979" computed="true" matchingValueCount="88017" notMatchingValueCount="962">
         <parameters xmi:id="_NYukQe0KEeidmJUNeAS2Pw">
           <dataValidDomain xmi:id="_NYukQu0KEeidmJUNeAS2Pw">
@@ -154,14 +154,26 @@
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
         <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_djwroO0OEeidmJUNeAS2Pw" body="SELECT COUNT(CASE WHEN `CountryCode` REGEXP BINARY '^[A-Z][A-Z]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_fMeZMPyhEeimdf0CgpRDAQ" name="postal_code_belgium">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_fMeZMPyhEeimdf0CgpRDAQ" name="postal_code_belgium" count="88979" computed="true" matchingValueCount="87794" notMatchingValueCount="1185">
         <parameters xmi:id="_fMeZMfyhEeimdf0CgpRDAQ">
           <dataValidDomain xmi:id="_fMeZMvyhEeimdf0CgpRDAQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_GkK9gOzZEeiof8jSeXJ-ng"/>
+            <builtInPatterns xmi:id="_ftk7IPyhEeimdf0CgpRDAQ" name="postal_code_belgium">
+              <taggedValue xmi:id="_ftk7IfyhEeimdf0CgpRDAQ" tag="Status" value="development"/>
+              <taggedValue xmi:id="_ftk7IvyhEeimdf0CgpRDAQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_ftk7I_yhEeimdf0CgpRDAQ" tag="Purpose"/>
+              <taggedValue xmi:id="_ftk7JPyhEeimdf0CgpRDAQ" tag="Description"/>
+              <taggedValue xmi:id="_ftk7JfyhEeimdf0CgpRDAQ" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_ftk7JvyhEeimdf0CgpRDAQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_ftk7J_yhEeimdf0CgpRDAQ" expressionType="REGEXP">
+                <expression xmi:id="_ftk7KPyhEeimdf0CgpRDAQ" body="'^[0-9][0-9][0-9][0-9]$'" language="MySQL"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_ftv6QPyhEeimdf0CgpRDAQ" body="SELECT COUNT(CASE WHEN `sPostalCode` REGEXP BINARY '^[0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot` " language="MySQL"/>
       </indicators>
     </results>
     <parameters xmi:id="_2sHpee0JEeidmJUNeAS2Pw" dataFilter="_NZxGEO0KEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
