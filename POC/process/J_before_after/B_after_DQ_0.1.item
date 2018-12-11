@@ -562,6 +562,15 @@
       <column comment="" key="false" length="200" name="Phone_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -594,6 +603,9 @@
         <mapperTableEntries expression="row2.SalesChannel" name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.Phone " name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.Phone " name="Phone_ori" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.StandardizedPhoneNumber " name="StandardizedPhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.IsValidPhoneNumber " name="IsValidPhoneNumber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.IsPossiblePhoneNumber " name="IsPossiblePhoneNumber" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.ID" name="ID" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.Loading_Date" name="Loading_Date" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row2.Source" name="Source" nullable="true" type="id_String"/>
@@ -726,6 +738,12 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Phone_ori"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StandardizedPhoneNumber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IsValidPhoneNumber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IsPossiblePhoneNumber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
@@ -769,6 +787,15 @@
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Phone_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="StandardizedPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsValidPhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="IsPossiblePhoneNumber" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1050,6 +1077,15 @@
       <elementValue elementRef="TRACE_COLUMN" value="Phone_ori"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IsValidPhoneNumber"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="IsPossiblePhoneNumber"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="StandardizedPhoneNumber"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -1069,13 +1105,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_99b32d69-16fc-421d-8c88-31f08ea2dd4d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>97pGgKXWuiAgKiNQ29YN8Gxs9Jntd1wzC+HRUcm0b2UZ6MPANPD2sYn86HnKLI2B6tidquChCknU
-xT0YOTznAA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d5b12bc2-8622-486a-8017-6ca874ccf0f1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xI23fxCXxIN9GDND4c7wyeOK0+t+qVYXqP8Q8KTuSJjz9/9EkJpAW5isWh9ouD6DjbXhrCgIWwGw
-TajPggKpEw==</DigestValue></Reference></SignedInfo><SignatureValue>N2TKQsO+z0QhQwEjHn+WyDUvrDIQ0hIeg1JnOG8Ow03nT1Gy7PGAsC8y/g/wFN7Xja9Rp3SOK54S
-Uvd62seFoOqODzpXTkKTW3Tiq36ymIOzZPkOViw4/VlPiV1B7zYd0gwlo9IY0PBQ0ZAiFCMct0AS
-yVvcJu9yb+c6whBJ0ke3J8oZGXSCdBlorCI1Akgr6Z72Fk/D5VdFXJaJ+DfFLAP6x59lYqvhD8UG
-O/pOhKAtpjmLNUevgva+Kx38ib2QCeZ6MoEhSQJqFqcDCH/AJv3Hr5RxZ/3ZI6oePgWNkM+SV9KY
-nypjeVNePd+HnKlyo9X9k7R7QdiG4GKt9Kj+Mw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b74d5c3d-83c9-4407-a977-bb9f9e17f95d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XPHfDnO+Yhv2z+GEz5CC21psb9z9sqXkIIB8unTm0Dudj/GzS8XuoVTR0g9hZtQtOfZ9nCbxxvJD
+1/aCSyh0Rg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_22f60973-0e4f-46c5-a0be-b96ee9f21156"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rERYFpRRQGbhwwB1eD84rjaVFwFLXX7hAufcALEGW3TL6GMDPqjN4uVAE06zHQkPj6zQf8uFykAj
+kldlAV9Vjg==</DigestValue></Reference></SignedInfo><SignatureValue>UUIuZZ9c9rIUp/Lk8uT5ZMQqelCfAzVP1byt6IPGdSLRAT6h5qW9jIfIxU8O5pGAKucwIH8nrJ8i
+MJ20+KhsR7Q5WKXSbSPHYbL9BUIXB/lrqeKm5/JsMJh10qfS+rZRcoOdSZf3puMey2+WX+nBOm5g
+gFw7WJhLiJlFmoNmrja8iHvG6kqSeyWum+sCmAIg75AoUETstDh8tf3lDjeeQuuLGEBqXL9nldZc
+SlZHCS3nYQkCGb0sTiv1xwKykxS42ZakMQfelWH2kcbDblny7fn4VO+36H0vDNp/iR2PWJQrmnwB
+UeDanNTaFy6lY2jecpG7KVE+3Ml9sPNDLpPwWg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1099,4 +1135,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d5b12bc2-8622-486a-8017-6ca874ccf0f1" Target="#_99b32d69-16fc-421d-8c88-31f08ea2dd4d"><Timestamp>2018-12-11 20:39:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_22f60973-0e4f-46c5-a0be-b96ee9f21156" Target="#_b74d5c3d-83c9-4407-a977-bb9f9e17f95d"><Timestamp>2018-12-11 20:40:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
