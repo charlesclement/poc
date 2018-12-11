@@ -540,14 +540,14 @@
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_1" nullable="true" originalDbColumnName="VAT" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="VAT_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="AdressLine1_1" nullable="true" originalDbColumnName="AdressLine1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="AdressLine1_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -584,12 +584,12 @@
         <mapperTableEntries expression="row2.VAT_name " name="VAT_name" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.OrganisationNo" name="OrganisationNo" nullable="true" type="id_String"/>
         <mapperTableEntries expression="((row2.VAT_Complet) == null || (row2.VAT_Complet) == &quot;NULL&quot;)?row2.STG_VAT:row2.VAT_Complet " name="VAT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.VAT " name="VAT_1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.VAT " name="VAT_ori" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.ChamberOfCom" name="ChamberOfCom" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.Parma" name="Parma" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.SICCode" name="SICCode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="((row2.OSM_Valid).equals(&quot;true&quot;))?row2.OSM_house_number+&quot; &quot;+row2.OSM_road+&quot; &quot;+row2.OSM_city_district+&quot; &quot;+row2.OSM_postcode+&quot; &quot;+row2.OSM_country_code:&quot;B&quot; " name="AdressLine1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row2.AdressLine1 " name="AdressLine1_1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row2.AdressLine1 " name="AdressLine1_ori" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.OSM_house_number " name="OSM_house_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.OSM_road " name="OSM_road" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.OSM_Valid " name="OSM_Valid" nullable="true" type="id_String"/>
@@ -745,7 +745,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_ori"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -770,7 +770,7 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AdressLine1_1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AdressLine1_ori"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -872,14 +872,14 @@
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_1" nullable="true" originalDbColumnName="VAT" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="VAT_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="AdressLine1_1" nullable="true" originalDbColumnName="AdressLine1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="AdressLine1_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -917,14 +917,14 @@
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="VAT_1" nullable="true" originalDbColumnName="VAT" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="VAT_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="200" name="AdressLine1_1" nullable="true" originalDbColumnName="AdressLine1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="AdressLine1_ori" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="OSM_house_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -960,6 +960,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="VAT_ori"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -973,13 +978,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c9b8c03a-9c49-4a3c-a6ce-d9903e8f61db"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VPQVvQa7+a6XHhye9S4uE8SVqgSJy52eovga4L/WK9Y2MBnb4YtjXX45fJPjOKeyikYcGwWAEE7B
-ykzgT/WuKw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d4519bd9-3904-4e43-a86a-c889e172cdac"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>RyQRgy2o19dd8EAiW94AAq4Oq9c9koWwf5aYebTKYtqorKDzmKMKaWOIUcb6YcIFBb6nzE87hWVk
-ycc+DRCvxQ==</DigestValue></Reference></SignedInfo><SignatureValue>S3Wp1EJjvK+hj5gGXrcd+sDJLBs4YO/Cn8k4AZjiTZIa4SbesWYZCSzt6cgFKu7IDX+agcngEsjz
-HQxgyPaqB6Gz1dFoRZIpJWV4s9f2sWmgjPxKGJMQGfOXlrCRE2OmjWictqovLWzF6AI7ibznCreP
-9qTkx4ONSZLUQHutNJF2RjHpj0A7qa8GN6FXkJ5JANMo1NIDXmvGTaJrJHgr4zN3PbXuQ7+ayZoc
-jat3dXSMppBnOKbwU6UARaWMuJt792dL9wWKNNO8aiJl1ETeCX50Qy/dNWQwtY8M/6DxLz5o5goW
-J3qYFB/iDyiy4jURWILkX6NkoGw4R/Sm2vaJWw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0d093916-eab3-47f1-8d72-eae97156be55"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>f0zCmhQkLtF4JlJDulWyqiLMY/3MFLHexo4GRTRVcQeCoJU01kcwCtoNItK2MH63xd3z724mMWqs
+VmPFurrXRg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8bc5ac56-c714-4965-bcca-871878cdb2a4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tfB2YDzEh1vcbTyoDua2gvmdqaXf0bRqzf5TxO1P+zple6ek1CQlcC0mDHHOBSibP8U6QGMpgbOP
+OYKUbHf8QQ==</DigestValue></Reference></SignedInfo><SignatureValue>i7anPSeXOE5h7PPmZ3XuR4+lY4vQB69Hu8uWtZ5evdAkmcpdOkqYXFzcHbZJg88TJGfh5QIofN+A
+P6cL2LS8m9b8TCIfQLgtXfs6UFUFo/KIva8v9bgQ8kcGRdHANa3NupiEC6ygi9e/XQiJVl8Yp56A
+dIUh0nBSvVkF11+sa37r4OnR1nHSdGpj7IYjdL29VZK6r0xD5W77hkVUyLeDigOIjBzICTVCTcXJ
+alibEm833ZIcURz7K8paEur+hFAyz0rE0gwDR+jcAiWH4BvMwITkyRjfarQtxH8hYu2N/br6y46j
+BS0pBYyjuPcq2jFJCOyqP9kbDGFNmgTH+mQdkw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1003,4 +1008,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d4519bd9-3904-4e43-a86a-c889e172cdac" Target="#_c9b8c03a-9c49-4a3c-a6ce-d9903e8f61db"><Timestamp>2018-12-11 20:33:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8bc5ac56-c714-4965-bcca-871878cdb2a4" Target="#_0d093916-eab3-47f1-8d72-eae97156be55"><Timestamp>2018-12-11 20:34:11</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
