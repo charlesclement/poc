@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.reports:TdReport xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.reports="http://dataquality.reports" xmi:id="_QILOgP2cEeiVopKl37hDyg" name="AA_report" creationDate="2018-12-12T00:26:57.353+0100" defaultContext="Default">
+<dataquality.reports:TdReport xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dataquality.reports="http://dataquality.reports" xmi:id="_QILOgP2cEeiVopKl37hDyg" name="AA_report" creationDate="2018-12-12T00:26:57.353+0100" defaultContext="Dev">
   <clientDependency href="../Analyses/AE_Matching/A_before_0.1.ana#_sJFUgP2cEeiVopKl37hDyg"/>
   <clientDependency href="../Analyses/AE_Matching/B_after_0.1.ana#_sJingP2cEeiVopKl37hDyg"/>
   <taggedValue xmi:id="_QILOgf2cEeiVopKl37hDyg" tag="Status" value="development"/>
@@ -10,26 +10,49 @@
   <taggedValue xmi:id="_QILOhv2cEeiVopKl37hDyg" tag="OutputFolder" value="C:\talend_output"/>
   <taggedValue xmi:id="_QILOh_2cEeiVopKl37hDyg" tag="REP_DBINFO_DBTYPE" value="MySQL"/>
   <taggedValue xmi:id="_QILOiP2cEeiVopKl37hDyg" tag="REP_DBINFO_DBVERSION" value="MYSQL_5"/>
-  <taggedValue xmi:id="_QILOif2cEeiVopKl37hDyg" tag="REP_DBINFO_HOST" value="localhost"/>
-  <taggedValue xmi:id="_QIL1kP2cEeiVopKl37hDyg" tag="REP_DBINFO_PORT" value="3306"/>
+  <taggedValue xmi:id="_QILOif2cEeiVopKl37hDyg" tag="REP_DBINFO_HOST" value="context.Mysql_local_Server"/>
+  <taggedValue xmi:id="_QIL1kP2cEeiVopKl37hDyg" tag="REP_DBINFO_PORT" value="context.Mysql_local_Port"/>
   <taggedValue xmi:id="_QIL1kf2cEeiVopKl37hDyg" tag="REP_DBINFO_DBNAME" value="talend_dq"/>
   <taggedValue xmi:id="_QIL1kv2cEeiVopKl37hDyg" tag="REP_DBINFO_SCHEMA" value=""/>
-  <taggedValue xmi:id="_QIL1k_2cEeiVopKl37hDyg" tag="REP_DBINFO_USER" value="root"/>
-  <taggedValue xmi:id="_QIL1lP2cEeiVopKl37hDyg" tag="REP_DBINFO_PASSWORD" value="NZNgK6DuncI="/>
-  <taggedValue xmi:id="_QIL1lf2cEeiVopKl37hDyg" tag="REP_DBINFO_URL" value="jdbc:mysql://localhost:3306/talend_dq?characterEncoding=UTF8"/>
+  <taggedValue xmi:id="_QIL1k_2cEeiVopKl37hDyg" tag="REP_DBINFO_USER" value="context.Mysql_local_Login"/>
+  <taggedValue xmi:id="_QIL1lP2cEeiVopKl37hDyg" tag="REP_DBINFO_PASSWORD" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
+  <taggedValue xmi:id="_QIL1lf2cEeiVopKl37hDyg" tag="REP_DBINFO_URL" value="jdbc:mysql://context.Mysql_local_Server:context.Mysql_local_Port/talend_dq?characterEncoding=UTF8"/>
   <taggedValue xmi:id="_QIL1lv2cEeiVopKl37hDyg" tag="REP_DBINFO_DRIVER" value="org.gjt.mm.mysql.Driver"/>
   <taggedValue xmi:id="_QIL1l_2cEeiVopKl37hDyg" tag="REP_DBINFO_DIALECT" value="org.hibernate.dialect.MySQLDialect"/>
-  <taggedValue xmi:id="_QIL1mP2cEeiVopKl37hDyg" tag="REP_PASSWORD_CONTEXT" value="false"/>
+  <taggedValue xmi:id="_QIL1mP2cEeiVopKl37hDyg" tag="REP_PASSWORD_CONTEXT" value="true"/>
   <taggedValue xmi:id="_sI35IP2cEeiVopKl37hDyg" tag="OutputFileName" value="matching"/>
   <taggedValue xmi:id="_sI4gMP2cEeiVopKl37hDyg" tag="Single output" value="false"/>
   <taggedValue xmi:id="_sI4gMf2cEeiVopKl37hDyg" tag="OutputType" value="pdf"/>
   <taggedValue xmi:id="_sI5HQP2cEeiVopKl37hDyg" tag="REP_GENERATE_FILE" value="true"/>
-  <taggedValue xmi:id="_sI68cf2cEeiVopKl37hDyg" tag="REP_LAST_RUN_CONTEXT" value="Default"/>
+  <taggedValue xmi:id="_sI68cf2cEeiVopKl37hDyg" tag="REP_LAST_RUN_CONTEXT" value="Dev"/>
   <analysisMap xmi:id="_sI7jgP2cEeiVopKl37hDyg" mustRefresh="true" reportType="Basic">
     <analysis href="../Analyses/AE_Matching/A_before_0.1.ana#_Y4598P2UEeiVopKl37hDyg"/>
   </analysisMap>
   <analysisMap xmi:id="_sI7jgf2cEeiVopKl37hDyg" mustRefresh="true" reportType="Basic">
     <analysis href="../Analyses/AE_Matching/B_after_0.1.ana#_bd_UYP2VEeiVopKl37hDyg"/>
   </analysisMap>
-  <context xmi:id="_sI68cP2cEeiVopKl37hDyg" confirmationNeeded="false" name="Default"/>
+  <context xmi:id="_5Gt9sP2eEeiVopKl37hDyg" confirmationNeeded="false" name="Prod">
+    <contextParameter xmi:id="_5Gt9sf2eEeiVopKl37hDyg" comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" type="id_String" value="noDatetimeStringSync=true"/>
+    <contextParameter xmi:id="_5Gt9sv2eEeiVopKl37hDyg" comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" type="id_String" value="volvo"/>
+    <contextParameter xmi:id="_5Gt9s_2eEeiVopKl37hDyg" comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" type="id_String" value="root"/>
+    <contextParameter xmi:id="_5Gt9tP2eEeiVopKl37hDyg" comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter xmi:id="_5Gt9tf2eEeiVopKl37hDyg" comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" type="id_String" value="3306"/>
+    <contextParameter xmi:id="_5Gt9tv2eEeiVopKl37hDyg" comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" type="id_String" value="localhost"/>
+  </context>
+  <context xmi:id="_5Gt9t_2eEeiVopKl37hDyg" confirmationNeeded="false" name="Dev">
+    <contextParameter xmi:id="_5Gt9uP2eEeiVopKl37hDyg" comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" type="id_String" value="noDatetimeStringSync=true"/>
+    <contextParameter xmi:id="_5Gt9uf2eEeiVopKl37hDyg" comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" type="id_String" value="volvo"/>
+    <contextParameter xmi:id="_5Gt9uv2eEeiVopKl37hDyg" comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" type="id_String" value="root"/>
+    <contextParameter xmi:id="_5Gt9u_2eEeiVopKl37hDyg" comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter xmi:id="_5Gt9vP2eEeiVopKl37hDyg" comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" type="id_String" value="3306"/>
+    <contextParameter xmi:id="_5Gt9vf2eEeiVopKl37hDyg" comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" type="id_String" value="localhost"/>
+  </context>
+  <context xmi:id="_5Gt9vv2eEeiVopKl37hDyg" confirmationNeeded="false" name="Pprod">
+    <contextParameter xmi:id="_5Gt9v_2eEeiVopKl37hDyg" comment="" name="Mysql_local_AdditionalParams" prompt="Mysql_local_AdditionalParams?" promptNeeded="false" type="id_String" value="noDatetimeStringSync=true"/>
+    <contextParameter xmi:id="_5Gt9wP2eEeiVopKl37hDyg" comment="" name="Mysql_local_Database" prompt="Mysql_local_Database?" promptNeeded="false" type="id_String" value="volvo"/>
+    <contextParameter xmi:id="_5Gt9wf2eEeiVopKl37hDyg" comment="" name="Mysql_local_Login" prompt="Mysql_local_Login?" promptNeeded="false" type="id_String" value="root"/>
+    <contextParameter xmi:id="_5Gt9wv2eEeiVopKl37hDyg" comment="" name="Mysql_local_Password" prompt="Mysql_local_Password?" promptNeeded="false" type="id_Password" value="NZNgK6DuncI="/>
+    <contextParameter xmi:id="_5Gt9w_2eEeiVopKl37hDyg" comment="" name="Mysql_local_Port" prompt="Mysql_local_Port?" promptNeeded="false" type="id_String" value="3306"/>
+    <contextParameter xmi:id="_5Gt9xP2eEeiVopKl37hDyg" comment="" name="Mysql_local_Server" prompt="Mysql_local_Server?" promptNeeded="false" type="id_String" value="localhost"/>
+  </context>
 </dataquality.reports:TdReport>
