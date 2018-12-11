@@ -166,7 +166,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `immat_matching`.`CommonName`, &#10;  `immat_matching`.`LegalName`, &#10;  `immat_matching`.`P_NAME`, &#10;  `immat_matching`.`C_NAME`, &#10;  `immat_matching`.`ID`, &#10;  `immat_matching`.`ID_IMMAT`, &#10;  `immat_matching`.`Source`, &#10;  `immat_matching`.`MATCHING_DISTANCES`, &#10;  `immat_matching`.`MATCHING_WEIGHT`&#10;FROM `immat_matching`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `immat_matching`.`CommonName`, &#10;  `immat_matching`.`LegalName`, &#10;  `immat_matching`.`P_NAME`, &#10;  `immat_matching`.`C_NAME`, &#10;  `immat_matching`.`ID_IMMAT`, &#10;  `immat_matching`.`Source`, &#10;  `immat_matching`.`MATCHING_DISTANCES`, &#10;  `immat_matching`.`MATCHING_WEIGHT`&#10;FROM `immat_matching`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -184,8 +184,6 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="P_NAME"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="C_NAME"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_IMMAT"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -211,9 +209,6 @@
       <column comment="" key="false" length="200" name="C_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="10" name="ID_IMMAT" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -224,6 +219,12 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="MATCHING_WEIGHT" nullable="true" pattern="" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ID_Volvo" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="T_GEN_KEY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -284,11 +285,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_IMMAT"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -331,9 +327,6 @@
       <column comment="" key="false" length="200" name="C_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="10" name="ID_IMMAT" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -344,6 +337,12 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="20" name="MATCHING_WEIGHT" nullable="true" pattern="" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ID_Volvo" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="T_GEN_KEY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -361,9 +360,6 @@
       <column comment="" key="false" length="200" name="C_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="10" name="ID_IMMAT" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -378,6 +374,12 @@
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="ID_Volvo" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="T_GEN_KEY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
@@ -415,7 +417,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
   </connection>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
@@ -430,13 +432,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_52822d9b-74f4-401e-b507-52c851430dcc"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DOEsOF+Ko7G9Eo++0DSjNaC4vC1rmLy4TDrqyOd6njbm3fof/avRLesr/FnEywrN9fbeDwMFwV70
-YoZQLMAxDA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f6fe448d-96f2-4e30-8c7c-67666745eee5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IerqIyJb5A6TwT2Gv8/oL5oK4Rs+gDks8cO4XoFgnUZOviQL1mslnoedg/iYI6vsROGDuzFsohVF
-B6+6XQdAdw==</DigestValue></Reference></SignedInfo><SignatureValue>z0oatI8MdyQ3+SIzHfvmMwsdUEA+9wgDDTZkVeA8uCBYLgbx2PHZ3SXm4c5SugJUFT63Va4bpHft
-QZQqBCe3D3sQLDEkQEaRWuBm3Q/Yn36/OTIhzP5NlAbQab4vgAACj7ISkUNkCksn6O2HwLlMWoWO
-+vVrxDv3xYs1tLPyS+Jyrm83Mhc53WEiGeSnkFTh8BBPe+jhI3A+8/seajZTSdDFOe2qjDJ8b4YR
-yNN7VXUeJx3elZDZ8t6fzmzS4ixs9CDVvlCN+tHvei95pnkwVTsMiiD/WgyOxoYS94GXwlVYjvTz
-eVvB1Hk20nEnSUEdDzmUE4N/Hx9t1/YZ+73zmg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e53837b0-2c54-4445-83b8-38b15cbe2d0d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yzd64XhL4nIyww95WSar3awje6fwTTM5ioj1eSW/AhIitaGHxoTqfs5giwb+kxvlVQDTcD2YArAm
+vopLO0SZ+w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8d8c5396-38e6-4067-ac1c-07d4f130dd19"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gsCdQmBAOkryTrRao4jVJZR5p5kkgMjpcw0vxHj2PkmyTLJQX6mbScfmdQk+HMok/Yfxpj3m4bwg
+zz2WMUEP2g==</DigestValue></Reference></SignedInfo><SignatureValue>B2F25d+oeAm2YTt0+AguVbIdMs3VeX8iNfvVKbcumPpr1MFUrcKWov7ViUsdpvo74QnfwQCUplw1
+zKEp5LwyQ88IwFT6eNodkXzrZMzof9DDXkTYq7sxasZ7DjLtHLt7qyfNfiW+il57LXgT5/I/zuqF
+WJqLVmlUTR0GUen2QhDoPHviaG4uBJqIjlG0pQ2O+fRSVqpcoFRx7aw6jl5Ydlh9bv9uwzHfP16n
+vD7sUhrkJSHLBpitCRzun7Vxl01Sr76bTmdgExLUwtTcwbDoj2HzjVfbF5kyf3NfjC+Ep0Wb0EoL
+wUN5Y05eUSLk8uC3uY6lXl7UC5G3s5vN+v5biw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -460,4 +462,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f6fe448d-96f2-4e30-8c7c-67666745eee5" Target="#_52822d9b-74f4-401e-b507-52c851430dcc"><Timestamp>2018-12-10 11:48:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8d8c5396-38e6-4067-ac1c-07d4f130dd19" Target="#_e53837b0-2c54-4445-83b8-38b15cbe2d0d"><Timestamp>2018-12-11 08:54:59</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
