@@ -573,11 +573,11 @@
         <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_house_number+&quot; &quot;+row2.OSM_road+&quot; &quot;+row2.OSM_city_district+&quot; &quot;+row2.OSM_postcode+&quot; &quot;+row2.OSM_country_code:row2.AdressLine1 ) " name="AdressLine1" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.sAddrLine2" name="sAddrLine2" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.sAddrLine3" name="sAddrLine3" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_postcode:row2.sPostalCode) " name="sPostalCode" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_city_district :row2.sCity) " name="sCity" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_state:row2.sStateProvince) " name="sStateProvince" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_country:row2.Country) " name="Country" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_country_code:row2.CountryCode) " name="CountryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.sPostalCode:row2.OSM_postcode) " name="sPostalCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.sCity:row2.OSM_city_district) " name="sCity" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.sStateProvince:row2.OSM_state) " name="sStateProvince" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.Country:row2.OSM_country) " name="Country" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.CountryCode:row2.OSM_country_code) " name="CountryCode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.SalesChannel" name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries expression="((row2.IsValidPhoneNumber)==null || (row2.IsValidPhoneNumber).equals(&quot;false&quot;))?row2.Phone:row2.StandardizedPhoneNumber " name="Phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.ID" name="ID" nullable="true" type="id_String"/>
@@ -1213,13 +1213,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7853b675-74ed-42b5-b19f-e164bbbfa92a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oiF7sR6CtAE1JHgpYwBPMUmSwMNX9LIE3GHqeVKucm2IhaIJmQXDoVuFTjwlsS2fiTwY9O76ViwF
-9fbBV+c+MA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fc1d2eea-07d8-4630-b5d9-f49c147c1399"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vx359l4XIXCbutFue83KjIps/9acZwKZTsqDHYF1KaRZT3wLs/RHQPRfpUeEkZgi3UPcx4FCQypS
-bQTXkhL+1w==</DigestValue></Reference></SignedInfo><SignatureValue>1gvX70mle/6qm+SypZAuCpoNY6gYdZAn/dK3Ix8btf7eENp5CcSpvWQFX6eHl9A3mut8/DBuCOQ9
-oCbIWLgtshjFyn9b1ocQdJLhetcnHqa1l/ODHilL2HiFCVCd5stDcMgmgQiM8UZpMeSdY+ueDK96
-Wgfuw9MExaj2G2NiqDXY+uDsG6FtzKgWJ9Ok4aOG+zskB3vqcZfigU9ZANOnZaQ2idn7hWN5PxXy
-G008jlGTt/i6bvEZLq2dnVMWvw72s/aRc2bVEFypSW5Pp4KveftsY/tVjQurzbi5vhod4l3yblG0
-fYlwl43YamzQhcS8L8hX3vmvZIG5jljG/Mh/Gw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c82adb19-2e82-4eb8-89e7-9cc26c3d59d6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>A3ihuaIVOSIHnek7KozXhX2wbrhy183muEhJFI3OMZl4yKSO748bZ1vHhC87s8Itwa7CCxfb/ulm
+t9ZwLyKmXA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7979ab2a-2695-4185-9da2-c759001e409a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ztg8+0J/i9CRqbUo15AI7IbtJDHP5pf/K7Zt3m4y6fgMmBqUUL+yjlaV6kxGpUPAAjtw30fqv2Nm
+2zZDfdBFPQ==</DigestValue></Reference></SignedInfo><SignatureValue>4FRI8rOpXtthsdbGFalTYMM4JckXR/sE34w04Z3r5GRzBC3GZs5e9UcmAUp1ozzda6E2Z3pLE//l
+CixYJpiSXRkOMzofu/5VaclEZ0dccHH18MVKNQ42aFaYQIJdlwQxeEHHAB2Z36VxC4yRlpaI1ziD
+FzilQ00ORDslw3YNuIjctRDVZtZvTpHYeK82J6TE0k/G14b18x7JH8BVgabcc4sRTG20HJlq0sI3
+dDzBqzoOUDdJWuhBM5pNFwenvDAd5st/5LSpPDNa3PIkY7lV/i3/krrWtvDzPkPbNNmahkqgrcDf
+fHzibLTUggSPuqOuKoml0lQvSNbFHrtWyucBiA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1243,4 +1243,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fc1d2eea-07d8-4630-b5d9-f49c147c1399" Target="#_7853b675-74ed-42b5-b19f-e164bbbfa92a"><Timestamp>2018-12-11 22:04:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7979ab2a-2695-4185-9da2-c759001e409a" Target="#_c82adb19-2e82-4eb8-89e7-9cc26c3d59d6"><Timestamp>2018-12-11 22:09:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
