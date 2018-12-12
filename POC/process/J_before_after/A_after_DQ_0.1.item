@@ -558,7 +558,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables name="Var" sizeState="INTERMEDIATE"/>
       <outputTables activateExpressionFilter="true" columnNameFilter="" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row2.Customer" name="Customer" nullable="true" type="id_String"/>
@@ -566,14 +566,14 @@
         <mapperTableEntries expression="StringHandling.UPCASE(((row2.VAT_valid) == null || (row2.VAT_valid).equals(&quot;false&quot;))?row2.CommonName:row2.VAT_name) " name="CommonName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.UPCASE(((row2.VAT_valid) == null || (row2.VAT_valid).equals(&quot;false&quot;))?row2.LegalName:row2.VAT_name) " name="LegalName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.OrganisationNo" name="OrganisationNo" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="((row2.VAT_valid) == null || (row2.VAT_valid).equals(&quot;false&quot;))?row2.STG_VAT:row2.VAT_Complet " name="VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="((row2.VAT_valid) == null || (row2.VAT_valid).equals(&quot;false&quot;))?row2.VAT:row2.VAT_Complet " name="VAT" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.ChamberOfCom" name="ChamberOfCom" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.Parma" name="Parma" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.SICCode" name="SICCode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;true&quot;)&#13;&#10;)&#13;&#10;?row2.OSM_house_number+&quot; &quot;+row2.OSM_road+&quot; &quot;+row2.OSM_city_district+&quot; &quot;+row2.OSM_postcode+&quot; &quot;+row2.OSM_country_code:row2.AdressLine1 ) " name="AdressLine1" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.sAddrLine2" name="sAddrLine2" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row2.sAddrLine3" name="sAddrLine3" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.sPostalCode:row2.OSM_postcode) " name="sPostalCode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)?row2.sPostalCode:row2.OSM_postcode) " name="sPostalCode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.UPCASE(((row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;))?row2.sCity:row2.OSM_town) " name="sCity" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.sStateProvince:row2.OSM_state) " name="sStateProvince" nullable="true" type="id_String"/>
         <mapperTableEntries expression="StringHandling.UPCASE((&#13;&#10;(row2.OSM_Valid)==null||(row2.OSM_Valid).equals(&quot;false&quot;)&#13;&#10;)&#13;&#10;?row2.Country:row2.OSM_country) " name="Country" nullable="true" type="id_String"/>
@@ -1213,13 +1213,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ef989d89-781e-42b0-b3c5-1ecbb8157848"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nUPXgs4NC4SuBafqiwkARycprV659BLO0Q+8l9/76QSe22hPf9MlCSRpeARCV0tYOyrkVA+4ven0
-lIyDvcqXkQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e2e2c377-27d9-4534-99a0-073df9cceb90"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8uDFiZ7dPV5f3dkCKH2wdV57vd3NIPsXvuR8YA6v+8R8vRNtL+U3vH966SX++WtFEzpImB66z9zE
-IUttPMYEwQ==</DigestValue></Reference></SignedInfo><SignatureValue>pT3+4lvz/36lCLbYPyQZ1jV4YH45DUmjZcOLFOjLfE6MLuQeOrxkIrUpjGvVuSK9VLLrDZlMrKn9
-lYFZm370TOiVFpnFMR6pU5lQw6BLp+vN7E/3c0BC1GAPq/1A343KyVCwXnbASbUOcvDD8aLWoOqX
-AZrJfHwIgzwwlr/uR/NJR69tLX98AaVeTft50WoZ/s1aP5dMxlyVzQqTgJ6JA5NNC6Pa/th04iwf
-Tng/bITNdU1NbEB2gMtC1uutEaDVHdrT4g67scVOZX+QQJuFwnIYhnM6Lsi1lY0mS9zOXX5YUZBR
-4kSevyr/1Y2kwku6kPUKUxyCsTlMvHmaH6jDHA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c5d2c76e-2642-45c9-911f-f58d4169bd92"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4YV7g/ZpLeQU7lutq2qYguRkVKMBFL0Iq+19wf/+VZTQUnuDIsZ8GV2ctDG2Gu2VZ3/i5iMxHzp3
+DEL/lEglYg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5351be63-4b57-404e-af03-0582e2e52776"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Lk8WPSQNaevZXFp+zFCCjbdAzwSrJmqsV4iMaT+N5NxzSoKO4GqaUq/SP1hDG6EnZfmVf9spYNKR
+JRrdp3XQ8w==</DigestValue></Reference></SignedInfo><SignatureValue>GBnklKb+Un125xVOrXfTRASJuBOT/9DNjIM6+3EBae3aJzAApCz528jdAa71G8VYHGLFYQe1vnoI
+eWlXBqCmJ+RoVf045HYpInuANrnPA0y64FfiSCbgvNWTRz8ZEeQJhK19/ZDkyg/skTqd590c0cxK
+I2Qq7MI0RPg5DvKiOg+XivY5iXr3Ax8EMIMpV8cE74vLdDEOogFvWrYEKyjQYFHtOH6YGXQ62jnH
+XZ7nYyuJeu1gd7qqgJR817Rsg3qoYVGge/qIeWQptw5jKwqyQ/nqXl80Qc6VlolBc8VUaoOXfGPX
+T8pA1RouGudPJwWqlGkxhEPNcnajk6qSXeuvTg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1243,4 +1243,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e2e2c377-27d9-4534-99a0-073df9cceb90" Target="#_ef989d89-781e-42b0-b3c5-1ecbb8157848"><Timestamp>2018-12-11 22:28:58</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5351be63-4b57-404e-af03-0582e2e52776" Target="#_c5d2c76e-2642-45c9-911f-f58d4169bd92"><Timestamp>2018-12-12 14:47:44</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
