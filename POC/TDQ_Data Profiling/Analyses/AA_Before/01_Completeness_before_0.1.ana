@@ -7,7 +7,7 @@
     <taggedValue xmi:id="_w3nh8-0OEeidmJUNeAS2Pw" tag="Purpose" value="Is all the intended data being produced in the data set or is any of it missing ?"/>
     <taggedValue xmi:id="_w3nh9O0OEeidmJUNeAS2Pw" tag="Description" value="Is all the intended data being produced in the data set or is any of it missing?"/>
     <taggedValue xmi:id="_w3nh9e0OEeidmJUNeAS2Pw" tag="Version" value="0.1"/>
-    <taggedValue xmi:id="_2bjEke0OEeidmJUNeAS2Pw" tag="ANA_LAST_RUN_CONTEXT" value="CDB"/>
+    <taggedValue xmi:id="_2bjEke0OEeidmJUNeAS2Pw" tag="ANA_LAST_RUN_CONTEXT" value="RTDMS"/>
     <taggedValue xmi:id="_2bjEku0OEeidmJUNeAS2Pw" tag="PREVIEW_ROW_NUMBER" value="50"/>
     <taggedValue xmi:id="_2bjroO0OEeidmJUNeAS2Pw" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
     <taggedValue xmi:id="_2bk6A-0OEeidmJUNeAS2Pw" tag="Is Use Sample Data" value="false"/>
@@ -22,23 +22,23 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_w3nh9-0OEeidmJUNeAS2Pw">
-      <resultMetadata xmi:id="_w3nh-O0OEeidmJUNeAS2Pw" executionDate="2018-12-12T14:46:51.811+0100" executionDuration="3798" message="" executionNumber="22" lastRunOk="true" lastExecutionNumberOk="22"/>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSvu0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <resultMetadata xmi:id="_w3nh-O0OEeidmJUNeAS2Pw" executionDate="2018-12-12T15:07:27.837+0100" executionDuration="1639" message="" executionNumber="23" lastRunOk="true" lastExecutionNumberOk="23"/>
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSvu0OEeidmJUNeAS2Pw" count="962" computed="true">
         <parameters xmi:id="_2bkSv-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271uMu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `CommonName` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_271uMu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `CommonName` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2zrQsO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_2zrQse0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_2zrQsu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_2zrQs-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSxu0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkSxu0OEeidmJUNeAS2Pw" count="962" computed="true">
         <parameters xmi:id="_2bkSx-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728UO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`CommonName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`CommonName`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728UO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`CommonName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`CommonName`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_2z_ZwO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_2z_Zwe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_2z_Zwu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -49,33 +49,33 @@
           <sqlGenericExpression xmi:id="_2z_Zx-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_EPpfUu8MEei_b7MObsODRw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_EPpfUu8MEei_b7MObsODRw" count="962" computed="true">
         <parameters xmi:id="_EPpfU-8MEei_b7MObsODRw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_E2uGYe8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_E2uGYe8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_E2ljgO8MEei_b7MObsODRw" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_E2ljge8MEei_b7MObsODRw" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_E2ljgu8MEei_b7MObsODRw" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_E2ljg-8MEei_b7MObsODRw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_J-NdQO8PEei_b7MObsODRw" count="88017" computed="true" distinctValueCount="85079">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_J-NdQO8PEei_b7MObsODRw" count="962" computed="true" distinctValueCount="949">
         <parameters xmi:id="_J-NdQe8PEei_b7MObsODRw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_KRdJYO8PEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT DISTINCT `CommonName` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_KRdJYO8PEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT DISTINCT `CommonName` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_KRIZQO8PEei_b7MObsODRw" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_KRIZQe8PEei_b7MObsODRw" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_KRIZQu8PEei_b7MObsODRw" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_KRIZQ-8PEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_J-NdQu8PEei_b7MObsODRw" count="88017" computed="true" uniqueValueCount="82474">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_J-NdQu8PEei_b7MObsODRw" count="962" computed="true" uniqueValueCount="937">
         <parameters xmi:id="_J-NdQ-8PEei_b7MObsODRw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_KRdwcO8PEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT `CommonName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `CommonName` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_KRdwcO8PEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT `CommonName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `CommonName` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_KROf4O8PEei_b7MObsODRw" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_KROf4e8PEei_b7MObsODRw" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_KROf4u8PEei_b7MObsODRw" tag="Purpose" value="evaluates the number of unique records"/>
@@ -88,11 +88,11 @@
           <sqlGenericExpression xmi:id="_KROf6e8PEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1UPciEeio27Aq-MJppQ" count="88017" computed="true" duplicateValueCount="2605">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1UPciEeio27Aq-MJppQ" count="962" computed="true" duplicateValueCount="12">
         <parameters xmi:id="_MKo1UfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xCuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGfZkPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `CommonName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `CommonName` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGfZkPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `CommonName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `CommonName` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_M-6K4PciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_M-6K4fciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_M-6K4vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
@@ -105,22 +105,22 @@
           <sqlGenericExpression xmi:id="_M-6K6fciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSyu0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkSyu0OEeidmJUNeAS2Pw" count="962" computed="true">
         <parameters xmi:id="_2bkSy-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728Ue0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `LegalName` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_2728Ue0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `LegalName` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20Jx0O0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_20Jx0e0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_20Jx0u0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_20Jx0-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS0u0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS0u0OEeidmJUNeAS2Pw" count="962" computed="true">
         <parameters xmi:id="_2bkS0-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_273jYu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`LegalName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`LegalName`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_273jYu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`LegalName`) FROM `volvo`.`ods_pivot` WHERE TRIM(`LegalName`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20cswO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_20cswe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_20cswu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -131,33 +131,33 @@
           <sqlGenericExpression xmi:id="_20csx-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_fXdV8O8TEei_b7MObsODRw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_fXdV8O8TEei_b7MObsODRw" count="962" computed="true">
         <parameters xmi:id="_fXdV8e8TEei_b7MObsODRw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_f5ivUO8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_f5ivUO8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_f44oAO8TEei_b7MObsODRw" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_f44oAe8TEei_b7MObsODRw" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_f44oAu8TEei_b7MObsODRw" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_f44oA-8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_fXdV8u8TEei_b7MObsODRw" count="88017" computed="true" distinctValueCount="85257">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_fXdV8u8TEei_b7MObsODRw" count="962" computed="true" distinctValueCount="949">
         <parameters xmi:id="_fXdV8-8TEei_b7MObsODRw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_f5nAwO8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT DISTINCT `LegalName` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_f5nAwO8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT DISTINCT `LegalName` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_f5Aj0O8TEei_b7MObsODRw" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_f5Aj0e8TEei_b7MObsODRw" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_f5Aj0u8TEei_b7MObsODRw" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_f5Aj0-8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_fXdV9O8TEei_b7MObsODRw" count="88017" computed="true" uniqueValueCount="82818">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_fXdV9O8TEei_b7MObsODRw" count="962" computed="true" uniqueValueCount="937">
         <parameters xmi:id="_fXdV9e8TEei_b7MObsODRw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_f5nAwe8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT `LegalName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `LegalName` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_f5nAwe8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT `LegalName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `LegalName` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_f5GqcO8TEei_b7MObsODRw" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_f5Gqce8TEei_b7MObsODRw" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_f5Gqcu8TEei_b7MObsODRw" tag="Purpose" value="evaluates the number of unique records"/>
@@ -170,11 +170,11 @@
           <sqlGenericExpression xmi:id="_f5Gqee8TEei_b7MObsODRw" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1UvciEeio27Aq-MJppQ" count="88017" computed="true" duplicateValueCount="2439">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1UvciEeio27Aq-MJppQ" count="962" computed="true" duplicateValueCount="12">
         <parameters xmi:id="_MKo1U_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xDuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGh10PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `LegalName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `LegalName` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGh10PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `LegalName`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `LegalName` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_M_FKAPciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_M_FKAfciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_M_FKAvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
@@ -187,22 +187,22 @@
           <sqlGenericExpression xmi:id="_M_FKCfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS4u0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkS4u0OEeidmJUNeAS2Pw" count="962" nullCount="36" computed="true">
         <parameters xmi:id="_2bkS4-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275YkO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `VAT` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275YkO0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `VAT` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_20_fUO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_20_fUe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_20_fUu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_20_fU-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS6u0OEeidmJUNeAS2Pw" count="88017" computed="true" blankCount="1">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkS6u0OEeidmJUNeAS2Pw" count="962" nullCount="36" computed="true">
         <parameters xmi:id="_2bkS6-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275_oe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`VAT`) FROM `volvo`.`ods_pivot` WHERE TRIM(`VAT`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_275_oe0OEeidmJUNeAS2Pw" body="SELECT COUNT(`VAT`) FROM `volvo`.`ods_pivot` WHERE TRIM(`VAT`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_21TBUO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_21TBUe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_21TBUu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -213,33 +213,33 @@
           <sqlGenericExpression xmi:id="_21TBV-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKo1VPciEeio27Aq-MJppQ" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKo1VPciEeio27Aq-MJppQ" count="962" computed="true">
         <parameters xmi:id="_MKo1VfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr5PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr5PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_M_NF0PciEeio27Aq-MJppQ" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_M_NF0fciEeio27Aq-MJppQ" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_M_NF0vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_M_NF0_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKo1VvciEeio27Aq-MJppQ" count="88017" computed="true" distinctValueCount="77864">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKo1VvciEeio27Aq-MJppQ" count="962" nullCount="36" computed="true" distinctValueCount="865">
         <parameters xmi:id="_MKo1V_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGlgMPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `VAT` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGlgMPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `VAT` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_M_ZTEPciEeio27Aq-MJppQ" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_M_ZTEfciEeio27Aq-MJppQ" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_M_ZTEvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_M_ZTE_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKo1WPciEeio27Aq-MJppQ" count="88017" computed="true" uniqueValueCount="75887">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKo1WPciEeio27Aq-MJppQ" count="962" nullCount="36" computed="true" uniqueValueCount="843">
         <parameters xmi:id="_MKo1WfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGmHQPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `VAT` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGmHQPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `VAT` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_M_h18PciEeio27Aq-MJppQ" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_M_h18fciEeio27Aq-MJppQ" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_M_h18vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of unique records"/>
@@ -252,11 +252,11 @@
           <sqlGenericExpression xmi:id="_M_h1-fciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1WvciEeio27Aq-MJppQ" count="88017" computed="true" duplicateValueCount="1977">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1WvciEeio27Aq-MJppQ" count="962" nullCount="36" computed="true" duplicateValueCount="22">
         <parameters xmi:id="_MKo1W_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGmuUPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `VAT` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGmuUPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `VAT`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `VAT` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_M_qY0PciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_M_qY0fciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_M_qY0vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
@@ -269,22 +269,22 @@
           <sqlGenericExpression xmi:id="_M_qY2fciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTEu0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTEu0OEeidmJUNeAS2Pw" count="962" nullCount="13" computed="true">
         <parameters xmi:id="_2bkTE-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279qAu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `AdressLine1` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_279qAu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `AdressLine1` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_224VsO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_224Vse0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_224Vsu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_224Vs-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTGu0OEeidmJUNeAS2Pw" count="88017" computed="true" blankCount="1219">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTGu0OEeidmJUNeAS2Pw" count="962" nullCount="13" computed="true">
         <parameters xmi:id="_2bkTG-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27-4IO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`AdressLine1`) FROM `volvo`.`ods_pivot` WHERE TRIM(`AdressLine1`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_27-4IO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`AdressLine1`) FROM `volvo`.`ods_pivot` WHERE TRIM(`AdressLine1`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_23KCgO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_23KCge0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_23KCgu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -295,33 +295,33 @@
           <sqlGenericExpression xmi:id="_23KCh-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKo1dPciEeio27Aq-MJppQ" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKo1dPciEeio27Aq-MJppQ" count="962" computed="true">
         <parameters xmi:id="_MKo1dfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr4PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr4PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NBHxYPciEeio27Aq-MJppQ" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_NBHxYfciEeio27Aq-MJppQ" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_NBHxYvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_NBHxY_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKo1dvciEeio27Aq-MJppQ" count="88017" computed="true" distinctValueCount="76497">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKo1dvciEeio27Aq-MJppQ" count="962" nullCount="13" computed="true" distinctValueCount="910">
         <parameters xmi:id="_MKo1d_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGxGYPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `AdressLine1` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGxGYPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `AdressLine1` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NBOfEPciEeio27Aq-MJppQ" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_NBOfEfciEeio27Aq-MJppQ" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_NBOfEvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_NBOfE_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKo1ePciEeio27Aq-MJppQ" count="88017" computed="true" uniqueValueCount="68974">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKo1ePciEeio27Aq-MJppQ" count="962" nullCount="13" computed="true" uniqueValueCount="873">
         <parameters xmi:id="_MKo1efciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG0JsPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `AdressLine1`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `AdressLine1` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG0JsPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `AdressLine1`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `AdressLine1` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NBVz0PciEeio27Aq-MJppQ" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_NBVz0fciEeio27Aq-MJppQ" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_NBVz0vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of unique records"/>
@@ -334,11 +334,11 @@
           <sqlGenericExpression xmi:id="_NBVz2fciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1evciEeio27Aq-MJppQ" count="88017" computed="true" duplicateValueCount="7523">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1evciEeio27Aq-MJppQ" count="962" nullCount="13" computed="true" duplicateValueCount="37">
         <parameters xmi:id="_MKo1e_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG0wwPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `AdressLine1`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `AdressLine1` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG0wwPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `AdressLine1`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `AdressLine1` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NBe9wPciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_NBe9wfciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_NBe9wvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
@@ -351,22 +351,22 @@
           <sqlGenericExpression xmi:id="_NBe9yfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTNu0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTNu0OEeidmJUNeAS2Pw" count="962" nullCount="27" computed="true">
         <parameters xmi:id="_2bkTN-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AtUu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sPostalCode` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28AtUu0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sPostalCode` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24KvIO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_24KvIe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_24KvIu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_24KvI-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTPu0OEeidmJUNeAS2Pw" count="88017" computed="true" blankCount="212">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bkTPu0OEeidmJUNeAS2Pw" count="962" nullCount="27" computed="true">
         <parameters xmi:id="_2bkTP-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7cO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sPostalCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sPostalCode`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7cO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sPostalCode`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sPostalCode`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24dDAO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_24dDAe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_24dDAu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -377,33 +377,33 @@
           <sqlGenericExpression xmi:id="_24dDB-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKo1jPciEeio27Aq-MJppQ" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKo1jPciEeio27Aq-MJppQ" count="962" computed="true">
         <parameters xmi:id="_MKo1jfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr7PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr7PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NCmYEPciEeio27Aq-MJppQ" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_NCmYEfciEeio27Aq-MJppQ" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_NCmYEvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_NCmYE_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKo1jvciEeio27Aq-MJppQ" count="88017" computed="true" distinctValueCount="1768">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKo1jvciEeio27Aq-MJppQ" count="962" nullCount="27" computed="true" distinctValueCount="325">
         <parameters xmi:id="_MKo1j_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG-hwPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `sPostalCode` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG-hwPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `sPostalCode` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NCviAPciEeio27Aq-MJppQ" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_NCviAfciEeio27Aq-MJppQ" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_NCviAvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_NCviA_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKo1kPciEeio27Aq-MJppQ" count="88017" computed="true" uniqueValueCount="491">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKo1kPciEeio27Aq-MJppQ" count="962" nullCount="27" computed="true" uniqueValueCount="189">
         <parameters xmi:id="_MKo1kfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG-hwfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sPostalCode`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `sPostalCode` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG-hwfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sPostalCode`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `sPostalCode` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NC2PsPciEeio27Aq-MJppQ" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_NC2PsfciEeio27Aq-MJppQ" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_NC2PsvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of unique records"/>
@@ -416,11 +416,11 @@
           <sqlGenericExpression xmi:id="_NC2PufciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1kvciEeio27Aq-MJppQ" count="88017" computed="true" duplicateValueCount="1277">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKo1kvciEeio27Aq-MJppQ" count="962" nullCount="27" computed="true" duplicateValueCount="136">
         <parameters xmi:id="_MKo1k_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG_I0PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sPostalCode`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `sPostalCode` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NG_I0PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sPostalCode`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `sPostalCode` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NC-LgPciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_NC-LgfciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_NC-LgvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
@@ -433,22 +433,22 @@
           <sqlGenericExpression xmi:id="_NC-LifciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTQu0OEeidmJUNeAS2Pw" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bkTQu0OEeidmJUNeAS2Pw" count="962" nullCount="13" computed="true">
         <parameters xmi:id="_2bkTQ-0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7ce0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sCity` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28B7ce0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `sCity` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_24mM8O0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_24m0AO0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_24m0Ae0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_24m0Au0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk5xe0OEeidmJUNeAS2Pw" count="88017" computed="true" blankCount="135">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk5xe0OEeidmJUNeAS2Pw" count="962" nullCount="13" computed="true">
         <parameters xmi:id="_2bk5xu0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Cigu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sCity`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sCity`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Cigu0OEeidmJUNeAS2Pw" body="SELECT COUNT(`sCity`) FROM `volvo`.`ods_pivot` WHERE TRIM(`sCity`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_248yQO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_248yQe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_248yQu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -459,33 +459,33 @@
           <sqlGenericExpression xmi:id="_248yR-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKpcYPciEeio27Aq-MJppQ" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKpcYPciEeio27Aq-MJppQ" count="962" computed="true">
         <parameters xmi:id="_MKpcYfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr6_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr6_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NDK_0PciEeio27Aq-MJppQ" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_NDK_0fciEeio27Aq-MJppQ" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_NDK_0vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_NDK_0_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKpcYvciEeio27Aq-MJppQ" count="88017" computed="true" distinctValueCount="3012">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKpcYvciEeio27Aq-MJppQ" count="962" nullCount="13" computed="true" distinctValueCount="379">
         <parameters xmi:id="_MKpcY_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHAW8PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `sCity` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHAW8PciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `sCity` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NDTisPciEeio27Aq-MJppQ" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_NDTisfciEeio27Aq-MJppQ" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_NDTisvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_NDTis_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKpcZPciEeio27Aq-MJppQ" count="88017" computed="true" uniqueValueCount="1369">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKpcZPciEeio27Aq-MJppQ" count="962" nullCount="13" computed="true" uniqueValueCount="242">
         <parameters xmi:id="_MKpcZfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHA-APciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sCity`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `sCity` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHA-APciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sCity`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `sCity` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NDcFkPciEeio27Aq-MJppQ" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_NDcFkfciEeio27Aq-MJppQ" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_NDcFkvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of unique records"/>
@@ -498,11 +498,11 @@
           <sqlGenericExpression xmi:id="_NDcFmfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKpcZvciEeio27Aq-MJppQ" count="88017" computed="true" duplicateValueCount="1643">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKpcZvciEeio27Aq-MJppQ" count="962" nullCount="13" computed="true" duplicateValueCount="137">
         <parameters xmi:id="_MKpcZ_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xNuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHBlEPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sCity`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `sCity` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHBlEPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `sCity`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `sCity` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NDjaUPciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_NDjaUfciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_NDjaUvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
@@ -515,22 +515,22 @@
           <sqlGenericExpression xmi:id="_NDjaWfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%>  m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) > 1) myquery" language="Hive"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk5-e0OEeidmJUNeAS2Pw" count="88017" nullCount="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:NullCountIndicator" xmi:id="_2bk5-e0OEeidmJUNeAS2Pw" count="962" nullCount="145" computed="true">
         <parameters xmi:id="_2bk5-u0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Null_Count_0.1.definition#_GrAeADh9Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Gz8u0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Phone` IS NULL  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28Gz8u0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot` WHERE `Phone` IS NULL  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_27ZCQO0OEeidmJUNeAS2Pw" name="Null Count" label="Null Count">
           <taggedValue xmi:id="_27ZCQe0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluate the number of missing data (null records)"/>
           <taggedValue xmi:id="_27ZCQu0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of null rows"/>
           <sqlGenericExpression xmi:id="_27ZCQ-0OEeidmJUNeAS2Pw" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> WHERE &lt;%=__COLUMN_NAMES__%> IS NULL &lt;%=__AND_WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk6Ae0OEeidmJUNeAS2Pw" count="88017" nullCount="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:BlankCountIndicator" xmi:id="_2bk6Ae0OEeidmJUNeAS2Pw" count="962" nullCount="145" computed="true">
         <parameters xmi:id="_2bk6Au0OEeidmJUNeAS2Pw"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Blank_Count_0.1.definition#_ccHq0xF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28ICEO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Phone`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Phone`) = ''  AND (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_28ICEO0OEeidmJUNeAS2Pw" body="SELECT COUNT(`Phone`) FROM `volvo`.`ods_pivot` WHERE TRIM(`Phone`) = ''  AND (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_27tLUO0OEeidmJUNeAS2Pw" name="Blank Count" label="Blank Count">
           <taggedValue xmi:id="_27tLUe0OEeidmJUNeAS2Pw" tag="Description" value="counts the number of blank rows. A blank is a non null textual data that contains only white spaces (or nothing). Note that Oracle does not distinguish between the empty string and the null value"/>
           <taggedValue xmi:id="_27tLUu0OEeidmJUNeAS2Pw" tag="Purpose" value="evaluates the number of blank records"/>
@@ -541,33 +541,33 @@
           <sqlGenericExpression xmi:id="_27tLV-0OEeidmJUNeAS2Pw" body="SELECT COUNT(&lt;%=__COLUMN_NAMES__%>) FROM &lt;%=__TABLE_NAME__%> WHERE (&lt;%=__COLUMN_NAMES__%> = '' or RTRIM(LTRIM(&lt;%=__COLUMN_NAMES__%>)) = '') &lt;%=__AND_WHERE_CLAUSE__%>" language="Adaptive Server Enterprise | Sybase Adaptive Server IQ"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKpciPciEeio27Aq-MJppQ" count="88017" computed="true">
+      <indicators xsi:type="dataquality.indicators:RowCountIndicator" xmi:id="_MKpciPciEeio27Aq-MJppQ" count="962" computed="true">
         <parameters xmi:id="_MKpcifciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr5vciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NGYr5vciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NFn24PciEeio27Aq-MJppQ" name="Row Count" label="Row Count">
           <taggedValue xmi:id="_NFn24fciEeio27Aq-MJppQ" tag="Description" value="counts the number of rows"/>
           <taggedValue xmi:id="_NFn24vciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of records"/>
           <sqlGenericExpression xmi:id="_NFn24_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKpcivciEeio27Aq-MJppQ" count="88017" nullCount="88017" computed="true" distinctValueCount="1">
+      <indicators xsi:type="dataquality.indicators:DistinctCountIndicator" xmi:id="_MKpcivciEeio27Aq-MJppQ" count="962" nullCount="145" computed="true" distinctValueCount="801">
         <parameters xmi:id="_MKpci_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHNLQPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `Phone` FROM `volvo`.`ods_pivot`  WHERE (source='CDB')) A" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHNLQPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT `Phone` FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')) A" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NFvLoPciEeio27Aq-MJppQ" name="Distinct Count" label="Distinct Count">
           <taggedValue xmi:id="_NFvLofciEeio27Aq-MJppQ" tag="Description" value="counts the number of distinct rows (like a &quot;SELECT DISTINCT&quot; SQL statement)"/>
           <taggedValue xmi:id="_NFvLovciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of distinct records"/>
           <sqlGenericExpression xmi:id="_NFvLo_ciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT DISTINCT &lt;%=__COLUMN_NAMES__%> FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%>) A" language="SQL"/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKpcjPciEeio27Aq-MJppQ" count="88017" nullCount="88017" computed="true" uniqueValueCount="0">
+      <indicators xsi:type="dataquality.indicators:UniqueCountIndicator" xmi:id="_MKpcjPciEeio27Aq-MJppQ" count="962" nullCount="145" computed="true" uniqueValueCount="784">
         <parameters xmi:id="_MKpcjfciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHNLQfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `Phone`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='CDB') GROUP BY `Phone` HAVING mycount = 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHNLQfciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `Phone`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS') GROUP BY `Phone` HAVING mycount = 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NF3HcPciEeio27Aq-MJppQ" name="Unique Count" label="Unique Count">
           <taggedValue xmi:id="_NF3HcfciEeio27Aq-MJppQ" tag="Description" value="counts the number of unique rows (i.e. distinct rows with only one instance: rows that are not duplicated)"/>
           <taggedValue xmi:id="_NF3HcvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of unique records"/>
@@ -580,11 +580,11 @@
           <sqlGenericExpression xmi:id="_NF3HefciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> HAVING COUNT(*) = 1)  myquery" language="Hive" version=""/>
         </builtInIndicatorDefinition>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKpcjvciEeio27Aq-MJppQ" count="88017" nullCount="88017" computed="true" duplicateValueCount="1">
+      <indicators xsi:type="dataquality.indicators:DuplicateCountIndicator" xmi:id="_MKpcjvciEeio27Aq-MJppQ" count="962" nullCount="145" computed="true" duplicateValueCount="17">
         <parameters xmi:id="_MKpcj_ciEeio27Aq-MJppQ"/>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHNyUPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `Phone`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='CDB') GROUP BY `Phone` HAVING mycount > 1) AS myquery" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_NHNyUPciEeio27Aq-MJppQ" body="SELECT COUNT(*) FROM (SELECT `Phone`, COUNT(*) mycount FROM `volvo`.`ods_pivot`  m  WHERE (source='RTDMS') GROUP BY `Phone` HAVING mycount > 1) AS myquery" language="MySQL"/>
         <builtInIndicatorDefinition xmi:id="_NF-cMPciEeio27Aq-MJppQ" name="Duplicate Count" label="Duplicate Count">
           <taggedValue xmi:id="_NF-cMfciEeio27Aq-MJppQ" tag="Description" value="counts the number of duplicate rows. This number and the number of unique data equals the number of distinct rows"/>
           <taggedValue xmi:id="_NF-cMvciEeio27Aq-MJppQ" tag="Purpose" value="evaluates the number of duplicated records"/>
