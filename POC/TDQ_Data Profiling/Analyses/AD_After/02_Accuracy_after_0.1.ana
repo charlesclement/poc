@@ -23,8 +23,8 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6Fev2VEeiVopKl37hDyg"/>
     </context>
     <results xmi:id="_6P_Ai_4aEeiZB_HvH2ZRGQ">
-      <resultMetadata xmi:id="_6P_AjP4aEeiZB_HvH2ZRGQ" executionDate="2018-12-12T15:37:07.313+0100" executionDuration="270" message="" executionNumber="27" lastRunOk="true" lastExecutionNumberOk="27"/>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkgP4bEeiZB_HvH2ZRGQ" name="VAT_BE" count="962" computed="true" notMatchingValueCount="962">
+      <resultMetadata xmi:id="_6P_AjP4aEeiZB_HvH2ZRGQ" executionDate="2018-12-12T15:40:33.764+0100" executionDuration="280" message="" executionNumber="28" lastRunOk="true" lastExecutionNumberOk="28"/>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkgP4bEeiZB_HvH2ZRGQ" name="VAT_BE" count="962" computed="true" matchingValueCount="753" notMatchingValueCount="209">
         <parameters xmi:id="_LRdkgf4bEeiZB_HvH2ZRGQ">
           <dataValidDomain xmi:id="_LRdkgv4bEeiZB_HvH2ZRGQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_BE_0.1.pattern#_E_mEgN90Eeid7v2-FZr9SQ"/>
@@ -43,7 +43,7 @@
         </parameters>
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FRv2VEeiVopKl37hDyg"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpBv8P4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY 'BE?0[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='RTDMS')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpBv8P4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY 'BE?[ ]0[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='RTDMS')" language="MySQL"/>
       </indicators>
       <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkg_4bEeiZB_HvH2ZRGQ" name="VAT_FR" count="962" computed="true" notMatchingValueCount="962">
         <parameters xmi:id="_LRdkhP4bEeiZB_HvH2ZRGQ">
