@@ -9,6 +9,7 @@
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_NL_0.1.pattern#_0kHTwO0MEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Country_Code_Volvo_0.1.pattern#_dHg0gO0OEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_zzL40OzaEeiof8jSeXJ-ng"/>
+    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_ngSPYN0ZEeinyYgpzgK3Rg"/>
     <taggedValue xmi:id="_2sHpce0JEeidmJUNeAS2Pw" tag="Status" value="development"/>
     <taggedValue xmi:id="_2sHpcu0JEeidmJUNeAS2Pw" tag="Author" value="charlesclement@eval11351.talend.com"/>
     <taggedValue xmi:id="_2sHpc-0JEeidmJUNeAS2Pw" tag="Purpose" value="Does the data matches up with the real world object or event it describes, enabling correct conclusions to be drawn from it ?"/>
@@ -25,9 +26,10 @@
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
       <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
     </context>
     <results xmi:id="_2sHpd-0JEeidmJUNeAS2Pw">
-      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw" executionDate="2018-12-12T15:22:22.379+0100" executionDuration="446" message="" executionNumber="19" lastRunOk="true" lastExecutionNumberOk="19"/>
+      <resultMetadata xmi:id="_2sHpeO0JEeidmJUNeAS2Pw" executionDate="2018-12-12T15:25:22.290+0100" executionDuration="343" message="" executionNumber="20" lastRunOk="true" lastExecutionNumberOk="20"/>
       <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_NYukQO0KEeidmJUNeAS2Pw" name="Customer_Code_Volvo" count="962" computed="true" notMatchingValueCount="962">
         <parameters xmi:id="_NYukQe0KEeidmJUNeAS2Pw">
           <dataValidDomain xmi:id="_NYukQu0KEeidmJUNeAS2Pw">
@@ -174,6 +176,26 @@
         <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
         <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_ftv6QPyhEeimdf0CgpRDAQ" body="SELECT COUNT(CASE WHEN `sPostalCode` REGEXP BINARY '^[0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_wR9GkP4ZEeiZB_HvH2ZRGQ" name="Phone Number" count="962" computed="true" matchingValueCount="810" notMatchingValueCount="152">
+        <parameters xmi:id="_wR9Gkf4ZEeiZB_HvH2ZRGQ">
+          <dataValidDomain xmi:id="_wR9Gkv4ZEeiZB_HvH2ZRGQ">
+            <patterns href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_S7m6oIyhEd6Dle_8xC0lwg"/>
+            <builtInPatterns xmi:id="_wlXKwP4ZEeiZB_HvH2ZRGQ" name="Phone Number">
+              <taggedValue xmi:id="_wlXKwf4ZEeiZB_HvH2ZRGQ" tag="Author" value="Tim N Tousley"/>
+              <taggedValue xmi:id="_wlXKwv4ZEeiZB_HvH2ZRGQ" tag="Description" value="Very flexible phone number entry. -- There are many valid ways to enter a phone number, and often there is other data that a restrictive Regex pattern will not abide. -- This pattern accepts any number of letters, commas, pound signs, slashes, spaces, periods, parenthesis, hyphens, plus signs, and asterisks... but amongst it scans for a minimum of 7 digits (modify {7} to adjust the minimum number of required digits (i.e. 10 for area code + phone number, 18 for long international numbers). -- This pattern does not attempt to restrict the entered phone number format in any way, but instead just verfies that enough digits for one was entered. -- Data in excess of the 7 required digits is allowed. -- I've posted another submission that forces compliance for US phone numbers."/>
+              <taggedValue xmi:id="_wlXKw_4ZEeiZB_HvH2ZRGQ" tag="Purpose" value="1234567 ||| 12345678 ||| (555) 987-6543 ext 210 ||| 999-666-7777-x1967123456 ||| 555-123"/>
+              <taggedValue xmi:id="_wlXKxP4ZEeiZB_HvH2ZRGQ" tag="Status" value="Draft"/>
+              <taggedValue xmi:id="_wlXKxf4ZEeiZB_HvH2ZRGQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_wlXKxv4ZEeiZB_HvH2ZRGQ" expressionType="REGEXP">
+                <expression xmi:id="_wlXKx_4ZEeiZB_HvH2ZRGQ" body="'^([a-zA-Z,#/ \.\(\)\-\+\*]*[0-9]){7}[0-9a-zA-Z,#/ \.\(\)\-\+\*]*$'" language="SQL"/>
+              </components>
+            </builtInPatterns>
+          </dataValidDomain>
+        </parameters>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
+        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_wld4cP4ZEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `Phone` REGEXP BINARY '^([a-zA-Z,#/ \.\(\)\-\+\*]*[0-9]){7}[0-9a-zA-Z,#/ \.\(\)\-\+\*]*$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='RTDMS')" language="MySQL"/>
       </indicators>
     </results>
     <parameters xmi:id="_2sHpee0JEeidmJUNeAS2Pw" dataFilter="_NZxGEO0KEeidmJUNeAS2Pw" analysisType="Multiple Column Analysis"/>
