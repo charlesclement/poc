@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.domain.pattern="http://dataquality.domain.pattern" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
   <dataquality.analysis:Analysis xmi:id="_6P_AgP4aEeiZB_HvH2ZRGQ" name="02_Accuracy_after" creationDate="2018-11-20T22:18:41.541+0100" defaultContext="RTDMS">
     <clientDependency href="../../../metadata/connections/Mysql_local_0.1.item#_m6JAMN7sEeiAxo_Xf4VPDg"/>
-    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_NZs0oO0KEeidmJUNeAS2Pw"/>
-    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_sKdWoO0LEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_BE_0.1.pattern#_aDgjMN90Eeid7v2-FZr9SQ"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_FR_0.1.pattern#_dv7xUO0MEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_NL_0.1.pattern#_0kHTwO0MEeidmJUNeAS2Pw"/>
-    <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/Country_Code_Volvo_0.1.pattern#_dHg0gO0OEeidmJUNeAS2Pw"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_zzL40OzaEeiof8jSeXJ-ng"/>
     <clientDependency href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_ngSPYN0ZEeinyYgpzgK3Rg"/>
     <taggedValue xmi:id="_6P_Agf4aEeiZB_HvH2ZRGQ" tag="Status" value="development"/>
@@ -21,130 +18,115 @@
     <taggedValue xmi:id="_6P_Aif4aEeiZB_HvH2ZRGQ" tag="Is Use Sample Data" value="false"/>
     <context xmi:id="_6P_Aiv4aEeiZB_HvH2ZRGQ">
       <connection href="../../../metadata/connections/Mysql_local_0.1.item#_wsu3YN1GEeigRf1EgGbOLg"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
-      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FRv2VEeiVopKl37hDyg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FYv2VEeiVopKl37hDyg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6Fev2VEeiVopKl37hDyg"/>
     </context>
     <results xmi:id="_6P_Ai_4aEeiZB_HvH2ZRGQ">
-      <resultMetadata xmi:id="_6P_AjP4aEeiZB_HvH2ZRGQ" executionDate="2018-12-12T15:31:54.977+0100" executionDuration="1034" message="" executionNumber="24" lastRunOk="true" lastExecutionNumberOk="24"/>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Ajf4aEeiZB_HvH2ZRGQ" name="Customer_Code_Volvo" count="88017" computed="true" matchingValueCount="88017">
-        <parameters xmi:id="_6P_Ajv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Aj_4aEeiZB_HvH2ZRGQ">
-            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/Customer_Code_Volvo_0.1.pattern#_E02esO0KEeidmJUNeAS2Pw"/>
-          </dataValidDomain>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xAuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AkP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `Customer` REGEXP BINARY '^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
-      </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Akf4aEeiZB_HvH2ZRGQ" name="OwnerRU_code_Volvo" count="88017" computed="true" matchingValueCount="88017">
-        <parameters xmi:id="_6P_Akv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Ak_4aEeiZB_HvH2ZRGQ">
-            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/OwnerRU_code_Volvo_0.1.pattern#_SZV-cO0KEeidmJUNeAS2Pw"/>
-          </dataValidDomain>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xBuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AlP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `OwnerRU` REGEXP BINARY '^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
-      </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Alf4aEeiZB_HvH2ZRGQ" name="VAT_BE" count="88017" computed="true" matchingValueCount="65592" notMatchingValueCount="22425">
-        <parameters xmi:id="_6P_Alv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Al_4aEeiZB_HvH2ZRGQ">
+      <resultMetadata xmi:id="_6P_AjP4aEeiZB_HvH2ZRGQ" executionDate="2018-12-12T15:35:33.358+0100" executionDuration="458" message="" executionNumber="25" lastRunOk="true" lastExecutionNumberOk="25"/>
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkgP4bEeiZB_HvH2ZRGQ" name="VAT_BE" count="88017" computed="true" notMatchingValueCount="88017">
+        <parameters xmi:id="_LRdkgf4bEeiZB_HvH2ZRGQ">
+          <dataValidDomain xmi:id="_LRdkgv4bEeiZB_HvH2ZRGQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_BE_0.1.pattern#_E_mEgN90Eeid7v2-FZr9SQ"/>
+            <builtInPatterns xmi:id="_LlIHYP4bEeiZB_HvH2ZRGQ" name="VAT_BE">
+              <taggedValue xmi:id="_LlIHYf4bEeiZB_HvH2ZRGQ" tag="Status" value="development"/>
+              <taggedValue xmi:id="_LlIHYv4bEeiZB_HvH2ZRGQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_LlIHY_4bEeiZB_HvH2ZRGQ" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_LlIHZP4bEeiZB_HvH2ZRGQ" tag="Description" value=""/>
+              <taggedValue xmi:id="_LlIHZf4bEeiZB_HvH2ZRGQ" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_LlIHZv4bEeiZB_HvH2ZRGQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_LlIHZ_4bEeiZB_HvH2ZRGQ" expressionType="REGEXP">
+                <expression xmi:id="_LlIHaP4bEeiZB_HvH2ZRGQ" body="'BE?0[0-9]{9}'" language="MySQL" modificationDate="2018-11-20 22:40:21"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FRv2VEeiVopKl37hDyg"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AmP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY 'BE?0[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpBv8P4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY 'BE?0[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='CDB')" language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Amf4aEeiZB_HvH2ZRGQ" name="VAT_FR" count="88017" computed="true" matchingValueCount="12" notMatchingValueCount="88005">
-        <parameters xmi:id="_6P_Amv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Am_4aEeiZB_HvH2ZRGQ">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkg_4bEeiZB_HvH2ZRGQ" name="VAT_FR" count="88017" computed="true" notMatchingValueCount="88017">
+        <parameters xmi:id="_LRdkhP4bEeiZB_HvH2ZRGQ">
+          <dataValidDomain xmi:id="_LRdkhf4bEeiZB_HvH2ZRGQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_FR_0.1.pattern#_rTgggO0LEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_LmOTkP4bEeiZB_HvH2ZRGQ" name="VAT_FR">
+              <taggedValue xmi:id="_LmOTkf4bEeiZB_HvH2ZRGQ" tag="Status" value="development"/>
+              <taggedValue xmi:id="_LmOTkv4bEeiZB_HvH2ZRGQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_LmOTk_4bEeiZB_HvH2ZRGQ" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_LmOTlP4bEeiZB_HvH2ZRGQ" tag="Description" value=""/>
+              <taggedValue xmi:id="_LmOTlf4bEeiZB_HvH2ZRGQ" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_LmOTlv4bEeiZB_HvH2ZRGQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_LmOTl_4bEeiZB_HvH2ZRGQ" expressionType="REGEXP">
+                <expression xmi:id="_LmOTmP4bEeiZB_HvH2ZRGQ" body="'FR?[0-9A-Z]{2}[0-9]{9}'" language="MySQL" modificationDate="2018-11-20 22:40:58"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FRv2VEeiVopKl37hDyg"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AnP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY 'FR?[0-9A-Z]{2}[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpCXAP4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY 'FR?[0-9A-Z]{2}[0-9]{9}' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='CDB')" language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Anf4aEeiZB_HvH2ZRGQ" name="VAT_NL" count="88017" computed="true" matchingValueCount="29" notMatchingValueCount="87988">
-        <parameters xmi:id="_6P_Anv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_An_4aEeiZB_HvH2ZRGQ">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkhv4bEeiZB_HvH2ZRGQ" name="VAT_NL" count="88017" computed="true" notMatchingValueCount="88017">
+        <parameters xmi:id="_LRdkh_4bEeiZB_HvH2ZRGQ">
+          <dataValidDomain xmi:id="_LRdkiP4bEeiZB_HvH2ZRGQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/VAT/VAT_NL_0.1.pattern#_JMbRAO0MEeidmJUNeAS2Pw"/>
+            <builtInPatterns xmi:id="_LnLV0P4bEeiZB_HvH2ZRGQ" name="VAT_NL">
+              <taggedValue xmi:id="_LnLV0f4bEeiZB_HvH2ZRGQ" tag="Status" value="development"/>
+              <taggedValue xmi:id="_LnLV0v4bEeiZB_HvH2ZRGQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_LnLV0_4bEeiZB_HvH2ZRGQ" tag="Purpose" value=""/>
+              <taggedValue xmi:id="_LnLV1P4bEeiZB_HvH2ZRGQ" tag="Description" value=""/>
+              <taggedValue xmi:id="_LnLV1f4bEeiZB_HvH2ZRGQ" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_LnLV1v4bEeiZB_HvH2ZRGQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_LnLV1_4bEeiZB_HvH2ZRGQ" expressionType="REGEXP">
+                <expression xmi:id="_LnLV2P4bEeiZB_HvH2ZRGQ" body="'(NL)?[0-9]{9}B[0-9]{2}'" language="MySQL" modificationDate="2018-11-20 22:35:10"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xFuywEeiof8jSeXJ-ng"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FRv2VEeiVopKl37hDyg"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AoP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY '(NL)?[0-9]{9}B[0-9]{2}' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpCXAf4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `VAT` REGEXP BINARY '(NL)?[0-9]{9}B[0-9]{2}' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='CDB')" language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Aof4aEeiZB_HvH2ZRGQ" name="Country_Code_Volvo" count="88017" computed="true" matchingValueCount="88017">
-        <parameters xmi:id="_6P_Aov4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Ao_4aEeiZB_HvH2ZRGQ">
-            <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/Country_Code_Volvo_0.1.pattern#_VxPKgO0OEeidmJUNeAS2Pw"/>
-          </dataValidDomain>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xQuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_ApP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `CountryCode` REGEXP BINARY '^[A-Z][A-Z]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
-      </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Apf4aEeiZB_HvH2ZRGQ" name="postal_code_belgium" count="88017" computed="true" matchingValueCount="86930" notMatchingValueCount="1087">
-        <parameters xmi:id="_6P_Apv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Ap_4aEeiZB_HvH2ZRGQ">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkif4bEeiZB_HvH2ZRGQ" name="postal_code_belgium" count="88017" computed="true" matchingValueCount="86931" notMatchingValueCount="1086">
+        <parameters xmi:id="_LRdkiv4bEeiZB_HvH2ZRGQ">
+          <dataValidDomain xmi:id="_LRdki_4bEeiZB_HvH2ZRGQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/custom/postal_code_belgium_0.1.pattern#_GkK9gOzZEeiof8jSeXJ-ng"/>
+            <builtInPatterns xmi:id="_LoEGoP4bEeiZB_HvH2ZRGQ" name="postal_code_belgium">
+              <taggedValue xmi:id="_LoEGof4bEeiZB_HvH2ZRGQ" tag="Status" value="development"/>
+              <taggedValue xmi:id="_LoEGov4bEeiZB_HvH2ZRGQ" tag="Author" value="charlesclement@eval11351.talend.com"/>
+              <taggedValue xmi:id="_LoEGo_4bEeiZB_HvH2ZRGQ" tag="Purpose"/>
+              <taggedValue xmi:id="_LoEGpP4bEeiZB_HvH2ZRGQ" tag="Description"/>
+              <taggedValue xmi:id="_LoEGpf4bEeiZB_HvH2ZRGQ" tag="Version" value="0.1"/>
+              <taggedValue xmi:id="_LoEGpv4bEeiZB_HvH2ZRGQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_LoEGp_4bEeiZB_HvH2ZRGQ" expressionType="REGEXP">
+                <expression xmi:id="_LoEGqP4bEeiZB_HvH2ZRGQ" body="'^[0-9][0-9][0-9][0-9]$'" language="MySQL"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xMuywEeiof8jSeXJ-ng"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6FYv2VEeiVopKl37hDyg"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AqP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `sPostalCode` REGEXP BINARY '^[0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpCXAv4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `sPostalCode` REGEXP BINARY '^[0-9][0-9][0-9][0-9]$' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='CDB')" language="MySQL"/>
       </indicators>
-      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_6P_Aqf4aEeiZB_HvH2ZRGQ" name="Phone Number" count="88017" computed="true" notMatchingValueCount="88017">
-        <parameters xmi:id="_6P_Aqv4aEeiZB_HvH2ZRGQ">
-          <dataValidDomain xmi:id="_6P_Aq_4aEeiZB_HvH2ZRGQ">
+      <indicators xsi:type="dataquality.indicators:RegexpMatchingIndicator" xmi:id="_LRdkjP4bEeiZB_HvH2ZRGQ" name="Phone Number" count="88017" computed="true" notMatchingValueCount="88017">
+        <parameters xmi:id="_LRdkjf4bEeiZB_HvH2ZRGQ">
+          <dataValidDomain xmi:id="_LRdkjv4bEeiZB_HvH2ZRGQ">
             <patterns href="../../../TDQ_Libraries/Patterns/Regex/phone/Phone_Number_0.1.pattern#_S7m6oIyhEd6Dle_8xC0lwg"/>
+            <builtInPatterns xmi:id="_Lo-soP4bEeiZB_HvH2ZRGQ" name="Phone Number">
+              <taggedValue xmi:id="_Lo-sof4bEeiZB_HvH2ZRGQ" tag="Author" value="Tim N Tousley"/>
+              <taggedValue xmi:id="_Lo-sov4bEeiZB_HvH2ZRGQ" tag="Description" value="Very flexible phone number entry. -- There are many valid ways to enter a phone number, and often there is other data that a restrictive Regex pattern will not abide. -- This pattern accepts any number of letters, commas, pound signs, slashes, spaces, periods, parenthesis, hyphens, plus signs, and asterisks... but amongst it scans for a minimum of 7 digits (modify {7} to adjust the minimum number of required digits (i.e. 10 for area code + phone number, 18 for long international numbers). -- This pattern does not attempt to restrict the entered phone number format in any way, but instead just verfies that enough digits for one was entered. -- Data in excess of the 7 required digits is allowed. -- I've posted another submission that forces compliance for US phone numbers."/>
+              <taggedValue xmi:id="_Lo-so_4bEeiZB_HvH2ZRGQ" tag="Purpose" value="1234567 ||| 12345678 ||| (555) 987-6543 ext 210 ||| 999-666-7777-x1967123456 ||| 555-123"/>
+              <taggedValue xmi:id="_Lo-spP4bEeiZB_HvH2ZRGQ" tag="Status" value="Draft"/>
+              <taggedValue xmi:id="_Lo-spf4bEeiZB_HvH2ZRGQ" tag="Validation_Status" value="true"/>
+              <components xsi:type="dataquality.domain.pattern:RegularExpression" xmi:id="_Lo-spv4bEeiZB_HvH2ZRGQ" expressionType="REGEXP">
+                <expression xmi:id="_Lo-sp_4bEeiZB_HvH2ZRGQ" body="'^([a-zA-Z,#/ \.\(\)\-\+\*]*[0-9]){7}[0-9a-zA-Z,#/ \.\(\)\-\+\*]*$'" language="SQL"/>
+              </components>
+            </builtInPatterns>
           </dataValidDomain>
         </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xSuywEeiof8jSeXJ-ng"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_gq6Fev2VEeiVopKl37hDyg"/>
         <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Matching/Regular_Expression_Matching_0.1.definition#_yb-_8Dh8Ed2XmO7pl5Yuyg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_ArP4aEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `Phone` REGEXP BINARY '^([a-zA-Z,#/ \.\(\)\-\+\*]*[0-9]){7}[0-9a-zA-Z,#/ \.\(\)\-\+\*]*$' THEN 1 END), COUNT(*) FROM `volvo`.`ods_pivot`  WHERE (source='CDB')" language="MySQL"/>
-      </indicators>
-      <indicators xsi:type="dataquality.indicators:PatternFreqIndicator" xmi:id="_6P_Arf4aEeiZB_HvH2ZRGQ" computed="true" distinctValueCount="100" valueToFreq="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000C0770800000100000000647400007372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B020000787000000000000004C37400154141414141414141414141414141414141412039397371007E0003000000000000019174000C4141412041414141414120397371007E0003000000000000006D740013414141204141204141414141414141203939397371007E000300000000000000907400124141414141412041414141414141412039397371007E0003000000000000006474001141414120414120414141414141414120397371007E00030000000000000061740010414141414141414141414141203939397371007E000300000000000002DB74000E41616120416161616161616120397371007E00030000000000000057740019414141414141414120414120414141414141414141203939397371007E0003000000000000008B740007414141412039397371007E000300000000000000E674000D414141414141414141412039397371007E00030000000000000D2474001441414141414141414141414141414141412039397371007E0003000000000000038F740010414141204141204141414141412039397371007E000300000000000001F174000C4141414141414141203939397371007E000300000000000001D674001441414120414141204141414141414141412039397371007E0003000000000000007074000B41414141414141203939397371007E000300000000000000F6740016414141414141414141414141414141414141203939397371007E0003000000000000013D74000C4141412041414141412039397371007E000300000000000000C774000F4141412041412041414141412039397371007E0003000000000000011A7400094141414141414120397371007E0003000000000000013874000F41414141414141414141203939204171007E0013740013414141414141414141414141414141414120397371007E0003000000000000010474001141414141414141414141414141203939397371007E000300000000000002D57400012E7371007E00030000000000000107740010414141204141204141414141414120397371007E0003000000000000008D74001141414120414141204141414141412039397371007E0003000000000000008E740013414141412041414141414141414141412039397371007E0003000000000000006674000F4141414141414141414141412039397371007E00030000000000000AAB7400124141414141414141414141414141203939397371007E0003000000000000049D740010414141414141414141414141414120397371007E00030000000000000358740013414141204141412041414141414141412039397371007E000300000000000000AE7400184141414141414141414141414141414141414141203939397371007E0003000000000000007E7400104141412041412041414141412039393971007E000974000841414141414120397371007E000300000000000000A07400164141414141414141204141204141414141412039393971007E004274001441414141414120414141414141414141412039397371007E00030000000000000065740013414141414120414141414141414141412039397371007E000300000000000000637400124141412041412041414141414141412039397371007E0003000000000000016E7400184141414141414141204141204141414141414141412039397371007E0003000000000000005A74001141414120414120414141414141203939397371007E00030000000000000071740013414141204141204141414141414141412039397371007E000300000000000000E37400154141414141412041414141414141414141412039397371007E00030000000000000077740016414141414141414141414141414141414141412039397371007E000300000000000000BE74000A414141414141203939397371007E00030000000000000058740014414141414141414120414120414141414120393971007E004E740016414141414120414141414141414141414141412039397371007E0003000000000000006E74000E41414141414141414141203939397371007E0003000000000000042674001441414120414120414141414141414141412039397371007E000300000000000000AE7400124161612061612041616161616161203939397371007E0003000000000000009D740013414141414141414141414141414141412039397371007E000300000000000005427400134141414141412041414141414141412039393971007E004A7400094141414141412039397371007E000300000000000001A974001141414141414141414141414141412039397371007E00030000000000000A887400184141414141414141204141204141414141414141203939397371007E0003000000000000006974001441616161616161616161616161616161203939397371007E0003000000000000037674001441414120414120414120414141414141412039397371007E00030000000000000096740010414141414141414141414120393920417371007E0003000000000000008074001241414120414120414120414141414120393971007E006A74001741616161616161616161616161616161616161203939397371007E0003000000000000009D74000F4141412041414141414141412039397371007E0003000000000000012374000E41414120414141414141412039397371007E000300000000000000EF74000B41414141414141412039397371007E000300000000000005FD74001741414141414141412041412041414141414141203939397371007E000300000000000000627400154141412041414141414120414141414141412039397371007E0003000000000000005574000D414141414141414141203939397371007E0003000000000000020874000D414141204141414141412039397371007E0003000000000000011274001741616161616161612061612041616161616161612039397371007E0003000000000000005C740010414141204141414141414141412039397371007E000300000000000000B174000841414141412039397371007E0003000000000000011D7400154141412041412041412041414141414141412039397371007E000300000000000000B97400154141414141414141414141414141414141203939397371007E0003000000000000028974001741414141414141414141414141414141414141412039397371007E0003000000000000007974001541414141414141412041412041414141412039393971007E003874001141414120414141414141414141412039397371007E0003000000000000009974000C4141414141414141412039397371007E000300000000000007AA74000F4141414141414141414141203939397371007E0003000000000000047074000F4161616161616161616161203939417371007E0003000000000000005D74000C4141414141414141414120397371007E000300000000000004B6740007414141414120397371007E0003000000000000008174000B41414141414141414120397371007E000300000000000002E27400124141414141414141414141414141412039397371007E0003000000000000082174000D414141414141414141414120397371007E000300000000000005097400124141412041414120414141414141412039397371007E0003000000000000005E74001141414120414120414141414141412039397371007E0003000000000000023A740010414141414141414141414141412039397371007E00030000000000000AB074001141414141414141414141414141414120397371007E0003000000000000030774000E41414120414120414141412039397371007E000300000000000000B774000A414141414141414120397371007E0003000000000000024874001141414141412041414141414141412039397371007E0003000000000000005974000E41414141414141414141414120397371007E0003000000000000041174000F4141414141414141414141414120397371007E00030000000000000416740014414141204141204141414141414141412039393971007E004E7400124161616161616161616161616161616120397371007E000300000000000001E774001441616161616161616161616161616161616120397371007E0003000000000000008874000E414141414120414141414120393971007E007B74000F4141412041412041414141414120397371007E000300000000000000B374000E41414141414141414141412039397371007E00030000000000000EBA74000A414141414141412039397371007E0003000000000000037674001441414141412041414141414141414141412039397371007E0003000000000000008B740013414141414141414141414141414141203939397371007E000300000000000002CD78">
-        <parameters xmi:id="_6P_Arv4aEeiZB_HvH2ZRGQ" topN="100">
-          <textParameter xmi:id="_6P_Ar_4aEeiZB_HvH2ZRGQ" useBlank="false"/>
-        </parameters>
-        <analyzedElement xsi:type="relational:TdColumn" href="../../../metadata/connections/Mysql_local_0.1.item#_RS8xJuywEeiof8jSeXJ-ng"/>
-        <indicatorDefinition href="../../../TDQ_Libraries/Indicators/System Indicators/Pattern Frequency Statistics/Pattern_Frequency_Table_0.1.definition#_kQzTsJR-Ed2XO-JvLwVAwg"/>
-        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_6P_AsP4aEeiZB_HvH2ZRGQ" body="SELECT REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(`AdressLine1`,'a','a'),'b','a'),'c','a'),'d','a'),'e','a'),'f','a'),'g','a'),'h','a'),'i','a'),'j','a'),'k','a'),'l','a'),'m','a'),'n','a'),'o','a'),'p','a'),'q','a'),'r','a'),'s','a'),'t','a'),'u','a'),'v','a'),'w','a'),'x','a'),'y','a'),'z','a'),'ç','a'),'â','a'),'ê','a'),'î','a'),'ô','a'),'û','a'),'é','a'),'è','a'),'ù','a'),'ï','a'),'ö','a'),'ü','a'),'A','A'),'B','A'),'C','A'),'D','A'),'E','A'),'F','A'),'G','A'),'H','A'),'I','A'),'J','A'),'K','A'),'L','A'),'M','A'),'N','A'),'O','A'),'P','A'),'Q','A'),'R','A'),'S','A'),'T','A'),'U','A'),'V','A'),'W','A'),'X','A'),'Y','A'),'Z','A'),'Ç','A'),'Â','A'),'Ê','A'),'Î','A'),'Ô','A'),'Û','A'),'É','A'),'È','A'),'Ù','A'),'Ï','A'),'Ö','A'),'Ü','A'),'0','9'),'1','9'),'2','9'),'3','9'),'4','9'),'5','9'),'6','9'),'7','9'),'8','9'),'9','9'), COUNT(*) c FROM `volvo`.`ods_pivot` t  WHERE (source='CDB') GROUP BY REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(`AdressLine1`,'a','a'),'b','a'),'c','a'),'d','a'),'e','a'),'f','a'),'g','a'),'h','a'),'i','a'),'j','a'),'k','a'),'l','a'),'m','a'),'n','a'),'o','a'),'p','a'),'q','a'),'r','a'),'s','a'),'t','a'),'u','a'),'v','a'),'w','a'),'x','a'),'y','a'),'z','a'),'ç','a'),'â','a'),'ê','a'),'î','a'),'ô','a'),'û','a'),'é','a'),'è','a'),'ù','a'),'ï','a'),'ö','a'),'ü','a'),'A','A'),'B','A'),'C','A'),'D','A'),'E','A'),'F','A'),'G','A'),'H','A'),'I','A'),'J','A'),'K','A'),'L','A'),'M','A'),'N','A'),'O','A'),'P','A'),'Q','A'),'R','A'),'S','A'),'T','A'),'U','A'),'V','A'),'W','A'),'X','A'),'Y','A'),'Z','A'),'Ç','A'),'Â','A'),'Ê','A'),'Î','A'),'Ô','A'),'Û','A'),'É','A'),'È','A'),'Ù','A'),'Ï','A'),'Ö','A'),'Ü','A'),'0','9'),'1','9'),'2','9'),'3','9'),'4','9'),'5','9'),'6','9'),'7','9'),'8','9'),'9','9') ORDER BY c DESC LIMIT 100" language="MySQL"/>
-        <builtInIndicatorDefinition xmi:id="_6P_Asf4aEeiZB_HvH2ZRGQ" name="Pattern Frequency Table" label="Pattern Frequency Table">
-          <taggedValue xmi:id="_6P_Asv4aEeiZB_HvH2ZRGQ" tag="Description" value="counts the number of records for each distinct pattern"/>
-          <taggedValue xmi:id="_6P_As_4aEeiZB_HvH2ZRGQ" tag="Purpose" value="evaluates the most frequent patterns"/>
-          <sqlGenericExpression xmi:id="_6P_AtP4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="SQL"/>
-          <sqlGenericExpression xmi:id="_6P_Atf4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="MySQL"/>
-          <sqlGenericExpression xmi:id="_6P_Atv4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) AS c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Oracle"/>
-          <sqlGenericExpression xmi:id="_6P_At_4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) AS c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="PostgreSQL"/>
-          <sqlGenericExpression xmi:id="_6P_AuP4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="DB2"/>
-          <sqlGenericExpression xmi:id="_6P_Auf4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%> , COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Microsoft SQL Server"/>
-          <sqlGenericExpression xmi:id="_6P_Auv4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) AS c FROM &lt;%=__TABLE_NAME__%> &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Informix"/>
-          <sqlGenericExpression xmi:id="_6P_Au_4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="AS/400"/>
-          <sqlGenericExpression xmi:id="_6P_AvP4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Teradata"/>
-          <sqlGenericExpression xmi:id="_6P_Avf4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) AS c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Vertica Database"/>
-          <sqlGenericExpression xmi:id="_6P_Avv4aEeiZB_HvH2ZRGQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) AS c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Netezza"/>
-          <charactersMapping xmi:id="_6P_Av_4aEeiZB_HvH2ZRGQ" language="SQL" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_AwP4aEeiZB_HvH2ZRGQ" name="Characters mapping on MySQL" language="MySQL" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Awf4aEeiZB_HvH2ZRGQ" name="Characters mapping on Oracle" language="Oracle" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Awv4aEeiZB_HvH2ZRGQ" name="Characters mapping on PostgreSQL" language="PostgreSQL" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Aw_4aEeiZB_HvH2ZRGQ" name="Characters mapping on Microsoft SQL Server" language="Microsoft SQL Server" charactersToReplace="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_AxP4aEeiZB_HvH2ZRGQ" name="Characters mapping on DB2" language="DB2" charactersToReplace="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Axf4aEeiZB_HvH2ZRGQ" name="Characters mapping on AS/400" language="AS/400" charactersToReplace="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Axv4aEeiZB_HvH2ZRGQ" name="Characters mapping on Informix" language="Informix" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Ax_4aEeiZB_HvH2ZRGQ" name="Characters mapping on Teradata" language="Teradata" charactersToReplace="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_AyP4aEeiZB_HvH2ZRGQ" name="Characters mapping on Vertica" language="Vertica Database" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Ayf4aEeiZB_HvH2ZRGQ" language="Netezza" charactersToReplace="abcdefghijklmnopqrstuvwxyzçâêîôûéèùïöüABCDEFGHIJKLMNOPQRSTUVWXYZÇÂÊÎÔÛÉÈÙÏÖÜ0123456789" replacementCharacters="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9999999999"/>
-          <charactersMapping xmi:id="_6P_Ayv4aEeiZB_HvH2ZRGQ" name="Characters mapping on Hive" language="Hive" charactersToReplace="0123456789abcdefghijklmnopqrstuvwxyz?aê???éèù??üABCDEFGHIJKLMNOPQRSTUVWXYZ??ê???éèù??ü" replacementCharacters="9999999999aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
-        </builtInIndicatorDefinition>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_LpC-EP4bEeiZB_HvH2ZRGQ" body="SELECT COUNT(CASE WHEN `Phone` REGEXP BINARY '^([a-zA-Z,#/ \.\(\)\-\+\*]*[0-9]){7}[0-9a-zA-Z,#/ \.\(\)\-\+\*]*$' THEN 1 END), COUNT(*) FROM `volvo`.`dq_pivot_optim`  WHERE (source='CDB')" language="MySQL"/>
       </indicators>
     </results>
     <parameters xmi:id="_6P_Ay_4aEeiZB_HvH2ZRGQ" dataFilter="_6P_A0P4aEeiZB_HvH2ZRGQ" analysisType="Multiple Column Analysis"/>
@@ -155,7 +137,7 @@
       <contextParameter xmi:id="_6P_Az_4aEeiZB_HvH2ZRGQ" comment="" name="Source" prompt="Source?" promptNeeded="false" type="id_String" value="source='RTDMS'"/>
     </contextType>
   </dataquality.analysis:Analysis>
-  <dataquality.domain:Domain xmi:id="_6P_A0P4aEeiZB_HvH2ZRGQ" name="Analysis Data Filter">
+  <dataquality.domain:Domain xmi:id="_6P_A0P4aEeiZB_HvH2ZRGQ" name="02_Accuracy_after">
     <ranges xmi:id="_6P_A0f4aEeiZB_HvH2ZRGQ">
       <expressions xmi:id="_6P_A0v4aEeiZB_HvH2ZRGQ">
         <expression xsi:type="relational:TdExpression" xmi:id="_6P_A0_4aEeiZB_HvH2ZRGQ" body="context.Source" language="SQL"/>
