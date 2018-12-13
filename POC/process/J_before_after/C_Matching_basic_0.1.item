@@ -168,13 +168,13 @@
     <elementParameter field="TEXT" name="USER" show="false" value="context.Mysql_local_Login"/>
     <elementParameter field="PASSWORD" name="PASS" show="false" value="8pW6Nmy2kucrqmR6ZMJJfsShvn5S15wfx43l51+VfXk="/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - dq_pivot_optim"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;dq_pivot_optim&quot;"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wp_scN1GEeigRf1EgGbOLg - stg_pivot"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;stg_pivot&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `dq_pivot_optim`.`Customer`, &#10;  `dq_pivot_optim`.`OwnerRU`, &#10;  `dq_pivot_optim`.`CommonName`, &#10;  `dq_pivot_optim`.`LegalName`, &#10;  `dq_pivot_optim`.`OrganisationNo`, &#10;  `dq_pivot_optim`.`VAT`, &#10;  `dq_pivot_optim`.`ChamberOfCom`, &#10;  `dq_pivot_optim`.`Parma`, &#10;  `dq_pivot_optim`.`SICCode`, &#10;  `dq_pivot_optim`.`AdressLine1`, &#10;  `dq_pivot_optim`.`sAddrLine2`, &#10;  `dq_pivot_optim`.`sAddrLine3`, &#10;  `dq_pivot_optim`.`sPostalCode`, &#10;  `dq_pivot_optim`.`sCity`, &#10;  `dq_pivot_optim`.`sStateProvince`, &#10;  `dq_pivot_optim`.`Country`, &#10;  `dq_pivot_optim`.`CountryCode`, &#10;  `dq_pivot_optim`.`SalesChannel`, &#10;  `dq_pivot_optim`.`Phone`, &#10;  `dq_pivot_optim`.`ID`, &#10;  `dq_pivot_optim`.`Loading_Date`, &#10;  `dq_pivot_optim`.`Source`, &#10;  `dq_pivot_optim`.`VAT_valid`, &#10;  `dq_pivot_optim`.`OSM_Valid`&#10;FROM `dq_pivot_optim`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;  `stg_pivot`.`Customer`, &#10;  `stg_pivot`.`OwnerRU`, &#10;  `stg_pivot`.`CommonName`, &#10;  `stg_pivot`.`LegalName`, &#10;  `stg_pivot`.`OrganisationNo`, &#10;  `stg_pivot`.`VAT`, &#10;  `stg_pivot`.`STG_VAT`, &#10;  `stg_pivot`.`ChamberOfCom`, &#10;  `stg_pivot`.`Parma`, &#10;  `stg_pivot`.`SICCode`, &#10;  `stg_pivot`.`AdressLine1`, &#10;  `stg_pivot`.`sAddrLine2`, &#10;  `stg_pivot`.`sAddrLine3`, &#10;  `stg_pivot`.`sPostalCode`, &#10;  `stg_pivot`.`sCity`, &#10;  `stg_pivot`.`sStateProvince`, &#10;  `stg_pivot`.`Country`, &#10;  `stg_pivot`.`CountryCode`, &#10;  `stg_pivot`.`STG_Adresse`, &#10;  `stg_pivot`.`SalesChannel`, &#10;  `stg_pivot`.`Phone`, &#10;  `stg_pivot`.`STG_Phone`, &#10;  `stg_pivot`.`ID`, &#10;  `stg_pivot`.`Loading_Date`&#10;FROM `stg_pivot`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -196,6 +196,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="OrganisationNo"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="VAT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_VAT"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ChamberOfCom"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -219,119 +221,96 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CountryCode"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_Adresse"/>
+      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SalesChannel"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Phone"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STG_Phone"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Loading_Date"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Source"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VAT_valid"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="OSM_Valid"/>
-      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="dq_pivot_optim" name="tDBInput_2">
+    <metadata connector="FLOW" label="stg_pivot" name="tDBInput_2">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
       </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
@@ -359,104 +338,83 @@
     <elementParameter field="LABEL" name="HELP_KEY" show="false" value="Notice that how to fill algorithm parameter:&#10;(1) N first characters of each word: fill in a digit number, like 2 or 12, etc.&#10;(2) first N characters of the string: fill in a digit number&#10;(3) last N characters of the string: fill in a digit number&#10;(4) first N consonants of the string: fill in a digit number&#10;(5) first N vowels of the string: fill in a digit number&#10;(6) substring(a, b): fill a String like &quot;2;4&quot;, for example, &quot;abcdef&quot; returns &quot;cd&quot; on impact&#10;(7) pick characters: fill a String like &quot;1;2-4;5&quot;, for example, &quot;abcdef&quot; returns &quot;bcdf&quot; on impact&#10;(8) use default value: any String you want.(it is to replace empty value after key algorithm)&#10;(9) add left position character: about usual separators like parenthesis and so on, applied after &quot;use default value&quot;&#10;(10) add right position character: about usual separators like parenthesis and so on, applied after &quot;use default value&quot;&#10;"/>
     <elementParameter field="CHECK" name="IS_SHADOW_JOB" show="false" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="dq_pivot_optim" name="tGenKey_1">
+    <metadata connector="FLOW" label="stg_pivot" name="tGenKey_1">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
-      </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
@@ -491,102 +449,78 @@
     <elementParameter field="CHECK" name="DISPLAY_ATTR_LABELS" value="true"/>
     <elementParameter field="CHECK" name="DEACTIVATE_MATCHING_COMPUTATION" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="dq_pivot_optim" name="tMatchGroup_2">
+    <metadata connector="FLOW" label="stg_pivot" name="tMatchGroup_2">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
-      </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -595,104 +529,83 @@
       <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
-    <metadata connector="FLOW_OUTPUT" label="dq_pivot_optim" name="FLOW_OUTPUT">
+    <metadata connector="FLOW_OUTPUT" label="stg_pivot" name="FLOW_OUTPUT">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
-      </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -701,104 +614,83 @@
       <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
-    <metadata connector="UNIQUE_ROWS" label="dq_pivot_optim" name="UNIQUE_ROWS">
+    <metadata connector="UNIQUE_ROWS" label="stg_pivot" name="UNIQUE_ROWS">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
-      </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -807,104 +699,83 @@
       <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
-    <metadata connector="CONFIDENT_GROUPS" label="dq_pivot_optim" name="CONFIDENT_GROUPS">
+    <metadata connector="CONFIDENT_GROUPS" label="stg_pivot" name="CONFIDENT_GROUPS">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
-      </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -913,104 +784,83 @@
       <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
-    <metadata connector="UNCERTAIN_GROUPS" label="dq_pivot_optim" name="UNCERTAIN_GROUPS">
+    <metadata connector="UNCERTAIN_GROUPS" label="stg_pivot" name="UNCERTAIN_GROUPS">
       <column comment="" key="false" length="200" name="Customer" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OwnerRU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CommonName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="LegalName" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="OrganisationNo" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_VAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ChamberOfCom" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Parma" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="SICCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="AdressLine1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sAddrLine3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sPostalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sCity" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="sStateProvince" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="CountryCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Adresse" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="SalesChannel" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="200" name="Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
+      </column>
+      <column comment="" key="false" length="200" name="STG_Phone" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="200" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column comment="" key="false" length="19" name="Loading_Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Interval"/>
-      </column>
-      <column comment="" key="false" length="200" name="Source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="VAT_valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
-      </column>
-      <column comment="" key="false" length="200" name="OSM_Valid" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-        <additionalField key="Content Type" value="Nominal"/>
       </column>
       <column defaultValue="" key="false" length="255" name="T_GEN_KEY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="GID" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1019,20 +869,13 @@
       <column defaultValue="" key="false" length="20" name="SCORE" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="MATCHING_DISTANCES" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="200" name="source" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="tdqmatching:MatchingData">
       <ruleMatchers>
-        <joinkeys>
-          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
-          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
-          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
-          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
-          <columnMap key="CONFIDENCE_WEIGHT" value="3"/>
-          <columnMap key="INPUT_COLUMN" value="AdressLine1"/>
-          <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
-          <columnMap key="TOKENIZATION_TYPE" value="No"/>
-        </joinkeys>
         <joinkeys>
           <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
           <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
@@ -1053,6 +896,16 @@
           <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
           <columnMap key="TOKENIZATION_TYPE" value="No"/>
         </joinkeys>
+        <joinkeys>
+          <columnMap key="MATCHING_TYPE" value="Levenshtein"/>
+          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
+          <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
+          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
+          <columnMap key="CONFIDENCE_WEIGHT" value="3"/>
+          <columnMap key="INPUT_COLUMN" value="STG_Adresse"/>
+          <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
+          <columnMap key="TOKENIZATION_TYPE" value="No"/>
+        </joinkeys>
         <matchParamMap key="INTERVAL_RULE" value="0.85"/>
         <matchParamMap key="MATCHING_ALGORITHM" value="Simple VSR Matcher"/>
       </ruleMatchers>
@@ -1063,7 +916,7 @@
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_WDv70P3uEeiZB_HvH2ZRGQ-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_WeLFwP7lEeiz_78T7rhrDg-tMap_1-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -1178,7 +1031,7 @@
       <column defaultValue="" key="false" length="20" name="GRP_QUALITY" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row3.Customer " name="Customer" nullable="true" type="id_String"/>
@@ -1220,6 +1073,7 @@
         <mapperTableEntries name="LegalName" nullable="true" type="id_String"/>
         <mapperTableEntries name="OrganisationNo" nullable="true" type="id_String"/>
         <mapperTableEntries name="VAT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_VAT" nullable="true" type="id_String"/>
         <mapperTableEntries name="ChamberOfCom" nullable="true" type="id_String"/>
         <mapperTableEntries name="Parma" nullable="true" type="id_String"/>
         <mapperTableEntries name="SICCode" nullable="true" type="id_String"/>
@@ -1231,13 +1085,12 @@
         <mapperTableEntries name="sStateProvince" nullable="true" type="id_String"/>
         <mapperTableEntries name="Country" nullable="true" type="id_String"/>
         <mapperTableEntries name="CountryCode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_Adresse" nullable="true" type="id_String"/>
         <mapperTableEntries name="SalesChannel" nullable="true" type="id_String"/>
         <mapperTableEntries name="Phone" nullable="true" type="id_String"/>
+        <mapperTableEntries name="STG_Phone" nullable="true" type="id_String"/>
         <mapperTableEntries name="ID" nullable="true" type="id_String"/>
         <mapperTableEntries name="Loading_Date" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="Source" nullable="true" type="id_String"/>
-        <mapperTableEntries name="VAT_valid" nullable="true" type="id_String"/>
-        <mapperTableEntries name="OSM_Valid" nullable="true" type="id_String"/>
         <mapperTableEntries name="T_GEN_KEY" nullable="true" type="id_String"/>
         <mapperTableEntries name="GID" nullable="true" type="id_String"/>
         <mapperTableEntries name="GRP_SIZE" nullable="true" type="id_Integer"/>
@@ -1934,13 +1787,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_76d2c016-7ceb-4080-b939-3309841e4ec6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IyeOtbGkXv4sMlPRga1un3zIt3CbjsagmOvU1nufwVfNf8LCHzTrzlpjDU4gWepu8vv/oUhV3r9E
-2iC1Z42/dQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8f68d931-d402-4841-9349-026b6dd6d61b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>XjDeyRz/il3sjZGN22OGOvrygy67wDUNWoLO05VHqy7r1aJd4z4Hxza5Q13bxymKRxhbChZx7YpM
-+LhXdWpX3A==</DigestValue></Reference></SignedInfo><SignatureValue>03qz8rajEsm2fIO/p3W4LVXBPipHu0fX4uRnSvXc3e0TVxwM7dSORelqyeKzlTSh0O8sWxUd80X7
-ypB+w3EGf/L8SK0HbZGqb2q9mu3Il1hUFsm5BNRuXNp+m0LUpdZTdIz/kANHxA9Ll/Fs2d2K7pft
-aFrqlV6kCzl0a7Dfmtvw2Q5qeGYNBjlwtYv71EfXKoQRiKuyC7aiqUe05s5MNz34KkpPEvD03cei
-EMfObSlYFfN1xJplya89Kw/YALjw0IZ2rIHj8wtcUri+Ffz2EfenDQxLysPMp+IELGhisT5yvHAQ
-7SLyqkcnegfwLWD9DvOIZUwbi2ateSquJsqvUQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_3ec23d33-4d73-46fb-8f64-531518918783"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pS4o9ptQyA2UqvL3RkC/kF5Asu1tsUwDyPwI6uN5+FLwuXCwexXNTMuAfKdum7YvspWbYyVeGeHP
+H3i4Q441Mg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_25b323e6-4a01-4f64-96ea-199f36a021f9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Hdl9N0pZp2n101yIuVr3sj3UoVF/1qa7IEJu7YnsgfMlP8WXKvHuFj18yUDryMe8oQb6BuVkBGQD
+OEAX3ocnlQ==</DigestValue></Reference></SignedInfo><SignatureValue>NwiWBDzpKYhy7M3Y7dCApEk/eWDs1cZllfdFHhT7RpXLLhtKuhQfBx4YuXAeRIe4XL8N+bzsBfCM
+oQZS9X1onUwzh/V1AhyKiyQ93o3vafr3JdiuTTMTzD1UZcm/1pA8Spvn1J3WvbUIQXPFFTDdZ++I
+A4z1HEA54uvdCbx1MiYbdEIbEn3sslpWm7Y4Kr74tYZkn5yKn0sxEMLnzsgVNWwh1aBVzLhZ1Swt
+T9WRA5rjKly70NL6Ey/K9Twra+QLwImThhuSgIHddk1cuqdt0RpbVEOO96WV4qk1rUCrMWvc+L/5
+507DNMMD7ENPEwwXXs4zS9xubqUn7AjQa3yRZg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -1964,4 +1817,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8f68d931-d402-4841-9349-026b6dd6d61b" Target="#_76d2c016-7ceb-4080-b939-3309841e4ec6"><Timestamp>2018-12-13 14:42:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_25b323e6-4a01-4f64-96ea-199f36a021f9" Target="#_3ec23d33-4d73-46fb-8f64-531518918783"><Timestamp>2018-12-13 14:51:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
